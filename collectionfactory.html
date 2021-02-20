@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83690-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-83690-3');
+</script>
+<title>API reference (collectionfactory)</title>
+
+<!-- Google Structured Data (https://developers.google.com/search/docs/guides/intro-structured-data) -->
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "Organization",
+		"name": "Defold Foundation",
+		"url": "https://www.defold.com",
+		"email": "info@defold.com",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Postbox 6034",
+			"addressLocality": "Hägersten",
+			"addressRegion": "Stockholm",
+			"addressCountry": "Sweden",
+			"postalCode": "12906"
+		},
+		"foundingDate": "2020",
+		"sameAs": [
+			"https://www.facebook.com/Defold",
+			"https://www.twitter.com/defold",
+			"https://www.github.com/defold",
+			"https://www.youtube.com/channel/UCrEYXG15n3V0Y8eK0RbCaLQ"
+		]
+	}
+</script>
+
+<!-- META DATA -->
+<meta name="description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="author" content="Defold Foundation" />
+<meta name="keywords" content="defold, gameengine, game-engine, game-development, game-dev, gamedev, open-source, opensource, crossplatform, cross-platform, free, nintendo-switch, console, html5, web, android, ios, desktop" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://defold.com/ref/stable/collectionfactory/">
+<meta property="og:site_name" content="Defold game engine">
+<meta property="og:title" content="API reference (collectionfactory)">
+<meta property="og:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta property="og:image" content="https://www.defold.com/images/social/facebook-share.jpg">
+<!-- end OPEN GRAPH -->
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@defold">
+<meta name="twitter:title" content="API reference (collectionfactory)">
+<meta name="twitter:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="twitter:image" content="https://www.defold.com/images/social/twitter-share.jpg">
+<!-- end TWITTER -->
+
+<!-- web monetization -->
+<meta name="monetization" content="$ilp.uphold.com/QkG86UgXzKq8">
+
+<!-- FONTS -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+<!-- favicon -->
+<link rel='shortcut icon' type='image/x-icon' href='/images/favicon.ico' />
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+<link rel="stylesheet" type="text/css" href="/css/defold.css">
+<link rel="stylesheet" type="text/css" href="/css/fruity.css">
+<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+<!-- end CSS -->
+
+<!-- SendInBlue CSS -->
+<link rel="stylesheet" type="text/css" href="/css/sendinblue.css">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!-- end SendInBlue CSS -->
+
+</head>
+<body>
+<div id="page">
+	<div id="pagecontent">
+	<div class="nav dark">
+	<div class="container">
+		<div class="row">
+			<div class="eight columns">
+				<ul class="navmenu">
+					<li><nobr><a href="/" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M16 9l-3-3V2h-2v2L8 1 0 9h2l1 5c0 .55.45 1 1 1h8c.55 0 1-.45 1-1l1-5h2zm-4 5H9v-4H7v4H4L2.81 7.69 8 2.5l5.19 5.19L12 14z"/></svg>
+</span>&nbsp; Defold
+</a></nobr></li>
+					<li><a href="/product">Product</a></li>
+					<li><a href="/showcase">Showcase</a></li>
+					<li><a href="/learn">Learn</a></li>
+					<li><a href="/assets">Asset&nbsp;Portal</a></li>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="//forum.defold.com">Forum</a></li>
+					<li style="visibility: hidden"><span class="octicon" style="fill: #FFF; zoom: 1.75; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"/></svg>
+</span>&nbsp;
+ Download</li>
+				</ul>
+				<select class="navdropdown dark-text" onchange="location = this.value;">
+					<option value="/">Home</option>
+					<option value="/product" >Product</option>
+					<option value="/showcase" >Showcase</option>
+					<option value="/learn">Learn</option>
+					<option value="/assets" >Asset Portal</option>
+					<option value="/open" >Open Source</option>
+					<option value="//forum.defold.com">Forum</option>
+					<option value="/donate" >Donate</option>
+					<option value="/download" >Download</option>
+					<option value="https://www.github.com/defold">GitHub</option>
+				</select>
+			</div>
+			<div class="four columns">
+				<ul class="navmenu right">
+					<li><nobr><a href="/donate" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M9 2c-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-1.632.086-2.954 1.333-3 3 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.047-1.69-1.342-2.913-3-3z"/></svg>
+</span>&nbsp; Donate
+</a></nobr></li>
+					<li><nobr><a href="/download" target=""><span class="octicon" style="fill: #FFF; zoom: 1.35; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"><path fill-rule="evenodd" d="M7 7V3H3v4H0l5 6 5-6H7z"/></svg>
+</span>&nbsp; Download
+</a></nobr></li>
+					<li><nobr><a href="https://www.github.com/defold" target="_blank"><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+
+</span>&nbsp; GitHub
+</a></nobr></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+	<div class="nav learn light">
+	<div class="container">
+		<div class="row">
+			<div class="nine columns"><ul class="navmenu">
+					<li><a href="/examples/animation/basic_tween" class="">Examples </a></li>
+					<li><a href="/tutorials/getting-started" class="">Tutorials</a></li>
+					<li><a href="/manuals/introduction" class="">Manuals</a></li>
+					<li><a href="/ref/stable/go" class="bold">API Reference</a></li>
+					<li><a href="/faq/faq" class="">FAQ</a></li>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;">
+					<option value="/examples/animation/basic_tween" >Examples</option>
+					<option value="/tutorials/getting-started" >Tutorials</option>
+					<option value="/manuals/introduction" >Manuals</option>
+					<option value="/ref/stable/go" selected>API Reference</option>
+					<option value="/faq/faq" >FAQ</option>
+				</select>
+				<div class="right navdropdown compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div></div>
+			<div class="three columns">
+				<div class="right navmenu compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section lightest">
+	<div class="container">
+		<div class="row">
+			<div class="columns two">
+				<ul id="navmenu" class="navmenu ref nobullet"><input id="collapsible_lua" class="toggle" type="checkbox" />
+					<label for="collapsible_lua" class="togglelabel">Lua</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/base" style="text-decoration: none;">base</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/bit" style="text-decoration: none;">bit</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/coroutine" style="text-decoration: none;">coroutine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/debug" style="text-decoration: none;">debug</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/io" style="text-decoration: none;">io</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/math" style="text-decoration: none;">math</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/os" style="text-decoration: none;">os</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/package" style="text-decoration: none;">package</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/socket" style="text-decoration: none;">socket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/string" style="text-decoration: none;">string</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/table" style="text-decoration: none;">table</a></li></ul><input id="collapsible_defold" class="toggle" type="checkbox" checked/>
+					<label for="collapsible_defold" class="togglelabel">Defold</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/buffer" style="text-decoration: none;">buffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/builtins" style="text-decoration: none;">builtins</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/camera" style="text-decoration: none;">camera</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionfactory" style="font-weight: bolder; font-style: italic; text-decoration: none;">collectionfactory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionproxy" style="text-decoration: none;">collectionproxy</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/crash" style="text-decoration: none;">crash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/engine" style="text-decoration: none;">engine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/factory" style="text-decoration: none;">factory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/go" style="text-decoration: none;">go</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/gui" style="text-decoration: none;">gui</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/html5" style="text-decoration: none;">html5</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/http" style="text-decoration: none;">http</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/image" style="text-decoration: none;">image</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/json" style="text-decoration: none;">json</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/label" style="text-decoration: none;">label</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/model" style="text-decoration: none;">model</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/msg" style="text-decoration: none;">msg</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/particlefx" style="text-decoration: none;">particlefx</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/physics" style="text-decoration: none;">physics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/profiler" style="text-decoration: none;">profiler</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/render" style="text-decoration: none;">render</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/resource" style="text-decoration: none;">resource</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sharedlibrary" style="text-decoration: none;">sharedlibrary</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sound" style="text-decoration: none;">sound</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/spine" style="text-decoration: none;">spine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sprite" style="text-decoration: none;">sprite</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sys" style="text-decoration: none;">sys</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/tilemap" style="text-decoration: none;">tilemap</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/timer" style="text-decoration: none;">timer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/vmath" style="text-decoration: none;">vmath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/window" style="text-decoration: none;">window</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/zlib" style="text-decoration: none;">zlib</a></li></ul><input id="collapsible_c" class="toggle" type="checkbox" />
+					<label for="collapsible_c" class="togglelabel">C</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/dmAlign" style="text-decoration: none;">dmAlign</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmArray" style="text-decoration: none;">dmArray</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmBuffer" style="text-decoration: none;">dmBuffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConditionVariable" style="text-decoration: none;">dmConditionVariable</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConfigFile" style="text-decoration: none;">dmConfigFile</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConnectionPool" style="text-decoration: none;">dmConnectionPool</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmCrypt" style="text-decoration: none;">dmCrypt</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmDNS" style="text-decoration: none;">dmDNS</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmEngine" style="text-decoration: none;">dmEngine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmExtension" style="text-decoration: none;">dmExtension</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGameObject" style="text-decoration: none;">dmGameObject</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGraphics" style="text-decoration: none;">dmGraphics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHash" style="text-decoration: none;">dmHash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHid" style="text-decoration: none;">dmHid</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHttpClient" style="text-decoration: none;">dmHttpClient</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmJson" style="text-decoration: none;">dmJson</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmLog" style="text-decoration: none;">dmLog</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMath" style="text-decoration: none;">dmMath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMutex" style="text-decoration: none;">dmMutex</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSSLSocket" style="text-decoration: none;">dmSSLSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmScript" style="text-decoration: none;">dmScript</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSocket" style="text-decoration: none;">dmSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmStringFunc" style="text-decoration: none;">dmStringFunc</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmThread" style="text-decoration: none;">dmThread</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmTime" style="text-decoration: none;">dmTime</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmURI" style="text-decoration: none;">dmURI</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmWebServer" style="text-decoration: none;">dmWebServer</a></li></ul><input id="collapsible_extension" class="toggle" type="checkbox" />
+					<label for="collapsible_extension" class="togglelabel">Extension</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/extension-adinfo/api" style="text-decoration: none;">extension-adinfo</a></li><li style="padding-bottom: 0px;"><a href="/extension-camera/api" style="text-decoration: none;">extension-camera</a></li><li style="padding-bottom: 0px;"><a href="/extension-facebook/api" style="text-decoration: none;">extension-facebook</a></li><li style="padding-bottom: 0px;"><a href="/extension-fbinstant/api" style="text-decoration: none;">extension-fbinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-firebase-analytics/api" style="text-decoration: none;">extension-firebase-analytics</a></li><li style="padding-bottom: 0px;"><a href="/extension-googleplayinstant/api" style="text-decoration: none;">extension-googleplayinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-gpgs/api" style="text-decoration: none;">extension-gpgs</a></li><li style="padding-bottom: 0px;"><a href="/extension-iap/api" style="text-decoration: none;">extension-iap</a></li><li style="padding-bottom: 0px;"><a href="/extension-push/api" style="text-decoration: none;">extension-push</a></li><li style="padding-bottom: 0px;"><a href="/extension-review/api" style="text-decoration: none;">extension-review</a></li><li style="padding-bottom: 0px;"><a href="/extension-siwa/api" style="text-decoration: none;">extension-siwa</a></li><li style="padding-bottom: 0px;"><a href="/extension-webmonetization/api" style="text-decoration: none;">extension-webmonetization</a></li><li style="padding-bottom: 0px;"><a href="/extension-websocket/api" style="text-decoration: none;">extension-websocket</a></li><li style="padding-bottom: 0px;"><a href="/extension-webview/api" style="text-decoration: none;">extension-webview</a></li></ul><input id="branch" class="toggle" type="checkbox" checked/>
+					<label for="branch" class="togglelabel">Version</label>
+					<ul class="nobullet"><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/alpha/collectionfactory/" style="text-decoration: none;">alpha</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/beta/collectionfactory/" style="text-decoration: none;">beta</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/stable/collectionfactory/" style="font-weight: bolder; font-style: italic; text-decoration: none;">stable</a></li></ul>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/stable/base">base</option><option value="/ref/stable/bit">bit</option><option value="/ref/stable/buffer">buffer</option><option value="/ref/stable/builtins">builtins</option><option value="/ref/stable/camera">camera</option><option value="/ref/stable/collectionfactory">collectionfactory</option><option value="/ref/stable/collectionproxy">collectionproxy</option><option value="/ref/stable/coroutine">coroutine</option><option value="/ref/stable/crash">crash</option><option value="/ref/stable/debug">debug</option><option value="/ref/stable/dmAlign">dmAlign</option><option value="/ref/stable/dmArray">dmArray</option><option value="/ref/stable/dmBuffer">dmBuffer</option><option value="/ref/stable/dmConditionVariable">dmConditionVariable</option><option value="/ref/stable/dmConfigFile">dmConfigFile</option><option value="/ref/stable/dmConnectionPool">dmConnectionPool</option><option value="/ref/stable/dmCrypt">dmCrypt</option><option value="/ref/stable/dmDNS">dmDNS</option><option value="/ref/stable/dmEngine">dmEngine</option><option value="/ref/stable/dmExtension">dmExtension</option><option value="/ref/stable/dmGameObject">dmGameObject</option><option value="/ref/stable/dmGraphics">dmGraphics</option><option value="/ref/stable/dmHash">dmHash</option><option value="/ref/stable/dmHid">dmHid</option><option value="/ref/stable/dmHttpClient">dmHttpClient</option><option value="/ref/stable/dmJson">dmJson</option><option value="/ref/stable/dmLog">dmLog</option><option value="/ref/stable/dmMath">dmMath</option><option value="/ref/stable/dmMutex">dmMutex</option><option value="/ref/stable/dmSSLSocket">dmSSLSocket</option><option value="/ref/stable/dmScript">dmScript</option><option value="/ref/stable/dmSocket">dmSocket</option><option value="/ref/stable/dmStringFunc">dmStringFunc</option><option value="/ref/stable/dmThread">dmThread</option><option value="/ref/stable/dmTime">dmTime</option><option value="/ref/stable/dmURI">dmURI</option><option value="/ref/stable/dmWebServer">dmWebServer</option><option value="/ref/stable/engine">engine</option><option value="/extension-adinfo/api">extension-adinfo</option><option value="/extension-camera/api">extension-camera</option><option value="/extension-facebook/api">extension-facebook</option><option value="/extension-fbinstant/api">extension-fbinstant</option><option value="/extension-firebase-analytics/api">extension-firebase-analytics</option><option value="/extension-googleplayinstant/api">extension-googleplayinstant</option><option value="/extension-gpgs/api">extension-gpgs</option><option value="/extension-iap/api">extension-iap</option><option value="/extension-push/api">extension-push</option><option value="/extension-review/api">extension-review</option><option value="/extension-siwa/api">extension-siwa</option><option value="/extension-webmonetization/api">extension-webmonetization</option><option value="/extension-websocket/api">extension-websocket</option><option value="/extension-webview/api">extension-webview</option><option value="/ref/stable/factory">factory</option><option value="/ref/stable/go">go</option><option value="/ref/stable/gui">gui</option><option value="/ref/stable/html5">html5</option><option value="/ref/stable/http">http</option><option value="/ref/stable/image">image</option><option value="/ref/stable/io">io</option><option value="/ref/stable/json">json</option><option value="/ref/stable/label">label</option><option value="/ref/stable/math">math</option><option value="/ref/stable/model">model</option><option value="/ref/stable/msg">msg</option><option value="/ref/stable/os">os</option><option value="/ref/stable/package">package</option><option value="/ref/stable/particlefx">particlefx</option><option value="/ref/stable/physics">physics</option><option value="/ref/stable/profiler">profiler</option><option value="/ref/stable/render">render</option><option value="/ref/stable/resource">resource</option><option value="/ref/stable/sharedlibrary">sharedlibrary</option><option value="/ref/stable/socket">socket</option><option value="/ref/stable/sound">sound</option><option value="/ref/stable/spine">spine</option><option value="/ref/stable/sprite">sprite</option><option value="/ref/stable/string">string</option><option value="/ref/stable/sys">sys</option><option value="/ref/stable/table">table</option><option value="/ref/stable/tilemap">tilemap</option><option value="/ref/stable/timer">timer</option><option value="/ref/stable/vmath">vmath</option><option value="/ref/stable/window">window</option><option value="/ref/stable/zlib">zlib</option></select>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/collectionfactory/">alpha</option><option value="/ref/beta/collectionfactory/">beta</option><option value="/ref/stable/collectionfactory/">stable</option></select>
+				&nbsp;
+			</div>
+			<div class="columns nine ref scrollable"><h1>Collection factory API documentation</h1>
+<p>Version: stable</p><table class="compact">
+	<tr>
+		<th>FUNCTION</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#collectionfactory.get_status:[url]">collectionfactory.get_status()</a></td>
+		<td>Get collection factory status</td>
+	</tr><tr>
+		<td><a href="#collectionfactory.unload:[url]">collectionfactory.unload()</a></td>
+		<td>Unload resources previously loaded using collectionfactory.load</td>
+	</tr><tr>
+		<td><a href="#collectionfactory.load:[url]-[complete_function]">collectionfactory.load()</a></td>
+		<td>Load resources of a collection factory prototype.</td>
+	</tr><tr>
+		<td><a href="#collectionfactory.create:url-[position]-[rotation]-[properties]-[scale]">collectionfactory.create()</a></td>
+		<td>Spawn a new instance of a collection into the existing collection.</td>
+	</tr></table><table class="compact">
+	<tr>
+		<th>CONSTANT</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#collectionfactory.STATUS_UNLOADED">collectionfactory.STATUS_UNLOADED</a></td>
+		<td>unloaded</td>
+	</tr><tr>
+		<td><a href="#collectionfactory.STATUS_LOADING">collectionfactory.STATUS_LOADING</a></td>
+		<td>loading</td>
+	</tr><tr>
+		<td><a href="#collectionfactory.STATUS_LOADED">collectionfactory.STATUS_LOADED</a></td>
+		<td>loaded</td>
+	</tr></table><h2>Functions</h2><a name="collectionfactory.get_status:[url]"/>
+		<a name="collectionfactory.get_status"/>
+		<h4>collectionfactory.get_status()<a href="#collectionfactory.get_status:[url]" class="anchor-link"></a></h4>
+		<p><code>collectionfactory.get_status([url])</code></p>
+		This returns status of the collection factory.
+Calling this function when the factory is not marked as dynamic loading always returns COMP_COLLECTION_FACTORY_STATUS_LOADED.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[url]</code></td>
+				<td>the collection factory component to get status from</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>status of the collection factory component
+<ul>
+<li><code>collectionfactory.STATUS_UNLOADED</code></li>
+<li><code>collectionfactory.STATUS_LOADING</code></li>
+<li><code>collectionfactory.STATUS_LOADED</code></li>
+</ul></td>
+			</tr></table><hr/><a name="collectionfactory.unload:[url]"/>
+		<a name="collectionfactory.unload"/>
+		<h4>collectionfactory.unload()<a href="#collectionfactory.unload:[url]" class="anchor-link"></a></h4>
+		<p><code>collectionfactory.unload([url])</code></p>
+		This decreases the reference count for each resource loaded with collectionfactory.load. If reference is zero, the resource is destroyed.
+Calling this function when the factory is not marked as dynamic loading does nothing.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[url]</code></td>
+				<td>the collection factory component to unload</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to unload resources of a collection factory prototype loaded with collectionfactory.load
+<div class="codehilite"><pre><span></span><span class="n">collectionfactory</span><span class="p">.</span><span class="n">unload</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#factory&quot;</span><span class="p">)</span>
+</pre></div><hr/><a name="collectionfactory.load:[url]-[complete_function]"/>
+		<a name="collectionfactory.load"/>
+		<h4>collectionfactory.load()<a href="#collectionfactory.load:[url]-[complete_function]" class="anchor-link"></a></h4>
+		<p><code>collectionfactory.load([url],[complete_function])</code></p>
+		Resources loaded are referenced by the collection factory component until the existing (parent) collection is destroyed or collectionfactory.unload is called.
+Calling this function when the factory is not marked as dynamic loading does nothing.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[url]</code></td>
+				<td>the collection factory component to load</td>
+			</tr><tr>
+				<td><code>[complete_function]</code></td>
+				<td>function to call when resources are loaded.
+<dl>
+<dt><code>self</code></dt>
+<dd><span class="type">object</span> The current object.</dd>
+<dt><code>url</code></dt>
+<dd><span class="type">url</span> url of the collection factory component</dd>
+<dt><code>result</code></dt>
+<dd><span class="type">boolean</span> True if resource were loaded successfully</dd>
+</dl></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to load resources of a collection factory prototype.
+<div class="codehilite"><pre><span></span><span class="n">collectionfactory</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#factory&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+</pre></div><hr/><a name="collectionfactory.create:url-[position]-[rotation]-[properties]-[scale]"/>
+		<a name="collectionfactory.create"/>
+		<h4>collectionfactory.create()<a href="#collectionfactory.create:url-[position]-[rotation]-[properties]-[scale]" class="anchor-link"></a></h4>
+		<p><code>collectionfactory.create(url,[position],[rotation],[properties],[scale])</code></p>
+		The URL identifies the collectionfactory component that should do the spawning.
+Spawning is instant, but spawned game objects get their first update calls the following frame. The supplied parameters for position, rotation and scale
+will be applied to the whole collection when spawned.
+Script properties in the created game objects can be overridden through
+a properties-parameter table. The table should contain game object ids
+(hash) as keys and property tables as values to be used when initiating each
+spawned game object.
+See go.property for more information on script properties.
+The function returns a table that contains a key for each game object
+id (hash), as addressed if the collection file was top level, and the
+corresponding spawned instance id (hash) as value with a unique path
+prefix added to each instance.
+<span class="icon-attention"></span> Calling <a href="/ref/collectionfactory#collectionfactory.create">collectionfactory.create</a> create on a collection factory that is marked as dynamic without having loaded resources
+using <a href="/ref/collectionfactory#collectionfactory.load">collectionfactory.load</a> will synchronously load and create resources which may affect application performance.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>url</code></td>
+				<td>the collection factory component to be used</td>
+			</tr><tr>
+				<td><code>[position]</code></td>
+				<td>position to assign to the newly spawned collection</td>
+			</tr><tr>
+				<td><code>[rotation]</code></td>
+				<td>rotation to assign to the newly spawned collection</td>
+			</tr><tr>
+				<td><code>[properties]</code></td>
+				<td>table of script properties to propagate to any new game object instances</td>
+			</tr><tr>
+				<td><code>[scale]</code></td>
+				<td>uniform scaling to apply to the newly spawned collection (must be greater than 0).</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>ids</code></td>
+				<td>a table mapping the id:s from the collection to the new instance id:s</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to spawn a collection of game objects:
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="c1">-- Spawn a small group of enemies.</span>
+  <span class="kd">local</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector3</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">rot</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">quat_rotation_z</span><span class="p">(</span><span class="nb">math.pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span>
+  <span class="kd">local</span> <span class="n">props</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="n">props</span><span class="p">[</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/enemy_leader&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">health</span> <span class="o">=</span> <span class="mf">1000.0</span> <span class="p">}</span>
+  <span class="n">props</span><span class="p">[</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/enemy_1&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">health</span> <span class="o">=</span> <span class="mf">200.0</span> <span class="p">}</span>
+  <span class="n">props</span><span class="p">[</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/enemy_2&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">health</span> <span class="o">=</span> <span class="mf">400.0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">green&quot;</span><span class="p">)</span> <span class="p">}</span>
+
+  <span class="kd">local</span> <span class="n">self</span><span class="p">.</span><span class="n">enemy_ids</span> <span class="o">=</span> <span class="n">collectionfactory</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#enemyfactory&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">props</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
+  <span class="c1">-- enemy_ids now map to the spawned instance ids:</span>
+  <span class="c1">--</span>
+  <span class="c1">-- pprint(self.enemy_ids)</span>
+  <span class="c1">--</span>
+  <span class="c1">-- DEBUG:SCRIPT:</span>
+  <span class="c1">-- {</span>
+  <span class="c1">--   hash: [/enemy_leader] = hash: [/collection0/enemy_leader],</span>
+  <span class="c1">--   hash: [/enemy_1] = hash: [/collection0/enemy_1],</span>
+  <span class="c1">--   hash: [/enemy_2] = hash: [/collection0/enemy_2]</span>
+  <span class="c1">-- }</span>
+
+  <span class="c1">-- Send &quot;attack&quot; message to the leader. First look up its instance id.</span>
+  <span class="kd">local</span> <span class="n">leader_id</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">enemy_ids</span><span class="p">[</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/enemy_leader&quot;</span><span class="p">)]</span>
+  <span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">leader_id</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">attack&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+
+How to delete a spawned collection:
+<div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">enemy_ids</span><span class="p">)</span>
+</pre></div><hr/><h2>Constants</h2><a name="collectionfactory.STATUS_UNLOADED"/>
+	<h4>collectionfactory.STATUS_UNLOADED<a href="#collectionfactory.STATUS_UNLOADED"><span class="anchor-link"/></a></h4>
+	<p>unloaded</p>
+	<p>unloaded</p><hr/><a name="collectionfactory.STATUS_LOADING"/>
+	<h4>collectionfactory.STATUS_LOADING<a href="#collectionfactory.STATUS_LOADING"><span class="anchor-link"/></a></h4>
+	<p>loading</p>
+	<p>loading</p><hr/><a name="collectionfactory.STATUS_LOADED"/>
+	<h4>collectionfactory.STATUS_LOADED<a href="#collectionfactory.STATUS_LOADED"><span class="anchor-link"/></a></h4>
+	<p>loaded</p>
+	<p>loaded</p><hr/></div>
+		</div>
+	</div>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<script>
+	var query = new URLSearchParams(window.location.search).get('q');
+	if (query) {
+		var instance = new Mark("div.ref");
+		instance.mark(query);
+		var elements = document.getElementsByTagName("mark");
+		if (elements.length > 0) {
+			elements[0].scrollIntoView();
+		}
+	}
+</script>
+<script type="text/javascript">
+	var menu = document.getElementById("navmenu");
+	if (menu != null) {
+		var viewportOffset = menu.getBoundingClientRect();
+		window.onscroll = function() {
+			if (window.pageYOffset > viewportOffset.top) {
+				menu.classList.add("sticky");
+			}
+			else {
+				menu.classList.remove("sticky");
+			}
+		};
+	}
+</script>
+
+	</div>
+
+	<footer class="darkest">
+	<div class="container">
+		<div class="row">
+			<div class="two columns">
+				<p><b>DEFOLD</b></p>
+				<ul>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/foundation">Foundation</a></li>
+					<li><a href="/faq/faq">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>NEWS</b></p>
+				<ul>
+					<li><a href="/press">Press</a></li>
+					<li><a href="/blog">Blog</a></li>
+					<li><a href="/newsletter">Newsletter</a></li>
+					<li><a href="https://forum.defold.com/c/releasenotes">Release announcements</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>GET INVOLVED</b></p>
+				<ul>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="/donate">Donate</a></li>
+					<li><a href="/contribute">Contribute</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEARN</b></p>
+				<ul>
+					<li><a href="/ref/go">API</a></li>
+					<li><a href="/examples">Examples</a></li>
+					<li><a href="/manuals/introduction">Manuals</a></li>
+					<li><a href="/tutorials">Tutorials</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>COMMUNITY</b></p>
+				<ul>
+					<li><a href="https://forum.defold.com" target="_blank">Forum</a></li>
+					<li><a href="/slack">Slack</a></li>
+					<li><a href="https://www.facebook.com/Defold" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/defold" target="_blank">Twitter</a></li>
+					<li><a href="https://www.linkedin.com/company/defold-foundation" target="_blank">LinkedIn</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEGAL</b></p>
+				<ul>
+					<li><a href="/license">License</a></li>
+					<li><a href="/logo-and-trademark">Logo &amp; Trademark</a></li>
+					<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+					<li><a href="/privacy-policy">Privacy Policy</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>Copyright © 2021 Defold Foundation</p>
+		</div>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

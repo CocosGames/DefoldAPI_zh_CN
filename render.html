@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83690-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-83690-3');
+</script>
+<title>API reference (render)</title>
+
+<!-- Google Structured Data (https://developers.google.com/search/docs/guides/intro-structured-data) -->
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "Organization",
+		"name": "Defold Foundation",
+		"url": "https://www.defold.com",
+		"email": "info@defold.com",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Postbox 6034",
+			"addressLocality": "Hägersten",
+			"addressRegion": "Stockholm",
+			"addressCountry": "Sweden",
+			"postalCode": "12906"
+		},
+		"foundingDate": "2020",
+		"sameAs": [
+			"https://www.facebook.com/Defold",
+			"https://www.twitter.com/defold",
+			"https://www.github.com/defold",
+			"https://www.youtube.com/channel/UCrEYXG15n3V0Y8eK0RbCaLQ"
+		]
+	}
+</script>
+
+<!-- META DATA -->
+<meta name="description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="author" content="Defold Foundation" />
+<meta name="keywords" content="defold, gameengine, game-engine, game-development, game-dev, gamedev, open-source, opensource, crossplatform, cross-platform, free, nintendo-switch, console, html5, web, android, ios, desktop" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://defold.com/ref/stable/render/">
+<meta property="og:site_name" content="Defold game engine">
+<meta property="og:title" content="API reference (render)">
+<meta property="og:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta property="og:image" content="https://www.defold.com/images/social/facebook-share.jpg">
+<!-- end OPEN GRAPH -->
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@defold">
+<meta name="twitter:title" content="API reference (render)">
+<meta name="twitter:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="twitter:image" content="https://www.defold.com/images/social/twitter-share.jpg">
+<!-- end TWITTER -->
+
+<!-- web monetization -->
+<meta name="monetization" content="$ilp.uphold.com/QkG86UgXzKq8">
+
+<!-- FONTS -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+<!-- favicon -->
+<link rel='shortcut icon' type='image/x-icon' href='/images/favicon.ico' />
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+<link rel="stylesheet" type="text/css" href="/css/defold.css">
+<link rel="stylesheet" type="text/css" href="/css/fruity.css">
+<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+<!-- end CSS -->
+
+<!-- SendInBlue CSS -->
+<link rel="stylesheet" type="text/css" href="/css/sendinblue.css">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!-- end SendInBlue CSS -->
+
+</head>
+<body>
+<div id="page">
+	<div id="pagecontent">
+	<div class="nav dark">
+	<div class="container">
+		<div class="row">
+			<div class="eight columns">
+				<ul class="navmenu">
+					<li><nobr><a href="/" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M16 9l-3-3V2h-2v2L8 1 0 9h2l1 5c0 .55.45 1 1 1h8c.55 0 1-.45 1-1l1-5h2zm-4 5H9v-4H7v4H4L2.81 7.69 8 2.5l5.19 5.19L12 14z"/></svg>
+</span>&nbsp; Defold
+</a></nobr></li>
+					<li><a href="/product">Product</a></li>
+					<li><a href="/showcase">Showcase</a></li>
+					<li><a href="/learn">Learn</a></li>
+					<li><a href="/assets">Asset&nbsp;Portal</a></li>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="//forum.defold.com">Forum</a></li>
+					<li style="visibility: hidden"><span class="octicon" style="fill: #FFF; zoom: 1.75; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"/></svg>
+</span>&nbsp;
+ Download</li>
+				</ul>
+				<select class="navdropdown dark-text" onchange="location = this.value;">
+					<option value="/">Home</option>
+					<option value="/product" >Product</option>
+					<option value="/showcase" >Showcase</option>
+					<option value="/learn">Learn</option>
+					<option value="/assets" >Asset Portal</option>
+					<option value="/open" >Open Source</option>
+					<option value="//forum.defold.com">Forum</option>
+					<option value="/donate" >Donate</option>
+					<option value="/download" >Download</option>
+					<option value="https://www.github.com/defold">GitHub</option>
+				</select>
+			</div>
+			<div class="four columns">
+				<ul class="navmenu right">
+					<li><nobr><a href="/donate" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M9 2c-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-1.632.086-2.954 1.333-3 3 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.047-1.69-1.342-2.913-3-3z"/></svg>
+</span>&nbsp; Donate
+</a></nobr></li>
+					<li><nobr><a href="/download" target=""><span class="octicon" style="fill: #FFF; zoom: 1.35; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"><path fill-rule="evenodd" d="M7 7V3H3v4H0l5 6 5-6H7z"/></svg>
+</span>&nbsp; Download
+</a></nobr></li>
+					<li><nobr><a href="https://www.github.com/defold" target="_blank"><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+
+</span>&nbsp; GitHub
+</a></nobr></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+	<div class="nav learn light">
+	<div class="container">
+		<div class="row">
+			<div class="nine columns"><ul class="navmenu">
+					<li><a href="/examples/animation/basic_tween" class="">Examples </a></li>
+					<li><a href="/tutorials/getting-started" class="">Tutorials</a></li>
+					<li><a href="/manuals/introduction" class="">Manuals</a></li>
+					<li><a href="/ref/stable/go" class="bold">API Reference</a></li>
+					<li><a href="/faq/faq" class="">FAQ</a></li>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;">
+					<option value="/examples/animation/basic_tween" >Examples</option>
+					<option value="/tutorials/getting-started" >Tutorials</option>
+					<option value="/manuals/introduction" >Manuals</option>
+					<option value="/ref/stable/go" selected>API Reference</option>
+					<option value="/faq/faq" >FAQ</option>
+				</select>
+				<div class="right navdropdown compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div></div>
+			<div class="three columns">
+				<div class="right navmenu compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section lightest">
+	<div class="container">
+		<div class="row">
+			<div class="columns two">
+				<ul id="navmenu" class="navmenu ref nobullet"><input id="collapsible_lua" class="toggle" type="checkbox" />
+					<label for="collapsible_lua" class="togglelabel">Lua</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/base" style="text-decoration: none;">base</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/bit" style="text-decoration: none;">bit</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/coroutine" style="text-decoration: none;">coroutine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/debug" style="text-decoration: none;">debug</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/io" style="text-decoration: none;">io</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/math" style="text-decoration: none;">math</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/os" style="text-decoration: none;">os</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/package" style="text-decoration: none;">package</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/socket" style="text-decoration: none;">socket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/string" style="text-decoration: none;">string</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/table" style="text-decoration: none;">table</a></li></ul><input id="collapsible_defold" class="toggle" type="checkbox" checked/>
+					<label for="collapsible_defold" class="togglelabel">Defold</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/buffer" style="text-decoration: none;">buffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/builtins" style="text-decoration: none;">builtins</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/camera" style="text-decoration: none;">camera</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionfactory" style="text-decoration: none;">collectionfactory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionproxy" style="text-decoration: none;">collectionproxy</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/crash" style="text-decoration: none;">crash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/engine" style="text-decoration: none;">engine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/factory" style="text-decoration: none;">factory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/go" style="text-decoration: none;">go</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/gui" style="text-decoration: none;">gui</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/html5" style="text-decoration: none;">html5</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/http" style="text-decoration: none;">http</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/image" style="text-decoration: none;">image</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/json" style="text-decoration: none;">json</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/label" style="text-decoration: none;">label</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/model" style="text-decoration: none;">model</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/msg" style="text-decoration: none;">msg</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/particlefx" style="text-decoration: none;">particlefx</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/physics" style="text-decoration: none;">physics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/profiler" style="text-decoration: none;">profiler</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/render" style="font-weight: bolder; font-style: italic; text-decoration: none;">render</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/resource" style="text-decoration: none;">resource</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sharedlibrary" style="text-decoration: none;">sharedlibrary</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sound" style="text-decoration: none;">sound</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/spine" style="text-decoration: none;">spine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sprite" style="text-decoration: none;">sprite</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sys" style="text-decoration: none;">sys</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/tilemap" style="text-decoration: none;">tilemap</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/timer" style="text-decoration: none;">timer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/vmath" style="text-decoration: none;">vmath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/window" style="text-decoration: none;">window</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/zlib" style="text-decoration: none;">zlib</a></li></ul><input id="collapsible_c" class="toggle" type="checkbox" />
+					<label for="collapsible_c" class="togglelabel">C</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/dmAlign" style="text-decoration: none;">dmAlign</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmArray" style="text-decoration: none;">dmArray</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmBuffer" style="text-decoration: none;">dmBuffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConditionVariable" style="text-decoration: none;">dmConditionVariable</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConfigFile" style="text-decoration: none;">dmConfigFile</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConnectionPool" style="text-decoration: none;">dmConnectionPool</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmCrypt" style="text-decoration: none;">dmCrypt</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmDNS" style="text-decoration: none;">dmDNS</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmEngine" style="text-decoration: none;">dmEngine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmExtension" style="text-decoration: none;">dmExtension</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGameObject" style="text-decoration: none;">dmGameObject</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGraphics" style="text-decoration: none;">dmGraphics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHash" style="text-decoration: none;">dmHash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHid" style="text-decoration: none;">dmHid</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHttpClient" style="text-decoration: none;">dmHttpClient</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmJson" style="text-decoration: none;">dmJson</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmLog" style="text-decoration: none;">dmLog</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMath" style="text-decoration: none;">dmMath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMutex" style="text-decoration: none;">dmMutex</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSSLSocket" style="text-decoration: none;">dmSSLSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmScript" style="text-decoration: none;">dmScript</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSocket" style="text-decoration: none;">dmSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmStringFunc" style="text-decoration: none;">dmStringFunc</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmThread" style="text-decoration: none;">dmThread</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmTime" style="text-decoration: none;">dmTime</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmURI" style="text-decoration: none;">dmURI</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmWebServer" style="text-decoration: none;">dmWebServer</a></li></ul><input id="collapsible_extension" class="toggle" type="checkbox" />
+					<label for="collapsible_extension" class="togglelabel">Extension</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/extension-adinfo/api" style="text-decoration: none;">extension-adinfo</a></li><li style="padding-bottom: 0px;"><a href="/extension-camera/api" style="text-decoration: none;">extension-camera</a></li><li style="padding-bottom: 0px;"><a href="/extension-facebook/api" style="text-decoration: none;">extension-facebook</a></li><li style="padding-bottom: 0px;"><a href="/extension-fbinstant/api" style="text-decoration: none;">extension-fbinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-firebase-analytics/api" style="text-decoration: none;">extension-firebase-analytics</a></li><li style="padding-bottom: 0px;"><a href="/extension-googleplayinstant/api" style="text-decoration: none;">extension-googleplayinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-gpgs/api" style="text-decoration: none;">extension-gpgs</a></li><li style="padding-bottom: 0px;"><a href="/extension-iap/api" style="text-decoration: none;">extension-iap</a></li><li style="padding-bottom: 0px;"><a href="/extension-push/api" style="text-decoration: none;">extension-push</a></li><li style="padding-bottom: 0px;"><a href="/extension-review/api" style="text-decoration: none;">extension-review</a></li><li style="padding-bottom: 0px;"><a href="/extension-siwa/api" style="text-decoration: none;">extension-siwa</a></li><li style="padding-bottom: 0px;"><a href="/extension-webmonetization/api" style="text-decoration: none;">extension-webmonetization</a></li><li style="padding-bottom: 0px;"><a href="/extension-websocket/api" style="text-decoration: none;">extension-websocket</a></li><li style="padding-bottom: 0px;"><a href="/extension-webview/api" style="text-decoration: none;">extension-webview</a></li></ul><input id="branch" class="toggle" type="checkbox" checked/>
+					<label for="branch" class="togglelabel">Version</label>
+					<ul class="nobullet"><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/alpha/render/" style="text-decoration: none;">alpha</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/beta/render/" style="text-decoration: none;">beta</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/stable/render/" style="font-weight: bolder; font-style: italic; text-decoration: none;">stable</a></li></ul>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/stable/base">base</option><option value="/ref/stable/bit">bit</option><option value="/ref/stable/buffer">buffer</option><option value="/ref/stable/builtins">builtins</option><option value="/ref/stable/camera">camera</option><option value="/ref/stable/collectionfactory">collectionfactory</option><option value="/ref/stable/collectionproxy">collectionproxy</option><option value="/ref/stable/coroutine">coroutine</option><option value="/ref/stable/crash">crash</option><option value="/ref/stable/debug">debug</option><option value="/ref/stable/dmAlign">dmAlign</option><option value="/ref/stable/dmArray">dmArray</option><option value="/ref/stable/dmBuffer">dmBuffer</option><option value="/ref/stable/dmConditionVariable">dmConditionVariable</option><option value="/ref/stable/dmConfigFile">dmConfigFile</option><option value="/ref/stable/dmConnectionPool">dmConnectionPool</option><option value="/ref/stable/dmCrypt">dmCrypt</option><option value="/ref/stable/dmDNS">dmDNS</option><option value="/ref/stable/dmEngine">dmEngine</option><option value="/ref/stable/dmExtension">dmExtension</option><option value="/ref/stable/dmGameObject">dmGameObject</option><option value="/ref/stable/dmGraphics">dmGraphics</option><option value="/ref/stable/dmHash">dmHash</option><option value="/ref/stable/dmHid">dmHid</option><option value="/ref/stable/dmHttpClient">dmHttpClient</option><option value="/ref/stable/dmJson">dmJson</option><option value="/ref/stable/dmLog">dmLog</option><option value="/ref/stable/dmMath">dmMath</option><option value="/ref/stable/dmMutex">dmMutex</option><option value="/ref/stable/dmSSLSocket">dmSSLSocket</option><option value="/ref/stable/dmScript">dmScript</option><option value="/ref/stable/dmSocket">dmSocket</option><option value="/ref/stable/dmStringFunc">dmStringFunc</option><option value="/ref/stable/dmThread">dmThread</option><option value="/ref/stable/dmTime">dmTime</option><option value="/ref/stable/dmURI">dmURI</option><option value="/ref/stable/dmWebServer">dmWebServer</option><option value="/ref/stable/engine">engine</option><option value="/extension-adinfo/api">extension-adinfo</option><option value="/extension-camera/api">extension-camera</option><option value="/extension-facebook/api">extension-facebook</option><option value="/extension-fbinstant/api">extension-fbinstant</option><option value="/extension-firebase-analytics/api">extension-firebase-analytics</option><option value="/extension-googleplayinstant/api">extension-googleplayinstant</option><option value="/extension-gpgs/api">extension-gpgs</option><option value="/extension-iap/api">extension-iap</option><option value="/extension-push/api">extension-push</option><option value="/extension-review/api">extension-review</option><option value="/extension-siwa/api">extension-siwa</option><option value="/extension-webmonetization/api">extension-webmonetization</option><option value="/extension-websocket/api">extension-websocket</option><option value="/extension-webview/api">extension-webview</option><option value="/ref/stable/factory">factory</option><option value="/ref/stable/go">go</option><option value="/ref/stable/gui">gui</option><option value="/ref/stable/html5">html5</option><option value="/ref/stable/http">http</option><option value="/ref/stable/image">image</option><option value="/ref/stable/io">io</option><option value="/ref/stable/json">json</option><option value="/ref/stable/label">label</option><option value="/ref/stable/math">math</option><option value="/ref/stable/model">model</option><option value="/ref/stable/msg">msg</option><option value="/ref/stable/os">os</option><option value="/ref/stable/package">package</option><option value="/ref/stable/particlefx">particlefx</option><option value="/ref/stable/physics">physics</option><option value="/ref/stable/profiler">profiler</option><option value="/ref/stable/render">render</option><option value="/ref/stable/resource">resource</option><option value="/ref/stable/sharedlibrary">sharedlibrary</option><option value="/ref/stable/socket">socket</option><option value="/ref/stable/sound">sound</option><option value="/ref/stable/spine">spine</option><option value="/ref/stable/sprite">sprite</option><option value="/ref/stable/string">string</option><option value="/ref/stable/sys">sys</option><option value="/ref/stable/table">table</option><option value="/ref/stable/tilemap">tilemap</option><option value="/ref/stable/timer">timer</option><option value="/ref/stable/vmath">vmath</option><option value="/ref/stable/window">window</option><option value="/ref/stable/zlib">zlib</option></select>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/render/">alpha</option><option value="/ref/beta/render/">beta</option><option value="/ref/stable/render/">stable</option></select>
+				&nbsp;
+			</div>
+			<div class="columns nine ref scrollable"><h1>Rendering API documentation</h1>
+<p>Version: stable</p><table class="compact">
+	<tr>
+		<th>FUNCTION</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#render.constant_buffer:">render.constant_buffer()</a></td>
+		<td>create a new constant buffer.</td>
+	</tr><tr>
+		<td><a href="#render.enable_state:state">render.enable_state()</a></td>
+		<td>enables a render state</td>
+	</tr><tr>
+		<td><a href="#render.disable_state:state">render.disable_state()</a></td>
+		<td>disables a render state</td>
+	</tr><tr>
+		<td><a href="#render.set_viewport:x-y-width-height">render.set_viewport()</a></td>
+		<td>sets the render viewport</td>
+	</tr><tr>
+		<td><a href="#render.render_target:name-parameters">render.render_target()</a></td>
+		<td>creates a new render target</td>
+	</tr><tr>
+		<td><a href="#render.delete_render_target:render_target">render.delete_render_target()</a></td>
+		<td>deletes a render target</td>
+	</tr><tr>
+		<td><a href="#render.set_render_target:render_target-[options]">render.set_render_target()</a></td>
+		<td>sets a render target</td>
+	</tr><tr>
+		<td><a href="#render.set_render_target_size:render_target-width-height">render.set_render_target_size()</a></td>
+		<td>sets the render target size</td>
+	</tr><tr>
+		<td><a href="#render.enable_texture:unit-render_target-buffer_type">render.enable_texture()</a></td>
+		<td>enables a texture for a render target</td>
+	</tr><tr>
+		<td><a href="#render.disable_texture:unit">render.disable_texture()</a></td>
+		<td>disables a texture for a render target</td>
+	</tr><tr>
+		<td><a href="#render.get_render_target_width:render_target-buffer_type">render.get_render_target_width()</a></td>
+		<td>retrieve the buffer width from a render target</td>
+	</tr><tr>
+		<td><a href="#render.get_render_target_height:render_target-buffer_type">render.get_render_target_height()</a></td>
+		<td>retrieve a buffer height from a render target</td>
+	</tr><tr>
+		<td><a href="#render.clear:buffers">render.clear()</a></td>
+		<td>clears the active render target</td>
+	</tr><tr>
+		<td><a href="#render.draw:predicate-[constants]">render.draw()</a></td>
+		<td>draws all objects matching a predicate</td>
+	</tr><tr>
+		<td><a href="#render.draw_debug3d:">render.draw_debug3d()</a></td>
+		<td>draws all 3d debug graphics</td>
+	</tr><tr>
+		<td><a href="#render.set_view:matrix">render.set_view()</a></td>
+		<td>sets the view matrix</td>
+	</tr><tr>
+		<td><a href="#render.set_projection:matrix">render.set_projection()</a></td>
+		<td>sets the projection matrix</td>
+	</tr><tr>
+		<td><a href="#render.set_blend_func:source_factor-destination_factor">render.set_blend_func()</a></td>
+		<td>sets the blending function</td>
+	</tr><tr>
+		<td><a href="#render.set_color_mask:red-green-blue-alpha">render.set_color_mask()</a></td>
+		<td>sets the color mask</td>
+	</tr><tr>
+		<td><a href="#render.set_depth_mask:depth">render.set_depth_mask()</a></td>
+		<td>sets the depth mask</td>
+	</tr><tr>
+		<td><a href="#render.set_stencil_mask:mask">render.set_stencil_mask()</a></td>
+		<td>sets the stencil mask</td>
+	</tr><tr>
+		<td><a href="#render.set_depth_func:func">render.set_depth_func()</a></td>
+		<td>sets the depth test function</td>
+	</tr><tr>
+		<td><a href="#render.set_stencil_func:func-ref-mask">render.set_stencil_func()</a></td>
+		<td>sets the stencil test function</td>
+	</tr><tr>
+		<td><a href="#render.set_stencil_op:sfail-dpfail-dppass">render.set_stencil_op()</a></td>
+		<td>sets the stencil operator</td>
+	</tr><tr>
+		<td><a href="#render.set_cull_face:face_type">render.set_cull_face()</a></td>
+		<td>sets the cull face</td>
+	</tr><tr>
+		<td><a href="#render.set_polygon_offset:factor-units">render.set_polygon_offset()</a></td>
+		<td>sets the polygon offset</td>
+	</tr><tr>
+		<td><a href="#render.get_width:">render.get_width()</a></td>
+		<td>gets the window width, as specified for the project</td>
+	</tr><tr>
+		<td><a href="#render.get_height:">render.get_height()</a></td>
+		<td>gets the window height, as specified for the project</td>
+	</tr><tr>
+		<td><a href="#render.get_window_width:">render.get_window_width()</a></td>
+		<td>gets the actual window width</td>
+	</tr><tr>
+		<td><a href="#render.get_window_height:">render.get_window_height()</a></td>
+		<td>gets the actual window height</td>
+	</tr><tr>
+		<td><a href="#render.predicate:tags">render.predicate()</a></td>
+		<td>creates a new render predicate</td>
+	</tr><tr>
+		<td><a href="#render.enable_material:material_id">render.enable_material()</a></td>
+		<td>enables a material</td>
+	</tr><tr>
+		<td><a href="#render.disable_material:">render.disable_material()</a></td>
+		<td>disables the currently enabled material</td>
+	</tr></table><table class="compact">
+	<tr>
+		<th>CONSTANT</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#render.STATE_DEPTH_TEST">render.STATE_DEPTH_TEST</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STATE_STENCIL_TEST">render.STATE_STENCIL_TEST</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STATE_BLEND">render.STATE_BLEND</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STATE_CULL_FACE">render.STATE_CULL_FACE</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STATE_POLYGON_OFFSET_FILL">render.STATE_POLYGON_OFFSET_FILL</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_LUMINANCE">render.FORMAT_LUMINANCE</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_RGB">render.FORMAT_RGB</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_RGBA">render.FORMAT_RGBA</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_RGB_DXT1">render.FORMAT_RGB_DXT1</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_RGBA_DXT1">render.FORMAT_RGBA_DXT1</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_RGBA_DXT3">render.FORMAT_RGBA_DXT3</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_RGBA_DXT5">render.FORMAT_RGBA_DXT5</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_DEPTH">render.FORMAT_DEPTH</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FORMAT_STENCIL">render.FORMAT_STENCIL</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FILTER_LINEAR">render.FILTER_LINEAR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FILTER_NEAREST">render.FILTER_NEAREST</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.WRAP_CLAMP_TO_BORDER">render.WRAP_CLAMP_TO_BORDER</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.WRAP_CLAMP_TO_EDGE">render.WRAP_CLAMP_TO_EDGE</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.WRAP_MIRRORED_REPEAT">render.WRAP_MIRRORED_REPEAT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.WRAP_REPEAT">render.WRAP_REPEAT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.RENDER_TARGET_DEFAULT">render.RENDER_TARGET_DEFAULT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BUFFER_COLOR_BIT">render.BUFFER_COLOR_BIT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BUFFER_DEPTH_BIT">render.BUFFER_DEPTH_BIT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BUFFER_STENCIL_BIT">render.BUFFER_STENCIL_BIT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ZERO">render.BLEND_ZERO</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ONE">render.BLEND_ONE</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_SRC_COLOR">render.BLEND_SRC_COLOR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ONE_MINUS_SRC_COLOR">render.BLEND_ONE_MINUS_SRC_COLOR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_DST_COLOR">render.BLEND_DST_COLOR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ONE_MINUS_DST_COLOR">render.BLEND_ONE_MINUS_DST_COLOR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_SRC_ALPHA">render.BLEND_SRC_ALPHA</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ONE_MINUS_SRC_ALPHA">render.BLEND_ONE_MINUS_SRC_ALPHA</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_DST_ALPHA">render.BLEND_DST_ALPHA</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ONE_MINUS_DST_ALPHA">render.BLEND_ONE_MINUS_DST_ALPHA</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_SRC_ALPHA_SATURATE">render.BLEND_SRC_ALPHA_SATURATE</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_CONSTANT_COLOR">render.BLEND_CONSTANT_COLOR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ONE_MINUS_CONSTANT_COLOR">render.BLEND_ONE_MINUS_CONSTANT_COLOR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_CONSTANT_ALPHA">render.BLEND_CONSTANT_ALPHA</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.BLEND_ONE_MINUS_CONSTANT_ALPHA">render.BLEND_ONE_MINUS_CONSTANT_ALPHA</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_NEVER">render.COMPARE_FUNC_NEVER</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_LESS">render.COMPARE_FUNC_LESS</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_LEQUAL">render.COMPARE_FUNC_LEQUAL</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_GREATER">render.COMPARE_FUNC_GREATER</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_GEQUAL">render.COMPARE_FUNC_GEQUAL</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_EQUAL">render.COMPARE_FUNC_EQUAL</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_NOTEQUAL">render.COMPARE_FUNC_NOTEQUAL</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.COMPARE_FUNC_ALWAYS">render.COMPARE_FUNC_ALWAYS</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_KEEP">render.STENCIL_OP_KEEP</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_ZERO">render.STENCIL_OP_ZERO</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_REPLACE">render.STENCIL_OP_REPLACE</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_INCR">render.STENCIL_OP_INCR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_INCR_WRAP">render.STENCIL_OP_INCR_WRAP</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_DECR">render.STENCIL_OP_DECR</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_DECR_WRAP">render.STENCIL_OP_DECR_WRAP</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.STENCIL_OP_INVERT">render.STENCIL_OP_INVERT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FACE_FRONT">render.FACE_FRONT</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FACE_BACK">render.FACE_BACK</a></td>
+		<td></td>
+	</tr><tr>
+		<td><a href="#render.FACE_FRONT_AND_BACK">render.FACE_FRONT_AND_BACK</a></td>
+		<td></td>
+	</tr></table><table class="compact">
+	<tr>
+		<th>MESSAGE</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#draw_debug_text">draw_debug_text</a></td>
+		<td>draw a text on the screen</td>
+	</tr><tr>
+		<td><a href="#draw_line">draw_line</a></td>
+		<td>draw a line on the screen</td>
+	</tr><tr>
+		<td><a href="#window_resized">window_resized</a></td>
+		<td>reports a window size change</td>
+	</tr><tr>
+		<td><a href="#resize">resize</a></td>
+		<td>resizes the window</td>
+	</tr><tr>
+		<td><a href="#clear_color">clear_color</a></td>
+		<td>set clear color</td>
+	</tr></table><h2>Functions</h2><a name="render.constant_buffer:"/>
+		<a name="render.constant_buffer"/>
+		<h4>render.constant_buffer()<a href="#render.constant_buffer:" class="anchor-link"></a></h4>
+		<p><code>render.constant_buffer()</code></p>
+		Constant buffers are used to set shader program variables and are optionally passed to the <code>render.draw()</code> function. The buffer's constant elements can be indexed like an ordinary Lua table, but you can't iterate over them with pairs() or ipairs().
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>buffer</code></td>
+				<td>new constant buffer</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Set a "tint" constant in a constant buffer in the render script:
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">constants</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">constant_buffer</span><span class="p">()</span>
+<span class="n">constants</span><span class="p">.</span><span class="n">tint</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+Then use the constant buffer when drawing a predicate:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">,</span> <span class="n">constants</span><span class="p">)</span>
+</pre></div><hr/><a name="render.enable_state:state"/>
+		<a name="render.enable_state"/>
+		<h4>render.enable_state()<a href="#render.enable_state:state" class="anchor-link"></a></h4>
+		<p><code>render.enable_state(state)</code></p>
+		Enables a particular render state. The state will be enabled until disabled.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>state</code></td>
+				<td>state to enable
+<ul>
+<li><code>render.STATE_DEPTH_TEST</code></li>
+<li><code>render.STATE_STENCIL_TEST</code></li>
+<li><code>render.STATE_BLEND</code></li>
+<li><code>render.STATE_ALPHA_TEST</code> (<span class="icon-ios"></span><span class="icon-android"></span> not available on iOS and Android)</li>
+<li><code>render.STATE_CULL_FACE</code></li>
+<li><code>render.STATE_POLYGON_OFFSET_FILL</code></li>
+</ul></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Enable stencil test when drawing the gui predicate, then disable it:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">enable_state</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">STATE_STENCIL_TEST</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">gui_pred</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">disable_state</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">STATE_STENCIL_TEST</span><span class="p">)</span>
+</pre></div><hr/><a name="render.disable_state:state"/>
+		<a name="render.disable_state"/>
+		<h4>render.disable_state()<a href="#render.disable_state:state" class="anchor-link"></a></h4>
+		<p><code>render.disable_state(state)</code></p>
+		Disables a render state.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>state</code></td>
+				<td>state to disable
+<ul>
+<li><code>render.STATE_DEPTH_TEST</code></li>
+<li><code>render.STATE_STENCIL_TEST</code></li>
+<li><code>render.STATE_BLEND</code></li>
+<li><code>render.STATE_ALPHA_TEST</code> (<span class="icon-ios"></span><span class="icon-android"></span> not available on iOS and Android)</li>
+<li><code>render.STATE_CULL_FACE</code></li>
+<li><code>render.STATE_POLYGON_OFFSET_FILL</code></li>
+</ul></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Disable face culling when drawing the tile predicate:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">disable_state</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">STATE_CULL_FACE</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">tile_pred</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_viewport:x-y-width-height"/>
+		<a name="render.set_viewport"/>
+		<h4>render.set_viewport()<a href="#render.set_viewport:x-y-width-height" class="anchor-link"></a></h4>
+		<p><code>render.set_viewport(x,y,width,height)</code></p>
+		Set the render viewport to the specified rectangle.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>x</code></td>
+				<td>left corner</td>
+			</tr><tr>
+				<td><code>y</code></td>
+				<td>bottom corner</td>
+			</tr><tr>
+				<td><code>width</code></td>
+				<td>viewport width</td>
+			</tr><tr>
+				<td><code>height</code></td>
+				<td>viewport height</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- Set the viewport to the window dimensions.</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_viewport</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_width</span><span class="p">(),</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_height</span><span class="p">())</span>
+</pre></div><hr/><a name="render.render_target:name-parameters"/>
+		<a name="render.render_target"/>
+		<h4>render.render_target()<a href="#render.render_target:name-parameters" class="anchor-link"></a></h4>
+		<p><code>render.render_target(name,parameters)</code></p>
+		Creates a new render target according to the supplied
+specification table.
+The table should contain keys specifying which buffers should be created
+with what parameters. Each buffer key should have a table value consisting
+of parameters. The following parameter keys are available:
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>format</code></td>
+<td><code>render.FORMAT_LUMINANCE</code><br/><code>render.FORMAT_RGB</code><br/><code>render.FORMAT_RGBA</code><br/> <code>render.FORMAT_RGB_DXT1</code><br/><code>render.FORMAT_RGBA_DXT1</code><br/><code>render.FORMAT_RGBA_DXT3</code><br/> <code>render.FORMAT_RGBA_DXT5</code><br/><code>render.FORMAT_DEPTH</code><br/><code>render.FORMAT_STENCIL</code><br/></td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>number</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>number</td>
+</tr>
+<tr>
+<td><code>min_filter</code></td>
+<td><code>render.FILTER_LINEAR</code><br/><code>render.FILTER_NEAREST</code></td>
+</tr>
+<tr>
+<td><code>mag_filter</code></td>
+<td><code>render.FILTER_LINEAR</code><br/><code>render.FILTER_NEAREST</code></td>
+</tr>
+<tr>
+<td><code>u_wrap</code></td>
+<td><code>render.WRAP_CLAMP_TO_BORDER</code><br/><code>render.WRAP_CLAMP_TO_EDGE</code><br/><code>render.WRAP_MIRRORED_REPEAT</code><br/><code>render.WRAP_REPEAT</code><br/></td>
+</tr>
+<tr>
+<td><code>v_wrap</code></td>
+<td><code>render.WRAP_CLAMP_TO_BORDER</code><br/><code>render.WRAP_CLAMP_TO_EDGE</code><br/><code>render.WRAP_MIRRORED_REPEAT</code><br/><code>render.WRAP_REPEAT</code></td>
+</tr>
+</tbody>
+</table>
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>name</code></td>
+				<td>render target name</td>
+			</tr><tr>
+				<td><code>parameters</code></td>
+				<td>table of buffer parameters, see the description for available keys and values</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>render_target</code></td>
+				<td>new render target</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to create a new render target and draw to it:
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+    <span class="c1">-- render target buffer parameters</span>
+    <span class="kd">local</span> <span class="n">color_params</span> <span class="o">=</span> <span class="p">{</span> <span class="n">format</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">FORMAT_RGBA</span><span class="p">,</span>
+                           <span class="n">width</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_width</span><span class="p">(),</span>
+                           <span class="n">height</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_height</span><span class="p">(),</span>
+                           <span class="n">min_filter</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">FILTER_LINEAR</span><span class="p">,</span>
+                           <span class="n">mag_filter</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">FILTER_LINEAR</span><span class="p">,</span>
+                           <span class="n">u_wrap</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">WRAP_CLAMP_TO_EDGE</span><span class="p">,</span>
+                           <span class="n">v_wrap</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">WRAP_CLAMP_TO_EDGE</span> <span class="p">}</span>
+    <span class="kd">local</span> <span class="n">depth_params</span> <span class="o">=</span> <span class="p">{</span> <span class="n">format</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">FORMAT_DEPTH</span><span class="p">,</span>
+                           <span class="n">width</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_width</span><span class="p">(),</span>
+                           <span class="n">height</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_height</span><span class="p">(),</span>
+                           <span class="n">u_wrap</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">WRAP_CLAMP_TO_EDGE</span><span class="p">,</span>
+                           <span class="n">v_wrap</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">WRAP_CLAMP_TO_EDGE</span> <span class="p">}</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">render_target</span><span class="p">({[</span><span class="n">render</span><span class="p">.</span><span class="n">BUFFER_COLOR_BIT</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_params</span><span class="p">,</span> <span class="p">[</span><span class="n">render</span><span class="p">.</span><span class="n">BUFFER_DEPTH_BIT</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth_params</span> <span class="p">})</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="c1">-- enable target so all drawing is done to it</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">enable_render_target</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">)</span>
+
+    <span class="c1">-- draw a predicate to the render target</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="render.delete_render_target:render_target"/>
+		<a name="render.delete_render_target"/>
+		<h4>render.delete_render_target()<a href="#render.delete_render_target:render_target" class="anchor-link"></a></h4>
+		<p><code>render.delete_render_target(render_target)</code></p>
+		Deletes a previously created render target.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>render_target</code></td>
+				<td>render target to delete</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to delete a render target:
+<div class="codehilite"><pre><span></span> <span class="n">render</span><span class="p">.</span><span class="n">delete_render_target</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_render_target:render_target-[options]"/>
+		<a name="render.set_render_target"/>
+		<h4>render.set_render_target()<a href="#render.set_render_target:render_target-[options]" class="anchor-link"></a></h4>
+		<p><code>render.set_render_target(render_target,[options])</code></p>
+		Sets a render target. Subsequent draw operations will be to the
+render target until it is replaced by a subsequent call to set_render_target.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>render_target</code></td>
+				<td>render target to set. render.RENDER_TARGET_DEFAULT to set the default render target</td>
+			</tr><tr>
+				<td><code>[options]</code></td>
+				<td>optional table with behaviour parameters
+<dl>
+<dt><code>transient</code></dt>
+<dd><span class="type">table</span> Transient frame buffer types are only valid while the render target is active, i.e becomes undefined when a new target is set by a subsequent call to set_render_target.
+ Default is all non-transient. Be aware that some hardware uses a combined depth stencil buffer and when this is the case both are considered non-transient if exclusively selected!
+ A buffer type defined that doesn't exist in the render target is silently ignored.</dd>
+</dl>
+<ul>
+<li><code>render.BUFFER_COLOR_BIT</code></li>
+<li><code>render.BUFFER_DEPTH_BIT</code></li>
+<li><code>render.BUFFER_STENCIL_BIT</code></li>
+</ul></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to set a render target and draw to it and then switch back to the default render target
+The render target defines the depth/stencil buffers as transient, when set_render_target is called the next time the buffers may be invalidated and allow for optimisations depending on driver support
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="c1">-- set render target so all drawing is done to it</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">set_render_target</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">,</span> <span class="p">{</span> <span class="n">transient</span> <span class="o">=</span> <span class="p">{</span> <span class="n">render</span><span class="p">.</span><span class="n">BUFFER_DEPTH_BIT</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">BUFFER_STENCIL_BIT</span> <span class="p">}</span> <span class="p">}</span> <span class="p">)</span>
+
+    <span class="c1">-- draw a predicate to the render target</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+
+    <span class="c1">-- set default render target. This also invalidates the depth and stencil buffers of the current target (self.my_render_target)</span>
+    <span class="c1">--  which can be an optimisation on some hardware</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">set_render_target</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">RENDER_TARGET_DEFAULT</span><span class="p">)</span>
+
+<span class="k">end</span>
+</pre></div><hr/><a name="render.set_render_target_size:render_target-width-height"/>
+		<a name="render.set_render_target_size"/>
+		<h4>render.set_render_target_size()<a href="#render.set_render_target_size:render_target-width-height" class="anchor-link"></a></h4>
+		<p><code>render.set_render_target_size(render_target,width,height)</code></p>
+		sets the render target size
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>render_target</code></td>
+				<td>render target to set size for</td>
+			</tr><tr>
+				<td><code>width</code></td>
+				<td>new render target width</td>
+			</tr><tr>
+				<td><code>height</code></td>
+				<td>new render target height</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Set the render target size to the window size:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">set_render_target_size</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_width</span><span class="p">(),</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_height</span><span class="p">())</span>
+</pre></div><hr/><a name="render.enable_texture:unit-render_target-buffer_type"/>
+		<a name="render.enable_texture"/>
+		<h4>render.enable_texture()<a href="#render.enable_texture:unit-render_target-buffer_type" class="anchor-link"></a></h4>
+		<p><code>render.enable_texture(unit,render_target,buffer_type)</code></p>
+		Sets the specified render target's specified buffer to be
+used as texture with the specified unit.
+A material shader can then use the texture to sample from.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>unit</code></td>
+				<td>texture unit to enable texture for</td>
+			</tr><tr>
+				<td><code>render_target</code></td>
+				<td>render target from which to enable the specified texture unit</td>
+			</tr><tr>
+				<td><code>buffer_type</code></td>
+				<td>buffer type from which to enable the texture
+<ul>
+<li><code>render.BUFFER_COLOR_BIT</code></li>
+<li><code>render.BUFFER_DEPTH_BIT</code></li>
+<li><code>render.BUFFER_STENCIL_BIT</code></li>
+</ul></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="c1">-- enable target so all drawing is done to it</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">enable_render_target</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">)</span>
+
+    <span class="c1">-- draw a predicate to the render target</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+
+    <span class="c1">-- disable target</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">disable_render_target</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">)</span>
+
+    <span class="n">render</span><span class="p">.</span><span class="n">enable_texture</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">BUFFER_COLOR_BIT</span><span class="p">)</span>
+    <span class="c1">-- draw a predicate with the render target available as texture 0 in the predicate</span>
+    <span class="c1">-- material shader.</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="render.disable_texture:unit"/>
+		<a name="render.disable_texture"/>
+		<h4>render.disable_texture()<a href="#render.disable_texture:unit" class="anchor-link"></a></h4>
+		<p><code>render.disable_texture(unit)</code></p>
+		Disables a texture unit for a render target that has previourly been enabled.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>unit</code></td>
+				<td>texture unit to disable</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">enable_texture</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_render_target</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">BUFFER_COLOR_BIT</span><span class="p">)</span>
+    <span class="c1">-- draw a predicate with the render target available as texture 0 in the predicate</span>
+    <span class="c1">-- material shader.</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+    <span class="c1">-- done, disable the texture</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">disable_texture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="render.get_render_target_width:render_target-buffer_type"/>
+		<a name="render.get_render_target_width"/>
+		<h4>render.get_render_target_width()<a href="#render.get_render_target_width:render_target-buffer_type" class="anchor-link"></a></h4>
+		<p><code>render.get_render_target_width(render_target,buffer_type)</code></p>
+		Returns the specified buffer width from a render target.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>render_target</code></td>
+				<td>render target from which to retrieve the buffer width</td>
+			</tr><tr>
+				<td><code>buffer_type</code></td>
+				<td>which type of buffer to retrieve the width from
+<ul>
+<li><code>render.BUFFER_COLOR_BIT</code></li>
+<li><code>render.BUFFER_DEPTH_BIT</code></li>
+<li><code>render.BUFFER_STENCIL_BIT</code></li>
+</ul></td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>width</code></td>
+				<td>the width of the render target buffer texture</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- get the width of the render target color buffer</span>
+<span class="kd">local</span> <span class="n">w</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_render_target_width</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">target_right</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">BUFFER_COLOR_BIT</span><span class="p">)</span>
+</pre></div><hr/><a name="render.get_render_target_height:render_target-buffer_type"/>
+		<a name="render.get_render_target_height"/>
+		<h4>render.get_render_target_height()<a href="#render.get_render_target_height:render_target-buffer_type" class="anchor-link"></a></h4>
+		<p><code>render.get_render_target_height(render_target,buffer_type)</code></p>
+		Returns the specified buffer height from a render target.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>render_target</code></td>
+				<td>render target from which to retrieve the buffer height</td>
+			</tr><tr>
+				<td><code>buffer_type</code></td>
+				<td>which type of buffer to retrieve the height from
+<ul>
+<li><code>render.BUFFER_COLOR_BIT</code></li>
+<li><code>render.BUFFER_DEPTH_BIT</code></li>
+<li><code>render.BUFFER_STENCIL_BIT</code></li>
+</ul></td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>height</code></td>
+				<td>the height of the render target buffer texture</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- get the height of the render target color buffer</span>
+<span class="kd">local</span> <span class="n">h</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_render_target_height</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">target_right</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">BUFFER_COLOR_BIT</span><span class="p">)</span>
+</pre></div><hr/><a name="render.clear:buffers"/>
+		<a name="render.clear"/>
+		<h4>render.clear()<a href="#render.clear:buffers" class="anchor-link"></a></h4>
+		<p><code>render.clear(buffers)</code></p>
+		Clear buffers in the currently enabled render target with specified value.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>buffers</code></td>
+				<td>table with keys specifying which buffers to clear and values set to clear values. Available keys are:
+<ul>
+<li><code>render.BUFFER_COLOR_BIT</code></li>
+<li><code>render.BUFFER_DEPTH_BIT</code></li>
+<li><code>render.BUFFER_STENCIL_BIT</code></li>
+</ul></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Clear the color buffer and the depth buffer.
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">clear</span><span class="p">({[</span><span class="n">render</span><span class="p">.</span><span class="n">BUFFER_COLOR_BIT</span><span class="p">]</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector4</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="n">render</span><span class="p">.</span><span class="n">BUFFER_DEPTH_BIT</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">})</span>
+</pre></div><hr/><a name="render.draw:predicate-[constants]"/>
+		<a name="render.draw"/>
+		<h4>render.draw()<a href="#render.draw:predicate-[constants]" class="anchor-link"></a></h4>
+		<p><code>render.draw(predicate,[constants])</code></p>
+		Draws all objects that match a specified predicate. An optional constant buffer can be
+provided to override the default constants. If no constants buffer is provided, a default
+system constants buffer is used containing constants as defined in materials and set through
+<a href="/ref/go#go.set">go.set</a> (or <a href="/ref/particlefx#particlefx.set_constant">particlefx.set_constant</a>) on visual components.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>predicate</code></td>
+				<td>predicate to draw for</td>
+			</tr><tr>
+				<td><code>[constants]</code></td>
+				<td>optional constants to use while rendering</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+    <span class="c1">-- define a predicate matching anything with material tag &quot;my_tag&quot;</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">my_pred</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">predicate</span><span class="p">({</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_tag&quot;</span><span class="p">)})</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="c1">-- draw everything in the my_pred predicate</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+
+Draw predicate with constant:
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">constants</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">constant_buffer</span><span class="p">()</span>
+<span class="n">constants</span><span class="p">.</span><span class="n">tint</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">,</span> <span class="n">constants</span><span class="p">)</span>
+</pre></div><hr/><a name="render.draw_debug3d:"/>
+		<a name="render.draw_debug3d"/>
+		<h4>render.draw_debug3d()<a href="#render.draw_debug3d:" class="anchor-link"></a></h4>
+		<p><code>render.draw_debug3d()</code></p>
+		Draws all 3d debug graphics such as lines drawn with "draw_line" messages and physics visualization.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="c1">-- draw debug visualization</span>
+    <span class="n">render</span><span class="p">.</span><span class="n">draw_debug3d</span><span class="p">()</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="render.set_view:matrix"/>
+		<a name="render.set_view"/>
+		<h4>render.set_view()<a href="#render.set_view:matrix" class="anchor-link"></a></h4>
+		<p><code>render.set_view(matrix)</code></p>
+		Sets the view matrix to use when rendering.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>matrix</code></td>
+				<td>view matrix to set</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to set the view and projection matrices according to
+the values supplied by a camera.
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">matrix4</span><span class="p">()</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">projection</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">matrix4</span><span class="p">()</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+  <span class="c1">-- set the view to the stored view value</span>
+  <span class="n">render</span><span class="p">.</span><span class="n">set_view</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+  <span class="c1">-- now we can draw with this view</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">message_id</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">message_id</span> <span class="o">==</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">set_view_projection&quot;</span><span class="p">)</span> <span class="k">then</span>
+     <span class="c1">-- camera view and projection arrives here.</span>
+     <span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">view</span>
+     <span class="n">self</span><span class="p">.</span><span class="n">projection</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">projection</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="render.set_projection:matrix"/>
+		<a name="render.set_projection"/>
+		<h4>render.set_projection()<a href="#render.set_projection:matrix" class="anchor-link"></a></h4>
+		<p><code>render.set_projection(matrix)</code></p>
+		Sets the projection matrix to use when rendering.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>matrix</code></td>
+				<td>projection matrix</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to set the projection to orthographic with world origo at lower left,
+width and height as set in project settings and depth (z) between -1 and 1:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">set_projection</span><span class="p">(</span><span class="n">vmath</span><span class="p">.</span><span class="n">matrix4_orthographic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">get_width</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">get_height</span><span class="p">(),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div><hr/><a name="render.set_blend_func:source_factor-destination_factor"/>
+		<a name="render.set_blend_func"/>
+		<h4>render.set_blend_func()<a href="#render.set_blend_func:source_factor-destination_factor" class="anchor-link"></a></h4>
+		<p><code>render.set_blend_func(source_factor,destination_factor)</code></p>
+		Specifies the arithmetic used when computing pixel values that are written to the frame
+buffer. In RGBA mode, pixels can be drawn using a function that blends the source RGBA
+pixel values with the destination pixel values already in the frame buffer.
+Blending is initially disabled.
+<code>source_factor</code> specifies which method is used to scale the source color components.
+<code>destination_factor</code> specifies which method is used to scale the destination color
+components.
+Source color components are referred to as (R<sub>s</sub>,G<sub>s</sub>,B<sub>s</sub>,A<sub>s</sub>).
+Destination color components are referred to as (R<sub>d</sub>,G<sub>d</sub>,B<sub>d</sub>,A<sub>d</sub>).
+The color specified by setting the blendcolor is referred to as (R<sub>c</sub>,G<sub>c</sub>,B<sub>c</sub>,A<sub>c</sub>).
+The source scale factor is referred to as (s<sub>R</sub>,s<sub>G</sub>,s<sub>B</sub>,s<sub>A</sub>).
+The destination scale factor is referred to as (d<sub>R</sub>,d<sub>G</sub>,d<sub>B</sub>,d<sub>A</sub>).
+The color values have integer values between 0 and (k<sub>R</sub>,k<sub>G</sub>,k<sub>B</sub>,k<sub>A</sub>), where k<sub>c</sub> = 2<sup>m<sub>c</sub></sup> - 1 and m<sub>c</sub> is the number of bitplanes for that color. I.e for 8 bit color depth, color values are between <code>0</code> and <code>255</code>.
+Available factor constants and corresponding scale factors:
+<table>
+<thead>
+<tr>
+<th>Factor constant</th>
+<th>Scale factor (f<sub>R</sub>,f<sub>G</sub>,f<sub>B</sub>,f<sub>A</sub>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>render.BLEND_ZERO</code></td>
+<td>(0,0,0,0)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_ONE</code></td>
+<td>(1,1,1,1)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_SRC_COLOR</code></td>
+<td>(R<sub>s</sub>/k<sub>R</sub>,G<sub>s</sub>/k<sub>G</sub>,B<sub>s</sub>/k<sub>B</sub>,A<sub>s</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_ONE_MINUS_SRC_COLOR</code></td>
+<td>(1,1,1,1) - (R<sub>s</sub>/k<sub>R</sub>,G<sub>s</sub>/k<sub>G</sub>,B<sub>s</sub>/k<sub>B</sub>,A<sub>s</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_DST_COLOR</code></td>
+<td>(R<sub>d</sub>/k<sub>R</sub>,G<sub>d</sub>/k<sub>G</sub>,B<sub>d</sub>/k<sub>B</sub>,A<sub>d</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_ONE_MINUS_DST_COLOR</code></td>
+<td>(1,1,1,1) - (R<sub>d</sub>/k<sub>R</sub>,G<sub>d</sub>/k<sub>G</sub>,B<sub>d</sub>/k<sub>B</sub>,A<sub>d</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_SRC_ALPHA</code></td>
+<td>(A<sub>s</sub>/k<sub>A</sub>,A<sub>s</sub>/k<sub>A</sub>,A<sub>s</sub>/k<sub>A</sub>,A<sub>s</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_ONE_MINUS_SRC_ALPHA</code></td>
+<td>(1,1,1,1) - (A<sub>s</sub>/k<sub>A</sub>,A<sub>s</sub>/k<sub>A</sub>,A<sub>s</sub>/k<sub>A</sub>,A<sub>s</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_DST_ALPHA</code></td>
+<td>(A<sub>d</sub>/k<sub>A</sub>,A<sub>d</sub>/k<sub>A</sub>,A<sub>d</sub>/k<sub>A</sub>,A<sub>d</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_ONE_MINUS_DST_ALPHA</code></td>
+<td>(1,1,1,1) - (A<sub>d</sub>/k<sub>A</sub>,A<sub>d</sub>/k<sub>A</sub>,A<sub>d</sub>/k<sub>A</sub>,A<sub>d</sub>/k<sub>A</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_CONSTANT_COLOR</code></td>
+<td>(R<sub>c</sub>,G<sub>c</sub>,B<sub>c</sub>,A<sub>c</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_ONE_MINUS_CONSTANT_COLOR</code></td>
+<td>(1,1,1,1) - (R<sub>c</sub>,G<sub>c</sub>,B<sub>c</sub>,A<sub>c</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_CONSTANT_ALPHA</code></td>
+<td>(A<sub>c</sub>,A<sub>c</sub>,A<sub>c</sub>,A<sub>c</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_ONE_MINUS_CONSTANT_ALPHA</code></td>
+<td>(1,1,1,1) - (A<sub>c</sub>,A<sub>c</sub>,A<sub>c</sub>,A<sub>c</sub>)</td>
+</tr>
+<tr>
+<td><code>render.BLEND_SRC_ALPHA_SATURATE</code></td>
+<td>(i,i,i,1) where i = min(A<sub>s</sub>, k<sub>A</sub> - A<sub>d</sub>) /k<sub>A</sub></td>
+</tr>
+</tbody>
+</table>
+The blended RGBA values of a pixel comes from the following equations:
+<ul>
+<li>R<sub>d</sub> = min(k<sub>R</sub>, R<sub>s</sub> * s<sub>R</sub> + R<sub>d</sub> * d<sub>R</sub>)</li>
+<li>G<sub>d</sub> = min(k<sub>G</sub>, G<sub>s</sub> * s<sub>G</sub> + G<sub>d</sub> * d<sub>G</sub>)</li>
+<li>B<sub>d</sub> = min(k<sub>B</sub>, B<sub>s</sub> * s<sub>B</sub> + B<sub>d</sub> * d<sub>B</sub>)</li>
+<li>A<sub>d</sub> = min(k<sub>A</sub>, A<sub>s</sub> * s<sub>A</sub> + A<sub>d</sub> * d<sub>A</sub>)</li>
+</ul>
+Blend function <code>(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)</code> is useful for
+drawing with transparency when the drawn objects are sorted from farthest to nearest.
+It is also useful for drawing antialiased points and lines in arbitrary order.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>source_factor</code></td>
+				<td>source factor</td>
+			</tr><tr>
+				<td><code>destination_factor</code></td>
+				<td>destination factor</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Set the blend func to the most common one:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">set_blend_func</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">BLEND_SRC_ALPHA</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">BLEND_ONE_MINUS_SRC_ALPHA</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_color_mask:red-green-blue-alpha"/>
+		<a name="render.set_color_mask"/>
+		<h4>render.set_color_mask()<a href="#render.set_color_mask:red-green-blue-alpha" class="anchor-link"></a></h4>
+		<p><code>render.set_color_mask(red,green,blue,alpha)</code></p>
+		Specifies whether the individual color components in the frame buffer is enabled for writing (<code>true</code>) or disabled (<code>false</code>). For example, if <code>blue</code> is <code>false</code>, nothing is written to the blue component of any pixel in any of the color buffers, regardless of the drawing operation attempted. Note that writing are either enabled or disabled for entire color components, not the individual bits of a component.
+The component masks are all initially <code>true</code>.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>red</code></td>
+				<td>red mask</td>
+			</tr><tr>
+				<td><code>green</code></td>
+				<td>green mask</td>
+			</tr><tr>
+				<td><code>blue</code></td>
+				<td>blue mask</td>
+			</tr><tr>
+				<td><code>alpha</code></td>
+				<td>alpha mask</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- alpha cannot be written to frame buffer</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_color_mask</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_depth_mask:depth"/>
+		<a name="render.set_depth_mask"/>
+		<h4>render.set_depth_mask()<a href="#render.set_depth_mask:depth" class="anchor-link"></a></h4>
+		<p><code>render.set_depth_mask(depth)</code></p>
+		Specifies whether the depth buffer is enabled for writing. The supplied mask governs
+if depth buffer writing is enabled (<code>true</code>) or disabled (<code>false</code>).
+The mask is initially <code>true</code>.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>depth</code></td>
+				<td>depth mask</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to turn off writing to the depth buffer:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">set_depth_mask</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_stencil_mask:mask"/>
+		<a name="render.set_stencil_mask"/>
+		<h4>render.set_stencil_mask()<a href="#render.set_stencil_mask:mask" class="anchor-link"></a></h4>
+		<p><code>render.set_stencil_mask(mask)</code></p>
+		The stencil mask controls the writing of individual bits in the stencil buffer.
+The least significant <code>n</code> bits of the parameter <code>mask</code>, where <code>n</code> is the number of
+bits in the stencil buffer, specify the mask.
+Where a <code>1</code> bit appears in the mask, the corresponding
+bit in the stencil buffer can be written. Where a <code>0</code> bit appears in the mask,
+the corresponding bit in the stencil buffer is never written.
+The mask is initially all <code>1</code>'s.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>mask</code></td>
+				<td>stencil mask</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- set the stencil mask to all 1:s</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_stencil_mask</span><span class="p">(</span><span class="mh">0xff</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_depth_func:func"/>
+		<a name="render.set_depth_func"/>
+		<h4>render.set_depth_func()<a href="#render.set_depth_func:func" class="anchor-link"></a></h4>
+		<p><code>render.set_depth_func(func)</code></p>
+		Specifies the function that should be used to compare each incoming pixel
+depth value with the value present in the depth buffer.
+The comparison is performed only if depth testing is enabled and specifies
+the conditions under which a pixel will be drawn.
+Function constants:
+<ul>
+<li><code>render.COMPARE_FUNC_NEVER</code> (never passes)</li>
+<li><code>render.COMPARE_FUNC_LESS</code> (passes if the incoming depth value is less than the stored value)</li>
+<li><code>render.COMPARE_FUNC_LEQUAL</code> (passes if the incoming depth value is less than or equal to the stored value)</li>
+<li><code>render.COMPARE_FUNC_GREATER</code> (passes if the incoming depth value is greater than the stored value)</li>
+<li><code>render.COMPARE_FUNC_GEQUAL</code> (passes if the incoming depth value is greater than or equal to the stored value)</li>
+<li><code>render.COMPARE_FUNC_EQUAL</code> (passes if the incoming depth value is equal to the stored value)</li>
+<li><code>render.COMPARE_FUNC_NOTEQUAL</code> (passes if the incoming depth value is not equal to the stored value)</li>
+<li><code>render.COMPARE_FUNC_ALWAYS</code> (always passes)</li>
+</ul>
+The depth function is initially set to <code>render.COMPARE_FUNC_LESS</code>.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>func</code></td>
+				<td>depth test function, see the description for available values</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Enable depth test and set the depth test function to "not equal".
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">enable_state</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">STATE_DEPTH_TEST</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_depth_func</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">COMPARE_FUNC_NOTEQUAL</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_stencil_func:func-ref-mask"/>
+		<a name="render.set_stencil_func"/>
+		<h4>render.set_stencil_func()<a href="#render.set_stencil_func:func-ref-mask" class="anchor-link"></a></h4>
+		<p><code>render.set_stencil_func(func,ref,mask)</code></p>
+		Stenciling is similar to depth-buffering as it enables and disables drawing on a
+per-pixel basis. First, GL drawing primitives are drawn into the stencil planes.
+Second, geometry and images are rendered but using the stencil planes to mask out
+where to draw.
+The stencil test discards a pixel based on the outcome of a comparison between the
+reference value <code>ref</code> and the corresponding value in the stencil buffer.
+<code>func</code> specifies the comparison function. See the table below for values.
+The initial value is <code>render.COMPARE_FUNC_ALWAYS</code>.
+<code>ref</code> specifies the reference value for the stencil test. The value is clamped to
+the range [0, 2<sup>n</sup>-1], where n is the number of bitplanes in the stencil buffer.
+The initial value is <code>0</code>.
+<code>mask</code> is ANDed with both the reference value and the stored stencil value when the test
+is done. The initial value is all <code>1</code>'s.
+Function constant:
+<ul>
+<li><code>render.COMPARE_FUNC_NEVER</code> (never passes)</li>
+<li><code>render.COMPARE_FUNC_LESS</code> (passes if (ref &amp; mask) &lt; (stencil &amp; mask))</li>
+<li><code>render.COMPARE_FUNC_LEQUAL</code> (passes if (ref &amp; mask) &lt;= (stencil &amp; mask))</li>
+<li><code>render.COMPARE_FUNC_GREATER</code> (passes if (ref &amp; mask) &gt; (stencil &amp; mask))</li>
+<li><code>render.COMPARE_FUNC_GEQUAL</code> (passes if (ref &amp; mask) &gt;= (stencil &amp; mask))</li>
+<li><code>render.COMPARE_FUNC_EQUAL</code> (passes if (ref &amp; mask) = (stencil &amp; mask))</li>
+<li><code>render.COMPARE_FUNC_NOTEQUAL</code> (passes if (ref &amp; mask) != (stencil &amp; mask))</li>
+<li><code>render.COMPARE_FUNC_ALWAYS</code> (always passes)</li>
+</ul>
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>func</code></td>
+				<td>stencil test function, see the description for available values</td>
+			</tr><tr>
+				<td><code>ref</code></td>
+				<td>reference value for the stencil test</td>
+			</tr><tr>
+				<td><code>mask</code></td>
+				<td>mask that is ANDed with both the reference value and the stored stencil value when the test is done</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- let only 0&#39;s pass the stencil test</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_stencil_func</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">COMPARE_FUNC_EQUAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_stencil_op:sfail-dpfail-dppass"/>
+		<a name="render.set_stencil_op"/>
+		<h4>render.set_stencil_op()<a href="#render.set_stencil_op:sfail-dpfail-dppass" class="anchor-link"></a></h4>
+		<p><code>render.set_stencil_op(sfail,dpfail,dppass)</code></p>
+		The stencil test discards a pixel based on the outcome of a comparison between the
+reference value <code>ref</code> and the corresponding value in the stencil buffer.
+To control the test, call <a href="/ref/render#render.set_stencil_func">render.set_stencil_func</a>.
+This function takes three arguments that control what happens to the stored stencil
+value while stenciling is enabled. If the stencil test fails, no change is made to the
+pixel's color or depth buffers, and <code>sfail</code> specifies what happens to the stencil buffer
+contents.
+Operator constants:
+<ul>
+<li><code>render.STENCIL_OP_KEEP</code> (keeps the current value)</li>
+<li><code>render.STENCIL_OP_ZERO</code> (sets the stencil buffer value to 0)</li>
+<li><code>render.STENCIL_OP_REPLACE</code> (sets the stencil buffer value to <code>ref</code>, as specified by <a href="/ref/render#render.set_stencil_func">render.set_stencil_func</a>)</li>
+<li><code>render.STENCIL_OP_INCR</code> (increments the stencil buffer value and clamp to the maximum representable unsigned value)</li>
+<li><code>render.STENCIL_OP_INCR_WRAP</code> (increments the stencil buffer value and wrap to zero when incrementing the maximum representable unsigned value)</li>
+<li><code>render.STENCIL_OP_DECR</code> (decrements the current stencil buffer value and clamp to 0)</li>
+<li><code>render.STENCIL_OP_DECR_WRAP</code> (decrements the current stencil buffer value and wrap to the maximum representable unsigned value when decrementing zero)</li>
+<li><code>render.STENCIL_OP_INVERT</code> (bitwise inverts the current stencil buffer value)</li>
+</ul>
+<code>dppass</code> and <code>dpfail</code> specify the stencil buffer actions depending on whether subsequent
+depth buffer tests succeed (dppass) or fail (dpfail).
+The initial value for all operators is <code>render.STENCIL_OP_KEEP</code>.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>sfail</code></td>
+				<td>action to take when the stencil test fails</td>
+			</tr><tr>
+				<td><code>dpfail</code></td>
+				<td>the stencil action when the stencil test passes</td>
+			</tr><tr>
+				<td><code>dppass</code></td>
+				<td>the stencil action when both the stencil test and the depth test pass, or when the stencil test passes and either there is no depth buffer or depth testing is not enabled</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Set the stencil function to never pass and operator to always draw 1's
+on test fail.
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">set_stencil_func</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">COMPARE_FUNC_NEVER</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="c1">-- always draw 1&#39;s on test fail</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_stencil_op</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">STENCIL_OP_REPLACE</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">STENCIL_OP_KEEP</span><span class="p">,</span> <span class="n">render</span><span class="p">.</span><span class="n">STENCIL_OP_KEEP</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_cull_face:face_type"/>
+		<a name="render.set_cull_face"/>
+		<h4>render.set_cull_face()<a href="#render.set_cull_face:face_type" class="anchor-link"></a></h4>
+		<p><code>render.set_cull_face(face_type)</code></p>
+		Specifies whether front- or back-facing polygons can be culled
+when polygon culling is enabled. Polygon culling is initially disabled.
+If mode is <code>render.FACE_FRONT_AND_BACK</code>, no polygons are drawn, but other
+primitives such as points and lines are drawn. The initial value for
+<code>face_type</code> is <code>render.FACE_BACK</code>.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>face_type</code></td>
+				<td>face type
+<ul>
+<li><code>render.FACE_FRONT</code></li>
+<li><code>render.FACE_BACK</code></li>
+<li><code>render.FACE_FRONT_AND_BACK</code></li>
+</ul></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to enable polygon culling and set front face culling:
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">enable_state</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">STATE_CULL_FACE</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_cull_face</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">FACE_FRONT</span><span class="p">)</span>
+</pre></div><hr/><a name="render.set_polygon_offset:factor-units"/>
+		<a name="render.set_polygon_offset"/>
+		<h4>render.set_polygon_offset()<a href="#render.set_polygon_offset:factor-units" class="anchor-link"></a></h4>
+		<p><code>render.set_polygon_offset(factor,units)</code></p>
+		Sets the scale and units used to calculate depth values.
+If <code>render.STATE_POLYGON_OFFSET_FILL</code> is enabled, each fragment's depth value
+is offset from its interpolated value (depending on the depth value of the
+appropriate vertices). Polygon offset can be used when drawing decals, rendering
+hidden-line images etc.
+<code>factor</code> specifies a scale factor that is used to create a variable depth
+offset for each polygon. The initial value is <code>0</code>.
+<code>units</code> is multiplied by an implementation-specific value to create a
+constant depth offset. The initial value is <code>0</code>.
+The value of the offset is computed as <code>factor</code> &times; <code>DZ</code> + <code>r</code> &times; <code>units</code>
+<code>DZ</code> is a measurement of the depth slope of the polygon which is the change in z (depth)
+values divided by the change in either x or y coordinates, as you traverse a polygon.
+The depth values are in window coordinates, clamped to the range [0, 1].
+<code>r</code> is the smallest value that is guaranteed to produce a resolvable difference.
+It's value is an implementation-specific constant.
+The offset is added before the depth test is performed and before the
+value is written into the depth buffer.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>factor</code></td>
+				<td>polygon offset factor</td>
+			</tr><tr>
+				<td><code>units</code></td>
+				<td>polygon offset units</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">enable_state</span><span class="p">(</span><span class="n">render</span><span class="p">.</span><span class="n">STATE_POLYGON_OFFSET_FILL</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">set_polygon_offset</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></div><hr/><a name="render.get_width:"/>
+		<a name="render.get_width"/>
+		<h4>render.get_width()<a href="#render.get_width:" class="anchor-link"></a></h4>
+		<p><code>render.get_width()</code></p>
+		Returns the logical window width that is set in the "game.project" settings.
+Note that the actual window pixel size can change, either by device constraints
+or user input.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>width</code></td>
+				<td>specified window width (number)</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Get the width of the window.
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">w</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_width</span><span class="p">()</span>
+</pre></div><hr/><a name="render.get_height:"/>
+		<a name="render.get_height"/>
+		<h4>render.get_height()<a href="#render.get_height:" class="anchor-link"></a></h4>
+		<p><code>render.get_height()</code></p>
+		Returns the logical window height that is set in the "game.project" settings.
+Note that the actual window pixel size can change, either by device constraints
+or user input.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>height</code></td>
+				<td>specified window height</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Get the height of the window
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">h</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_height</span><span class="p">()</span>
+</pre></div><hr/><a name="render.get_window_width:"/>
+		<a name="render.get_window_width"/>
+		<h4>render.get_window_width()<a href="#render.get_window_width:" class="anchor-link"></a></h4>
+		<p><code>render.get_window_width()</code></p>
+		Returns the actual physical window width.
+Note that this value might differ from the logical width that is set in the
+"game.project" settings.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>width</code></td>
+				<td>actual window width</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Get the actual width of the window
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">w</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_width</span><span class="p">()</span>
+</pre></div><hr/><a name="render.get_window_height:"/>
+		<a name="render.get_window_height"/>
+		<h4>render.get_window_height()<a href="#render.get_window_height:" class="anchor-link"></a></h4>
+		<p><code>render.get_window_height()</code></p>
+		Returns the actual physical window height.
+Note that this value might differ from the logical height that is set in the
+"game.project" settings.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>height</code></td>
+				<td>actual window height</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Get the actual height of the window
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">h</span> <span class="o">=</span> <span class="n">render</span><span class="p">.</span><span class="n">get_window_height</span><span class="p">()</span>
+</pre></div><hr/><a name="render.predicate:tags"/>
+		<a name="render.predicate"/>
+		<h4>render.predicate()<a href="#render.predicate:tags" class="anchor-link"></a></h4>
+		<p><code>render.predicate(tags)</code></p>
+		This function returns a new render predicate for objects with materials matching
+the provided material tags. The provided tags are combined into a bit mask
+for the predicate. If multiple tags are provided, the predicate matches materials
+with all tags ANDed together.
+The current limit to the number of tags that can be defined is <code>64</code>.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>tags</code></td>
+				<td>table of tags that the predicate should match. The tags can be of either hash or string type</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>predicate</code></td>
+				<td>new predicate</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Create a new render predicate containing all visual objects that
+have a material with material tags "opaque" AND "smoke".
+<div class="codehilite"><pre><span></span>local p = render.predicate({hash(&quot;opaque&quot;), hash(&quot;smoke&quot;)})
+</pre></div><hr/><a name="render.enable_material:material_id"/>
+		<a name="render.enable_material"/>
+		<h4>render.enable_material()<a href="#render.enable_material:material_id" class="anchor-link"></a></h4>
+		<p><code>render.enable_material(material_id)</code></p>
+		If another material was already enabled, it will be automatically disabled
+and the specified material is used instead.
+The name of the material must be specified in the ".render" resource set
+in the "game.project" setting.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>material_id</code></td>
+				<td>material id to enable</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Enable material named "glow", then draw my_pred with it.
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">enable_material</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">glow&quot;</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">disable_material</span><span class="p">()</span>
+</pre></div><hr/><a name="render.disable_material:"/>
+		<a name="render.disable_material"/>
+		<h4>render.disable_material()<a href="#render.disable_material:" class="anchor-link"></a></h4>
+		<p><code>render.disable_material()</code></p>
+		If a material is currently enabled, disable it.
+The name of the material must be specified in the ".render" resource set
+in the "game.project" setting.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>EXAMPLES</b></p>
+		Enable material named "glow", then draw my_pred with it.
+<div class="codehilite"><pre><span></span><span class="n">render</span><span class="p">.</span><span class="n">enable_material</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">glow&quot;</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">my_pred</span><span class="p">)</span>
+<span class="n">render</span><span class="p">.</span><span class="n">disable_material</span><span class="p">()</span>
+</pre></div><hr/><h2>Constants</h2><a name="render.STATE_DEPTH_TEST"/>
+	<h4>render.STATE_DEPTH_TEST<a href="#render.STATE_DEPTH_TEST"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STATE_STENCIL_TEST"/>
+	<h4>render.STATE_STENCIL_TEST<a href="#render.STATE_STENCIL_TEST"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STATE_BLEND"/>
+	<h4>render.STATE_BLEND<a href="#render.STATE_BLEND"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STATE_CULL_FACE"/>
+	<h4>render.STATE_CULL_FACE<a href="#render.STATE_CULL_FACE"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STATE_POLYGON_OFFSET_FILL"/>
+	<h4>render.STATE_POLYGON_OFFSET_FILL<a href="#render.STATE_POLYGON_OFFSET_FILL"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_LUMINANCE"/>
+	<h4>render.FORMAT_LUMINANCE<a href="#render.FORMAT_LUMINANCE"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_RGB"/>
+	<h4>render.FORMAT_RGB<a href="#render.FORMAT_RGB"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_RGBA"/>
+	<h4>render.FORMAT_RGBA<a href="#render.FORMAT_RGBA"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_RGB_DXT1"/>
+	<h4>render.FORMAT_RGB_DXT1<a href="#render.FORMAT_RGB_DXT1"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_RGBA_DXT1"/>
+	<h4>render.FORMAT_RGBA_DXT1<a href="#render.FORMAT_RGBA_DXT1"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_RGBA_DXT3"/>
+	<h4>render.FORMAT_RGBA_DXT3<a href="#render.FORMAT_RGBA_DXT3"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_RGBA_DXT5"/>
+	<h4>render.FORMAT_RGBA_DXT5<a href="#render.FORMAT_RGBA_DXT5"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_DEPTH"/>
+	<h4>render.FORMAT_DEPTH<a href="#render.FORMAT_DEPTH"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FORMAT_STENCIL"/>
+	<h4>render.FORMAT_STENCIL<a href="#render.FORMAT_STENCIL"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FILTER_LINEAR"/>
+	<h4>render.FILTER_LINEAR<a href="#render.FILTER_LINEAR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FILTER_NEAREST"/>
+	<h4>render.FILTER_NEAREST<a href="#render.FILTER_NEAREST"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.WRAP_CLAMP_TO_BORDER"/>
+	<h4>render.WRAP_CLAMP_TO_BORDER<a href="#render.WRAP_CLAMP_TO_BORDER"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.WRAP_CLAMP_TO_EDGE"/>
+	<h4>render.WRAP_CLAMP_TO_EDGE<a href="#render.WRAP_CLAMP_TO_EDGE"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.WRAP_MIRRORED_REPEAT"/>
+	<h4>render.WRAP_MIRRORED_REPEAT<a href="#render.WRAP_MIRRORED_REPEAT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.WRAP_REPEAT"/>
+	<h4>render.WRAP_REPEAT<a href="#render.WRAP_REPEAT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.RENDER_TARGET_DEFAULT"/>
+	<h4>render.RENDER_TARGET_DEFAULT<a href="#render.RENDER_TARGET_DEFAULT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BUFFER_COLOR_BIT"/>
+	<h4>render.BUFFER_COLOR_BIT<a href="#render.BUFFER_COLOR_BIT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BUFFER_DEPTH_BIT"/>
+	<h4>render.BUFFER_DEPTH_BIT<a href="#render.BUFFER_DEPTH_BIT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BUFFER_STENCIL_BIT"/>
+	<h4>render.BUFFER_STENCIL_BIT<a href="#render.BUFFER_STENCIL_BIT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ZERO"/>
+	<h4>render.BLEND_ZERO<a href="#render.BLEND_ZERO"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ONE"/>
+	<h4>render.BLEND_ONE<a href="#render.BLEND_ONE"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_SRC_COLOR"/>
+	<h4>render.BLEND_SRC_COLOR<a href="#render.BLEND_SRC_COLOR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ONE_MINUS_SRC_COLOR"/>
+	<h4>render.BLEND_ONE_MINUS_SRC_COLOR<a href="#render.BLEND_ONE_MINUS_SRC_COLOR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_DST_COLOR"/>
+	<h4>render.BLEND_DST_COLOR<a href="#render.BLEND_DST_COLOR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ONE_MINUS_DST_COLOR"/>
+	<h4>render.BLEND_ONE_MINUS_DST_COLOR<a href="#render.BLEND_ONE_MINUS_DST_COLOR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_SRC_ALPHA"/>
+	<h4>render.BLEND_SRC_ALPHA<a href="#render.BLEND_SRC_ALPHA"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ONE_MINUS_SRC_ALPHA"/>
+	<h4>render.BLEND_ONE_MINUS_SRC_ALPHA<a href="#render.BLEND_ONE_MINUS_SRC_ALPHA"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_DST_ALPHA"/>
+	<h4>render.BLEND_DST_ALPHA<a href="#render.BLEND_DST_ALPHA"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ONE_MINUS_DST_ALPHA"/>
+	<h4>render.BLEND_ONE_MINUS_DST_ALPHA<a href="#render.BLEND_ONE_MINUS_DST_ALPHA"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_SRC_ALPHA_SATURATE"/>
+	<h4>render.BLEND_SRC_ALPHA_SATURATE<a href="#render.BLEND_SRC_ALPHA_SATURATE"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_CONSTANT_COLOR"/>
+	<h4>render.BLEND_CONSTANT_COLOR<a href="#render.BLEND_CONSTANT_COLOR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ONE_MINUS_CONSTANT_COLOR"/>
+	<h4>render.BLEND_ONE_MINUS_CONSTANT_COLOR<a href="#render.BLEND_ONE_MINUS_CONSTANT_COLOR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_CONSTANT_ALPHA"/>
+	<h4>render.BLEND_CONSTANT_ALPHA<a href="#render.BLEND_CONSTANT_ALPHA"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.BLEND_ONE_MINUS_CONSTANT_ALPHA"/>
+	<h4>render.BLEND_ONE_MINUS_CONSTANT_ALPHA<a href="#render.BLEND_ONE_MINUS_CONSTANT_ALPHA"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_NEVER"/>
+	<h4>render.COMPARE_FUNC_NEVER<a href="#render.COMPARE_FUNC_NEVER"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_LESS"/>
+	<h4>render.COMPARE_FUNC_LESS<a href="#render.COMPARE_FUNC_LESS"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_LEQUAL"/>
+	<h4>render.COMPARE_FUNC_LEQUAL<a href="#render.COMPARE_FUNC_LEQUAL"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_GREATER"/>
+	<h4>render.COMPARE_FUNC_GREATER<a href="#render.COMPARE_FUNC_GREATER"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_GEQUAL"/>
+	<h4>render.COMPARE_FUNC_GEQUAL<a href="#render.COMPARE_FUNC_GEQUAL"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_EQUAL"/>
+	<h4>render.COMPARE_FUNC_EQUAL<a href="#render.COMPARE_FUNC_EQUAL"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_NOTEQUAL"/>
+	<h4>render.COMPARE_FUNC_NOTEQUAL<a href="#render.COMPARE_FUNC_NOTEQUAL"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.COMPARE_FUNC_ALWAYS"/>
+	<h4>render.COMPARE_FUNC_ALWAYS<a href="#render.COMPARE_FUNC_ALWAYS"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_KEEP"/>
+	<h4>render.STENCIL_OP_KEEP<a href="#render.STENCIL_OP_KEEP"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_ZERO"/>
+	<h4>render.STENCIL_OP_ZERO<a href="#render.STENCIL_OP_ZERO"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_REPLACE"/>
+	<h4>render.STENCIL_OP_REPLACE<a href="#render.STENCIL_OP_REPLACE"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_INCR"/>
+	<h4>render.STENCIL_OP_INCR<a href="#render.STENCIL_OP_INCR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_INCR_WRAP"/>
+	<h4>render.STENCIL_OP_INCR_WRAP<a href="#render.STENCIL_OP_INCR_WRAP"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_DECR"/>
+	<h4>render.STENCIL_OP_DECR<a href="#render.STENCIL_OP_DECR"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_DECR_WRAP"/>
+	<h4>render.STENCIL_OP_DECR_WRAP<a href="#render.STENCIL_OP_DECR_WRAP"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.STENCIL_OP_INVERT"/>
+	<h4>render.STENCIL_OP_INVERT<a href="#render.STENCIL_OP_INVERT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FACE_FRONT"/>
+	<h4>render.FACE_FRONT<a href="#render.FACE_FRONT"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FACE_BACK"/>
+	<h4>render.FACE_BACK<a href="#render.FACE_BACK"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><a name="render.FACE_FRONT_AND_BACK"/>
+	<h4>render.FACE_FRONT_AND_BACK<a href="#render.FACE_FRONT_AND_BACK"><span class="anchor-link"/></a></h4>
+	<p></p>
+	<p></p><hr/><h2>Messages</h2><a name="draw_debug_text"/>
+	<h4>draw_debug_text<a href="#draw_debug_text"><span class="anchor-link"/></a></h4>
+	<p>draw a text on the screen</p>
+	<p>Draw a text on the screen. This should be used for debugging purposes only.</p><table><tr>
+		<td><code>position</code></td>
+		<td>position of the text</td>
+	</tr><tr>
+		<td><code>text</code></td>
+		<td>the text to draw</td>
+	</tr><tr>
+		<td><code>color</code></td>
+		<td>color of the text</td>
+	</tr></table><p><b>EXAMPLES</b></p>
+	<div class="codehilite"><pre><span></span><span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">@render:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">draw_debug_text&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Hello world!&quot;</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector3</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">}</span> <span class="p">)</span>
+</pre></div><hr/><a name="draw_line"/>
+	<h4>draw_line<a href="#draw_line"><span class="anchor-link"/></a></h4>
+	<p>draw a line on the screen</p>
+	<p>Draw a line on the screen. This should mostly be used for debugging purposes.</p><table><tr>
+		<td><code>start_point</code></td>
+		<td>start point of the line</td>
+	</tr><tr>
+		<td><code>end_point</code></td>
+		<td>end point of the line</td>
+	</tr><tr>
+		<td><code>color</code></td>
+		<td>color of the line</td>
+	</tr></table><p><b>EXAMPLES</b></p>
+	<div class="codehilite"><pre><span></span><span class="c1">-- draw a white line from (200, 200) to (200, 300)</span>
+<span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">@render:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">draw_line&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">start_point</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector3</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">end_point</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector3</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">}</span> <span class="p">)</span>
+</pre></div><hr/><a name="window_resized"/>
+	<h4>window_resized<a href="#window_resized"><span class="anchor-link"/></a></h4>
+	<p>reports a window size change</p>
+	<p>Reports a change in window size. This is initiated on window resize on desktop or by orientation changes
+on mobile devices.</p><table><tr>
+		<td><code>height</code></td>
+		<td>the new window height</td>
+	</tr><tr>
+		<td><code>width</code></td>
+		<td>the new window width</td>
+	</tr></table><p><b>EXAMPLES</b></p>
+	<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">message_id</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+    <span class="c1">-- check for the message</span>
+    <span class="k">if</span> <span class="n">message_id</span> <span class="o">==</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">window_resized&quot;</span><span class="p">)</span> <span class="k">then</span>
+        <span class="c1">-- the window was resized.</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resize"/>
+	<h4>resize<a href="#resize"><span class="anchor-link"/></a></h4>
+	<p>resizes the window</p>
+	<p>Set the size of the game window. Only works on desktop platforms.</p><table><tr>
+		<td><code>height</code></td>
+		<td>the new window height</td>
+	</tr><tr>
+		<td><code>width</code></td>
+		<td>the new window width</td>
+	</tr></table><p><b>EXAMPLES</b></p>
+	<div class="codehilite"><pre><span></span><span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">@render:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">resize&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">768</span> <span class="p">}</span> <span class="p">)</span>
+</pre></div><hr/><a name="clear_color"/>
+	<h4>clear_color<a href="#clear_color"><span class="anchor-link"/></a></h4>
+	<p>set clear color</p>
+	<p>Set render clear color. This is the color that appears on the screen where nothing is rendered, i.e. background.</p><table><tr>
+		<td><code>color</code></td>
+		<td>color to use as clear color</td>
+	</tr></table><p><b>EXAMPLES</b></p>
+	<div class="codehilite"><pre><span></span><span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">@render:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">clear_color&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">color</span> <span class="o">=</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">}</span> <span class="p">)</span>
+</pre></div><hr/></div>
+		</div>
+	</div>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<script>
+	var query = new URLSearchParams(window.location.search).get('q');
+	if (query) {
+		var instance = new Mark("div.ref");
+		instance.mark(query);
+		var elements = document.getElementsByTagName("mark");
+		if (elements.length > 0) {
+			elements[0].scrollIntoView();
+		}
+	}
+</script>
+<script type="text/javascript">
+	var menu = document.getElementById("navmenu");
+	if (menu != null) {
+		var viewportOffset = menu.getBoundingClientRect();
+		window.onscroll = function() {
+			if (window.pageYOffset > viewportOffset.top) {
+				menu.classList.add("sticky");
+			}
+			else {
+				menu.classList.remove("sticky");
+			}
+		};
+	}
+</script>
+
+	</div>
+
+	<footer class="darkest">
+	<div class="container">
+		<div class="row">
+			<div class="two columns">
+				<p><b>DEFOLD</b></p>
+				<ul>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/foundation">Foundation</a></li>
+					<li><a href="/faq/faq">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>NEWS</b></p>
+				<ul>
+					<li><a href="/press">Press</a></li>
+					<li><a href="/blog">Blog</a></li>
+					<li><a href="/newsletter">Newsletter</a></li>
+					<li><a href="https://forum.defold.com/c/releasenotes">Release announcements</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>GET INVOLVED</b></p>
+				<ul>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="/donate">Donate</a></li>
+					<li><a href="/contribute">Contribute</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEARN</b></p>
+				<ul>
+					<li><a href="/ref/go">API</a></li>
+					<li><a href="/examples">Examples</a></li>
+					<li><a href="/manuals/introduction">Manuals</a></li>
+					<li><a href="/tutorials">Tutorials</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>COMMUNITY</b></p>
+				<ul>
+					<li><a href="https://forum.defold.com" target="_blank">Forum</a></li>
+					<li><a href="/slack">Slack</a></li>
+					<li><a href="https://www.facebook.com/Defold" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/defold" target="_blank">Twitter</a></li>
+					<li><a href="https://www.linkedin.com/company/defold-foundation" target="_blank">LinkedIn</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEGAL</b></p>
+				<ul>
+					<li><a href="/license">License</a></li>
+					<li><a href="/logo-and-trademark">Logo &amp; Trademark</a></li>
+					<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+					<li><a href="/privacy-policy">Privacy Policy</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>Copyright © 2021 Defold Foundation</p>
+		</div>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

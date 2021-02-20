@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83690-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-83690-3');
+</script>
+<title>API reference (debug)</title>
+
+<!-- Google Structured Data (https://developers.google.com/search/docs/guides/intro-structured-data) -->
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "Organization",
+		"name": "Defold Foundation",
+		"url": "https://www.defold.com",
+		"email": "info@defold.com",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Postbox 6034",
+			"addressLocality": "Hägersten",
+			"addressRegion": "Stockholm",
+			"addressCountry": "Sweden",
+			"postalCode": "12906"
+		},
+		"foundingDate": "2020",
+		"sameAs": [
+			"https://www.facebook.com/Defold",
+			"https://www.twitter.com/defold",
+			"https://www.github.com/defold",
+			"https://www.youtube.com/channel/UCrEYXG15n3V0Y8eK0RbCaLQ"
+		]
+	}
+</script>
+
+<!-- META DATA -->
+<meta name="description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="author" content="Defold Foundation" />
+<meta name="keywords" content="defold, gameengine, game-engine, game-development, game-dev, gamedev, open-source, opensource, crossplatform, cross-platform, free, nintendo-switch, console, html5, web, android, ios, desktop" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://defold.com/ref/stable/debug/">
+<meta property="og:site_name" content="Defold game engine">
+<meta property="og:title" content="API reference (debug)">
+<meta property="og:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta property="og:image" content="https://www.defold.com/images/social/facebook-share.jpg">
+<!-- end OPEN GRAPH -->
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@defold">
+<meta name="twitter:title" content="API reference (debug)">
+<meta name="twitter:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="twitter:image" content="https://www.defold.com/images/social/twitter-share.jpg">
+<!-- end TWITTER -->
+
+<!-- web monetization -->
+<meta name="monetization" content="$ilp.uphold.com/QkG86UgXzKq8">
+
+<!-- FONTS -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+<!-- favicon -->
+<link rel='shortcut icon' type='image/x-icon' href='/images/favicon.ico' />
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+<link rel="stylesheet" type="text/css" href="/css/defold.css">
+<link rel="stylesheet" type="text/css" href="/css/fruity.css">
+<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+<!-- end CSS -->
+
+<!-- SendInBlue CSS -->
+<link rel="stylesheet" type="text/css" href="/css/sendinblue.css">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!-- end SendInBlue CSS -->
+
+</head>
+<body>
+<div id="page">
+	<div id="pagecontent">
+	<div class="nav dark">
+	<div class="container">
+		<div class="row">
+			<div class="eight columns">
+				<ul class="navmenu">
+					<li><nobr><a href="/" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M16 9l-3-3V2h-2v2L8 1 0 9h2l1 5c0 .55.45 1 1 1h8c.55 0 1-.45 1-1l1-5h2zm-4 5H9v-4H7v4H4L2.81 7.69 8 2.5l5.19 5.19L12 14z"/></svg>
+</span>&nbsp; Defold
+</a></nobr></li>
+					<li><a href="/product">Product</a></li>
+					<li><a href="/showcase">Showcase</a></li>
+					<li><a href="/learn">Learn</a></li>
+					<li><a href="/assets">Asset&nbsp;Portal</a></li>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="//forum.defold.com">Forum</a></li>
+					<li style="visibility: hidden"><span class="octicon" style="fill: #FFF; zoom: 1.75; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"/></svg>
+</span>&nbsp;
+ Download</li>
+				</ul>
+				<select class="navdropdown dark-text" onchange="location = this.value;">
+					<option value="/">Home</option>
+					<option value="/product" >Product</option>
+					<option value="/showcase" >Showcase</option>
+					<option value="/learn">Learn</option>
+					<option value="/assets" >Asset Portal</option>
+					<option value="/open" >Open Source</option>
+					<option value="//forum.defold.com">Forum</option>
+					<option value="/donate" >Donate</option>
+					<option value="/download" >Download</option>
+					<option value="https://www.github.com/defold">GitHub</option>
+				</select>
+			</div>
+			<div class="four columns">
+				<ul class="navmenu right">
+					<li><nobr><a href="/donate" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M9 2c-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-1.632.086-2.954 1.333-3 3 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.047-1.69-1.342-2.913-3-3z"/></svg>
+</span>&nbsp; Donate
+</a></nobr></li>
+					<li><nobr><a href="/download" target=""><span class="octicon" style="fill: #FFF; zoom: 1.35; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"><path fill-rule="evenodd" d="M7 7V3H3v4H0l5 6 5-6H7z"/></svg>
+</span>&nbsp; Download
+</a></nobr></li>
+					<li><nobr><a href="https://www.github.com/defold" target="_blank"><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+
+</span>&nbsp; GitHub
+</a></nobr></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+	<div class="nav learn light">
+	<div class="container">
+		<div class="row">
+			<div class="nine columns"><ul class="navmenu">
+					<li><a href="/examples/animation/basic_tween" class="">Examples </a></li>
+					<li><a href="/tutorials/getting-started" class="">Tutorials</a></li>
+					<li><a href="/manuals/introduction" class="">Manuals</a></li>
+					<li><a href="/ref/stable/go" class="bold">API Reference</a></li>
+					<li><a href="/faq/faq" class="">FAQ</a></li>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;">
+					<option value="/examples/animation/basic_tween" >Examples</option>
+					<option value="/tutorials/getting-started" >Tutorials</option>
+					<option value="/manuals/introduction" >Manuals</option>
+					<option value="/ref/stable/go" selected>API Reference</option>
+					<option value="/faq/faq" >FAQ</option>
+				</select>
+				<div class="right navdropdown compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div></div>
+			<div class="three columns">
+				<div class="right navmenu compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section lightest">
+	<div class="container">
+		<div class="row">
+			<div class="columns two">
+				<ul id="navmenu" class="navmenu ref nobullet"><input id="collapsible_lua" class="toggle" type="checkbox" checked/>
+					<label for="collapsible_lua" class="togglelabel">Lua</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/base" style="text-decoration: none;">base</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/bit" style="text-decoration: none;">bit</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/coroutine" style="text-decoration: none;">coroutine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/debug" style="font-weight: bolder; font-style: italic; text-decoration: none;">debug</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/io" style="text-decoration: none;">io</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/math" style="text-decoration: none;">math</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/os" style="text-decoration: none;">os</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/package" style="text-decoration: none;">package</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/socket" style="text-decoration: none;">socket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/string" style="text-decoration: none;">string</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/table" style="text-decoration: none;">table</a></li></ul><input id="collapsible_defold" class="toggle" type="checkbox" />
+					<label for="collapsible_defold" class="togglelabel">Defold</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/buffer" style="text-decoration: none;">buffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/builtins" style="text-decoration: none;">builtins</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/camera" style="text-decoration: none;">camera</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionfactory" style="text-decoration: none;">collectionfactory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionproxy" style="text-decoration: none;">collectionproxy</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/crash" style="text-decoration: none;">crash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/engine" style="text-decoration: none;">engine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/factory" style="text-decoration: none;">factory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/go" style="text-decoration: none;">go</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/gui" style="text-decoration: none;">gui</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/html5" style="text-decoration: none;">html5</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/http" style="text-decoration: none;">http</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/image" style="text-decoration: none;">image</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/json" style="text-decoration: none;">json</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/label" style="text-decoration: none;">label</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/model" style="text-decoration: none;">model</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/msg" style="text-decoration: none;">msg</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/particlefx" style="text-decoration: none;">particlefx</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/physics" style="text-decoration: none;">physics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/profiler" style="text-decoration: none;">profiler</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/render" style="text-decoration: none;">render</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/resource" style="text-decoration: none;">resource</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sharedlibrary" style="text-decoration: none;">sharedlibrary</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sound" style="text-decoration: none;">sound</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/spine" style="text-decoration: none;">spine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sprite" style="text-decoration: none;">sprite</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sys" style="text-decoration: none;">sys</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/tilemap" style="text-decoration: none;">tilemap</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/timer" style="text-decoration: none;">timer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/vmath" style="text-decoration: none;">vmath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/window" style="text-decoration: none;">window</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/zlib" style="text-decoration: none;">zlib</a></li></ul><input id="collapsible_c" class="toggle" type="checkbox" />
+					<label for="collapsible_c" class="togglelabel">C</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/dmAlign" style="text-decoration: none;">dmAlign</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmArray" style="text-decoration: none;">dmArray</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmBuffer" style="text-decoration: none;">dmBuffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConditionVariable" style="text-decoration: none;">dmConditionVariable</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConfigFile" style="text-decoration: none;">dmConfigFile</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConnectionPool" style="text-decoration: none;">dmConnectionPool</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmCrypt" style="text-decoration: none;">dmCrypt</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmDNS" style="text-decoration: none;">dmDNS</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmEngine" style="text-decoration: none;">dmEngine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmExtension" style="text-decoration: none;">dmExtension</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGameObject" style="text-decoration: none;">dmGameObject</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGraphics" style="text-decoration: none;">dmGraphics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHash" style="text-decoration: none;">dmHash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHid" style="text-decoration: none;">dmHid</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHttpClient" style="text-decoration: none;">dmHttpClient</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmJson" style="text-decoration: none;">dmJson</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmLog" style="text-decoration: none;">dmLog</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMath" style="text-decoration: none;">dmMath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMutex" style="text-decoration: none;">dmMutex</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSSLSocket" style="text-decoration: none;">dmSSLSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmScript" style="text-decoration: none;">dmScript</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSocket" style="text-decoration: none;">dmSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmStringFunc" style="text-decoration: none;">dmStringFunc</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmThread" style="text-decoration: none;">dmThread</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmTime" style="text-decoration: none;">dmTime</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmURI" style="text-decoration: none;">dmURI</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmWebServer" style="text-decoration: none;">dmWebServer</a></li></ul><input id="collapsible_extension" class="toggle" type="checkbox" />
+					<label for="collapsible_extension" class="togglelabel">Extension</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/extension-adinfo/api" style="text-decoration: none;">extension-adinfo</a></li><li style="padding-bottom: 0px;"><a href="/extension-camera/api" style="text-decoration: none;">extension-camera</a></li><li style="padding-bottom: 0px;"><a href="/extension-facebook/api" style="text-decoration: none;">extension-facebook</a></li><li style="padding-bottom: 0px;"><a href="/extension-fbinstant/api" style="text-decoration: none;">extension-fbinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-firebase-analytics/api" style="text-decoration: none;">extension-firebase-analytics</a></li><li style="padding-bottom: 0px;"><a href="/extension-googleplayinstant/api" style="text-decoration: none;">extension-googleplayinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-gpgs/api" style="text-decoration: none;">extension-gpgs</a></li><li style="padding-bottom: 0px;"><a href="/extension-iap/api" style="text-decoration: none;">extension-iap</a></li><li style="padding-bottom: 0px;"><a href="/extension-push/api" style="text-decoration: none;">extension-push</a></li><li style="padding-bottom: 0px;"><a href="/extension-review/api" style="text-decoration: none;">extension-review</a></li><li style="padding-bottom: 0px;"><a href="/extension-siwa/api" style="text-decoration: none;">extension-siwa</a></li><li style="padding-bottom: 0px;"><a href="/extension-webmonetization/api" style="text-decoration: none;">extension-webmonetization</a></li><li style="padding-bottom: 0px;"><a href="/extension-websocket/api" style="text-decoration: none;">extension-websocket</a></li><li style="padding-bottom: 0px;"><a href="/extension-webview/api" style="text-decoration: none;">extension-webview</a></li></ul><input id="branch" class="toggle" type="checkbox" checked/>
+					<label for="branch" class="togglelabel">Version</label>
+					<ul class="nobullet"><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/alpha/debug/" style="text-decoration: none;">alpha</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/beta/debug/" style="text-decoration: none;">beta</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/stable/debug/" style="font-weight: bolder; font-style: italic; text-decoration: none;">stable</a></li></ul>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/stable/base">base</option><option value="/ref/stable/bit">bit</option><option value="/ref/stable/buffer">buffer</option><option value="/ref/stable/builtins">builtins</option><option value="/ref/stable/camera">camera</option><option value="/ref/stable/collectionfactory">collectionfactory</option><option value="/ref/stable/collectionproxy">collectionproxy</option><option value="/ref/stable/coroutine">coroutine</option><option value="/ref/stable/crash">crash</option><option value="/ref/stable/debug">debug</option><option value="/ref/stable/dmAlign">dmAlign</option><option value="/ref/stable/dmArray">dmArray</option><option value="/ref/stable/dmBuffer">dmBuffer</option><option value="/ref/stable/dmConditionVariable">dmConditionVariable</option><option value="/ref/stable/dmConfigFile">dmConfigFile</option><option value="/ref/stable/dmConnectionPool">dmConnectionPool</option><option value="/ref/stable/dmCrypt">dmCrypt</option><option value="/ref/stable/dmDNS">dmDNS</option><option value="/ref/stable/dmEngine">dmEngine</option><option value="/ref/stable/dmExtension">dmExtension</option><option value="/ref/stable/dmGameObject">dmGameObject</option><option value="/ref/stable/dmGraphics">dmGraphics</option><option value="/ref/stable/dmHash">dmHash</option><option value="/ref/stable/dmHid">dmHid</option><option value="/ref/stable/dmHttpClient">dmHttpClient</option><option value="/ref/stable/dmJson">dmJson</option><option value="/ref/stable/dmLog">dmLog</option><option value="/ref/stable/dmMath">dmMath</option><option value="/ref/stable/dmMutex">dmMutex</option><option value="/ref/stable/dmSSLSocket">dmSSLSocket</option><option value="/ref/stable/dmScript">dmScript</option><option value="/ref/stable/dmSocket">dmSocket</option><option value="/ref/stable/dmStringFunc">dmStringFunc</option><option value="/ref/stable/dmThread">dmThread</option><option value="/ref/stable/dmTime">dmTime</option><option value="/ref/stable/dmURI">dmURI</option><option value="/ref/stable/dmWebServer">dmWebServer</option><option value="/ref/stable/engine">engine</option><option value="/extension-adinfo/api">extension-adinfo</option><option value="/extension-camera/api">extension-camera</option><option value="/extension-facebook/api">extension-facebook</option><option value="/extension-fbinstant/api">extension-fbinstant</option><option value="/extension-firebase-analytics/api">extension-firebase-analytics</option><option value="/extension-googleplayinstant/api">extension-googleplayinstant</option><option value="/extension-gpgs/api">extension-gpgs</option><option value="/extension-iap/api">extension-iap</option><option value="/extension-push/api">extension-push</option><option value="/extension-review/api">extension-review</option><option value="/extension-siwa/api">extension-siwa</option><option value="/extension-webmonetization/api">extension-webmonetization</option><option value="/extension-websocket/api">extension-websocket</option><option value="/extension-webview/api">extension-webview</option><option value="/ref/stable/factory">factory</option><option value="/ref/stable/go">go</option><option value="/ref/stable/gui">gui</option><option value="/ref/stable/html5">html5</option><option value="/ref/stable/http">http</option><option value="/ref/stable/image">image</option><option value="/ref/stable/io">io</option><option value="/ref/stable/json">json</option><option value="/ref/stable/label">label</option><option value="/ref/stable/math">math</option><option value="/ref/stable/model">model</option><option value="/ref/stable/msg">msg</option><option value="/ref/stable/os">os</option><option value="/ref/stable/package">package</option><option value="/ref/stable/particlefx">particlefx</option><option value="/ref/stable/physics">physics</option><option value="/ref/stable/profiler">profiler</option><option value="/ref/stable/render">render</option><option value="/ref/stable/resource">resource</option><option value="/ref/stable/sharedlibrary">sharedlibrary</option><option value="/ref/stable/socket">socket</option><option value="/ref/stable/sound">sound</option><option value="/ref/stable/spine">spine</option><option value="/ref/stable/sprite">sprite</option><option value="/ref/stable/string">string</option><option value="/ref/stable/sys">sys</option><option value="/ref/stable/table">table</option><option value="/ref/stable/tilemap">tilemap</option><option value="/ref/stable/timer">timer</option><option value="/ref/stable/vmath">vmath</option><option value="/ref/stable/window">window</option><option value="/ref/stable/zlib">zlib</option></select>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/debug/">alpha</option><option value="/ref/beta/debug/">beta</option><option value="/ref/stable/debug/">stable</option></select>
+				&nbsp;
+			</div>
+			<div class="columns nine ref scrollable"><h1>Lua debug standard library</h1>
+<p>Version: stable</p><table class="compact">
+	<tr>
+		<th>FUNCTION</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#debug.debug:">debug.debug()</a></td>
+		<td>enters interactive debugging</td>
+	</tr><tr>
+		<td><a href="#debug.getfenv:o">debug.getfenv()</a></td>
+		<td>returns the environment of an object</td>
+	</tr><tr>
+		<td><a href="#debug.gethook:[thread]">debug.gethook()</a></td>
+		<td>returns the current hook settings</td>
+	</tr><tr>
+		<td><a href="#debug.getinfo:[thread]-function-[what]">debug.getinfo()</a></td>
+		<td>returns a table with information about a function</td>
+	</tr><tr>
+		<td><a href="#debug.getlocal:[thread]-level-local">debug.getlocal()</a></td>
+		<td>returns name and value of a local variable</td>
+	</tr><tr>
+		<td><a href="#debug.getmetatable:object">debug.getmetatable()</a></td>
+		<td>returns the metatable of the given object</td>
+	</tr><tr>
+		<td><a href="#debug.getregistry:">debug.getregistry()</a></td>
+		<td>returns the registry table</td>
+	</tr><tr>
+		<td><a href="#debug.getupvalue:func-up">debug.getupvalue()</a></td>
+		<td>returns the name and value of an upvalue</td>
+	</tr><tr>
+		<td><a href="#debug.setfenv:object-table">debug.setfenv()</a></td>
+		<td>sets the environment of an object</td>
+	</tr><tr>
+		<td><a href="#debug.sethook:[thread]-hook-mask-[count]">debug.sethook()</a></td>
+		<td>sets a debug hook function</td>
+	</tr><tr>
+		<td><a href="#debug.setlocal:[thread]-level-local-value">debug.setlocal()</a></td>
+		<td>sets the value of the local variable</td>
+	</tr><tr>
+		<td><a href="#debug.setmetatable:object-table">debug.setmetatable()</a></td>
+		<td>sets the metatable for an object</td>
+	</tr><tr>
+		<td><a href="#debug.setupvalue:func-up-value">debug.setupvalue()</a></td>
+		<td>sets an upvalue for a function</td>
+	</tr><tr>
+		<td><a href="#debug.traceback:[thread]-[message]-[level]">debug.traceback()</a></td>
+		<td>returns a string with a traceback of the stack call</td>
+	</tr></table><h2>Functions</h2><a name="debug.debug:"/>
+		<a name="debug.debug"/>
+		<h4>debug.debug()<a href="#debug.debug:" class="anchor-link"></a></h4>
+		<p><code>debug.debug()</code></p>
+		Enters an interactive mode with the user,
+running each string that the user enters.
+Using simple commands and other debug facilities,
+the user can inspect global and local variables,
+change their values, evaluate expressions, and so on.
+A line containing only the word cont finishes this function,
+so that the caller continues its execution.
+Note that commands for debug.debug are not lexically nested
+within any function, and so have no direct access to local variables.
+		<p><b>PARAMETERS</b></p>
+		<table></table><hr/><a name="debug.getfenv:o"/>
+		<a name="debug.getfenv"/>
+		<h4>debug.getfenv()<a href="#debug.getfenv:o" class="anchor-link"></a></h4>
+		<p><code>debug.getfenv(o)</code></p>
+		Returns the environment of object o.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>o</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.gethook:[thread]"/>
+		<a name="debug.gethook"/>
+		<h4>debug.gethook()<a href="#debug.gethook:[thread]" class="anchor-link"></a></h4>
+		<p><code>debug.gethook([thread])</code></p>
+		Returns the current hook settings of the thread, as three values:
+the current hook function, the current hook mask,
+and the current hook count
+(as set by the debug.sethook function).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[thread]</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.getinfo:[thread]-function-[what]"/>
+		<a name="debug.getinfo"/>
+		<h4>debug.getinfo()<a href="#debug.getinfo:[thread]-function-[what]" class="anchor-link"></a></h4>
+		<p><code>debug.getinfo([thread],function,[what])</code></p>
+		Returns a table with information about a function.
+You can give the function directly,
+or you can give a number as the value of function,
+which means the function running at level function of the call stack
+of the given thread:
+level 0 is the current function (getinfo itself);
+level 1 is the function that called getinfo;
+and so on.
+If function is a number larger than the number of active functions,
+then getinfo returns <span class="type"> nil</span>.
+The returned table can contain all the fields returned by lua_getinfo,
+with the string what describing which fields to fill in.
+The default for what is to get all information available,
+except the table of valid lines.
+If present,
+the option 'f'
+adds a field named func with the function itself.
+If present,
+the option 'L'
+adds a field named activelines with the table of
+valid lines.
+For instance, the expression <code>debug.getinfo(1,"n").name</code> returns
+a table with a name for the current function,
+if a reasonable name can be found,
+and the expression <code>debug.getinfo(print)</code>
+returns a table with all available information
+about the print function.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[thread]</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>function</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>[what]</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.getlocal:[thread]-level-local"/>
+		<a name="debug.getlocal"/>
+		<h4>debug.getlocal()<a href="#debug.getlocal:[thread]-level-local" class="anchor-link"></a></h4>
+		<p><code>debug.getlocal([thread],level,local)</code></p>
+		This function returns the name and the value of the local variable
+with index local of the function at level level of the stack.
+(The first parameter or local variable has index 1, and so on,
+until the last active local variable.)
+The function returns <span class="type"> nil</span> if there is no local
+variable with the given index,
+and raises an error when called with a level out of range.
+(You can call debug.getinfo to check whether the level is valid.)
+Variable names starting with '(' (open parentheses)
+represent internal variables
+(loop control variables, temporaries, and C function locals).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[thread]</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>level</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>local</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.getmetatable:object"/>
+		<a name="debug.getmetatable"/>
+		<h4>debug.getmetatable()<a href="#debug.getmetatable:object" class="anchor-link"></a></h4>
+		<p><code>debug.getmetatable(object)</code></p>
+		Returns the metatable of the given object
+or <span class="type"> nil</span> if it does not have a metatable.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>object</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.getregistry:"/>
+		<a name="debug.getregistry"/>
+		<h4>debug.getregistry()<a href="#debug.getregistry:" class="anchor-link"></a></h4>
+		<p><code>debug.getregistry()</code></p>
+		Returns the registry table .
+		<p><b>PARAMETERS</b></p>
+		<table></table><hr/><a name="debug.getupvalue:func-up"/>
+		<a name="debug.getupvalue"/>
+		<h4>debug.getupvalue()<a href="#debug.getupvalue:func-up" class="anchor-link"></a></h4>
+		<p><code>debug.getupvalue(func,up)</code></p>
+		This function returns the name and the value of the upvalue
+with index up of the function func.
+The function returns <span class="type"> nil</span> if there is no upvalue with the given index.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>func</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>up</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.setfenv:object-table"/>
+		<a name="debug.setfenv"/>
+		<h4>debug.setfenv()<a href="#debug.setfenv:object-table" class="anchor-link"></a></h4>
+		<p><code>debug.setfenv(object,table)</code></p>
+		Sets the environment of the given object to the given table.
+Returns object.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>object</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>table</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.sethook:[thread]-hook-mask-[count]"/>
+		<a name="debug.sethook"/>
+		<h4>debug.sethook()<a href="#debug.sethook:[thread]-hook-mask-[count]" class="anchor-link"></a></h4>
+		<p><code>debug.sethook([thread],hook,mask,[count])</code></p>
+		Sets the given function as a hook.
+The string mask and the number count describe
+when the hook will be called.
+The string mask may have the following characters,
+with the given meaning:
+<dl>
+<dt><code>"c"</code></dt>
+<dd>the hook is called every time Lua calls a function;</dd>
+<dt><code>"r"</code></dt>
+<dd>the hook is called every time Lua returns from a function;</dd>
+<dt><code>"l"</code></dt>
+<dd>the hook is called every time Lua enters a new line of code.</dd>
+</dl>
+With a count different from zero,
+the hook is called after every count instructions.
+When called without arguments,
+debug.sethook turns off the hook.
+When the hook is called, its first parameter is a string
+describing the event that has triggered its call:
+<code>"call"</code>, <code>"return"</code> (or <code>"tail return"</code>,
+when simulating a return from a tail call),
+<code>"line"</code>, and <code>"count"</code>.
+For line events,
+the hook also gets the new line number as its second parameter.
+Inside a hook,
+you can call getinfo with level 2 to get more information about
+the running function
+(level 0 is the getinfo function,
+and level 1 is the hook function),
+unless the event is <code>"tail return"</code>.
+In this case, Lua is only simulating the return,
+and a call to getinfo will return invalid data.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[thread]</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>hook</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>mask</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>[count]</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.setlocal:[thread]-level-local-value"/>
+		<a name="debug.setlocal"/>
+		<h4>debug.setlocal()<a href="#debug.setlocal:[thread]-level-local-value" class="anchor-link"></a></h4>
+		<p><code>debug.setlocal([thread],level,local,value)</code></p>
+		This function assigns the value value to the local variable
+with index local of the function at level level of the stack.
+The function returns <span class="type"> nil</span> if there is no local
+variable with the given index,
+and raises an error when called with a level out of range.
+(You can call getinfo to check whether the level is valid.)
+Otherwise, it returns the name of the local variable.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[thread]</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>level</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>local</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>value</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.setmetatable:object-table"/>
+		<a name="debug.setmetatable"/>
+		<h4>debug.setmetatable()<a href="#debug.setmetatable:object-table" class="anchor-link"></a></h4>
+		<p><code>debug.setmetatable(object,table)</code></p>
+		Sets the metatable for the given object to the given table
+(which can be <span class="type"> nil</span>).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>object</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>table</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.setupvalue:func-up-value"/>
+		<a name="debug.setupvalue"/>
+		<h4>debug.setupvalue()<a href="#debug.setupvalue:func-up-value" class="anchor-link"></a></h4>
+		<p><code>debug.setupvalue(func,up,value)</code></p>
+		This function assigns the value value to the upvalue
+with index up of the function func.
+The function returns <span class="type"> nil</span> if there is no upvalue
+with the given index.
+Otherwise, it returns the name of the upvalue.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>func</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>up</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>value</code></td>
+				<td></td>
+			</tr></table><hr/><a name="debug.traceback:[thread]-[message]-[level]"/>
+		<a name="debug.traceback"/>
+		<h4>debug.traceback()<a href="#debug.traceback:[thread]-[message]-[level]" class="anchor-link"></a></h4>
+		<p><code>debug.traceback([thread],[message],[level])</code></p>
+		Returns a string with a traceback of the call stack.
+An optional message string is appended
+at the beginning of the traceback.
+An optional level number tells at which level
+to start the traceback
+(default is 1, the function calling traceback).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[thread]</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>[message]</code></td>
+				<td></td>
+			</tr><tr>
+				<td><code>[level]</code></td>
+				<td></td>
+			</tr></table><hr/></div>
+		</div>
+	</div>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<script>
+	var query = new URLSearchParams(window.location.search).get('q');
+	if (query) {
+		var instance = new Mark("div.ref");
+		instance.mark(query);
+		var elements = document.getElementsByTagName("mark");
+		if (elements.length > 0) {
+			elements[0].scrollIntoView();
+		}
+	}
+</script>
+<script type="text/javascript">
+	var menu = document.getElementById("navmenu");
+	if (menu != null) {
+		var viewportOffset = menu.getBoundingClientRect();
+		window.onscroll = function() {
+			if (window.pageYOffset > viewportOffset.top) {
+				menu.classList.add("sticky");
+			}
+			else {
+				menu.classList.remove("sticky");
+			}
+		};
+	}
+</script>
+
+	</div>
+
+	<footer class="darkest">
+	<div class="container">
+		<div class="row">
+			<div class="two columns">
+				<p><b>DEFOLD</b></p>
+				<ul>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/foundation">Foundation</a></li>
+					<li><a href="/faq/faq">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>NEWS</b></p>
+				<ul>
+					<li><a href="/press">Press</a></li>
+					<li><a href="/blog">Blog</a></li>
+					<li><a href="/newsletter">Newsletter</a></li>
+					<li><a href="https://forum.defold.com/c/releasenotes">Release announcements</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>GET INVOLVED</b></p>
+				<ul>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="/donate">Donate</a></li>
+					<li><a href="/contribute">Contribute</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEARN</b></p>
+				<ul>
+					<li><a href="/ref/go">API</a></li>
+					<li><a href="/examples">Examples</a></li>
+					<li><a href="/manuals/introduction">Manuals</a></li>
+					<li><a href="/tutorials">Tutorials</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>COMMUNITY</b></p>
+				<ul>
+					<li><a href="https://forum.defold.com" target="_blank">Forum</a></li>
+					<li><a href="/slack">Slack</a></li>
+					<li><a href="https://www.facebook.com/Defold" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/defold" target="_blank">Twitter</a></li>
+					<li><a href="https://www.linkedin.com/company/defold-foundation" target="_blank">LinkedIn</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEGAL</b></p>
+				<ul>
+					<li><a href="/license">License</a></li>
+					<li><a href="/logo-and-trademark">Logo &amp; Trademark</a></li>
+					<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+					<li><a href="/privacy-policy">Privacy Policy</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>Copyright © 2021 Defold Foundation</p>
+		</div>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

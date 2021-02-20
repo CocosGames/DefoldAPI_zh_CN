@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83690-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-83690-3');
+</script>
+<title>API reference (resource)</title>
+
+<!-- Google Structured Data (https://developers.google.com/search/docs/guides/intro-structured-data) -->
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "Organization",
+		"name": "Defold Foundation",
+		"url": "https://www.defold.com",
+		"email": "info@defold.com",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Postbox 6034",
+			"addressLocality": "Hägersten",
+			"addressRegion": "Stockholm",
+			"addressCountry": "Sweden",
+			"postalCode": "12906"
+		},
+		"foundingDate": "2020",
+		"sameAs": [
+			"https://www.facebook.com/Defold",
+			"https://www.twitter.com/defold",
+			"https://www.github.com/defold",
+			"https://www.youtube.com/channel/UCrEYXG15n3V0Y8eK0RbCaLQ"
+		]
+	}
+</script>
+
+<!-- META DATA -->
+<meta name="description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="author" content="Defold Foundation" />
+<meta name="keywords" content="defold, gameengine, game-engine, game-development, game-dev, gamedev, open-source, opensource, crossplatform, cross-platform, free, nintendo-switch, console, html5, web, android, ios, desktop" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://defold.com/ref/stable/resource/">
+<meta property="og:site_name" content="Defold game engine">
+<meta property="og:title" content="API reference (resource)">
+<meta property="og:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta property="og:image" content="https://www.defold.com/images/social/facebook-share.jpg">
+<!-- end OPEN GRAPH -->
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@defold">
+<meta name="twitter:title" content="API reference (resource)">
+<meta name="twitter:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="twitter:image" content="https://www.defold.com/images/social/twitter-share.jpg">
+<!-- end TWITTER -->
+
+<!-- web monetization -->
+<meta name="monetization" content="$ilp.uphold.com/QkG86UgXzKq8">
+
+<!-- FONTS -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+<!-- favicon -->
+<link rel='shortcut icon' type='image/x-icon' href='/images/favicon.ico' />
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+<link rel="stylesheet" type="text/css" href="/css/defold.css">
+<link rel="stylesheet" type="text/css" href="/css/fruity.css">
+<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+<!-- end CSS -->
+
+<!-- SendInBlue CSS -->
+<link rel="stylesheet" type="text/css" href="/css/sendinblue.css">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!-- end SendInBlue CSS -->
+
+</head>
+<body>
+<div id="page">
+	<div id="pagecontent">
+	<div class="nav dark">
+	<div class="container">
+		<div class="row">
+			<div class="eight columns">
+				<ul class="navmenu">
+					<li><nobr><a href="/" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M16 9l-3-3V2h-2v2L8 1 0 9h2l1 5c0 .55.45 1 1 1h8c.55 0 1-.45 1-1l1-5h2zm-4 5H9v-4H7v4H4L2.81 7.69 8 2.5l5.19 5.19L12 14z"/></svg>
+</span>&nbsp; Defold
+</a></nobr></li>
+					<li><a href="/product">Product</a></li>
+					<li><a href="/showcase">Showcase</a></li>
+					<li><a href="/learn">Learn</a></li>
+					<li><a href="/assets">Asset&nbsp;Portal</a></li>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="//forum.defold.com">Forum</a></li>
+					<li style="visibility: hidden"><span class="octicon" style="fill: #FFF; zoom: 1.75; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"/></svg>
+</span>&nbsp;
+ Download</li>
+				</ul>
+				<select class="navdropdown dark-text" onchange="location = this.value;">
+					<option value="/">Home</option>
+					<option value="/product" >Product</option>
+					<option value="/showcase" >Showcase</option>
+					<option value="/learn">Learn</option>
+					<option value="/assets" >Asset Portal</option>
+					<option value="/open" >Open Source</option>
+					<option value="//forum.defold.com">Forum</option>
+					<option value="/donate" >Donate</option>
+					<option value="/download" >Download</option>
+					<option value="https://www.github.com/defold">GitHub</option>
+				</select>
+			</div>
+			<div class="four columns">
+				<ul class="navmenu right">
+					<li><nobr><a href="/donate" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M9 2c-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-1.632.086-2.954 1.333-3 3 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.047-1.69-1.342-2.913-3-3z"/></svg>
+</span>&nbsp; Donate
+</a></nobr></li>
+					<li><nobr><a href="/download" target=""><span class="octicon" style="fill: #FFF; zoom: 1.35; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"><path fill-rule="evenodd" d="M7 7V3H3v4H0l5 6 5-6H7z"/></svg>
+</span>&nbsp; Download
+</a></nobr></li>
+					<li><nobr><a href="https://www.github.com/defold" target="_blank"><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+
+</span>&nbsp; GitHub
+</a></nobr></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+	<div class="nav learn light">
+	<div class="container">
+		<div class="row">
+			<div class="nine columns"><ul class="navmenu">
+					<li><a href="/examples/animation/basic_tween" class="">Examples </a></li>
+					<li><a href="/tutorials/getting-started" class="">Tutorials</a></li>
+					<li><a href="/manuals/introduction" class="">Manuals</a></li>
+					<li><a href="/ref/stable/go" class="bold">API Reference</a></li>
+					<li><a href="/faq/faq" class="">FAQ</a></li>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;">
+					<option value="/examples/animation/basic_tween" >Examples</option>
+					<option value="/tutorials/getting-started" >Tutorials</option>
+					<option value="/manuals/introduction" >Manuals</option>
+					<option value="/ref/stable/go" selected>API Reference</option>
+					<option value="/faq/faq" >FAQ</option>
+				</select>
+				<div class="right navdropdown compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div></div>
+			<div class="three columns">
+				<div class="right navmenu compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section lightest">
+	<div class="container">
+		<div class="row">
+			<div class="columns two">
+				<ul id="navmenu" class="navmenu ref nobullet"><input id="collapsible_lua" class="toggle" type="checkbox" />
+					<label for="collapsible_lua" class="togglelabel">Lua</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/base" style="text-decoration: none;">base</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/bit" style="text-decoration: none;">bit</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/coroutine" style="text-decoration: none;">coroutine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/debug" style="text-decoration: none;">debug</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/io" style="text-decoration: none;">io</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/math" style="text-decoration: none;">math</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/os" style="text-decoration: none;">os</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/package" style="text-decoration: none;">package</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/socket" style="text-decoration: none;">socket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/string" style="text-decoration: none;">string</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/table" style="text-decoration: none;">table</a></li></ul><input id="collapsible_defold" class="toggle" type="checkbox" checked/>
+					<label for="collapsible_defold" class="togglelabel">Defold</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/buffer" style="text-decoration: none;">buffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/builtins" style="text-decoration: none;">builtins</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/camera" style="text-decoration: none;">camera</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionfactory" style="text-decoration: none;">collectionfactory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionproxy" style="text-decoration: none;">collectionproxy</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/crash" style="text-decoration: none;">crash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/engine" style="text-decoration: none;">engine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/factory" style="text-decoration: none;">factory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/go" style="text-decoration: none;">go</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/gui" style="text-decoration: none;">gui</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/html5" style="text-decoration: none;">html5</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/http" style="text-decoration: none;">http</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/image" style="text-decoration: none;">image</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/json" style="text-decoration: none;">json</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/label" style="text-decoration: none;">label</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/model" style="text-decoration: none;">model</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/msg" style="text-decoration: none;">msg</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/particlefx" style="text-decoration: none;">particlefx</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/physics" style="text-decoration: none;">physics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/profiler" style="text-decoration: none;">profiler</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/render" style="text-decoration: none;">render</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/resource" style="font-weight: bolder; font-style: italic; text-decoration: none;">resource</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sharedlibrary" style="text-decoration: none;">sharedlibrary</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sound" style="text-decoration: none;">sound</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/spine" style="text-decoration: none;">spine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sprite" style="text-decoration: none;">sprite</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sys" style="text-decoration: none;">sys</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/tilemap" style="text-decoration: none;">tilemap</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/timer" style="text-decoration: none;">timer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/vmath" style="text-decoration: none;">vmath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/window" style="text-decoration: none;">window</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/zlib" style="text-decoration: none;">zlib</a></li></ul><input id="collapsible_c" class="toggle" type="checkbox" />
+					<label for="collapsible_c" class="togglelabel">C</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/dmAlign" style="text-decoration: none;">dmAlign</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmArray" style="text-decoration: none;">dmArray</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmBuffer" style="text-decoration: none;">dmBuffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConditionVariable" style="text-decoration: none;">dmConditionVariable</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConfigFile" style="text-decoration: none;">dmConfigFile</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConnectionPool" style="text-decoration: none;">dmConnectionPool</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmCrypt" style="text-decoration: none;">dmCrypt</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmDNS" style="text-decoration: none;">dmDNS</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmEngine" style="text-decoration: none;">dmEngine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmExtension" style="text-decoration: none;">dmExtension</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGameObject" style="text-decoration: none;">dmGameObject</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGraphics" style="text-decoration: none;">dmGraphics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHash" style="text-decoration: none;">dmHash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHid" style="text-decoration: none;">dmHid</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHttpClient" style="text-decoration: none;">dmHttpClient</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmJson" style="text-decoration: none;">dmJson</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmLog" style="text-decoration: none;">dmLog</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMath" style="text-decoration: none;">dmMath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMutex" style="text-decoration: none;">dmMutex</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSSLSocket" style="text-decoration: none;">dmSSLSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmScript" style="text-decoration: none;">dmScript</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSocket" style="text-decoration: none;">dmSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmStringFunc" style="text-decoration: none;">dmStringFunc</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmThread" style="text-decoration: none;">dmThread</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmTime" style="text-decoration: none;">dmTime</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmURI" style="text-decoration: none;">dmURI</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmWebServer" style="text-decoration: none;">dmWebServer</a></li></ul><input id="collapsible_extension" class="toggle" type="checkbox" />
+					<label for="collapsible_extension" class="togglelabel">Extension</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/extension-adinfo/api" style="text-decoration: none;">extension-adinfo</a></li><li style="padding-bottom: 0px;"><a href="/extension-camera/api" style="text-decoration: none;">extension-camera</a></li><li style="padding-bottom: 0px;"><a href="/extension-facebook/api" style="text-decoration: none;">extension-facebook</a></li><li style="padding-bottom: 0px;"><a href="/extension-fbinstant/api" style="text-decoration: none;">extension-fbinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-firebase-analytics/api" style="text-decoration: none;">extension-firebase-analytics</a></li><li style="padding-bottom: 0px;"><a href="/extension-googleplayinstant/api" style="text-decoration: none;">extension-googleplayinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-gpgs/api" style="text-decoration: none;">extension-gpgs</a></li><li style="padding-bottom: 0px;"><a href="/extension-iap/api" style="text-decoration: none;">extension-iap</a></li><li style="padding-bottom: 0px;"><a href="/extension-push/api" style="text-decoration: none;">extension-push</a></li><li style="padding-bottom: 0px;"><a href="/extension-review/api" style="text-decoration: none;">extension-review</a></li><li style="padding-bottom: 0px;"><a href="/extension-siwa/api" style="text-decoration: none;">extension-siwa</a></li><li style="padding-bottom: 0px;"><a href="/extension-webmonetization/api" style="text-decoration: none;">extension-webmonetization</a></li><li style="padding-bottom: 0px;"><a href="/extension-websocket/api" style="text-decoration: none;">extension-websocket</a></li><li style="padding-bottom: 0px;"><a href="/extension-webview/api" style="text-decoration: none;">extension-webview</a></li></ul><input id="branch" class="toggle" type="checkbox" checked/>
+					<label for="branch" class="togglelabel">Version</label>
+					<ul class="nobullet"><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/alpha/resource/" style="text-decoration: none;">alpha</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/beta/resource/" style="text-decoration: none;">beta</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/stable/resource/" style="font-weight: bolder; font-style: italic; text-decoration: none;">stable</a></li></ul>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/stable/base">base</option><option value="/ref/stable/bit">bit</option><option value="/ref/stable/buffer">buffer</option><option value="/ref/stable/builtins">builtins</option><option value="/ref/stable/camera">camera</option><option value="/ref/stable/collectionfactory">collectionfactory</option><option value="/ref/stable/collectionproxy">collectionproxy</option><option value="/ref/stable/coroutine">coroutine</option><option value="/ref/stable/crash">crash</option><option value="/ref/stable/debug">debug</option><option value="/ref/stable/dmAlign">dmAlign</option><option value="/ref/stable/dmArray">dmArray</option><option value="/ref/stable/dmBuffer">dmBuffer</option><option value="/ref/stable/dmConditionVariable">dmConditionVariable</option><option value="/ref/stable/dmConfigFile">dmConfigFile</option><option value="/ref/stable/dmConnectionPool">dmConnectionPool</option><option value="/ref/stable/dmCrypt">dmCrypt</option><option value="/ref/stable/dmDNS">dmDNS</option><option value="/ref/stable/dmEngine">dmEngine</option><option value="/ref/stable/dmExtension">dmExtension</option><option value="/ref/stable/dmGameObject">dmGameObject</option><option value="/ref/stable/dmGraphics">dmGraphics</option><option value="/ref/stable/dmHash">dmHash</option><option value="/ref/stable/dmHid">dmHid</option><option value="/ref/stable/dmHttpClient">dmHttpClient</option><option value="/ref/stable/dmJson">dmJson</option><option value="/ref/stable/dmLog">dmLog</option><option value="/ref/stable/dmMath">dmMath</option><option value="/ref/stable/dmMutex">dmMutex</option><option value="/ref/stable/dmSSLSocket">dmSSLSocket</option><option value="/ref/stable/dmScript">dmScript</option><option value="/ref/stable/dmSocket">dmSocket</option><option value="/ref/stable/dmStringFunc">dmStringFunc</option><option value="/ref/stable/dmThread">dmThread</option><option value="/ref/stable/dmTime">dmTime</option><option value="/ref/stable/dmURI">dmURI</option><option value="/ref/stable/dmWebServer">dmWebServer</option><option value="/ref/stable/engine">engine</option><option value="/extension-adinfo/api">extension-adinfo</option><option value="/extension-camera/api">extension-camera</option><option value="/extension-facebook/api">extension-facebook</option><option value="/extension-fbinstant/api">extension-fbinstant</option><option value="/extension-firebase-analytics/api">extension-firebase-analytics</option><option value="/extension-googleplayinstant/api">extension-googleplayinstant</option><option value="/extension-gpgs/api">extension-gpgs</option><option value="/extension-iap/api">extension-iap</option><option value="/extension-push/api">extension-push</option><option value="/extension-review/api">extension-review</option><option value="/extension-siwa/api">extension-siwa</option><option value="/extension-webmonetization/api">extension-webmonetization</option><option value="/extension-websocket/api">extension-websocket</option><option value="/extension-webview/api">extension-webview</option><option value="/ref/stable/factory">factory</option><option value="/ref/stable/go">go</option><option value="/ref/stable/gui">gui</option><option value="/ref/stable/html5">html5</option><option value="/ref/stable/http">http</option><option value="/ref/stable/image">image</option><option value="/ref/stable/io">io</option><option value="/ref/stable/json">json</option><option value="/ref/stable/label">label</option><option value="/ref/stable/math">math</option><option value="/ref/stable/model">model</option><option value="/ref/stable/msg">msg</option><option value="/ref/stable/os">os</option><option value="/ref/stable/package">package</option><option value="/ref/stable/particlefx">particlefx</option><option value="/ref/stable/physics">physics</option><option value="/ref/stable/profiler">profiler</option><option value="/ref/stable/render">render</option><option value="/ref/stable/resource">resource</option><option value="/ref/stable/sharedlibrary">sharedlibrary</option><option value="/ref/stable/socket">socket</option><option value="/ref/stable/sound">sound</option><option value="/ref/stable/spine">spine</option><option value="/ref/stable/sprite">sprite</option><option value="/ref/stable/string">string</option><option value="/ref/stable/sys">sys</option><option value="/ref/stable/table">table</option><option value="/ref/stable/tilemap">tilemap</option><option value="/ref/stable/timer">timer</option><option value="/ref/stable/vmath">vmath</option><option value="/ref/stable/window">window</option><option value="/ref/stable/zlib">zlib</option></select>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/resource/">alpha</option><option value="/ref/beta/resource/">beta</option><option value="/ref/stable/resource/">stable</option></select>
+				&nbsp;
+			</div>
+			<div class="columns nine ref scrollable"><h1>Resource API documentation</h1>
+<p>Version: stable</p><table class="compact">
+	<tr>
+		<th>FUNCTION</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#resource.material:[path]">resource.material()</a></td>
+		<td>reference to material resource</td>
+	</tr><tr>
+		<td><a href="#resource.font:[path]">resource.font()</a></td>
+		<td>reference to font resource</td>
+	</tr><tr>
+		<td><a href="#resource.texture:[path]">resource.texture()</a></td>
+		<td>reference to texture resource</td>
+	</tr><tr>
+		<td><a href="#resource.atlas:[path]">resource.atlas()</a></td>
+		<td>reference to atlas resource</td>
+	</tr><tr>
+		<td><a href="#resource.buffer:[path]">resource.buffer()</a></td>
+		<td>reference to buffer resource</td>
+	</tr><tr>
+		<td><a href="#resource.tile_source:[path]">resource.tile_source()</a></td>
+		<td>reference to tile source resource</td>
+	</tr><tr>
+		<td><a href="#resource.set:path-buffer">resource.set()</a></td>
+		<td>Set a resource</td>
+	</tr><tr>
+		<td><a href="#resource.load:path">resource.load()</a></td>
+		<td>load a resource</td>
+	</tr><tr>
+		<td><a href="#resource.set_texture:path-table-buffer">resource.set_texture()</a></td>
+		<td>set a texture</td>
+	</tr><tr>
+		<td><a href="#resource.get_buffer:path">resource.get_buffer()</a></td>
+		<td>get resource buffer</td>
+	</tr><tr>
+		<td><a href="#resource.set_buffer:path-buffer">resource.set_buffer()</a></td>
+		<td>set resource buffer</td>
+	</tr><tr>
+		<td><a href="#resource.get_current_manifest:">resource.get_current_manifest()</a></td>
+		<td>return a reference to the Manifest that is currently loaded</td>
+	</tr><tr>
+		<td><a href="#resource.store_resource:manifest_reference-data-hexdigest-callback">resource.store_resource()</a></td>
+		<td>add a resource to the data archive and runtime index</td>
+	</tr><tr>
+		<td><a href="#resource.store_manifest:manifest_buffer-callback">resource.store_manifest()</a></td>
+		<td>create, verify, and store a manifest to device</td>
+	</tr><tr>
+		<td><a href="#resource.store_archive:path-callback">resource.store_archive()</a></td>
+		<td>register and store a live update zip file</td>
+	</tr><tr>
+		<td><a href="#resource.is_using_liveupdate_data:">resource.is_using_liveupdate_data()</a></td>
+		<td>is any liveupdate data mounted and currently in use</td>
+	</tr></table><table class="compact">
+	<tr>
+		<th>CONSTANT</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#resource.TEXTURE_TYPE_2D">resource.TEXTURE_TYPE_2D</a></td>
+		<td>2D texture type</td>
+	</tr><tr>
+		<td><a href="#resource.TEXTURE_FORMAT_LUMINANCE">resource.TEXTURE_FORMAT_LUMINANCE</a></td>
+		<td>luminance type texture format</td>
+	</tr><tr>
+		<td><a href="#resource.TEXTURE_FORMAT_RGB">resource.TEXTURE_FORMAT_RGB</a></td>
+		<td>RGB type texture format</td>
+	</tr><tr>
+		<td><a href="#resource.TEXTURE_FORMAT_RGBA">resource.TEXTURE_FORMAT_RGBA</a></td>
+		<td>RGBA type texture format</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_OK">resource.LIVEUPDATE_OK</a></td>
+		<td>LIVEUPDATE_OK</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_INVALID_RESOURCE">resource.LIVEUPDATE_INVALID_RESOURCE</a></td>
+		<td>LIVEUPDATE_INVALID_RESOURCE</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_VERSION_MISMATCH">resource.LIVEUPDATE_VERSION_MISMATCH</a></td>
+		<td>LIVEUPDATE_VERSION_MISMATCH</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_ENGINE_VERSION_MISMATCH">resource.LIVEUPDATE_ENGINE_VERSION_MISMATCH</a></td>
+		<td>LIVEUPDATE_ENGINE_VERSION_MISMATCH</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_SIGNATURE_MISMATCH">resource.LIVEUPDATE_SIGNATURE_MISMATCH</a></td>
+		<td>LIVEUPDATE_SIGNATURE_MISMATCH</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_SCHEME_MISMATCH">resource.LIVEUPDATE_SCHEME_MISMATCH</a></td>
+		<td>LIVEUPDATE_SCHEME_MISMATCH</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH">resource.LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH</a></td>
+		<td>LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH</td>
+	</tr><tr>
+		<td><a href="#resource.LIVEUPDATE_FORMAT_ERROR">resource.LIVEUPDATE_FORMAT_ERROR</a></td>
+		<td>LIVEUPDATE_FORMAT_ERROR</td>
+	</tr></table><h2>Functions</h2><a name="resource.material:[path]"/>
+		<a name="resource.material"/>
+		<h4>resource.material()<a href="#resource.material:[path]" class="anchor-link"></a></h4>
+		<p><code>resource.material([path])</code></p>
+		Constructor-like function with two purposes:
+<ul>
+<li>Load the specified resource as part of loading the script</li>
+<li>Return a hash to the run-time version of the resource</li>
+</ul>
+<span class="icon-attention"></span> This function can only be called within <a href="/ref/go#go.property">go.property</a> function calls.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[path]</code></td>
+				<td>optional resource path string to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>a path hash to the binary version of the resource</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Load a material and set it to a sprite:
+<div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_material&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">material</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/material.material&quot;</span><span class="p">))</span>
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#sprite&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">material&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_material</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.font:[path]"/>
+		<a name="resource.font"/>
+		<h4>resource.font()<a href="#resource.font:[path]" class="anchor-link"></a></h4>
+		<p><code>resource.font([path])</code></p>
+		Constructor-like function with two purposes:
+<ul>
+<li>Load the specified resource as part of loading the script</li>
+<li>Return a hash to the run-time version of the resource</li>
+</ul>
+<span class="icon-attention"></span> This function can only be called within <a href="/ref/go#go.property">go.property</a> function calls.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[path]</code></td>
+				<td>optional resource path string to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>a path hash to the binary version of the resource</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Load a font and set it to a label:
+<div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_font&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">font</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/font.font&quot;</span><span class="p">))</span>
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#label&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">font&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_font</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.texture:[path]"/>
+		<a name="resource.texture"/>
+		<h4>resource.texture()<a href="#resource.texture:[path]" class="anchor-link"></a></h4>
+		<p><code>resource.texture([path])</code></p>
+		Constructor-like function with two purposes:
+<ul>
+<li>Load the specified resource as part of loading the script</li>
+<li>Return a hash to the run-time version of the resource</li>
+</ul>
+<span class="icon-attention"></span> This function can only be called within <a href="/ref/go#go.property">go.property</a> function calls.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[path]</code></td>
+				<td>optional resource path string to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>a path hash to the binary version of the resource</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Load a texture and set it to a model:
+<div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_texture&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">texture</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/texture.png&quot;</span><span class="p">))</span>
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#model&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">texture0&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_texture</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.atlas:[path]"/>
+		<a name="resource.atlas"/>
+		<h4>resource.atlas()<a href="#resource.atlas:[path]" class="anchor-link"></a></h4>
+		<p><code>resource.atlas([path])</code></p>
+		Constructor-like function with two purposes:
+<ul>
+<li>Load the specified resource as part of loading the script</li>
+<li>Return a hash to the run-time version of the resource</li>
+</ul>
+<span class="icon-attention"></span> This function can only be called within <a href="/ref/go#go.property">go.property</a> function calls.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[path]</code></td>
+				<td>optional resource path string to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>a path hash to the binary version of the resource</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Load an atlas and set it to a sprite:
+<div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_atlas&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">atlas</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/atlas.atlas&quot;</span><span class="p">))</span>
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#sprite&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">image&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_atlas</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.buffer:[path]"/>
+		<a name="resource.buffer"/>
+		<h4>resource.buffer()<a href="#resource.buffer:[path]" class="anchor-link"></a></h4>
+		<p><code>resource.buffer([path])</code></p>
+		Constructor-like function with two purposes:
+<ul>
+<li>Load the specified resource as part of loading the script</li>
+<li>Return a hash to the run-time version of the resource</li>
+</ul>
+<span class="icon-attention"></span> This function can only be called within <a href="/ref/go#go.property">go.property</a> function calls.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[path]</code></td>
+				<td>optional resource path string to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>a path hash to the binary version of the resource</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Set a unique buffer it to a sprite:
+<div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_buffer&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">buffer</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/cube.buffer&quot;</span><span class="p">))</span>
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#mesh&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">vertices&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_buffer</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.tile_source:[path]"/>
+		<a name="resource.tile_source"/>
+		<h4>resource.tile_source()<a href="#resource.tile_source:[path]" class="anchor-link"></a></h4>
+		<p><code>resource.tile_source([path])</code></p>
+		Constructor-like function with two purposes:
+<ul>
+<li>Load the specified resource as part of loading the script</li>
+<li>Return a hash to the run-time version of the resource</li>
+</ul>
+<span class="icon-attention"></span> This function can only be called within <a href="/ref/go#go.property">go.property</a> function calls.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[path]</code></td>
+				<td>optional resource path string to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>a path hash to the binary version of the resource</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Load tile source and set it to a tile map:
+<div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_tile_source&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">tile_source</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/tilesource.tilesource&quot;</span><span class="p">))</span>
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#tilemap&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">tile_source&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_tile_source</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.set:path-buffer"/>
+		<a name="resource.set"/>
+		<h4>resource.set()<a href="#resource.set:path-buffer" class="anchor-link"></a></h4>
+		<p><code>resource.set(path,buffer)</code></p>
+		Sets the resource data for a specific resource
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>The path to the resource</td>
+			</tr><tr>
+				<td><code>buffer</code></td>
+				<td>The buffer of precreated data, suitable for the intended resource type</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Assuming the folder "/res" is added to the project custom resources:
+<div class="codehilite"><pre><span></span><span class="c1">-- load a texture resource and set it on a sprite</span>
+<span class="kd">local</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">resource</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/res/new.texturec&quot;</span><span class="p">)</span>
+<span class="n">resource</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">go</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#sprite&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">texture0&quot;</span><span class="p">),</span> <span class="n">buffer</span><span class="p">)</span>
+</pre></div><hr/><a name="resource.load:path"/>
+		<a name="resource.load"/>
+		<h4>resource.load()<a href="#resource.load:path" class="anchor-link"></a></h4>
+		<p><code>resource.load(path)</code></p>
+		Loads the resource data for a specific resource.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>The path to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>buffer</code></td>
+				<td>Returns the buffer stored on disc</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- read custom resource data into buffer</span>
+<span class="kd">local</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">resource</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/resources/datafile&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+In order for the engine to include custom resources in the build process, you need
+to specify them in the "game.project" settings file:
+<div class="codehilite"><pre><span></span><span class="k">[project]</span>
+<span class="na">title</span> <span class="o">=</span> <span class="s">My project</span>
+<span class="na">version</span> <span class="o">=</span> <span class="s">0.1</span>
+<span class="na">custom_resources</span> <span class="o">=</span> <span class="s">resources/,assets/level_data.json</span>
+</pre></div><hr/><a name="resource.set_texture:path-table-buffer"/>
+		<a name="resource.set_texture"/>
+		<h4>resource.set_texture()<a href="#resource.set_texture:path-table-buffer" class="anchor-link"></a></h4>
+		<p><code>resource.set_texture(path,table,buffer)</code></p>
+		Sets the pixel data for a specific texture.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>The path to the resource</td>
+			</tr><tr>
+				<td><code>table</code></td>
+				<td>A table containing info about the texture. Supported entries:
+<dl>
+<dt><code>type</code></dt>
+<dd><span class="type">number</span> The texture type. Supported values:</dd>
+</dl>
+<ul>
+<li><code>resource.TEXTURE_TYPE_2D</code></li>
+</ul>
+<dl>
+<dt><code>width</code></dt>
+<dd><span class="type">number</span> The width of the texture (in pixels)</dd>
+<dt><code>height</code></dt>
+<dd><span class="type">number</span> The width of the texture (in pixels)</dd>
+<dt><code>format</code></dt>
+<dd><span class="type">number</span> The texture format. Supported values:</dd>
+</dl>
+<ul>
+<li><code>resource.TEXTURE_FORMAT_LUMINANCE</code></li>
+<li><code>resource.TEXTURE_FORMAT_RGB</code></li>
+<li><code>resource.TEXTURE_FORMAT_RGBA</code></li>
+</ul></td>
+			</tr><tr>
+				<td><code>buffer</code></td>
+				<td>The buffer of precreated pixel data
+<span class="icon-attention"></span> Currently, only 1 mipmap is generated.</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to set all pixels of an atlas
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">128</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">128</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="p">{</span> <span class="p">{</span><span class="n">name</span><span class="o">=</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">rgb&quot;</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="n">buffer</span><span class="p">.</span><span class="n">VALUE_TYPE_UINT8</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">}</span> <span class="p">}</span> <span class="p">)</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">stream</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">.</span><span class="n">get_stream</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">buffer</span><span class="p">,</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">rgb&quot;</span><span class="p">))</span>
+
+  <span class="k">for</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">height</span> <span class="k">do</span>
+      <span class="k">for</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="k">do</span>
+          <span class="kd">local</span> <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+          <span class="n">self</span><span class="p">.</span><span class="n">stream</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xff</span>
+          <span class="n">self</span><span class="p">.</span><span class="n">stream</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x80</span>
+          <span class="n">self</span><span class="p">.</span><span class="n">stream</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x10</span>
+      <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="kd">local</span> <span class="n">resource_path</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#sprite&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">texture0&quot;</span><span class="p">)</span>
+  <span class="kd">local</span> <span class="n">header</span> <span class="o">=</span> <span class="p">{</span> <span class="n">width</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">resource</span><span class="p">.</span><span class="n">TEXTURE_TYPE_2D</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="n">resource</span><span class="p">.</span><span class="n">TEXTURE_FORMAT_RGB</span><span class="p">,</span> <span class="n">num_mip_maps</span><span class="o">=</span><span class="mi">1</span> <span class="p">}</span>
+  <span class="n">resource</span><span class="p">.</span><span class="n">set_texture</span><span class="p">(</span> <span class="n">resource_path</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">buffer</span> <span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.get_buffer:path"/>
+		<a name="resource.get_buffer"/>
+		<h4>resource.get_buffer()<a href="#resource.get_buffer:path" class="anchor-link"></a></h4>
+		<p><code>resource.get_buffer(path)</code></p>
+		gets the buffer from a resource
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>The path to the resource</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>buffer</code></td>
+				<td>The resource buffer</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to get the data from a buffer
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+
+    <span class="kd">local</span> <span class="n">res_path</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#mesh&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">vertices&quot;</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">resource</span><span class="p">.</span><span class="n">get_buffer</span><span class="p">(</span><span class="n">res_path</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">stream_positions</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">.</span><span class="n">get_stream</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">buffer</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">position&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="o">#</span><span class="n">stream_positions</span> <span class="k">do</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">stream_positions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.set_buffer:path-buffer"/>
+		<a name="resource.set_buffer"/>
+		<h4>resource.set_buffer()<a href="#resource.set_buffer:path-buffer" class="anchor-link"></a></h4>
+		<p><code>resource.set_buffer(path,buffer)</code></p>
+		sets the buffer of a resource
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>The path to the resource</td>
+			</tr><tr>
+				<td><code>buffer</code></td>
+				<td>The resource buffer</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to set the data from a buffer
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">fill_stream</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">verts</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">verts</span><span class="p">)</span> <span class="k">do</span>
+        <span class="n">stream</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">verts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+
+    <span class="kd">local</span> <span class="n">res_path</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#mesh&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">vertices&quot;</span><span class="p">)</span>
+
+    <span class="kd">local</span> <span class="n">positions</span> <span class="o">=</span> <span class="p">{</span>
+         <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="p">}</span>
+
+    <span class="kd">local</span> <span class="n">num_verts</span> <span class="o">=</span> <span class="o">#</span><span class="n">positions</span> <span class="o">/</span> <span class="mi">3</span>
+
+    <span class="c1">-- create a new buffer</span>
+    <span class="kd">local</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">num_verts</span><span class="p">,</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">position&quot;</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="n">buffer</span><span class="p">.</span><span class="n">VALUE_TYPE_FLOAT32</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">}</span>
+    <span class="p">})</span>
+
+    <span class="kd">local</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">resource</span><span class="p">.</span><span class="n">get_buffer</span><span class="p">(</span><span class="n">res_path</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">stream_positions</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">.</span><span class="n">get_stream</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">position&quot;</span><span class="p">)</span>
+
+    <span class="n">fill_stream</span><span class="p">(</span><span class="n">stream_positions</span><span class="p">,</span> <span class="n">positions</span><span class="p">)</span>
+
+    <span class="n">resource</span><span class="p">.</span><span class="n">set_buffer</span><span class="p">(</span><span class="n">res_path</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.get_current_manifest:"/>
+		<a name="resource.get_current_manifest"/>
+		<h4>resource.get_current_manifest()<a href="#resource.get_current_manifest:" class="anchor-link"></a></h4>
+		<p><code>resource.get_current_manifest()</code></p>
+		Return a reference to the Manifest that is currently loaded.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>manifest_reference</code></td>
+				<td>reference to the Manifest that is currently loaded</td>
+			</tr></table><hr/><a name="resource.store_resource:manifest_reference-data-hexdigest-callback"/>
+		<a name="resource.store_resource"/>
+		<h4>resource.store_resource()<a href="#resource.store_resource:manifest_reference-data-hexdigest-callback" class="anchor-link"></a></h4>
+		<p><code>resource.store_resource(manifest_reference,data,hexdigest,callback)</code></p>
+		add a resource to the data archive and runtime index. The resource will be verified
+internally before being added to the data archive.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>manifest_reference</code></td>
+				<td>The manifest to check against.</td>
+			</tr><tr>
+				<td><code>data</code></td>
+				<td>The resource data that should be stored.</td>
+			</tr><tr>
+				<td><code>hexdigest</code></td>
+				<td>The expected hash for the resource,
+retrieved through collectionproxy.missing_resources.</td>
+			</tr><tr>
+				<td><code>callback</code></td>
+				<td>The callback
+function that is executed once the engine has been attempted to store
+the resource.
+<dl>
+<dt><code>self</code></dt>
+<dd><span class="type">object</span> The current object.</dd>
+<dt><code>hexdigest</code></dt>
+<dd><span class="type">string</span> The hexdigest of the resource.</dd>
+<dt><code>status</code></dt>
+<dd><span class="type">boolean</span> Whether or not the resource was successfully stored.</dd>
+</dl></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">manifest</span> <span class="o">=</span> <span class="n">resource</span><span class="p">.</span><span class="n">get_current_manifest</span><span class="p">()</span>
+<span class="k">end</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">callback_store_resource</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">hexdigest</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="kc">true</span> <span class="k">then</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Successfully stored resource: &quot;</span> <span class="o">..</span> <span class="n">hexdigest</span><span class="p">)</span>
+     <span class="k">else</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Failed to store resource: &quot;</span> <span class="o">..</span> <span class="n">hexdigest</span><span class="p">)</span>
+     <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">load_resources</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+     <span class="kd">local</span> <span class="n">resources</span> <span class="o">=</span> <span class="n">collectionproxy</span><span class="p">.</span><span class="n">missing_resources</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">resource_hash</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">resources</span><span class="p">)</span> <span class="k">do</span>
+          <span class="kd">local</span> <span class="n">baseurl</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">http://example.defold.com:8000/&quot;</span>
+          <span class="n">http</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">baseurl</span> <span class="o">..</span> <span class="n">resource_hash</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">GET&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+               <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">200</span> <span class="k">then</span>
+                    <span class="n">resource</span><span class="p">.</span><span class="n">store_resource</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">manifest</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">response</span><span class="p">,</span> <span class="n">resource_hash</span><span class="p">,</span> <span class="n">callback_store_resource</span><span class="p">)</span>
+               <span class="k">else</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Failed to download resource: &quot;</span> <span class="o">..</span> <span class="n">resource_hash</span><span class="p">)</span>
+               <span class="k">end</span>
+          <span class="k">end</span><span class="p">)</span>
+     <span class="k">end</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.store_manifest:manifest_buffer-callback"/>
+		<a name="resource.store_manifest"/>
+		<h4>resource.store_manifest()<a href="#resource.store_manifest:manifest_buffer-callback" class="anchor-link"></a></h4>
+		<p><code>resource.store_manifest(manifest_buffer,callback)</code></p>
+		Create a new manifest from a buffer. The created manifest is verified
+by ensuring that the manifest was signed using the bundled public/private
+key-pair during the bundle process and that the manifest supports the current
+running engine version. Once the manifest is verified it is stored on device.
+The next time the engine starts (or is rebooted) it will look for the stored
+manifest before loading resources. Storing a new manifest allows the
+developer to update the game, modify existing resources, or add new
+resources to the game through LiveUpdate.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>manifest_buffer</code></td>
+				<td>the binary data that represents the manifest</td>
+			</tr><tr>
+				<td><code>callback</code></td>
+				<td>the callback function
+executed once the engine has attempted to store the manifest.
+<dl>
+<dt><code>self</code></dt>
+<dd><span class="type">object</span> The current object.</dd>
+<dt><code>status</code></dt>
+<dd><span class="type">constant</span> the status of the store operation:</dd>
+</dl>
+<ul>
+<li><code>resource.LIVEUPATE_OK</code></li>
+<li><code>resource.LIVEUPATE_INVALID_RESOURCE</code></li>
+<li><code>resource.LIVEUPATE_VERSION_MISMATCH</code></li>
+<li><code>resource.LIVEUPATE_ENGINE_VERSION_MISMATCH</code></li>
+<li><code>resource.LIVEUPATE_SIGNATURE_MISMATCH</code></li>
+<li><code>resource.LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH</code></li>
+<li><code>resource.LIVEUPDATE_FORMAT_ERROR</code></li>
+</ul></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to download a manifest with HTTP and store it on device.
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">store_manifest_cb</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">resource</span><span class="p">.</span><span class="n">LIVEUPATE_OK</span> <span class="k">then</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Successfully stored manifest. This manifest will be loaded instead of the bundled manifest the next time the engine starts.&quot;</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Failed to store manifest&quot;</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">download_and_store_manifest</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+  <span class="n">http</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">MANIFEST_URL</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">GET&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">200</span> <span class="k">then</span>
+        <span class="n">resource</span><span class="p">.</span><span class="n">store_manifest</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">response</span><span class="p">,</span> <span class="n">store_manifest_cb</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div><hr/><a name="resource.store_archive:path-callback"/>
+		<a name="resource.store_archive"/>
+		<h4>resource.store_archive()<a href="#resource.store_archive:path-callback" class="anchor-link"></a></h4>
+		<p><code>resource.store_archive(path,callback)</code></p>
+		Stores a zip file and uses it for live update content.
+The path is renamed and stored in the (internal) live update location
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>path</code></td>
+				<td>the path to the original file on disc</td>
+			</tr><tr>
+				<td><code>callback</code></td>
+				<td>the callback function
+executed after the storage has completed
+<dl>
+<dt><code>self</code></dt>
+<dd><span class="type">object</span> The current object.</dd>
+<dt><code>status</code></dt>
+<dd><span class="type">constant</span> the status of the store operation (See resource.store_manifest)</dd>
+</dl></td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to download an archive with HTTP and store it on device.
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">LIVEUPDATE_URL</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">file</span> <span class="n">server</span> <span class="n">url</span><span class="o">&gt;</span>
+
+<span class="c1">-- This can be anything, but you should keep the platform bundles apart</span>
+<span class="kd">local</span> <span class="n">ZIP_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">defold.resourcepack.zip&#39;</span>
+
+<span class="kd">local</span> <span class="n">APP_SAVE_DIR</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">LiveUpdateDemo&quot;</span>
+
+<span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">proxy</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">levels#level1&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">INIT: is_using_liveupdate_data:&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">is_using_liveupdate_data</span><span class="p">())</span>
+    <span class="c1">-- let&#39;s download the archive</span>
+    <span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">attempt_download_archive&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1">-- helper function to store headers from the http request (e.g. the ETag)</span>
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">store_http_response_headers</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">path</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">get_save_file</span><span class="p">(</span><span class="n">APP_SAVE_DIR</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">load_http_response_headers</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">path</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">get_save_file</span><span class="p">(</span><span class="n">APP_SAVE_DIR</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sys</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1">-- returns headers that can potentially generate a 304</span>
+<span class="c1">-- without redownloading the file again</span>
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">get_http_request_headers</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="n">load_http_response_headers</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">do</span>
+        <span class="k">if</span> <span class="nb">string.lower</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="s">etag&#39;</span> <span class="k">then</span>
+            <span class="n">headers</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">If-None-Match&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">elseif</span> <span class="nb">string.lower</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="s">last-modified&#39;</span> <span class="k">then</span>
+            <span class="n">headers</span><span class="p">[</span><span class="s1">&#39;</span><span class="s">If-Modified-Since&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="n">headers</span>
+<span class="k">end</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">store_archive_cb</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="kc">true</span> <span class="k">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Successfully stored live update archive!&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+        <span class="n">sys</span><span class="p">.</span><span class="n">reboot</span><span class="p">()</span>
+    <span class="k">else</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Failed to store live update archive, &quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+        <span class="c1">-- remove the path</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">message_id</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">message_id</span> <span class="o">==</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">attempt_download_archive&quot;</span><span class="p">)</span> <span class="k">then</span>
+
+        <span class="c1">-- by supplying the ETag, we don&#39;t have to redownload the file again</span>
+        <span class="c1">-- if we already have downloaded it.</span>
+        <span class="kd">local</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">get_http_request_headers</span><span class="p">(</span><span class="n">ZIP_FILENAME</span> <span class="o">..</span> <span class="s1">&#39;</span><span class="s">.json&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">resource</span><span class="p">.</span><span class="n">is_using_liveupdate_data</span><span class="p">()</span> <span class="k">then</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">-- live update data has been purged, and we need do a fresh download</span>
+        <span class="k">end</span>
+
+        <span class="kd">local</span> <span class="n">path</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">get_save_file</span><span class="p">(</span><span class="n">APP_SAVE_DIR</span><span class="p">,</span> <span class="n">ZIP_FILENAME</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">,</span>        <span class="c1">-- a temporary file on disc. will be removed upon successful liveupdate storage</span>
+            <span class="n">ignore_cache</span> <span class="o">=</span> <span class="kc">true</span> <span class="c1">-- we don&#39;t want to store a (potentially large) duplicate in our http cache</span>
+        <span class="p">}</span>
+
+        <span class="kd">local</span> <span class="n">url</span> <span class="o">=</span> <span class="n">LIVEUPDATE_URL</span> <span class="o">..</span> <span class="n">ZIP_FILENAME</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Downloading&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">http</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">GET&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">304</span> <span class="k">then</span>
+                <span class="nb">print</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">%d: Archive zip file up-to-date&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">))</span>
+            <span class="k">elseif</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">200</span> <span class="ow">and</span> <span class="n">response</span><span class="p">.</span><span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">then</span>
+                <span class="c1">-- register the path to the live update system</span>
+                <span class="n">resource</span><span class="p">.</span><span class="n">store_archive</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">path</span><span class="p">,</span> <span class="n">store_archive_cb</span><span class="p">)</span>
+                <span class="c1">-- at this point, the &quot;path&quot; has been moved internally to a different location</span>
+
+                <span class="c1">-- save the ETag for the next run</span>
+                <span class="n">store_http_response_headers</span><span class="p">(</span><span class="n">ZIP_FILENAME</span> <span class="o">..</span> <span class="s1">&#39;</span><span class="s">.json&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">headers</span><span class="p">)</span>
+            <span class="k">else</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">Error when downloading&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">to&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">error</span><span class="p">)</span>
+            <span class="k">end</span>
+
+            <span class="c1">-- If we got a 200, we would call store_archive_cb() then reboot</span>
+            <span class="c1">-- Second time, if we get here, it should be after a 304, and then</span>
+            <span class="c1">-- we can load the missing resources from the liveupdate archive</span>
+            <span class="k">if</span> <span class="n">resource</span><span class="p">.</span><span class="n">is_using_liveupdate_data</span><span class="p">()</span> <span class="k">then</span>
+                <span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">load&quot;</span><span class="p">)</span>
+            <span class="k">end</span>
+        <span class="k">end</span><span class="p">,</span>
+        <span class="n">headers</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</pre></div><hr/><a name="resource.is_using_liveupdate_data:"/>
+		<a name="resource.is_using_liveupdate_data"/>
+		<h4>resource.is_using_liveupdate_data()<a href="#resource.is_using_liveupdate_data:" class="anchor-link"></a></h4>
+		<p><code>resource.is_using_liveupdate_data()</code></p>
+		Is any liveupdate data mounted and currently in use?
+This can be used to determine if a new manifest or zip file should be downloaded.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>bool</code></td>
+				<td>true if a liveupdate archive (any format) has been loaded</td>
+			</tr></table><hr/><h2>Constants</h2><a name="resource.TEXTURE_TYPE_2D"/>
+	<h4>resource.TEXTURE_TYPE_2D<a href="#resource.TEXTURE_TYPE_2D"><span class="anchor-link"/></a></h4>
+	<p>2D texture type</p>
+	<p>2D texture type</p><hr/><a name="resource.TEXTURE_FORMAT_LUMINANCE"/>
+	<h4>resource.TEXTURE_FORMAT_LUMINANCE<a href="#resource.TEXTURE_FORMAT_LUMINANCE"><span class="anchor-link"/></a></h4>
+	<p>luminance type texture format</p>
+	<p>luminance type texture format</p><hr/><a name="resource.TEXTURE_FORMAT_RGB"/>
+	<h4>resource.TEXTURE_FORMAT_RGB<a href="#resource.TEXTURE_FORMAT_RGB"><span class="anchor-link"/></a></h4>
+	<p>RGB type texture format</p>
+	<p>RGB type texture format</p><hr/><a name="resource.TEXTURE_FORMAT_RGBA"/>
+	<h4>resource.TEXTURE_FORMAT_RGBA<a href="#resource.TEXTURE_FORMAT_RGBA"><span class="anchor-link"/></a></h4>
+	<p>RGBA type texture format</p>
+	<p>RGBA type texture format</p><hr/><a name="resource.LIVEUPDATE_OK"/>
+	<h4>resource.LIVEUPDATE_OK<a href="#resource.LIVEUPDATE_OK"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_OK</p>
+	<p>LIVEUPDATE_OK</p><hr/><a name="resource.LIVEUPDATE_INVALID_RESOURCE"/>
+	<h4>resource.LIVEUPDATE_INVALID_RESOURCE<a href="#resource.LIVEUPDATE_INVALID_RESOURCE"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_INVALID_RESOURCE</p>
+	<p>The handled resource is invalid.</p><hr/><a name="resource.LIVEUPDATE_VERSION_MISMATCH"/>
+	<h4>resource.LIVEUPDATE_VERSION_MISMATCH<a href="#resource.LIVEUPDATE_VERSION_MISMATCH"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_VERSION_MISMATCH</p>
+	<p>Mismatch between manifest expected version and actual version.</p><hr/><a name="resource.LIVEUPDATE_ENGINE_VERSION_MISMATCH"/>
+	<h4>resource.LIVEUPDATE_ENGINE_VERSION_MISMATCH<a href="#resource.LIVEUPDATE_ENGINE_VERSION_MISMATCH"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_ENGINE_VERSION_MISMATCH</p>
+	<p>Mismatch between running engine version and engine versions supported by manifest.</p><hr/><a name="resource.LIVEUPDATE_SIGNATURE_MISMATCH"/>
+	<h4>resource.LIVEUPDATE_SIGNATURE_MISMATCH<a href="#resource.LIVEUPDATE_SIGNATURE_MISMATCH"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_SIGNATURE_MISMATCH</p>
+	<p>Mismatch between manifest expected signature and actual signature.</p><hr/><a name="resource.LIVEUPDATE_SCHEME_MISMATCH"/>
+	<h4>resource.LIVEUPDATE_SCHEME_MISMATCH<a href="#resource.LIVEUPDATE_SCHEME_MISMATCH"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_SCHEME_MISMATCH</p>
+	<p>Mismatch between scheme used to load resources. Resources are loaded with a different scheme than from manifest, for example over HTTP or directly from file. This is typically the case when running the game directly from the editor instead of from a bundle.</p><hr/><a name="resource.LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH"/>
+	<h4>resource.LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH<a href="#resource.LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_BUNDLED_RESOURCE_MISMATCH</p>
+	<p>Mismatch between between expected bundled resources and actual bundled resources. The manifest expects a resource to be in the bundle, but it was not found in the bundle. This is typically the case when a non-excluded resource was modified between publishing the bundle and publishing the manifest.</p><hr/><a name="resource.LIVEUPDATE_FORMAT_ERROR"/>
+	<h4>resource.LIVEUPDATE_FORMAT_ERROR<a href="#resource.LIVEUPDATE_FORMAT_ERROR"><span class="anchor-link"/></a></h4>
+	<p>LIVEUPDATE_FORMAT_ERROR</p>
+	<p>Failed to parse manifest data buffer. The manifest was probably produced by a different engine version.</p><hr/></div>
+		</div>
+	</div>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<script>
+	var query = new URLSearchParams(window.location.search).get('q');
+	if (query) {
+		var instance = new Mark("div.ref");
+		instance.mark(query);
+		var elements = document.getElementsByTagName("mark");
+		if (elements.length > 0) {
+			elements[0].scrollIntoView();
+		}
+	}
+</script>
+<script type="text/javascript">
+	var menu = document.getElementById("navmenu");
+	if (menu != null) {
+		var viewportOffset = menu.getBoundingClientRect();
+		window.onscroll = function() {
+			if (window.pageYOffset > viewportOffset.top) {
+				menu.classList.add("sticky");
+			}
+			else {
+				menu.classList.remove("sticky");
+			}
+		};
+	}
+</script>
+
+	</div>
+
+	<footer class="darkest">
+	<div class="container">
+		<div class="row">
+			<div class="two columns">
+				<p><b>DEFOLD</b></p>
+				<ul>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/foundation">Foundation</a></li>
+					<li><a href="/faq/faq">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>NEWS</b></p>
+				<ul>
+					<li><a href="/press">Press</a></li>
+					<li><a href="/blog">Blog</a></li>
+					<li><a href="/newsletter">Newsletter</a></li>
+					<li><a href="https://forum.defold.com/c/releasenotes">Release announcements</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>GET INVOLVED</b></p>
+				<ul>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="/donate">Donate</a></li>
+					<li><a href="/contribute">Contribute</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEARN</b></p>
+				<ul>
+					<li><a href="/ref/go">API</a></li>
+					<li><a href="/examples">Examples</a></li>
+					<li><a href="/manuals/introduction">Manuals</a></li>
+					<li><a href="/tutorials">Tutorials</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>COMMUNITY</b></p>
+				<ul>
+					<li><a href="https://forum.defold.com" target="_blank">Forum</a></li>
+					<li><a href="/slack">Slack</a></li>
+					<li><a href="https://www.facebook.com/Defold" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/defold" target="_blank">Twitter</a></li>
+					<li><a href="https://www.linkedin.com/company/defold-foundation" target="_blank">LinkedIn</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEGAL</b></p>
+				<ul>
+					<li><a href="/license">License</a></li>
+					<li><a href="/logo-and-trademark">Logo &amp; Trademark</a></li>
+					<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+					<li><a href="/privacy-policy">Privacy Policy</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>Copyright © 2021 Defold Foundation</p>
+		</div>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

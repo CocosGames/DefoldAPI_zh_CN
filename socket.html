@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83690-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-83690-3');
+</script>
+<title>API reference (socket)</title>
+
+<!-- Google Structured Data (https://developers.google.com/search/docs/guides/intro-structured-data) -->
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "Organization",
+		"name": "Defold Foundation",
+		"url": "https://www.defold.com",
+		"email": "info@defold.com",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Postbox 6034",
+			"addressLocality": "Hägersten",
+			"addressRegion": "Stockholm",
+			"addressCountry": "Sweden",
+			"postalCode": "12906"
+		},
+		"foundingDate": "2020",
+		"sameAs": [
+			"https://www.facebook.com/Defold",
+			"https://www.twitter.com/defold",
+			"https://www.github.com/defold",
+			"https://www.youtube.com/channel/UCrEYXG15n3V0Y8eK0RbCaLQ"
+		]
+	}
+</script>
+
+<!-- META DATA -->
+<meta name="description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="author" content="Defold Foundation" />
+<meta name="keywords" content="defold, gameengine, game-engine, game-development, game-dev, gamedev, open-source, opensource, crossplatform, cross-platform, free, nintendo-switch, console, html5, web, android, ios, desktop" />
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://defold.com/ref/stable/socket/">
+<meta property="og:site_name" content="Defold game engine">
+<meta property="og:title" content="API reference (socket)">
+<meta property="og:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta property="og:image" content="https://www.defold.com/images/social/facebook-share.jpg">
+<!-- end OPEN GRAPH -->
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@defold">
+<meta name="twitter:title" content="API reference (socket)">
+<meta name="twitter:description" content="Defold is a free and open game engine used for development of console, desktop, mobile and web games.">
+<meta name="twitter:image" content="https://www.defold.com/images/social/twitter-share.jpg">
+<!-- end TWITTER -->
+
+<!-- web monetization -->
+<meta name="monetization" content="$ilp.uphold.com/QkG86UgXzKq8">
+
+<!-- FONTS -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+<!-- favicon -->
+<link rel='shortcut icon' type='image/x-icon' href='/images/favicon.ico' />
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+<link rel="stylesheet" type="text/css" href="/css/defold.css">
+<link rel="stylesheet" type="text/css" href="/css/fruity.css">
+<link rel="stylesheet" type="text/css" href="/css/fontello.css">
+<!-- end CSS -->
+
+<!-- SendInBlue CSS -->
+<link rel="stylesheet" type="text/css" href="/css/sendinblue.css">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!-- end SendInBlue CSS -->
+
+</head>
+<body>
+<div id="page">
+	<div id="pagecontent">
+	<div class="nav dark">
+	<div class="container">
+		<div class="row">
+			<div class="eight columns">
+				<ul class="navmenu">
+					<li><nobr><a href="/" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M16 9l-3-3V2h-2v2L8 1 0 9h2l1 5c0 .55.45 1 1 1h8c.55 0 1-.45 1-1l1-5h2zm-4 5H9v-4H7v4H4L2.81 7.69 8 2.5l5.19 5.19L12 14z"/></svg>
+</span>&nbsp; Defold
+</a></nobr></li>
+					<li><a href="/product">Product</a></li>
+					<li><a href="/showcase">Showcase</a></li>
+					<li><a href="/learn">Learn</a></li>
+					<li><a href="/assets">Asset&nbsp;Portal</a></li>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="//forum.defold.com">Forum</a></li>
+					<li style="visibility: hidden"><span class="octicon" style="fill: #FFF; zoom: 1.75; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"/></svg>
+</span>&nbsp;
+ Download</li>
+				</ul>
+				<select class="navdropdown dark-text" onchange="location = this.value;">
+					<option value="/">Home</option>
+					<option value="/product" >Product</option>
+					<option value="/showcase" >Showcase</option>
+					<option value="/learn">Learn</option>
+					<option value="/assets" >Asset Portal</option>
+					<option value="/open" >Open Source</option>
+					<option value="//forum.defold.com">Forum</option>
+					<option value="/donate" >Donate</option>
+					<option value="/download" >Download</option>
+					<option value="https://www.github.com/defold">GitHub</option>
+				</select>
+			</div>
+			<div class="four columns">
+				<ul class="navmenu right">
+					<li><nobr><a href="/donate" target=""><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M9 2c-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-1.632.086-2.954 1.333-3 3 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.047-1.69-1.342-2.913-3-3z"/></svg>
+</span>&nbsp; Donate
+</a></nobr></li>
+					<li><nobr><a href="/download" target=""><span class="octicon" style="fill: #FFF; zoom: 1.35; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"><path fill-rule="evenodd" d="M7 7V3H3v4H0l5 6 5-6H7z"/></svg>
+</span>&nbsp; Download
+</a></nobr></li>
+					<li><nobr><a href="https://www.github.com/defold" target="_blank"><span class="octicon" style="fill: #FFF; zoom: 1.25; vertical-align: middle;">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+
+</span>&nbsp; GitHub
+</a></nobr></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+	<div class="nav learn light">
+	<div class="container">
+		<div class="row">
+			<div class="nine columns"><ul class="navmenu">
+					<li><a href="/examples/animation/basic_tween" class="">Examples </a></li>
+					<li><a href="/tutorials/getting-started" class="">Tutorials</a></li>
+					<li><a href="/manuals/introduction" class="">Manuals</a></li>
+					<li><a href="/ref/stable/go" class="bold">API Reference</a></li>
+					<li><a href="/faq/faq" class="">FAQ</a></li>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;">
+					<option value="/examples/animation/basic_tween" >Examples</option>
+					<option value="/tutorials/getting-started" >Tutorials</option>
+					<option value="/manuals/introduction" >Manuals</option>
+					<option value="/ref/stable/go" selected>API Reference</option>
+					<option value="/faq/faq" >FAQ</option>
+				</select>
+				<div class="right navdropdown compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div></div>
+			<div class="three columns">
+				<div class="right navmenu compact">
+					<form action="/search">
+						<input id="search" name="q" type="text" placeholder="Search..."/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section lightest">
+	<div class="container">
+		<div class="row">
+			<div class="columns two">
+				<ul id="navmenu" class="navmenu ref nobullet"><input id="collapsible_lua" class="toggle" type="checkbox" checked/>
+					<label for="collapsible_lua" class="togglelabel">Lua</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/base" style="text-decoration: none;">base</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/bit" style="text-decoration: none;">bit</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/coroutine" style="text-decoration: none;">coroutine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/debug" style="text-decoration: none;">debug</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/io" style="text-decoration: none;">io</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/math" style="text-decoration: none;">math</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/os" style="text-decoration: none;">os</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/package" style="text-decoration: none;">package</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/socket" style="font-weight: bolder; font-style: italic; text-decoration: none;">socket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/string" style="text-decoration: none;">string</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/table" style="text-decoration: none;">table</a></li></ul><input id="collapsible_defold" class="toggle" type="checkbox" />
+					<label for="collapsible_defold" class="togglelabel">Defold</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/buffer" style="text-decoration: none;">buffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/builtins" style="text-decoration: none;">builtins</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/camera" style="text-decoration: none;">camera</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionfactory" style="text-decoration: none;">collectionfactory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/collectionproxy" style="text-decoration: none;">collectionproxy</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/crash" style="text-decoration: none;">crash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/engine" style="text-decoration: none;">engine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/factory" style="text-decoration: none;">factory</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/go" style="text-decoration: none;">go</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/gui" style="text-decoration: none;">gui</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/html5" style="text-decoration: none;">html5</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/http" style="text-decoration: none;">http</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/image" style="text-decoration: none;">image</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/json" style="text-decoration: none;">json</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/label" style="text-decoration: none;">label</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/model" style="text-decoration: none;">model</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/msg" style="text-decoration: none;">msg</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/particlefx" style="text-decoration: none;">particlefx</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/physics" style="text-decoration: none;">physics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/profiler" style="text-decoration: none;">profiler</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/render" style="text-decoration: none;">render</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/resource" style="text-decoration: none;">resource</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sharedlibrary" style="text-decoration: none;">sharedlibrary</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sound" style="text-decoration: none;">sound</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/spine" style="text-decoration: none;">spine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sprite" style="text-decoration: none;">sprite</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/sys" style="text-decoration: none;">sys</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/tilemap" style="text-decoration: none;">tilemap</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/timer" style="text-decoration: none;">timer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/vmath" style="text-decoration: none;">vmath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/window" style="text-decoration: none;">window</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/zlib" style="text-decoration: none;">zlib</a></li></ul><input id="collapsible_c" class="toggle" type="checkbox" />
+					<label for="collapsible_c" class="togglelabel">C</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/ref/stable/dmAlign" style="text-decoration: none;">dmAlign</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmArray" style="text-decoration: none;">dmArray</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmBuffer" style="text-decoration: none;">dmBuffer</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConditionVariable" style="text-decoration: none;">dmConditionVariable</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConfigFile" style="text-decoration: none;">dmConfigFile</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmConnectionPool" style="text-decoration: none;">dmConnectionPool</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmCrypt" style="text-decoration: none;">dmCrypt</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmDNS" style="text-decoration: none;">dmDNS</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmEngine" style="text-decoration: none;">dmEngine</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmExtension" style="text-decoration: none;">dmExtension</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGameObject" style="text-decoration: none;">dmGameObject</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmGraphics" style="text-decoration: none;">dmGraphics</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHash" style="text-decoration: none;">dmHash</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHid" style="text-decoration: none;">dmHid</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmHttpClient" style="text-decoration: none;">dmHttpClient</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmJson" style="text-decoration: none;">dmJson</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmLog" style="text-decoration: none;">dmLog</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMath" style="text-decoration: none;">dmMath</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmMutex" style="text-decoration: none;">dmMutex</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSSLSocket" style="text-decoration: none;">dmSSLSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmScript" style="text-decoration: none;">dmScript</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmSocket" style="text-decoration: none;">dmSocket</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmStringFunc" style="text-decoration: none;">dmStringFunc</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmThread" style="text-decoration: none;">dmThread</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmTime" style="text-decoration: none;">dmTime</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmURI" style="text-decoration: none;">dmURI</a></li><li style="padding-bottom: 0px;"><a href="/ref/stable/dmWebServer" style="text-decoration: none;">dmWebServer</a></li></ul><input id="collapsible_extension" class="toggle" type="checkbox" />
+					<label for="collapsible_extension" class="togglelabel">Extension</label>
+					<ul class="nobullet"><li style="padding-bottom: 0px;"><a href="/extension-adinfo/api" style="text-decoration: none;">extension-adinfo</a></li><li style="padding-bottom: 0px;"><a href="/extension-camera/api" style="text-decoration: none;">extension-camera</a></li><li style="padding-bottom: 0px;"><a href="/extension-facebook/api" style="text-decoration: none;">extension-facebook</a></li><li style="padding-bottom: 0px;"><a href="/extension-fbinstant/api" style="text-decoration: none;">extension-fbinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-firebase-analytics/api" style="text-decoration: none;">extension-firebase-analytics</a></li><li style="padding-bottom: 0px;"><a href="/extension-googleplayinstant/api" style="text-decoration: none;">extension-googleplayinstant</a></li><li style="padding-bottom: 0px;"><a href="/extension-gpgs/api" style="text-decoration: none;">extension-gpgs</a></li><li style="padding-bottom: 0px;"><a href="/extension-iap/api" style="text-decoration: none;">extension-iap</a></li><li style="padding-bottom: 0px;"><a href="/extension-push/api" style="text-decoration: none;">extension-push</a></li><li style="padding-bottom: 0px;"><a href="/extension-review/api" style="text-decoration: none;">extension-review</a></li><li style="padding-bottom: 0px;"><a href="/extension-siwa/api" style="text-decoration: none;">extension-siwa</a></li><li style="padding-bottom: 0px;"><a href="/extension-webmonetization/api" style="text-decoration: none;">extension-webmonetization</a></li><li style="padding-bottom: 0px;"><a href="/extension-websocket/api" style="text-decoration: none;">extension-websocket</a></li><li style="padding-bottom: 0px;"><a href="/extension-webview/api" style="text-decoration: none;">extension-webview</a></li></ul><input id="branch" class="toggle" type="checkbox" checked/>
+					<label for="branch" class="togglelabel">Version</label>
+					<ul class="nobullet"><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/alpha/socket/" style="text-decoration: none;">alpha</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/beta/socket/" style="text-decoration: none;">beta</a></li><li style="padding-left: 2rem; padding-bottom: 0px;"><a href="/ref/stable/socket/" style="font-weight: bolder; font-style: italic; text-decoration: none;">stable</a></li></ul>
+				</ul>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/stable/base">base</option><option value="/ref/stable/bit">bit</option><option value="/ref/stable/buffer">buffer</option><option value="/ref/stable/builtins">builtins</option><option value="/ref/stable/camera">camera</option><option value="/ref/stable/collectionfactory">collectionfactory</option><option value="/ref/stable/collectionproxy">collectionproxy</option><option value="/ref/stable/coroutine">coroutine</option><option value="/ref/stable/crash">crash</option><option value="/ref/stable/debug">debug</option><option value="/ref/stable/dmAlign">dmAlign</option><option value="/ref/stable/dmArray">dmArray</option><option value="/ref/stable/dmBuffer">dmBuffer</option><option value="/ref/stable/dmConditionVariable">dmConditionVariable</option><option value="/ref/stable/dmConfigFile">dmConfigFile</option><option value="/ref/stable/dmConnectionPool">dmConnectionPool</option><option value="/ref/stable/dmCrypt">dmCrypt</option><option value="/ref/stable/dmDNS">dmDNS</option><option value="/ref/stable/dmEngine">dmEngine</option><option value="/ref/stable/dmExtension">dmExtension</option><option value="/ref/stable/dmGameObject">dmGameObject</option><option value="/ref/stable/dmGraphics">dmGraphics</option><option value="/ref/stable/dmHash">dmHash</option><option value="/ref/stable/dmHid">dmHid</option><option value="/ref/stable/dmHttpClient">dmHttpClient</option><option value="/ref/stable/dmJson">dmJson</option><option value="/ref/stable/dmLog">dmLog</option><option value="/ref/stable/dmMath">dmMath</option><option value="/ref/stable/dmMutex">dmMutex</option><option value="/ref/stable/dmSSLSocket">dmSSLSocket</option><option value="/ref/stable/dmScript">dmScript</option><option value="/ref/stable/dmSocket">dmSocket</option><option value="/ref/stable/dmStringFunc">dmStringFunc</option><option value="/ref/stable/dmThread">dmThread</option><option value="/ref/stable/dmTime">dmTime</option><option value="/ref/stable/dmURI">dmURI</option><option value="/ref/stable/dmWebServer">dmWebServer</option><option value="/ref/stable/engine">engine</option><option value="/extension-adinfo/api">extension-adinfo</option><option value="/extension-camera/api">extension-camera</option><option value="/extension-facebook/api">extension-facebook</option><option value="/extension-fbinstant/api">extension-fbinstant</option><option value="/extension-firebase-analytics/api">extension-firebase-analytics</option><option value="/extension-googleplayinstant/api">extension-googleplayinstant</option><option value="/extension-gpgs/api">extension-gpgs</option><option value="/extension-iap/api">extension-iap</option><option value="/extension-push/api">extension-push</option><option value="/extension-review/api">extension-review</option><option value="/extension-siwa/api">extension-siwa</option><option value="/extension-webmonetization/api">extension-webmonetization</option><option value="/extension-websocket/api">extension-websocket</option><option value="/extension-webview/api">extension-webview</option><option value="/ref/stable/factory">factory</option><option value="/ref/stable/go">go</option><option value="/ref/stable/gui">gui</option><option value="/ref/stable/html5">html5</option><option value="/ref/stable/http">http</option><option value="/ref/stable/image">image</option><option value="/ref/stable/io">io</option><option value="/ref/stable/json">json</option><option value="/ref/stable/label">label</option><option value="/ref/stable/math">math</option><option value="/ref/stable/model">model</option><option value="/ref/stable/msg">msg</option><option value="/ref/stable/os">os</option><option value="/ref/stable/package">package</option><option value="/ref/stable/particlefx">particlefx</option><option value="/ref/stable/physics">physics</option><option value="/ref/stable/profiler">profiler</option><option value="/ref/stable/render">render</option><option value="/ref/stable/resource">resource</option><option value="/ref/stable/sharedlibrary">sharedlibrary</option><option value="/ref/stable/socket">socket</option><option value="/ref/stable/sound">sound</option><option value="/ref/stable/spine">spine</option><option value="/ref/stable/sprite">sprite</option><option value="/ref/stable/string">string</option><option value="/ref/stable/sys">sys</option><option value="/ref/stable/table">table</option><option value="/ref/stable/tilemap">tilemap</option><option value="/ref/stable/timer">timer</option><option value="/ref/stable/vmath">vmath</option><option value="/ref/stable/window">window</option><option value="/ref/stable/zlib">zlib</option></select>
+				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/socket/">alpha</option><option value="/ref/beta/socket/">beta</option><option value="/ref/stable/socket/">stable</option></select>
+				&nbsp;
+			</div>
+			<div class="columns nine ref scrollable"><h1>LuaSocket API documentation</h1>
+<p>Version: stable</p><table class="compact">
+	<tr>
+		<th>FUNCTION</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#socket.select:recvt-sendt-[timeout]">socket.select()</a></td>
+		<td>waits for a number of sockets to change status</td>
+	</tr><tr>
+		<td><a href="#socket.tcp6:">socket.tcp6()</a></td>
+		<td>creates a new IPv6 TCP master object</td>
+	</tr><tr>
+		<td><a href="#socket.udp6:">socket.udp6()</a></td>
+		<td>creates a new IPv6 UDP object</td>
+	</tr><tr>
+		<td><a href="#socket.dns.tohostname:address">socket.dns.tohostname()</a></td>
+		<td>resolve to host name (IPv4)</td>
+	</tr><tr>
+		<td><a href="#socket.dns.toip:address">socket.dns.toip()</a></td>
+		<td>resolve to IPv4 address</td>
+	</tr><tr>
+		<td><a href="#socket.dns.gethostname:">socket.dns.gethostname()</a></td>
+		<td>gets the machine host name</td>
+	</tr><tr>
+		<td><a href="#socket.dns.getaddrinfo:address">socket.dns.getaddrinfo()</a></td>
+		<td>resolve to IPv4 or IPv6 address</td>
+	</tr><tr>
+		<td><a href="#socket.dns.getnameinfo:address">socket.dns.getnameinfo()</a></td>
+		<td>resolve to hostname (IPv4 or IPv6)</td>
+	</tr><tr>
+		<td><a href="#socket.connect:address-port-[locaddr]-[locport]-[family]">socket.connect()</a></td>
+		<td>creates a new connected TCP client object</td>
+	</tr><tr>
+		<td><a href="#socket.udp:">socket.udp()</a></td>
+		<td>creates a new IPv4 UDP object</td>
+	</tr><tr>
+		<td><a href="#socket.skip:d-[ret1]-[ret2]-[retN]">socket.skip()</a></td>
+		<td>drops a number of arguments and returns the remaining</td>
+	</tr><tr>
+		<td><a href="#socket.tcp:">socket.tcp()</a></td>
+		<td>creates a new IPv4 TCP master object</td>
+	</tr><tr>
+		<td><a href="#socket.newtry:finalizer">socket.newtry()</a></td>
+		<td>creates a new try function</td>
+	</tr><tr>
+		<td><a href="#socket.protect:func">socket.protect()</a></td>
+		<td>converts a function that throws exceptions into a safe function</td>
+	</tr><tr>
+		<td><a href="#socket.gettime:">socket.gettime()</a></td>
+		<td>gets seconds since system epoch</td>
+	</tr><tr>
+		<td><a href="#socket.sleep:time">socket.sleep()</a></td>
+		<td>sleeps for a number of seconds</td>
+	</tr><tr>
+		<td><a href="#server:accept:">server:accept()</a></td>
+		<td>waits for a remote connection on the server object</td>
+	</tr><tr>
+		<td><a href="#master:bind:address-port">master:bind()</a></td>
+		<td>binds a master object to address and port on the local host</td>
+	</tr><tr>
+		<td><a href="#master:close:">master:close()</a></td>
+		<td>closes a master TCP object</td>
+	</tr><tr>
+		<td><a href="#client:close:">client:close()</a></td>
+		<td>closes a client TCP object</td>
+	</tr><tr>
+		<td><a href="#server:close:">server:close()</a></td>
+		<td>closes a server TCP object</td>
+	</tr><tr>
+		<td><a href="#master:connect:address-port">master:connect()</a></td>
+		<td>connects a master object to a remote host</td>
+	</tr><tr>
+		<td><a href="#client:getpeername:">client:getpeername()</a></td>
+		<td>gets information about a client's peer</td>
+	</tr><tr>
+		<td><a href="#master:getsockname:">master:getsockname()</a></td>
+		<td>gets the local address information from master</td>
+	</tr><tr>
+		<td><a href="#client:getsockname:">client:getsockname()</a></td>
+		<td>gets the local address information from client</td>
+	</tr><tr>
+		<td><a href="#server:getsockname:">server:getsockname()</a></td>
+		<td>gets the local address information from server</td>
+	</tr><tr>
+		<td><a href="#master:getstats:">master:getstats()</a></td>
+		<td>gets accounting information on the socket</td>
+	</tr><tr>
+		<td><a href="#client:getstats:">client:getstats()</a></td>
+		<td>gets accounting information on the socket</td>
+	</tr><tr>
+		<td><a href="#server:getstats:">server:getstats()</a></td>
+		<td>gets accounting information on the socket</td>
+	</tr><tr>
+		<td><a href="#master:listen:backlog">master:listen()</a></td>
+		<td>makes the master socket listen for connections</td>
+	</tr><tr>
+		<td><a href="#client:receive:[pattern]-[prefix]">client:receive()</a></td>
+		<td>receives data from a client socket</td>
+	</tr><tr>
+		<td><a href="#client:send:data-[i]-[j]">client:send()</a></td>
+		<td>sends data through client socket</td>
+	</tr><tr>
+		<td><a href="#client:setoption:option-[value]">client:setoption()</a></td>
+		<td>sets options for the socket</td>
+	</tr><tr>
+		<td><a href="#server:setoption:option-[value]">server:setoption()</a></td>
+		<td>sets options for the socket</td>
+	</tr><tr>
+		<td><a href="#client:getoption:option">client:getoption()</a></td>
+		<td>gets options for the socket</td>
+	</tr><tr>
+		<td><a href="#server:getoption:option">server:getoption()</a></td>
+		<td>gets options for the socket</td>
+	</tr><tr>
+		<td><a href="#master:setstats:received-sent-age">master:setstats()</a></td>
+		<td>resets accounting information on the socket</td>
+	</tr><tr>
+		<td><a href="#client:setstats:received-sent-age">client:setstats()</a></td>
+		<td>resets accounting information on the socket</td>
+	</tr><tr>
+		<td><a href="#server:setstats:received-sent-age">server:setstats()</a></td>
+		<td>resets accounting information on the socket</td>
+	</tr><tr>
+		<td><a href="#master:settimeout:value-[mode]">master:settimeout()</a></td>
+		<td>set the timeout values for the socket</td>
+	</tr><tr>
+		<td><a href="#client:settimeout:value-[mode]">client:settimeout()</a></td>
+		<td>set the timeout values for the socket</td>
+	</tr><tr>
+		<td><a href="#server:settimeout:value-[mode]">server:settimeout()</a></td>
+		<td>set the timeout values for the socket</td>
+	</tr><tr>
+		<td><a href="#client:shutdown:mode">client:shutdown()</a></td>
+		<td>shut down socket</td>
+	</tr><tr>
+		<td><a href="#master:dirty:">master:dirty()</a></td>
+		<td>checks the read buffer status</td>
+	</tr><tr>
+		<td><a href="#client:dirty:">client:dirty()</a></td>
+		<td>checks the read buffer status</td>
+	</tr><tr>
+		<td><a href="#server:dirty:">server:dirty()</a></td>
+		<td>checks the read buffer status</td>
+	</tr><tr>
+		<td><a href="#master:getfd:">master:getfd()</a></td>
+		<td>gets the socket descriptor</td>
+	</tr><tr>
+		<td><a href="#client:getfd:">client:getfd()</a></td>
+		<td>gets the socket descriptor</td>
+	</tr><tr>
+		<td><a href="#server:getfd:">server:getfd()</a></td>
+		<td>gets the socket descriptor</td>
+	</tr><tr>
+		<td><a href="#master:setfd:handle">master:setfd()</a></td>
+		<td>sets the socket descriptor</td>
+	</tr><tr>
+		<td><a href="#client:setfd:handle">client:setfd()</a></td>
+		<td>sets the socket descriptor</td>
+	</tr><tr>
+		<td><a href="#server:setfd:handle">server:setfd()</a></td>
+		<td>sets the socket descriptor</td>
+	</tr><tr>
+		<td><a href="#connected:close:">connected:close()</a></td>
+		<td>closes the UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:close:">unconnected:close()</a></td>
+		<td>closes the UDP socket</td>
+	</tr><tr>
+		<td><a href="#connected:getpeername:">connected:getpeername()</a></td>
+		<td>gets information about the UDP socket peer</td>
+	</tr><tr>
+		<td><a href="#connected:getsockname:">connected:getsockname()</a></td>
+		<td>gets the local address information associated to the socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:getsockname:">unconnected:getsockname()</a></td>
+		<td>gets the local address information associated to the socket</td>
+	</tr><tr>
+		<td><a href="#connected:receive:[size]">connected:receive()</a></td>
+		<td>receives a datagram from the UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:receive:[size]">unconnected:receive()</a></td>
+		<td>receives a datagram from the UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:receivefrom:[size]">unconnected:receivefrom()</a></td>
+		<td>receives a datagram from the UDP socket</td>
+	</tr><tr>
+		<td><a href="#connected:getoption:option">connected:getoption()</a></td>
+		<td>gets options for the UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:getoption:option">unconnected:getoption()</a></td>
+		<td>gets options for the UDP socket</td>
+	</tr><tr>
+		<td><a href="#connected:send:datagram">connected:send()</a></td>
+		<td>sends a datagram through the connected UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:sendto:datagram-ip-port">unconnected:sendto()</a></td>
+		<td>sends a datagram through the UDP socket to the specified IP address and port number</td>
+	</tr><tr>
+		<td><a href="#connected:setpeername:"*"">connected:setpeername()</a></td>
+		<td>remove the peer of the connected UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:setpeername:address-port">unconnected:setpeername()</a></td>
+		<td>set the peer of the unconnected UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:setsockname:address-port">unconnected:setsockname()</a></td>
+		<td>binds the UDP socket to a local address</td>
+	</tr><tr>
+		<td><a href="#connected:setoption:option-[value]">connected:setoption()</a></td>
+		<td>sets options for the UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:setoption:option-[value]">unconnected:setoption()</a></td>
+		<td>sets options for the UDP socket</td>
+	</tr><tr>
+		<td><a href="#connected:settimeout:value">connected:settimeout()</a></td>
+		<td>sets the timeout value for the UDP socket</td>
+	</tr><tr>
+		<td><a href="#unconnected:settimeout:value">unconnected:settimeout()</a></td>
+		<td>sets the timeout value for the UDP socket</td>
+	</tr></table><table class="compact">
+	<tr>
+		<th>CONSTANT</th>
+		<th></th>
+	</tr><tr>
+		<td><a href="#socket._VERSION">socket._VERSION</a></td>
+		<td>the current LuaSocket version</td>
+	</tr><tr>
+		<td><a href="#socket._SETSIZE">socket._SETSIZE</a></td>
+		<td>max numbers of sockets the select function can handle</td>
+	</tr></table><h2>Functions</h2><a name="socket.select:recvt-sendt-[timeout]"/>
+		<a name="socket.select"/>
+		<h4>socket.select()<a href="#socket.select:recvt-sendt-[timeout]" class="anchor-link"></a></h4>
+		<p><code>socket.select(recvt,sendt,[timeout])</code></p>
+		The function returns a list with the sockets ready for reading, a list with the sockets ready for writing and an error message. The error message is "timeout" if a timeout condition was met and nil otherwise. The returned tables are doubly keyed both by integers and also by the sockets themselves, to simplify the test if a specific socket has changed status.
+<code>Recvt</code> and <code>sendt</code> parameters can be empty tables or <code>nil</code>. Non-socket values (or values with non-numeric indices) in these arrays will be silently ignored.
+The returned tables are doubly keyed both by integers and also by the sockets themselves, to simplify the test if a specific socket has changed status.
+<span class="icon-attention"></span> This function can monitor a limited number of sockets, as defined by the constant socket._SETSIZE. This number may be as high as 1024 or as low as 64 by default, depending on the system. It is usually possible to change this at compile time. Invoking select with a larger number of sockets will raise an error.
+<span class="icon-attention"></span> A known bug in WinSock causes select to fail on non-blocking TCP sockets. The function may return a socket as writable even though the socket is not ready for sending.
+<span class="icon-attention"></span> Calling select with a server socket in the receive parameter before a call to accept does not guarantee accept will return immediately. Use the settimeout method or accept might block forever.
+<span class="icon-attention"></span> If you close a socket and pass it to select, it will be ignored.
+(Using select with non-socket objects: Any object that implements <code>getfd</code> and <code>dirty</code> can be used with select, allowing objects from other libraries to be used within a socket.select driven loop.)
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>recvt</code></td>
+				<td>array with the sockets to test for characters available for reading.</td>
+			</tr><tr>
+				<td><code>sendt</code></td>
+				<td>array with sockets that are watched to see if it is OK to immediately write on them.</td>
+			</tr><tr>
+				<td><code>[timeout]</code></td>
+				<td>the maximum amount of time (in seconds) to wait for a change in status. Nil, negative or omitted timeout value allows the function to block indefinitely.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>sockets_r</code></td>
+				<td>a list with the sockets ready for reading.</td>
+			</tr><tr>
+				<td><code>sockets_w</code></td>
+				<td>a list with the sockets ready for writing.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>an error message. "timeout" if a timeout condition was met, otherwise <code>nil</code>.</td>
+			</tr></table><hr/><a name="socket.tcp6:"/>
+		<a name="socket.tcp6"/>
+		<h4>socket.tcp6()<a href="#socket.tcp6:" class="anchor-link"></a></h4>
+		<p><code>socket.tcp6()</code></p>
+		Creates and returns an IPv6 TCP master object. A master object can be transformed into a server object with the method <code>listen</code> (after a call to <code>bind</code>) or into a client object with the method connect. The only other method supported by a master object is the close method.
+Note: The TCP object returned will have the option "ipv6-v6only" set to true.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>tcp_master</code></td>
+				<td>a new IPv6 TCP master object, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="socket.udp6:"/>
+		<a name="socket.udp6"/>
+		<h4>socket.udp6()<a href="#socket.udp6:" class="anchor-link"></a></h4>
+		<p><code>socket.udp6()</code></p>
+		Creates and returns an unconnected IPv6 UDP object. Unconnected objects support the <code>sendto</code>, <code>receive</code>, <code>receivefrom</code>, <code>getoption</code>, <code>getsockname</code>, <code>setoption</code>, <code>settimeout</code>, <code>setpeername</code>, <code>setsockname</code>, and <code>close</code> methods. The <code>setpeername</code> method is used to connect the object.
+Note: The UDP object returned will have the option "ipv6-v6only" set to true.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>udp_unconnected</code></td>
+				<td>a new unconnected IPv6 UDP object, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="socket.dns.tohostname:address"/>
+		<a name="socket.dns.tohostname"/>
+		<h4>socket.dns.tohostname()<a href="#socket.dns.tohostname:address" class="anchor-link"></a></h4>
+		<p><code>socket.dns.tohostname(address)</code></p>
+		This function converts from an IPv4 address to host name.
+The address can be an IPv4 address or a host name.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>an IPv4 address or host name.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>hostname</code></td>
+				<td>the canonic host name of the given address, or <code>nil</code> in case of an error.</td>
+			</tr><tr>
+				<td><code>resolved</code></td>
+				<td>a table with all information returned by the resolver, or if an error occurs, the error message string.</td>
+			</tr></table><hr/><a name="socket.dns.toip:address"/>
+		<a name="socket.dns.toip"/>
+		<h4>socket.dns.toip()<a href="#socket.dns.toip:address" class="anchor-link"></a></h4>
+		<p><code>socket.dns.toip(address)</code></p>
+		This function converts a host name to IPv4 address.
+The address can be an IP address or a host name.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>a hostname or an IP address.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>ip_address</code></td>
+				<td>the first IP address found for the hostname, or <code>nil</code> in case of an error.</td>
+			</tr><tr>
+				<td><code>resolved</code></td>
+				<td>a table with all information returned by the resolver, or if an error occurs, the error message string.</td>
+			</tr></table><hr/><a name="socket.dns.gethostname:"/>
+		<a name="socket.dns.gethostname"/>
+		<h4>socket.dns.gethostname()<a href="#socket.dns.gethostname:" class="anchor-link"></a></h4>
+		<p><code>socket.dns.gethostname()</code></p>
+		Returns the standard host name for the machine as a string.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>hostname</code></td>
+				<td>the host name for the machine.</td>
+			</tr></table><hr/><a name="socket.dns.getaddrinfo:address"/>
+		<a name="socket.dns.getaddrinfo"/>
+		<h4>socket.dns.getaddrinfo()<a href="#socket.dns.getaddrinfo:address" class="anchor-link"></a></h4>
+		<p><code>socket.dns.getaddrinfo(address)</code></p>
+		This function converts a host name to IPv4 or IPv6 address.
+The supplied address can be an IPv4 or IPv6 address or host name.
+The function returns a table with all information returned by the resolver:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">family</span> <span class="o">=</span> <span class="n">family</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">addr</span> <span class="o">=</span> <span class="n">address</span><span class="o">-</span><span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+  <span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">family</span> <span class="o">=</span> <span class="n">family</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">n</span><span class="p">,</span>
+    <span class="n">addr</span> <span class="o">=</span> <span class="n">address</span><span class="o">-</span><span class="n">n</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+Here, family contains the string <code>"inet"</code> for IPv4 addresses, and <code>"inet6"</code> for IPv6 addresses.
+In case of error, the function returns nil followed by an error message.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>a hostname or an IPv4 or IPv6 address.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>resolved</code></td>
+				<td>a table with all information returned by the resolver, or if an error occurs, <code>nil</code>.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="socket.dns.getnameinfo:address"/>
+		<a name="socket.dns.getnameinfo"/>
+		<h4>socket.dns.getnameinfo()<a href="#socket.dns.getnameinfo:address" class="anchor-link"></a></h4>
+		<p><code>socket.dns.getnameinfo(address)</code></p>
+		This function converts an address to host name.
+The supplied address can be an IPv4 or IPv6 address or host name.
+The function returns a table with all information returned by the resolver:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">host</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+  <span class="o">...</span>
+  <span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">host</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">n</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>a hostname or an IPv4 or IPv6 address.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>resolved</code></td>
+				<td>a table with all information returned by the resolver, or if an error occurs, <code>nil</code>.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="socket.connect:address-port-[locaddr]-[locport]-[family]"/>
+		<a name="socket.connect"/>
+		<h4>socket.connect()<a href="#socket.connect:address-port-[locaddr]-[locport]-[family]" class="anchor-link"></a></h4>
+		<p><code>socket.connect(address,port,[locaddr],[locport],[family])</code></p>
+		This function is a shortcut that creates and returns a TCP client object connected to a remote
+address at a given port. Optionally, the user can also specify the local address and port to
+bind (<code>locaddr</code> and <code>locport</code>), or restrict the socket family to <code>"inet"</code> or <code>"inet6"</code>.
+Without specifying family to connect, whether a tcp or tcp6 connection is created depends on
+your system configuration.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>the address to connect to.</td>
+			</tr><tr>
+				<td><code>port</code></td>
+				<td>the port to connect to.</td>
+			</tr><tr>
+				<td><code>[locaddr]</code></td>
+				<td>optional local address to bind to.</td>
+			</tr><tr>
+				<td><code>[locport]</code></td>
+				<td>optional local port to bind to.</td>
+			</tr><tr>
+				<td><code>[family]</code></td>
+				<td>optional socket family to use, <code>"inet"</code> or <code>"inet6"</code>.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>tcp_client</code></td>
+				<td>a new IPv6 TCP client object, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="socket.udp:"/>
+		<a name="socket.udp"/>
+		<h4>socket.udp()<a href="#socket.udp:" class="anchor-link"></a></h4>
+		<p><code>socket.udp()</code></p>
+		Creates and returns an unconnected IPv4 UDP object. Unconnected objects support the <code>sendto</code>, <code>receive</code>, <code>receivefrom</code>, <code>getoption</code>, <code>getsockname</code>, <code>setoption</code>, <code>settimeout</code>, <code>setpeername</code>, <code>setsockname</code>, and <code>close</code> methods. The <code>setpeername</code> method is used to connect the object.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>udp_unconnected</code></td>
+				<td>a new unconnected IPv4 UDP object, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="socket.skip:d-[ret1]-[ret2]-[retN]"/>
+		<a name="socket.skip"/>
+		<h4>socket.skip()<a href="#socket.skip:d-[ret1]-[ret2]-[retN]" class="anchor-link"></a></h4>
+		<p><code>socket.skip(d,[ret1],[ret2],[retN])</code></p>
+		This function drops a number of arguments and returns the remaining.
+It is useful to avoid creation of dummy variables:
+<code>D</code> is the number of arguments to drop. <code>Ret<sub>1</sub></code> to <code>ret<sub>N</sub></code> are the arguments.
+The function returns <code>ret<sub>D+1</sub></code> to <code>ret<sub>N</sub></code>.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>d</code></td>
+				<td>the number of arguments to drop.</td>
+			</tr><tr>
+				<td><code>[ret1]</code></td>
+				<td>argument 1.</td>
+			</tr><tr>
+				<td><code>[ret2]</code></td>
+				<td>argument 2.</td>
+			</tr><tr>
+				<td><code>[retN]</code></td>
+				<td>argument N.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>[retD+1]</code></td>
+				<td>argument D+1.</td>
+			</tr><tr>
+				<td><code>[retD+2]</code></td>
+				<td>argument D+2.</td>
+			</tr><tr>
+				<td><code>[retN]</code></td>
+				<td>argument N.</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Instead of doing the following with dummy variables:
+<div class="codehilite"><pre><span></span><span class="c1">-- get the status code and separator from SMTP server reply</span>
+<span class="kd">local</span> <span class="n">dummy1</span><span class="p">,</span> <span class="n">dummy2</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="nb">string.find</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">^(%d%d%d)(.?)&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+You can skip a number of variables:
+<div class="codehilite"><pre><span></span><span class="c1">-- get the status code and separator from SMTP server reply</span>
+<span class="kd">local</span> <span class="n">code</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">string.find</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">^(%d%d%d)(.?)&quot;</span><span class="p">))</span>
+</pre></div><hr/><a name="socket.tcp:"/>
+		<a name="socket.tcp"/>
+		<h4>socket.tcp()<a href="#socket.tcp:" class="anchor-link"></a></h4>
+		<p><code>socket.tcp()</code></p>
+		Creates and returns an IPv4 TCP master object. A master object can be transformed into a server object with the method <code>listen</code> (after a call to <code>bind</code>) or into a client object with the method <code>connect</code>. The only other method supported by a master object is the <code>close</code> method.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>tcp_master</code></td>
+				<td>a new IPv4 TCP master object, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="socket.newtry:finalizer"/>
+		<a name="socket.newtry"/>
+		<h4>socket.newtry()<a href="#socket.newtry:finalizer" class="anchor-link"></a></h4>
+		<p><code>socket.newtry(finalizer)</code></p>
+		This function creates and returns a clean try function that allows for cleanup before the exception is raised.
+The <code>finalizer</code> function will be called in protected mode (see <a href="#protect">protect</a>).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>finalizer</code></td>
+				<td>a function that will be called before the try throws the exception.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>try</code></td>
+				<td>the customized try function.</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		Perform operations on an open socket <code>c</code>:
+<div class="codehilite"><pre><span></span><span class="c1">-- create a try function that closes &#39;c&#39; on error</span>
+<span class="kd">local</span> <span class="n">try</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">newtry</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="n">c</span><span class="p">:</span><span class="n">close</span><span class="p">()</span> <span class="k">end</span><span class="p">)</span>
+<span class="c1">-- do everything reassured c will be closed</span>
+<span class="n">try</span><span class="p">(</span><span class="n">c</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">hello there?</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">))</span>
+<span class="kd">local</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">try</span><span class="p">(</span><span class="n">c</span><span class="p">:</span><span class="n">receive</span><span class="p">())</span>
+<span class="o">...</span>
+<span class="n">try</span><span class="p">(</span><span class="n">c</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">good bye</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">))</span>
+<span class="n">c</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+</pre></div><hr/><a name="socket.protect:func"/>
+		<a name="socket.protect"/>
+		<h4>socket.protect()<a href="#socket.protect:func" class="anchor-link"></a></h4>
+		<p><code>socket.protect(func)</code></p>
+		Converts a function that throws exceptions into a safe function. This function only catches exceptions thrown by try functions. It does not catch normal Lua errors.
+<span class="icon-attention"></span> Beware that if your function performs some illegal operation that raises an error, the protected function will catch the error and return it as a string. This is because try functions uses errors as the mechanism to throw exceptions.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>func</code></td>
+				<td>a function that calls a try function (or assert, or error) to throw exceptions.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>safe_func</code></td>
+				<td>an equivalent function that instead of throwing exceptions, returns <code>nil</code> followed by an error message.</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">dostuff</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">protect</span><span class="p">(</span><span class="k">function</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">try</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">newtry</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">c</span> <span class="o">=</span> <span class="n">try</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">myserver.com&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
+    <span class="n">try</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">newtry</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="n">c</span><span class="p">:</span><span class="n">close</span><span class="p">()</span> <span class="k">end</span><span class="p">)</span>
+    <span class="n">try</span><span class="p">(</span><span class="n">c</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">hello?</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">))</span>
+    <span class="kd">local</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">try</span><span class="p">(</span><span class="n">c</span><span class="p">:</span><span class="n">receive</span><span class="p">())</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+<span class="k">end</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">n</span><span class="p">,</span> <span class="nb">error</span> <span class="o">=</span> <span class="n">dostuff</span><span class="p">()</span>
+</pre></div><hr/><a name="socket.gettime:"/>
+		<a name="socket.gettime"/>
+		<h4>socket.gettime()<a href="#socket.gettime:" class="anchor-link"></a></h4>
+		<p><code>socket.gettime()</code></p>
+		Returns the time in seconds, relative to the system epoch (Unix epoch time since January 1, 1970 (UTC) or Windows file time since January 1, 1601 (UTC)).
+You should use the values returned by this function for relative measurements only.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>seconds</code></td>
+				<td>the number of seconds elapsed.</td>
+			</tr></table><p><b>EXAMPLES</b></p>
+		How to use the gettime() function to measure running time:
+<div class="codehilite"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">gettime</span><span class="p">()</span>
+<span class="c1">-- do stuff</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">gettime</span><span class="p">()</span> <span class="o">-</span> <span class="n">t</span> <span class="o">..</span> <span class="s2">&quot;</span><span class="s"> seconds elapsed&quot;</span><span class="p">)</span>
+</pre></div><hr/><a name="socket.sleep:time"/>
+		<a name="socket.sleep"/>
+		<h4>socket.sleep()<a href="#socket.sleep:time" class="anchor-link"></a></h4>
+		<p><code>socket.sleep(time)</code></p>
+		Freezes the program execution during a given amount of time.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>time</code></td>
+				<td>the number of seconds to sleep for.</td>
+			</tr></table><hr/><a name="server:accept:"/>
+		<a name="server:accept"/>
+		<h4>server:accept()<a href="#server:accept:" class="anchor-link"></a></h4>
+		<p><code>server:accept()</code></p>
+		Waits for a remote connection on the server object and returns a client object representing that connection.
+<span class="icon-attention"></span> Calling <code>socket.select</code> with a server object in the <code>recvt</code> parameter before a call to accept does not guarantee accept will return immediately. Use the <code>settimeout</code> method or accept might block until another client shows up.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>tcp_client</code></td>
+				<td>if a connection is successfully initiated, a client object is returned, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred. The error is <code>"timeout"</code> if a timeout condition is met.</td>
+			</tr></table><hr/><a name="master:bind:address-port"/>
+		<a name="master:bind"/>
+		<h4>master:bind()<a href="#master:bind:address-port" class="anchor-link"></a></h4>
+		<p><code>master:bind(address,port)</code></p>
+		Binds a master object to address and port on the local host.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>an IP address or a host name. If address is <code>"*"</code>, the system binds to all local interfaces using the <code>INADDR_ANY</code> constant.</td>
+			</tr><tr>
+				<td><code>port</code></td>
+				<td>the port to commect to, in the range [0..64K). If port is 0, the system automatically chooses an ephemeral port.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="master:close:"/>
+		<a name="master:close"/>
+		<h4>master:close()<a href="#master:close:" class="anchor-link"></a></h4>
+		<p><code>master:close()</code></p>
+		Closes the TCP object. The internal socket used by the object is closed and the local address to which the object was bound is made available to other applications. No further operations (except for further calls to the close method) are allowed on a closed socket.
+<span class="icon-attention"></span> It is important to close all used sockets once they are not needed, since, in many systems, each socket uses a file descriptor, which are limited system resources. Garbage-collected objects are automatically closed before destruction, though.
+		<p><b>PARAMETERS</b></p>
+		<table></table><hr/><a name="client:close:"/>
+		<a name="client:close"/>
+		<h4>client:close()<a href="#client:close:" class="anchor-link"></a></h4>
+		<p><code>client:close()</code></p>
+		Closes the TCP object. The internal socket used by the object is closed and the local address to which the object was bound is made available to other applications. No further operations (except for further calls to the close method) are allowed on a closed socket.
+<span class="icon-attention"></span> It is important to close all used sockets once they are not needed, since, in many systems, each socket uses a file descriptor, which are limited system resources. Garbage-collected objects are automatically closed before destruction, though.
+		<p><b>PARAMETERS</b></p>
+		<table></table><hr/><a name="server:close:"/>
+		<a name="server:close"/>
+		<h4>server:close()<a href="#server:close:" class="anchor-link"></a></h4>
+		<p><code>server:close()</code></p>
+		Closes the TCP object. The internal socket used by the object is closed and the local address to which the object was bound is made available to other applications. No further operations (except for further calls to the close method) are allowed on a closed socket.
+<span class="icon-attention"></span> It is important to close all used sockets once they are not needed, since, in many systems, each socket uses a file descriptor, which are limited system resources. Garbage-collected objects are automatically closed before destruction, though.
+		<p><b>PARAMETERS</b></p>
+		<table></table><hr/><a name="master:connect:address-port"/>
+		<a name="master:connect"/>
+		<h4>master:connect()<a href="#master:connect:address-port" class="anchor-link"></a></h4>
+		<p><code>master:connect(address,port)</code></p>
+		Attempts to connect a master object to a remote host, transforming it into a client object. Client objects support methods send, receive, getsockname, getpeername, settimeout, and close.
+Note that the function <code>socket.connect</code> is available and is a shortcut for the creation of client sockets.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>an IP address or a host name. If address is <code>"*"</code>, the system binds to all local interfaces using the <code>INADDR_ANY</code> constant.</td>
+			</tr><tr>
+				<td><code>port</code></td>
+				<td>the port to commect to, in the range [0..64K). If port is 0, the system automatically chooses an ephemeral port.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="client:getpeername:"/>
+		<a name="client:getpeername"/>
+		<h4>client:getpeername()<a href="#client:getpeername:" class="anchor-link"></a></h4>
+		<p><code>client:getpeername()</code></p>
+		Returns information about the remote side of a connected client object.
+<span class="icon-attention"></span> It makes no sense to call this method on server objects.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>info</code></td>
+				<td>a string with the IP address of the peer, the port number that peer is using for the connection, and the family ("inet" or "inet6"). In case of error, the method returns <code>nil</code>.</td>
+			</tr></table><hr/><a name="master:getsockname:"/>
+		<a name="master:getsockname"/>
+		<h4>master:getsockname()<a href="#master:getsockname:" class="anchor-link"></a></h4>
+		<p><code>master:getsockname()</code></p>
+		Returns the local address information associated to the object.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>info</code></td>
+				<td>a string with local IP address, the local port number, and the family ("inet" or "inet6"). In case of error, the method returns <code>nil</code>.</td>
+			</tr></table><hr/><a name="client:getsockname:"/>
+		<a name="client:getsockname"/>
+		<h4>client:getsockname()<a href="#client:getsockname:" class="anchor-link"></a></h4>
+		<p><code>client:getsockname()</code></p>
+		Returns the local address information associated to the object.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>info</code></td>
+				<td>a string with local IP address, the local port number, and the family ("inet" or "inet6"). In case of error, the method returns <code>nil</code>.</td>
+			</tr></table><hr/><a name="server:getsockname:"/>
+		<a name="server:getsockname"/>
+		<h4>server:getsockname()<a href="#server:getsockname:" class="anchor-link"></a></h4>
+		<p><code>server:getsockname()</code></p>
+		Returns the local address information associated to the object.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>info</code></td>
+				<td>a string with local IP address, the local port number, and the family ("inet" or "inet6"). In case of error, the method returns <code>nil</code>.</td>
+			</tr></table><hr/><a name="master:getstats:"/>
+		<a name="master:getstats"/>
+		<h4>master:getstats()<a href="#master:getstats:" class="anchor-link"></a></h4>
+		<p><code>master:getstats()</code></p>
+		Returns accounting information on the socket, useful for throttling of bandwidth.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>stats</code></td>
+				<td>a string with the number of bytes received, the number of bytes sent, and the age of the socket object in seconds.</td>
+			</tr></table><hr/><a name="client:getstats:"/>
+		<a name="client:getstats"/>
+		<h4>client:getstats()<a href="#client:getstats:" class="anchor-link"></a></h4>
+		<p><code>client:getstats()</code></p>
+		Returns accounting information on the socket, useful for throttling of bandwidth.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>stats</code></td>
+				<td>a string with the number of bytes received, the number of bytes sent, and the age of the socket object in seconds.</td>
+			</tr></table><hr/><a name="server:getstats:"/>
+		<a name="server:getstats"/>
+		<h4>server:getstats()<a href="#server:getstats:" class="anchor-link"></a></h4>
+		<p><code>server:getstats()</code></p>
+		Returns accounting information on the socket, useful for throttling of bandwidth.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>stats</code></td>
+				<td>a string with the number of bytes received, the number of bytes sent, and the age of the socket object in seconds.</td>
+			</tr></table><hr/><a name="master:listen:backlog"/>
+		<a name="master:listen"/>
+		<h4>master:listen()<a href="#master:listen:backlog" class="anchor-link"></a></h4>
+		<p><code>master:listen(backlog)</code></p>
+		Specifies the socket is willing to receive connections, transforming the object into a server object. Server objects support the <code>accept</code>, <code>getsockname</code>, <code>setoption</code>, <code>settimeout</code>, and <code>close</code> methods.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>backlog</code></td>
+				<td>the number of client connections that can be queued waiting for service. If the queue is full and another client attempts connection, the connection is refused.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="client:receive:[pattern]-[prefix]"/>
+		<a name="client:receive"/>
+		<h4>client:receive()<a href="#client:receive:[pattern]-[prefix]" class="anchor-link"></a></h4>
+		<p><code>client:receive([pattern],[prefix])</code></p>
+		Reads data from a client object, according to the specified <code>read pattern</code>. Patterns follow the Lua file I/O format, and the difference in performance between patterns is negligible.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[pattern]</code></td>
+				<td>the read pattern that can be any of the following:
+<dl>
+<dt><code>"*a"</code></dt>
+<dd>reads from the socket until the connection is closed. No end-of-line translation is performed;</dd>
+<dt><code>"*l"</code></dt>
+<dd>reads a line of text from the socket. The line is terminated by a LF character (ASCII 10), optionally preceded by a CR character (ASCII 13). The CR and LF characters are not included in the returned line. In fact, all CR characters are ignored by the pattern. This is the default pattern;</dd>
+<dt><code>number</code></dt>
+<dd>causes the method to read a specified number of bytes from the socket.</dd>
+</dl></td>
+			</tr><tr>
+				<td><code>[prefix]</code></td>
+				<td>an optional string to be concatenated to the beginning of any received data before return.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>data</code></td>
+				<td>the received pattern, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred. The error message can be the string <code>"closed"</code> in case the connection was closed before the transmission was completed or the string <code>"timeout"</code> in case there was a timeout during the operation.</td>
+			</tr><tr>
+				<td><code>partial</code></td>
+				<td>a (possibly empty) string containing the partial that was received, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="client:send:data-[i]-[j]"/>
+		<a name="client:send"/>
+		<h4>client:send()<a href="#client:send:data-[i]-[j]" class="anchor-link"></a></h4>
+		<p><code>client:send(data,[i],[j])</code></p>
+		Sends data through client object.
+The optional arguments i and j work exactly like the standard <a href="/ref/string#string.sub">string.sub</a> Lua function to allow the selection of a substring to be sent.
+<span class="icon-attention"></span> Output is not buffered. For small strings, it is always better to concatenate them in Lua (with the <code>..</code> operator) and send the result in one call instead of calling the method several times.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>data</code></td>
+				<td>the string to be sent.</td>
+			</tr><tr>
+				<td><code>[i]</code></td>
+				<td>optional starting index of the string.</td>
+			</tr><tr>
+				<td><code>[j]</code></td>
+				<td>optional end index of string.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>index</code></td>
+				<td>that has been sent, or <code>nil</code> in case of error. Notice that, if <code>i</code> is 1 or absent, this is effectively the total number of bytes sent.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred. The error message can be <code>"closed"</code> in case the connection was closed before the transmission was completed or the string <code>"timeout"</code> in case there was a timeout during the operation.</td>
+			</tr><tr>
+				<td><code>lastindex</code></td>
+				<td>that has been sent. You might want to try again from the byte following that. <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="client:setoption:option-[value]"/>
+		<a name="client:setoption"/>
+		<h4>client:setoption()<a href="#client:setoption:option-[value]" class="anchor-link"></a></h4>
+		<p><code>client:setoption(option,[value])</code></p>
+		Sets options for the TCP object. Options are only needed by low-level or time-critical applications. You should only modify an option if you are sure you need it.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to set. The value is provided in the <code>value</code> parameter:
+<dl>
+<dt><code>"keepalive"</code></dt>
+<dd>Setting this option to <code>true</code> enables the periodic transmission of messages on a connected socket. Should the connected party fail to respond to these messages, the connection is considered broken and processes using the socket are notified;</dd>
+<dt><code>"linger"</code></dt>
+<dd>Controls the action taken when unsent data are queued on a socket and a close is performed. The value is a table with the following keys:</dd>
+</dl>
+<ul>
+<li><span class="type">boolean</span> <code>on</code></li>
+<li><span class="type">number</span> <code>timeout</code> (seconds)</li>
+</ul>
+If the 'on' field is set to true, the system will block the process on the close attempt until it is able to transmit the data or until <code>timeout</code> has passed. If 'on' is false and a close is issued, the system will process the close in a manner that allows the process to continue as quickly as possible. It is not advised to set this to anything other than zero;
+<dl>
+<dt><code>"reuseaddr"</code></dt>
+<dd>Setting this option indicates that the rules used in validating addresses supplied in a call to <code>bind</code> should allow reuse of local addresses;</dd>
+<dt><code>"tcp-nodelay"</code></dt>
+<dd>Setting this option to <code>true</code> disables the Nagle's algorithm for the connection;</dd>
+<dt><code>"ipv6-v6only"</code></dt>
+<dd>Setting this option to <code>true</code> restricts an inet6 socket to sending and receiving only IPv6 packets.</dd>
+</dl></td>
+			</tr><tr>
+				<td><code>[value]</code></td>
+				<td>the value to set for the specified option.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="server:setoption:option-[value]"/>
+		<a name="server:setoption"/>
+		<h4>server:setoption()<a href="#server:setoption:option-[value]" class="anchor-link"></a></h4>
+		<p><code>server:setoption(option,[value])</code></p>
+		Sets options for the TCP object. Options are only needed by low-level or time-critical applications. You should only modify an option if you are sure you need it.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to set. The value is provided in the <code>value</code> parameter:
+<dl>
+<dt><code>"keepalive"</code></dt>
+<dd>Setting this option to <code>true</code> enables the periodic transmission of messages on a connected socket. Should the connected party fail to respond to these messages, the connection is considered broken and processes using the socket are notified;</dd>
+<dt><code>"linger"</code></dt>
+<dd>Controls the action taken when unsent data are queued on a socket and a close is performed. The value is a table with the following keys:</dd>
+</dl>
+<ul>
+<li><span class="type">boolean</span> <code>on</code></li>
+<li><span class="type">number</span> <code>timeout</code> (seconds)</li>
+</ul>
+If the 'on' field is set to true, the system will block the process on the close attempt until it is able to transmit the data or until <code>timeout</code> has passed. If 'on' is false and a close is issued, the system will process the close in a manner that allows the process to continue as quickly as possible. It is not advised to set this to anything other than zero;
+<dl>
+<dt><code>"reuseaddr"</code></dt>
+<dd>Setting this option indicates that the rules used in validating addresses supplied in a call to <code>bind</code> should allow reuse of local addresses;</dd>
+<dt><code>"tcp-nodelay"</code></dt>
+<dd>Setting this option to <code>true</code> disables the Nagle's algorithm for the connection;</dd>
+<dt><code>"ipv6-v6only"</code></dt>
+<dd>Setting this option to <code>true</code> restricts an inet6 socket to sending and receiving only IPv6 packets.</dd>
+</dl></td>
+			</tr><tr>
+				<td><code>[value]</code></td>
+				<td>the value to set for the specified option.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="client:getoption:option"/>
+		<a name="client:getoption"/>
+		<h4>client:getoption()<a href="#client:getoption:option" class="anchor-link"></a></h4>
+		<p><code>client:getoption(option)</code></p>
+		Gets options for the TCP object. See <a href="#client:setoption">client:setoption</a> for description of the option names and values.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to get:
+<ul>
+<li><code>"keepalive"</code></li>
+<li><code>"linger"</code></li>
+<li><code>"reuseaddr"</code></li>
+<li><code>"tcp-nodelay"</code></li>
+</ul></td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the option value, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="server:getoption:option"/>
+		<a name="server:getoption"/>
+		<h4>server:getoption()<a href="#server:getoption:option" class="anchor-link"></a></h4>
+		<p><code>server:getoption(option)</code></p>
+		Gets options for the TCP object. See <a href="#server:setoption">server:setoption</a> for description of the option names and values.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to get:
+<ul>
+<li><code>"keepalive"</code></li>
+<li><code>"linger"</code></li>
+<li><code>"reuseaddr"</code></li>
+<li><code>"tcp-nodelay"</code></li>
+</ul></td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the option value, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="master:setstats:received-sent-age"/>
+		<a name="master:setstats"/>
+		<h4>master:setstats()<a href="#master:setstats:received-sent-age" class="anchor-link"></a></h4>
+		<p><code>master:setstats(received,sent,age)</code></p>
+		Resets accounting information on the socket, useful for throttling of bandwidth.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>received</code></td>
+				<td>the new number of bytes received.</td>
+			</tr><tr>
+				<td><code>sent</code></td>
+				<td>the new number of bytes sent.</td>
+			</tr><tr>
+				<td><code>age</code></td>
+				<td>the new age in seconds.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> in case of success, or <code>nil</code> in case of error.</td>
+			</tr></table><hr/><a name="client:setstats:received-sent-age"/>
+		<a name="client:setstats"/>
+		<h4>client:setstats()<a href="#client:setstats:received-sent-age" class="anchor-link"></a></h4>
+		<p><code>client:setstats(received,sent,age)</code></p>
+		Resets accounting information on the socket, useful for throttling of bandwidth.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>received</code></td>
+				<td>the new number of bytes received.</td>
+			</tr><tr>
+				<td><code>sent</code></td>
+				<td>the new number of bytes sent.</td>
+			</tr><tr>
+				<td><code>age</code></td>
+				<td>the new age in seconds.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> in case of success, or <code>nil</code> in case of error.</td>
+			</tr></table><hr/><a name="server:setstats:received-sent-age"/>
+		<a name="server:setstats"/>
+		<h4>server:setstats()<a href="#server:setstats:received-sent-age" class="anchor-link"></a></h4>
+		<p><code>server:setstats(received,sent,age)</code></p>
+		Resets accounting information on the socket, useful for throttling of bandwidth.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>received</code></td>
+				<td>the new number of bytes received.</td>
+			</tr><tr>
+				<td><code>sent</code></td>
+				<td>the new number of bytes sent.</td>
+			</tr><tr>
+				<td><code>age</code></td>
+				<td>the new age in seconds.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> in case of success, or <code>nil</code> in case of error.</td>
+			</tr></table><hr/><a name="master:settimeout:value-[mode]"/>
+		<a name="master:settimeout"/>
+		<h4>master:settimeout()<a href="#master:settimeout:value-[mode]" class="anchor-link"></a></h4>
+		<p><code>master:settimeout(value,[mode])</code></p>
+		Changes the timeout values for the object. By default, all I/O operations are blocking. That is, any call to the methods <code>send</code>, <code>receive</code>, and <code>accept</code> will block indefinitely, until the operation completes. The <code>settimeout</code> method defines a limit on the amount of time the I/O methods can block. When a timeout is set and the specified amount of time has elapsed, the affected methods give up and fail with an error code.
+There are two timeout modes and both can be used together for fine tuning.
+<span class="icon-attention"></span> Although timeout values have millisecond precision in LuaSocket, large blocks can cause I/O functions not to respect timeout values due to the time the library takes to transfer blocks to and from the OS and to and from the Lua interpreter. Also, function that accept host names and perform automatic name resolution might be blocked by the resolver for longer than the specified timeout value.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the amount of time to wait, in seconds. The <code>nil</code> timeout value allows operations to block indefinitely. Negative timeout values have the same effect.</td>
+			</tr><tr>
+				<td><code>[mode]</code></td>
+				<td>optional timeout mode to set:
+<dl>
+<dt><code>"b"</code></dt>
+<dd>block timeout. Specifies the upper limit on the amount of time LuaSocket can be blocked by the operating system while waiting for completion of any single I/O operation. This is the default mode;</dd>
+<dt><code>"t"</code></dt>
+<dd>total timeout. Specifies the upper limit on the amount of time LuaSocket can block a Lua script before returning from a call.</dd>
+</dl></td>
+			</tr></table><hr/><a name="client:settimeout:value-[mode]"/>
+		<a name="client:settimeout"/>
+		<h4>client:settimeout()<a href="#client:settimeout:value-[mode]" class="anchor-link"></a></h4>
+		<p><code>client:settimeout(value,[mode])</code></p>
+		Changes the timeout values for the object. By default, all I/O operations are blocking. That is, any call to the methods <code>send</code>, <code>receive</code>, and <code>accept</code> will block indefinitely, until the operation completes. The <code>settimeout</code> method defines a limit on the amount of time the I/O methods can block. When a timeout is set and the specified amount of time has elapsed, the affected methods give up and fail with an error code.
+There are two timeout modes and both can be used together for fine tuning.
+<span class="icon-attention"></span> Although timeout values have millisecond precision in LuaSocket, large blocks can cause I/O functions not to respect timeout values due to the time the library takes to transfer blocks to and from the OS and to and from the Lua interpreter. Also, function that accept host names and perform automatic name resolution might be blocked by the resolver for longer than the specified timeout value.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the amount of time to wait, in seconds. The <code>nil</code> timeout value allows operations to block indefinitely. Negative timeout values have the same effect.</td>
+			</tr><tr>
+				<td><code>[mode]</code></td>
+				<td>optional timeout mode to set:
+<dl>
+<dt><code>"b"</code></dt>
+<dd>block timeout. Specifies the upper limit on the amount of time LuaSocket can be blocked by the operating system while waiting for completion of any single I/O operation. This is the default mode;</dd>
+<dt><code>"t"</code></dt>
+<dd>total timeout. Specifies the upper limit on the amount of time LuaSocket can block a Lua script before returning from a call.</dd>
+</dl></td>
+			</tr></table><hr/><a name="server:settimeout:value-[mode]"/>
+		<a name="server:settimeout"/>
+		<h4>server:settimeout()<a href="#server:settimeout:value-[mode]" class="anchor-link"></a></h4>
+		<p><code>server:settimeout(value,[mode])</code></p>
+		Changes the timeout values for the object. By default, all I/O operations are blocking. That is, any call to the methods <code>send</code>, <code>receive</code>, and <code>accept</code> will block indefinitely, until the operation completes. The <code>settimeout</code> method defines a limit on the amount of time the I/O methods can block. When a timeout is set and the specified amount of time has elapsed, the affected methods give up and fail with an error code.
+There are two timeout modes and both can be used together for fine tuning.
+<span class="icon-attention"></span> Although timeout values have millisecond precision in LuaSocket, large blocks can cause I/O functions not to respect timeout values due to the time the library takes to transfer blocks to and from the OS and to and from the Lua interpreter. Also, function that accept host names and perform automatic name resolution might be blocked by the resolver for longer than the specified timeout value.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the amount of time to wait, in seconds. The <code>nil</code> timeout value allows operations to block indefinitely. Negative timeout values have the same effect.</td>
+			</tr><tr>
+				<td><code>[mode]</code></td>
+				<td>optional timeout mode to set:
+<dl>
+<dt><code>"b"</code></dt>
+<dd>block timeout. Specifies the upper limit on the amount of time LuaSocket can be blocked by the operating system while waiting for completion of any single I/O operation. This is the default mode;</dd>
+<dt><code>"t"</code></dt>
+<dd>total timeout. Specifies the upper limit on the amount of time LuaSocket can block a Lua script before returning from a call.</dd>
+</dl></td>
+			</tr></table><hr/><a name="client:shutdown:mode"/>
+		<a name="client:shutdown"/>
+		<h4>client:shutdown()<a href="#client:shutdown:mode" class="anchor-link"></a></h4>
+		<p><code>client:shutdown(mode)</code></p>
+		Shuts down part of a full-duplex connection.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>mode</code></td>
+				<td>which way of the connection should be shut down:
+<dl>
+<dt><code>"both"</code></dt>
+<dd>disallow further sends and receives on the object. This is the default mode;</dd>
+<dt><code>"send"</code></dt>
+<dd>disallow further sends on the object;</dd>
+<dt><code>"receive"</code></dt>
+<dd>disallow further receives on the object.</dd>
+</dl></td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>.</td>
+			</tr></table><hr/><a name="master:dirty:"/>
+		<a name="master:dirty"/>
+		<h4>master:dirty()<a href="#master:dirty:" class="anchor-link"></a></h4>
+		<p><code>master:dirty()</code></p>
+		Check the read buffer status.
+<span class="icon-attention"></span> This is an internal method, any use is unlikely to be portable.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td><code>true</code> if there is any data in the read buffer, <code>false</code> otherwise.</td>
+			</tr></table><hr/><a name="client:dirty:"/>
+		<a name="client:dirty"/>
+		<h4>client:dirty()<a href="#client:dirty:" class="anchor-link"></a></h4>
+		<p><code>client:dirty()</code></p>
+		Check the read buffer status.
+<span class="icon-attention"></span> This is an internal method, any use is unlikely to be portable.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td><code>true</code> if there is any data in the read buffer, <code>false</code> otherwise.</td>
+			</tr></table><hr/><a name="server:dirty:"/>
+		<a name="server:dirty"/>
+		<h4>server:dirty()<a href="#server:dirty:" class="anchor-link"></a></h4>
+		<p><code>server:dirty()</code></p>
+		Check the read buffer status.
+<span class="icon-attention"></span> This is an internal method, any use is unlikely to be portable.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td><code>true</code> if there is any data in the read buffer, <code>false</code> otherwise.</td>
+			</tr></table><hr/><a name="master:getfd:"/>
+		<a name="master:getfd"/>
+		<h4>master:getfd()<a href="#master:getfd:" class="anchor-link"></a></h4>
+		<p><code>master:getfd()</code></p>
+		Returns the underlying socket descriptor or handle associated to the object.
+<span class="icon-attention"></span> This is an internal method, any use is unlikely to be portable.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>handle</code></td>
+				<td>the descriptor or handle. In case the object has been closed, the return will be -1.</td>
+			</tr></table><hr/><a name="client:getfd:"/>
+		<a name="client:getfd"/>
+		<h4>client:getfd()<a href="#client:getfd:" class="anchor-link"></a></h4>
+		<p><code>client:getfd()</code></p>
+		Returns the underlying socket descriptor or handle associated to the object.
+<span class="icon-attention"></span> This is an internal method, any use is unlikely to be portable.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>handle</code></td>
+				<td>the descriptor or handle. In case the object has been closed, the return will be -1.</td>
+			</tr></table><hr/><a name="server:getfd:"/>
+		<a name="server:getfd"/>
+		<h4>server:getfd()<a href="#server:getfd:" class="anchor-link"></a></h4>
+		<p><code>server:getfd()</code></p>
+		Returns the underlying socket descriptor or handle associated to the object.
+<span class="icon-attention"></span> This is an internal method, any use is unlikely to be portable.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>handle</code></td>
+				<td>the descriptor or handle. In case the object has been closed, the return will be -1.</td>
+			</tr></table><hr/><a name="master:setfd:handle"/>
+		<a name="master:setfd"/>
+		<h4>master:setfd()<a href="#master:setfd:handle" class="anchor-link"></a></h4>
+		<p><code>master:setfd(handle)</code></p>
+		Sets the underling socket descriptor or handle associated to the object. The current one is simply replaced, not closed, and no other change to the object state is made
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>handle</code></td>
+				<td>the descriptor or handle to set.</td>
+			</tr></table><hr/><a name="client:setfd:handle"/>
+		<a name="client:setfd"/>
+		<h4>client:setfd()<a href="#client:setfd:handle" class="anchor-link"></a></h4>
+		<p><code>client:setfd(handle)</code></p>
+		Sets the underling socket descriptor or handle associated to the object. The current one is simply replaced, not closed, and no other change to the object state is made
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>handle</code></td>
+				<td>the descriptor or handle to set.</td>
+			</tr></table><hr/><a name="server:setfd:handle"/>
+		<a name="server:setfd"/>
+		<h4>server:setfd()<a href="#server:setfd:handle" class="anchor-link"></a></h4>
+		<p><code>server:setfd(handle)</code></p>
+		Sets the underling socket descriptor or handle associated to the object. The current one is simply replaced, not closed, and no other change to the object state is made
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>handle</code></td>
+				<td>the descriptor or handle to set.</td>
+			</tr></table><hr/><a name="connected:close:"/>
+		<a name="connected:close"/>
+		<h4>connected:close()<a href="#connected:close:" class="anchor-link"></a></h4>
+		<p><code>connected:close()</code></p>
+		Closes a UDP object. The internal socket used by the object is closed and the local address to which the object was bound is made available to other applications. No further operations (except for further calls to the close method) are allowed on a closed socket.
+<span class="icon-attention"></span> It is important to close all used sockets once they are not needed, since, in many systems, each socket uses a file descriptor, which are limited system resources. Garbage-collected objects are automatically closed before destruction, though.
+		<p><b>PARAMETERS</b></p>
+		<table></table><hr/><a name="unconnected:close:"/>
+		<a name="unconnected:close"/>
+		<h4>unconnected:close()<a href="#unconnected:close:" class="anchor-link"></a></h4>
+		<p><code>unconnected:close()</code></p>
+		Closes a UDP object. The internal socket used by the object is closed and the local address to which the object was bound is made available to other applications. No further operations (except for further calls to the close method) are allowed on a closed socket.
+<span class="icon-attention"></span> It is important to close all used sockets once they are not needed, since, in many systems, each socket uses a file descriptor, which are limited system resources. Garbage-collected objects are automatically closed before destruction, though.
+		<p><b>PARAMETERS</b></p>
+		<table></table><hr/><a name="connected:getpeername:"/>
+		<a name="connected:getpeername"/>
+		<h4>connected:getpeername()<a href="#connected:getpeername:" class="anchor-link"></a></h4>
+		<p><code>connected:getpeername()</code></p>
+		Retrieves information about the peer associated with a connected UDP object.
+<span class="icon-attention"></span> It makes no sense to call this method on unconnected objects.
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>info</code></td>
+				<td>a string with the IP address of the peer, the port number that peer is using for the connection, and the family ("inet" or "inet6"). In case of error, the method returns <code>nil</code>.</td>
+			</tr></table><hr/><a name="connected:getsockname:"/>
+		<a name="connected:getsockname"/>
+		<h4>connected:getsockname()<a href="#connected:getsockname:" class="anchor-link"></a></h4>
+		<p><code>connected:getsockname()</code></p>
+		Returns the local address information associated to the object.
+<span class="icon-attention"></span> UDP sockets are not bound to any address until the <code>setsockname</code> or the <code>sendto</code> method is called for the first time (in which case it is bound to an ephemeral port and the wild-card address).
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>info</code></td>
+				<td>a string with local IP address, a number with the local port, and the family ("inet" or "inet6"). In case of error, the method returns <code>nil</code>.</td>
+			</tr></table><hr/><a name="unconnected:getsockname:"/>
+		<a name="unconnected:getsockname"/>
+		<h4>unconnected:getsockname()<a href="#unconnected:getsockname:" class="anchor-link"></a></h4>
+		<p><code>unconnected:getsockname()</code></p>
+		Returns the local address information associated to the object.
+<span class="icon-attention"></span> UDP sockets are not bound to any address until the <code>setsockname</code> or the <code>sendto</code> method is called for the first time (in which case it is bound to an ephemeral port and the wild-card address).
+		<p><b>PARAMETERS</b></p>
+		<table></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>info</code></td>
+				<td>a string with local IP address, a number with the local port, and the family ("inet" or "inet6"). In case of error, the method returns <code>nil</code>.</td>
+			</tr></table><hr/><a name="connected:receive:[size]"/>
+		<a name="connected:receive"/>
+		<h4>connected:receive()<a href="#connected:receive:[size]" class="anchor-link"></a></h4>
+		<p><code>connected:receive([size])</code></p>
+		Receives a datagram from the UDP object. If the UDP object is connected, only datagrams coming from the peer are accepted. Otherwise, the returned datagram can come from any host.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[size]</code></td>
+				<td>optional maximum size of the datagram to be retrieved. If there are more than size bytes available in the datagram, the excess bytes are discarded. If there are less then size bytes available in the current datagram, the available bytes are returned. If size is omitted, the maximum datagram size is used (which is currently limited by the implementation to 8192 bytes).</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>datagram</code></td>
+				<td>the received datagram, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="unconnected:receive:[size]"/>
+		<a name="unconnected:receive"/>
+		<h4>unconnected:receive()<a href="#unconnected:receive:[size]" class="anchor-link"></a></h4>
+		<p><code>unconnected:receive([size])</code></p>
+		Receives a datagram from the UDP object. If the UDP object is connected, only datagrams coming from the peer are accepted. Otherwise, the returned datagram can come from any host.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[size]</code></td>
+				<td>optional maximum size of the datagram to be retrieved. If there are more than size bytes available in the datagram, the excess bytes are discarded. If there are less then size bytes available in the current datagram, the available bytes are returned. If size is omitted, the maximum datagram size is used (which is currently limited by the implementation to 8192 bytes).</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>datagram</code></td>
+				<td>the received datagram, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="unconnected:receivefrom:[size]"/>
+		<a name="unconnected:receivefrom"/>
+		<h4>unconnected:receivefrom()<a href="#unconnected:receivefrom:[size]" class="anchor-link"></a></h4>
+		<p><code>unconnected:receivefrom([size])</code></p>
+		Works exactly as the receive method, except it returns the IP address and port as extra return values (and is therefore slightly less efficient).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>[size]</code></td>
+				<td>optional maximum size of the datagram to be retrieved.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>datagram</code></td>
+				<td>the received datagram, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>ip_or_error</code></td>
+				<td>the IP address, or the error message in case of error.</td>
+			</tr><tr>
+				<td><code>port</code></td>
+				<td>the port number, or <code>nil</code> in case of error.</td>
+			</tr></table><hr/><a name="connected:getoption:option"/>
+		<a name="connected:getoption"/>
+		<h4>connected:getoption()<a href="#connected:getoption:option" class="anchor-link"></a></h4>
+		<p><code>connected:getoption(option)</code></p>
+		Gets an option value from the UDP object. See <a href="#connected:setoption">connected:setoption</a> for description of the option names and values.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to get:
+<ul>
+<li><code>"dontroute"</code></li>
+<li><code>"broadcast"</code></li>
+<li><code>"reuseaddr"</code></li>
+<li><code>"reuseport"</code></li>
+<li><code>"ip-multicast-loop"</code></li>
+<li><code>"ipv6-v6only"</code></li>
+<li><code>"ip-multicast-if"</code></li>
+<li><code>"ip-multicast-ttl"</code></li>
+<li><code>"ip-add-membership"</code></li>
+<li><code>"ip-drop-membership"</code></li>
+</ul></td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the option value, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="unconnected:getoption:option"/>
+		<a name="unconnected:getoption"/>
+		<h4>unconnected:getoption()<a href="#unconnected:getoption:option" class="anchor-link"></a></h4>
+		<p><code>unconnected:getoption(option)</code></p>
+		Gets an option value from the UDP object. See <a href="#unconnected:setoption">unconnected:setoption</a> for description of the option names and values.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to get:
+<ul>
+<li><code>"dontroute"</code></li>
+<li><code>"broadcast"</code></li>
+<li><code>"reuseaddr"</code></li>
+<li><code>"reuseport"</code></li>
+<li><code>"ip-multicast-loop"</code></li>
+<li><code>"ipv6-v6only"</code></li>
+<li><code>"ip-multicast-if"</code></li>
+<li><code>"ip-multicast-ttl"</code></li>
+<li><code>"ip-add-membership"</code></li>
+<li><code>"ip-drop-membership"</code></li>
+</ul></td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the option value, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="connected:send:datagram"/>
+		<a name="connected:send"/>
+		<h4>connected:send()<a href="#connected:send:datagram" class="anchor-link"></a></h4>
+		<p><code>connected:send(datagram)</code></p>
+		Sends a datagram to the UDP peer of a connected object.
+<span class="icon-attention"></span> In UDP, the send method never blocks and the only way it can fail is if the underlying transport layer refuses to send a message to the specified address (i.e. no interface accepts the address).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>datagram</code></td>
+				<td>a string with the datagram contents. The maximum datagram size for UDP is 64K minus IP layer overhead. However datagrams larger than the link layer packet size will be fragmented, which may deteriorate performance and/or reliability.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> on success, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="unconnected:sendto:datagram-ip-port"/>
+		<a name="unconnected:sendto"/>
+		<h4>unconnected:sendto()<a href="#unconnected:sendto:datagram-ip-port" class="anchor-link"></a></h4>
+		<p><code>unconnected:sendto(datagram,ip,port)</code></p>
+		Sends a datagram to the specified IP address and port number.
+<span class="icon-attention"></span> In UDP, the send method never blocks and the only way it can fail is if the underlying transport layer refuses to send a message to the specified address (i.e. no interface accepts the address).
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>datagram</code></td>
+				<td>a string with the datagram contents. The maximum datagram size for UDP is 64K minus IP layer overhead. However datagrams larger than the link layer packet size will be fragmented, which may deteriorate performance and/or reliability.</td>
+			</tr><tr>
+				<td><code>ip</code></td>
+				<td>the IP address of the recipient. Host names are not allowed for performance reasons.</td>
+			</tr><tr>
+				<td><code>port</code></td>
+				<td>the port number at the recipient.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> on success, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="connected:setpeername:"*""/>
+		<a name="connected:setpeername"/>
+		<h4>connected:setpeername()<a href="#connected:setpeername:"*"" class="anchor-link"></a></h4>
+		<p><code>connected:setpeername("*")</code></p>
+		Changes the peer of a UDP object. This method turns an unconnected UDP object into a connected UDP object or vice versa.
+For connected objects, outgoing datagrams will be sent to the specified peer, and datagrams received from other peers will be discarded by the OS. Connected UDP objects must use the <code>send</code> and <code>receive</code> methods instead of <code>sendto</code> and <code>receivefrom</code>.
+<span class="icon-attention"></span> Since the address of the peer does not have to be passed to and from the OS, the use of connected UDP objects is recommended when the same peer is used for several transmissions and can result in up to 30% performance gains.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>"*"</code></td>
+				<td>if address is "*" and the object is connected, the peer association is removed and the object becomes an unconnected object again.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> on success, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="unconnected:setpeername:address-port"/>
+		<a name="unconnected:setpeername"/>
+		<h4>unconnected:setpeername()<a href="#unconnected:setpeername:address-port" class="anchor-link"></a></h4>
+		<p><code>unconnected:setpeername(address,port)</code></p>
+		Changes the peer of a UDP object. This method turns an unconnected UDP object into a connected UDP object or vice versa.
+For connected objects, outgoing datagrams will be sent to the specified peer, and datagrams received from other peers will be discarded by the OS. Connected UDP objects must use the <code>send</code> and <code>receive</code> methods instead of <code>sendto</code> and <code>receivefrom</code>.
+<span class="icon-attention"></span> Since the address of the peer does not have to be passed to and from the OS, the use of connected UDP objects is recommended when the same peer is used for several transmissions and can result in up to 30% performance gains.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>an IP address or a host name.</td>
+			</tr><tr>
+				<td><code>port</code></td>
+				<td>the port number.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> on success, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="unconnected:setsockname:address-port"/>
+		<a name="unconnected:setsockname"/>
+		<h4>unconnected:setsockname()<a href="#unconnected:setsockname:address-port" class="anchor-link"></a></h4>
+		<p><code>unconnected:setsockname(address,port)</code></p>
+		Binds the UDP object to a local address.
+<span class="icon-attention"></span> This method can only be called before any datagram is sent through the UDP object, and only once. Otherwise, the system automatically binds the object to all local interfaces and chooses an ephemeral port as soon as the first datagram is sent. After the local address is set, either automatically by the system or explicitly by <code>setsockname</code>, it cannot be changed.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>address</code></td>
+				<td>an IP address or a host name. If address is "*" the system binds to all local interfaces using the constant <code>INADDR_ANY</code>.</td>
+			</tr><tr>
+				<td><code>port</code></td>
+				<td>the port number. If port is 0, the system chooses an ephemeral port.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>success</code></td>
+				<td>the value <code>1</code> on success, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="connected:setoption:option-[value]"/>
+		<a name="connected:setoption"/>
+		<h4>connected:setoption()<a href="#connected:setoption:option-[value]" class="anchor-link"></a></h4>
+		<p><code>connected:setoption(option,[value])</code></p>
+		Sets options for the UDP object. Options are only needed by low-level or time-critical applications. You should only modify an option if you are sure you need it.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to set. The value is provided in the <code>value</code> parameter:
+<dl>
+<dt><code>"dontroute"</code></dt>
+<dd>Indicates that outgoing messages should bypass the standard routing facilities. Receives a boolean value;</dd>
+<dt><code>"broadcast"</code></dt>
+<dd>Requests permission to send broadcast datagrams on the socket. Receives a boolean value;</dd>
+<dt><code>"reuseaddr"</code></dt>
+<dd>Indicates that the rules used in validating addresses supplied in a <code>bind</code> call should allow reuse of local addresses. Receives a boolean value;</dd>
+<dt><code>"reuseport"</code></dt>
+<dd>Allows completely duplicate bindings by multiple processes if they all set <code>"reuseport"</code> before binding the port. Receives a boolean value;</dd>
+<dt><code>"ip-multicast-loop"</code></dt>
+<dd>Specifies whether or not a copy of an outgoing multicast datagram is delivered to the sending host as long as it is a member of the multicast group. Receives a boolean value;</dd>
+<dt><code>"ipv6-v6only"</code></dt>
+<dd>Specifies whether to restrict inet6 sockets to sending and receiving only IPv6 packets. Receive a boolean value;</dd>
+<dt><code>"ip-multicast-if"</code></dt>
+<dd>Sets the interface over which outgoing multicast datagrams are sent. Receives an IP address;</dd>
+<dt><code>"ip-multicast-ttl"</code></dt>
+<dd>Sets the Time To Live in the IP header for outgoing multicast datagrams. Receives a number;</dd>
+</dl>
+<code>"ip-add-membership"</code>: Joins the multicast group specified. Receives a table with fields:
+<ul>
+<li><span class="type">string</span> <code>multiaddr</code> (IP address)</li>
+<li><span class="type">string</span> <code>interface</code> (IP address)</li>
+</ul>
+<dl>
+<dt>"'ip-drop-membership"`</dt>
+<dd>Leaves the multicast group specified. Receives a table with fields:</dd>
+</dl>
+<ul>
+<li><span class="type">string</span> <code>multiaddr</code> (IP address)</li>
+<li><span class="type">string</span> <code>interface</code> (IP address)</li>
+</ul></td>
+			</tr><tr>
+				<td><code>[value]</code></td>
+				<td>the value to set for the specified option.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="unconnected:setoption:option-[value]"/>
+		<a name="unconnected:setoption"/>
+		<h4>unconnected:setoption()<a href="#unconnected:setoption:option-[value]" class="anchor-link"></a></h4>
+		<p><code>unconnected:setoption(option,[value])</code></p>
+		Sets options for the UDP object. Options are only needed by low-level or time-critical applications. You should only modify an option if you are sure you need it.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>option</code></td>
+				<td>the name of the option to set. The value is provided in the <code>value</code> parameter:
+<dl>
+<dt><code>"dontroute"</code></dt>
+<dd>Indicates that outgoing messages should bypass the standard routing facilities. Receives a boolean value;</dd>
+<dt><code>"broadcast"</code></dt>
+<dd>Requests permission to send broadcast datagrams on the socket. Receives a boolean value;</dd>
+<dt><code>"reuseaddr"</code></dt>
+<dd>Indicates that the rules used in validating addresses supplied in a <code>bind</code> call should allow reuse of local addresses. Receives a boolean value;</dd>
+<dt><code>"reuseport"</code></dt>
+<dd>Allows completely duplicate bindings by multiple processes if they all set <code>"reuseport"</code> before binding the port. Receives a boolean value;</dd>
+<dt><code>"ip-multicast-loop"</code></dt>
+<dd>Specifies whether or not a copy of an outgoing multicast datagram is delivered to the sending host as long as it is a member of the multicast group. Receives a boolean value;</dd>
+<dt><code>"ipv6-v6only"</code></dt>
+<dd>Specifies whether to restrict inet6 sockets to sending and receiving only IPv6 packets. Receive a boolean value;</dd>
+<dt><code>"ip-multicast-if"</code></dt>
+<dd>Sets the interface over which outgoing multicast datagrams are sent. Receives an IP address;</dd>
+<dt><code>"ip-multicast-ttl"</code></dt>
+<dd>Sets the Time To Live in the IP header for outgoing multicast datagrams. Receives a number;</dd>
+</dl>
+<code>"ip-add-membership"</code>: Joins the multicast group specified. Receives a table with fields:
+<ul>
+<li><span class="type">string</span> <code>multiaddr</code> (IP address)</li>
+<li><span class="type">string</span> <code>interface</code> (IP address)</li>
+</ul>
+<dl>
+<dt>"'ip-drop-membership"`</dt>
+<dd>Leaves the multicast group specified. Receives a table with fields:</dd>
+</dl>
+<ul>
+<li><span class="type">string</span> <code>multiaddr</code> (IP address)</li>
+<li><span class="type">string</span> <code>interface</code> (IP address)</li>
+</ul></td>
+			</tr><tr>
+				<td><code>[value]</code></td>
+				<td>the value to set for the specified option.</td>
+			</tr></table><p><b>RETURNS</b></p>
+		<table><tr>
+				<td><code>status</code></td>
+				<td>the value <code>1</code>, or <code>nil</code> in case of error.</td>
+			</tr><tr>
+				<td><code>error</code></td>
+				<td>the error message, or <code>nil</code> if no error occurred.</td>
+			</tr></table><hr/><a name="connected:settimeout:value"/>
+		<a name="connected:settimeout"/>
+		<h4>connected:settimeout()<a href="#connected:settimeout:value" class="anchor-link"></a></h4>
+		<p><code>connected:settimeout(value)</code></p>
+		Changes the timeout values for the object. By default, the <code>receive</code> and <code>receivefrom</code>  operations are blocking. That is, any call to the methods will block indefinitely, until data arrives. The <code>settimeout</code> function defines a limit on the amount of time the functions can block. When a timeout is set and the specified amount of time has elapsed, the affected methods give up and fail with an error code.
+<span class="icon-attention"></span> In UDP, the <code>send</code> and <code>sendto</code> methods never block (the datagram is just passed to the OS and the call returns immediately). Therefore, the <code>settimeout</code> method has no effect on them.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the amount of time to wait, in seconds. The <code>nil</code> timeout value allows operations to block indefinitely. Negative timeout values have the same effect.</td>
+			</tr></table><hr/><a name="unconnected:settimeout:value"/>
+		<a name="unconnected:settimeout"/>
+		<h4>unconnected:settimeout()<a href="#unconnected:settimeout:value" class="anchor-link"></a></h4>
+		<p><code>unconnected:settimeout(value)</code></p>
+		Changes the timeout values for the object. By default, the <code>receive</code> and <code>receivefrom</code>  operations are blocking. That is, any call to the methods will block indefinitely, until data arrives. The <code>settimeout</code> function defines a limit on the amount of time the functions can block. When a timeout is set and the specified amount of time has elapsed, the affected methods give up and fail with an error code.
+<span class="icon-attention"></span> In UDP, the <code>send</code> and <code>sendto</code> methods never block (the datagram is just passed to the OS and the call returns immediately). Therefore, the <code>settimeout</code> method has no effect on them.
+		<p><b>PARAMETERS</b></p>
+		<table><tr>
+				<td><code>value</code></td>
+				<td>the amount of time to wait, in seconds. The <code>nil</code> timeout value allows operations to block indefinitely. Negative timeout values have the same effect.</td>
+			</tr></table><hr/><h2>Constants</h2><a name="socket._VERSION"/>
+	<h4>socket._VERSION<a href="#socket._VERSION"><span class="anchor-link"/></a></h4>
+	<p>the current LuaSocket version</p>
+	<p>This constant has a string describing the current LuaSocket version.</p><hr/><a name="socket._SETSIZE"/>
+	<h4>socket._SETSIZE<a href="#socket._SETSIZE"><span class="anchor-link"/></a></h4>
+	<p>max numbers of sockets the select function can handle</p>
+	<p>This constant contains the maximum number of sockets that the select function can handle.</p><hr/></div>
+		</div>
+	</div>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<script>
+	var query = new URLSearchParams(window.location.search).get('q');
+	if (query) {
+		var instance = new Mark("div.ref");
+		instance.mark(query);
+		var elements = document.getElementsByTagName("mark");
+		if (elements.length > 0) {
+			elements[0].scrollIntoView();
+		}
+	}
+</script>
+<script type="text/javascript">
+	var menu = document.getElementById("navmenu");
+	if (menu != null) {
+		var viewportOffset = menu.getBoundingClientRect();
+		window.onscroll = function() {
+			if (window.pageYOffset > viewportOffset.top) {
+				menu.classList.add("sticky");
+			}
+			else {
+				menu.classList.remove("sticky");
+			}
+		};
+	}
+</script>
+
+	</div>
+
+	<footer class="darkest">
+	<div class="container">
+		<div class="row">
+			<div class="two columns">
+				<p><b>DEFOLD</b></p>
+				<ul>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/foundation">Foundation</a></li>
+					<li><a href="/faq/faq">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>NEWS</b></p>
+				<ul>
+					<li><a href="/press">Press</a></li>
+					<li><a href="/blog">Blog</a></li>
+					<li><a href="/newsletter">Newsletter</a></li>
+					<li><a href="https://forum.defold.com/c/releasenotes">Release announcements</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>GET INVOLVED</b></p>
+				<ul>
+					<li><a href="/open">Open&nbsp;Source</a></li>
+					<li><a href="/donate">Donate</a></li>
+					<li><a href="/contribute">Contribute</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEARN</b></p>
+				<ul>
+					<li><a href="/ref/go">API</a></li>
+					<li><a href="/examples">Examples</a></li>
+					<li><a href="/manuals/introduction">Manuals</a></li>
+					<li><a href="/tutorials">Tutorials</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>COMMUNITY</b></p>
+				<ul>
+					<li><a href="https://forum.defold.com" target="_blank">Forum</a></li>
+					<li><a href="/slack">Slack</a></li>
+					<li><a href="https://www.facebook.com/Defold" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/defold" target="_blank">Twitter</a></li>
+					<li><a href="https://www.linkedin.com/company/defold-foundation" target="_blank">LinkedIn</a></li>
+				</ul>
+			</div>
+			<div class="two columns">
+				<p><b>LEGAL</b></p>
+				<ul>
+					<li><a href="/license">License</a></li>
+					<li><a href="/logo-and-trademark">Logo &amp; Trademark</a></li>
+					<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+					<li><a href="/privacy-policy">Privacy Policy</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>Copyright © 2021 Defold Foundation</p>
+		</div>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>
