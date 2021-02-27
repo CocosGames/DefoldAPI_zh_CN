@@ -307,7 +307,7 @@ message错误消息默认为 "assertion failed!"
 		<a name="collectgarbage"/>
 		<h4>collectgarbage()<a href="#collectgarbage:[opt]-[arg]" class="anchor-link"></a></h4>
 		<p><code>collectgarbage([opt],[arg])</code></p>
-		主要用于控制内存垃圾回收器. 其具体执行的功能由第一个参数决定, 可选项:
+		主要用于控制内存垃圾回收器. 其具体执行的功能由第一个参数决定, opt 可选项:
 <dl>
 <dt>"collect"</dt>
 <dd>进行一次内存垃圾回收.
@@ -319,22 +319,15 @@ message错误消息默认为 "assertion failed!"
 <dt>"count"</dt>
 <dd>返回Lua占用内存总数 (单位 Kbytes).</dd>
 <dt>"step"</dt>
-<dd>内存垃圾回收步进.
-The step "size" is controlled by arg
-(larger values mean more steps) in a non-specified way.
-If you want to control the step size
-you must experimentally tune the value of arg.
-Returns true if the step finished a collection cycle.</dd>
+<dd>内存垃圾回收步进. 步进 "长度" 由 arg 决定 (值越大长度越长) .
+想要精细控制步进长度需要对 arg 进行反复试验.
+步进完成之后返回 true.</dd>
 <dt>"setpause"</dt>
-<dd>sets arg as the new value for the <em>pause</em> of
-the collector .
-Returns the previous value for <em>pause</em>.</dd>
+<dd>设置 arg 为垃圾回收器暂停时长&nbsp;. 返回的是上一次设定的暂停时长.</dd>
 <dt>"setstepmul"</dt>
-<dd>sets arg as the new value for the <em>step multiplier</em> of
-the collector .
-Returns the previous value for <em>step</em>.</dd>
+<dd>设置 arg 垃圾回收器步进倍数&nbsp;. 返回的是上一次设定的倍数.</dd>
 </dl>
-		<p><b>PARAMETERS</b></p>
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>[opt]</code></td>
 				<td></td>
@@ -345,13 +338,10 @@ Returns the previous value for <em>step</em>.</dd>
 		<a name="dofile"/>
 		<h4>dofile()<a href="#dofile:[filename]" class="anchor-link"></a></h4>
 		<p><code>dofile([filename])</code></p>
-		Opens the named file and executes its contents as a Lua chunk.
-When called without arguments,
-dofile executes the contents of the standard input (stdin).
-Returns all values returned by the chunk.
-In case of errors, dofile propagates the error
-to its caller (that is, dofile does not run in protected mode).
-		<p><b>PARAMETERS</b></p>
+		打开并执行 Lua 脚本文件. 默认使用标准输入 (stdin) 执行脚本代码.
+并且返回所有脚本返回值.
+遇到错误, 则上报给调用代码 (即不使用保护模式运行脚本).
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>[filename]</code></td>
 				<td></td>
@@ -359,19 +349,13 @@ to its caller (that is, dofile does not run in protected mode).
 		<a name="error"/>
 		<h4>error()<a href="#error:message-[level]" class="anchor-link"></a></h4>
 		<p><code>error(message,[level])</code></p>
-		Terminates the last protected function called
-and returns message as the error message.
-Function error never returns.
-Usually, error adds some information about the error position
-at the beginning of the message.
-The level argument specifies how to get the error position.
-With level 1 (the default), the error position is where the
-error function was called.
-Level 2 points the error to where the function
-that called error was called; and so on.
-Passing a level 0 avoids the addition of error position information
-to the message.
-		<p><b>PARAMETERS</b></p>
+		终止函数执行返回错误信息.
+函数不会被执行完不会返回任何值.
+通常, 错误信息开头部分反映了出错位置.
+参数 level 决定了如何获取出错位置. 默认 level 1, 出错位置为出错函数调用位置.
+Level 2 指向上层调用处; 以此类推.
+0 表示忽略出错位置.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>message</code></td>
 				<td></td>
@@ -382,15 +366,12 @@ to the message.
 		<a name="getfenv"/>
 		<h4>getfenv()<a href="#getfenv:[f]" class="anchor-link"></a></h4>
 		<p><code>getfenv([f])</code></p>
-		Returns the current environment in use by the function.
-f can be a Lua function or a number
-that specifies the function at that stack level:
-Level 1 is the function calling getfenv.
-If the given function is not a Lua function,
-or if f is 0,
-getfenv returns the global environment.
-The default for f is 1.
-		<p><b>PARAMETERS</b></p>
+		返回当前运行环境.
+f 可以是 Lua 函数或者是用以指定函数堆栈:
+Level 1 为调用 getfenv 的函数.
+如果参数不是函数或者为 0,则返回全局环境.
+参数 f 默认为 1.
+<p><b>参数</b></p>
 		<table><tr>
 				<td><code>[f]</code></td>
 				<td></td>
@@ -398,12 +379,11 @@ The default for f is 1.
 		<a name="getmetatable"/>
 		<h4>getmetatable()<a href="#getmetatable:object" class="anchor-link"></a></h4>
 		<p><code>getmetatable(object)</code></p>
-		If object does not have a metatable, returns <span class="type"> nil</span>.
-Otherwise,
-if the object's metatable has a <code>"__metatable"</code> field,
-returns the associated value.
-Otherwise, returns the metatable of the given object.
-		<p><b>PARAMETERS</b></p>
+		如果该对象不含元数据表, 则返回&nbsp; <span class="type"> nil</span>.
+包含数据表并且数据表含有&nbsp; <code>"__metatable"</code> 项,
+则返回该值.
+包含元数据表并且不包含上述项的返回整个元数据表.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>object</code></td>
 				<td></td>
@@ -411,15 +391,15 @@ Otherwise, returns the metatable of the given object.
 		<a name="ipairs"/>
 		<h4>ipairs()<a href="#ipairs:t" class="anchor-link"></a></h4>
 		<p><code>ipairs(t)</code></p>
-		Returns three values: an iterator function, the table t, and 0,
-so that the construction
+		返回3个值: 迭代函数, 表 t, 索引 0,
+也就是说
 <div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">do</span> <span class="n">body</span> <span class="k">end</span>
 </pre></div>
 
 
-will iterate over the pairs (<code>1,t[1]</code>), (<code>2,t[2]</code>), ...,
-up to the first integer key absent from the table.
-		<p><b>PARAMETERS</b></p>
+代表迭代调用 pairs (<code>1,t[1]</code>), (<code>2,t[2]</code>), ...,
+直到索引超过表容量.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>t</code></td>
 				<td></td>
