@@ -10,7 +10,7 @@
 
   gtag('config', 'UA-83690-3');
 </script>
-<title>API reference (html5)</title>
+<title>API 文档 (html5)</title>
 
 <!-- Google Structured Data (https://developers.google.com/search/docs/guides/intro-structured-data) -->
 <script type="application/ld+json">
@@ -193,30 +193,30 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/html5/">alpha</option><option value="/ref/beta/html5/">beta</option><option value="/ref/stable/html5/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>HTML5 API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>HTML5 API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#html5.run:code">html5.run()</a></td>
-		<td>run JavaScript code, in the browser, from Lua</td>
+		<td>在浏览器中, 从 Lua 调用 JavaScript 代码</td>
 	</tr></table><h2>Functions</h2><a name="html5.run:code"/>
 		<a name="html5.run"/>
 		<h4>html5.run()<a href="#html5.run:code" class="anchor-link"></a></h4>
 		<p><code>html5.run(code)</code></p>
-		Executes the supplied string as JavaScript inside the browser.
-A call to this function is blocking, the result is returned as-is, as a string.
-(Internally this will execute the string using the <code>eval()</code> JavaScript function.)
-		<p><b>PARAMETERS</b></p>
+		在浏览器中运行字符串 JavaScript 代码.
+调用此函数会造成程序阻断, 返回值与传入值相同, 而且也是字符串类型.
+(内部会调用 JavaScript 的 <code>eval()</code> 函数以实现功能.)
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>code</code></td>
-				<td>Javascript code to run</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>要运行的 Javascript 代码</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>result</code></td>
-				<td>result as string</td>
-			</tr></table><p><b>EXAMPLES</b></p>
+				<td>代码字符串</td>
+			</tr></table><p><b>实例</b></p>
 		<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">res</span> <span class="o">=</span> <span class="n">html5</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">10 + 20&quot;</span><span class="p">)</span> <span class="c1">-- returns the string &quot;30&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">res_num</span> <span class="o">=</span> <span class="nb">tonumber</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="c1">-- convert to number</span>
