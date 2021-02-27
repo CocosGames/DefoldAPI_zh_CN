@@ -193,30 +193,30 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/json/">alpha</option><option value="/ref/beta/json/">beta</option><option value="/ref/stable/json/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>JSON API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>JSON API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#json.decode:json">json.decode()</a></td>
-		<td>decode JSON from a string to a lua-table</td>
-	</tr></table><h2>Functions</h2><a name="json.decode:json"/>
+		<td>把 JSON 字符串解码为 lua 表</td>
+	</tr></table><h2>函数</h2><a name="json.decode:json"/>
 		<a name="json.decode"/>
 		<h4>json.decode()<a href="#json.decode:json" class="anchor-link"></a></h4>
 		<p><code>json.decode(json)</code></p>
-		Decode a string of JSON data into a Lua table.
-A Lua error is raised for syntax errors.
-		<p><b>PARAMETERS</b></p>
+				把 JSON 字符串解码为 lua 表.
+遇到语法问题会抛出 Lua 错误.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>json</code></td>
-				<td>json data</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>json 数据</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>data</code></td>
-				<td>decoded json</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		Converting a string containing JSON data into a Lua table:
+				<td>解码后的 json</td>
+			</tr></table><p><b>实例</b></p>
+				把一个 JSON 数据字符串解码为 lua 表:
 <div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
     <span class="kd">local</span> <span class="n">jsonstring</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">{&quot;persons&quot;:[{&quot;name&quot;:&quot;John Doe&quot;},{&quot;name&quot;:&quot;Darth Vader&quot;}]}&#39;</span>
     <span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">jsonstring</span><span class="p">)</span>
@@ -225,7 +225,7 @@ A Lua error is raised for syntax errors.
 </pre></div>
 
 
-Results in the following printout:
+结果输出:
 <div class="codehilite"><pre><span></span>{
   persons = {
     1 = {
