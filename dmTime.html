@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmTime/">alpha</option><option value="/ref/beta/dmTime/">beta</option><option value="/ref/stable/dmTime/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk time api documentation</h2>
-<p>Time functions.</p>
+			<div class="columns nine ref scrollable"><h2>Sdk 时钟 api 文档</h2>
+<p>时钟函数.</p>
 
 <table class="compact">
 	<tr>
@@ -210,33 +210,33 @@
 
 </table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmTime::GetTime:">uint64_t&nbsp;dmTime::GetTime()</a></td>
-		<td>get current time in microseconds</td>
+		<td>获得当前时间毫秒数</td>
 	</tr><tr>
 		<td><a href="#dmTime::Sleep:useconds">void&nbsp;dmTime::Sleep(&nbsp;useconds)</a></td>
-		<td>sleep thread with low precision (~10 milliseconds).</td>
-	</tr></table><h2>Functions</h2><a name="dmTime::GetTime:"/>
+		<td>低精度(精度大约10毫秒)线程休眠.</td>
+	</tr></table><h2>函数</h2><a name="dmTime::GetTime:"/>
 		<h4>dmTime::GetTime<a href="#dmTime::GetTime:" class="anchor-link"></a></h4>
 			<p><code>uint64_t&nbsp;dmTime::GetTime()</code><p>
 
-    Get current time in microseconds since Jan. 1, 1970.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+    获得自从 Jan. 1, 1970 以来的毫秒数值.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>uint64_t</code></td>
-                <td>Current time in microseconds</td>
+                <td>当前时间毫秒数</td>
             </tr></table><hr/><a name="dmTime::Sleep:useconds"/>
 		<h4>dmTime::Sleep<a href="#dmTime::Sleep:useconds" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmTime::Sleep(&nbsp;useconds)</code><p>
 
-    Sleep thread with low precision (~10 milliseconds).
-    <p><b>PARAMETERS</b></p>
+					低精度(精度大约10毫秒)进行线程休眠.
+    <p><b>参数</b></p>
     <table><tr><td><code></code></td>
                 <td><code>useconds</code></td>
-                <td>Time to sleep in microseconds</td></tr></table><hr/></div>
+                <td>休眠毫秒数</td></tr></table><hr/></div>
 		</div>
 	</div>
 </div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>

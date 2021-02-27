@@ -221,7 +221,7 @@
 		<td>迭代以数字索引的数据表</td>
 	</tr><tr>
 		<td><a href="#load:func-[chunkname]">load()</a></td>
-		<td>反复调用函数以载入 chunk</td>
+		<td>反复调用函数以载入程式块</td>
 	</tr><tr>
 		<td><a href="#loadfile:[filename]">loadfile()</a></td>
 		<td>载入并解析 Lua 文件</td>
@@ -407,7 +407,7 @@ Level 1 为调用 getfenv 的函数.
 		<a name="load"/>
 		<h4>load()<a href="#load:func-[chunkname]" class="anchor-link"></a></h4>
 		<p><code>load(func,[chunkname])</code></p>
-		Loads a chunk using function func to get its pieces.
+		载入程式块并且使用 func 函数获取其中各个片段.
 Each call to func must return a string that concatenates
 with previous results.
 A return of an empty string, <span class="type"> nil</span>, or no value signals the end of the chunk.
