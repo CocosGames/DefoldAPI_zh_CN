@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmMutex/">alpha</option><option value="/ref/beta/dmMutex/">beta</option><option value="/ref/stable/dmMutex/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk mutex api documentation</h2>
-<p>API for platform independent mutex synchronization primitive.</p>
+			<div class="columns nine ref scrollable"><h2>Sdk mutex api 文档</h2>
+<p>跨平台同步互斥锁 API.</p>
 
 <table class="compact">
 	<tr>
@@ -210,83 +210,82 @@
 
 </table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmMutex::New:">dmMutex::HMutex&nbsp;dmMutex::New()</a></td>
-		<td>create Mutex</td>
+		<td>创建互斥锁.</td>
 	</tr><tr>
 		<td><a href="#dmMutex::Delete:mutex">void&nbsp;dmMutex::Delete(dmMutex::HMutex&nbsp;mutex)</a></td>
-		<td>delete Mutex.</td>
+		<td>删除互斥锁.</td>
 	</tr><tr>
 		<td><a href="#dmMutex::Lock:mutex">void&nbsp;dmMutex::Lock(dmMutex::HMutex&nbsp;mutex)</a></td>
-		<td>lock Mutex.</td>
+		<td>互斥锁锁定.</td>
 	</tr><tr>
 		<td><a href="#dmMutex::TryLock:mutex">bool&nbsp;dmMutex::TryLock(dmMutex::HMutex&nbsp;mutex)</a></td>
-		<td>non-blocking lock of Mutex.</td>
+		<td>以非阻断方式锁定.</td>
 	</tr><tr>
 		<td><a href="#dmMutex::Unlock:mutex">void&nbsp;dmMutex::Unlock(dmMutex::HMutex&nbsp;mutex)</a></td>
-		<td>unlock Mutex.</td>
+		<td>互斥锁解除锁定.</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>MACROS</th>
+		<th>宏</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmMutex::Unlock:mutex">DM_MUTEX_SCOPED_LOCK(mutex)</a></td>
-		<td>macro for scope lifetime Mutex locking</td>
+		<td>范围互斥锁相关宏</td>
 	</tr></table><h2>Functions</h2><a name="dmMutex::New:"/>
 		<h4>dmMutex::New<a href="#dmMutex::New:" class="anchor-link"></a></h4>
 			<p><code>dmMutex::HMutex&nbsp;dmMutex::New()</code><p>
 
-    Creates a new HMutex.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+    创建互斥锁句柄.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmMutex::HMutex</code></td>
-                <td>A new Mutex handle.</td>
+                <td>新建的互斥锁句柄.</td>
             </tr></table><hr/><a name="dmMutex::Delete:mutex"/>
 		<h4>dmMutex::Delete<a href="#dmMutex::Delete:mutex" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmMutex::Delete(dmMutex::HMutex&nbsp;mutex)</code><p>
 
-    Deletes a HMutex.
-    <p><b>PARAMETERS</b></p>
+    删除互斥锁句柄.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmMutex::HMutex</code></td>
                 <td><code>mutex</code></td>
-                <td>Mutex handle to delete.</td></tr></table><hr/><a name="dmMutex::Lock:mutex"/>
+                <td>需要删除的互斥锁句柄.</td></tr></table><hr/><a name="dmMutex::Lock:mutex"/>
 		<h4>dmMutex::Lock<a href="#dmMutex::Lock:mutex" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmMutex::Lock(dmMutex::HMutex&nbsp;mutex)</code><p>
 
-    Lock a HMutex, will block until mutex is unlocked if already locked elsewhere.
-    <p><b>PARAMETERS</b></p>
+    锁定互斥锁句柄, 直到别处的锁生效从而该锁解除.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmMutex::HMutex</code></td>
                 <td><code>mutex</code></td>
-                <td>Mutex handle to lock.</td></tr></table><hr/><a name="dmMutex::TryLock:mutex"/>
+                <td>需要锁定的互斥锁句柄.</td></tr></table><hr/><a name="dmMutex::TryLock:mutex"/>
 		<h4>dmMutex::TryLock<a href="#dmMutex::TryLock:mutex" class="anchor-link"></a></h4>
 			<p><code>bool&nbsp;dmMutex::TryLock(dmMutex::HMutex&nbsp;mutex)</code><p>
 
-    Tries to lock a HMutex, if mutex is already locked it will return false and
-continue without locking the mutex.
-    <p><b>PARAMETERS</b></p>
+    尝试锁定互斥锁句柄, 如果互斥锁已被锁定则返回false, 然后继续执行.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmMutex::HMutex</code></td>
                 <td><code>mutex</code></td>
-                <td>Mutex handle to lock.</td></tr></table><p><b>RETURNS</b></p>
+                <td>需要锁定的互斥锁句柄.</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>bool</code></td>
-                <td>True if mutex was successfully locked, false otherwise.</td>
+                <td>如果锁定成功则返回true, 否则返回false.</td>
             </tr></table><hr/><a name="dmMutex::Unlock:mutex"/>
 		<h4>dmMutex::Unlock<a href="#dmMutex::Unlock:mutex" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmMutex::Unlock(dmMutex::HMutex&nbsp;mutex)</code><p>
 
-    Unlock a HMutex.
+    解除互斥锁句柄锁定.
     <p><b>PARAMETERS</b></p>
     <table><tr><td><code>dmMutex::HMutex</code></td>
                 <td><code>mutex</code></td>
-                <td>Mutex handle to unlock.</td></tr></table><hr/><h2>Macros</h2><a name="DM_MUTEX_SCOPED_LOCK"/>
+                <td>需要解除的互斥锁句柄.</td></tr></table><hr/><h2>Macros</h2><a name="DM_MUTEX_SCOPED_LOCK"/>
 	<h4>DM_MUTEX_SCOPED_LOCK<a href="#DM_MUTEX_SCOPED_LOCK"><span class="anchor-link"/></a></h4>
-	<p>macro for scope lifetime Mutex locking</p>
-	<p>Will lock a Mutex and automatically unlock it at the end of the scope.</p><table><tr>
+	<p>范围互斥锁相关宏</p>
+	<p>锁定互斥锁然后自动在生命周期范围结束时解除互斥锁.</p><table><tr>
 		<td><code>mutex</code></td>
-		<td>Mutex handle to lock.</td>
+		<td>需要锁定的互斥锁句柄.</td>
 	</tr></table><hr/></div>
 		</div>
 	</div>
