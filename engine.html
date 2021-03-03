@@ -193,41 +193,41 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/engine/">alpha</option><option value="/ref/beta/engine/">beta</option><option value="/ref/stable/engine/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Engine runtime documentation</h1>
-<p>Version: stable</p><h2>Macros</h2><a name="DM_SAVE_HOME"/>
+			<div class="columns nine ref scrollable"><h1>Engine 运行时文档</h1>
+<p>Version: stable</p><h2>宏</h2><a name="DM_SAVE_HOME"/>
 	<h4>DM_SAVE_HOME<a href="#DM_SAVE_HOME"><span class="anchor-link"/></a></h4>
-	<p>override the save directory</p>
-	<p>Overrides the save directory when using <code>sys.get_save_file()</code></p><hr/><a name="DM_SERVICE_PORT"/>
+	<p>覆盖保存目录</p>
+	<p>使用 <code>sys.get_save_file()</code> 覆盖保存目录</p><hr/><a name="DM_SERVICE_PORT"/>
 	<h4>DM_SERVICE_PORT<a href="#DM_SERVICE_PORT"><span class="anchor-link"/></a></h4>
-	<p>set the engine service port</p>
-	<p>Overrides the engine service port, when creating the internal http server (e.g web profiler)
-Valid values are integers between [0, 65535] and the string "dynamic" (which translates to 0).
-Default value is 8001.</p><hr/><a name="DM_QUIT_ON_ESC"/>
+	<p>设置引擎服务端口</p>
+	<p>覆盖引擎服务端口, 用于创建内部 http 服务器 (比如 web 调试器)
+有效值为 [0, 65535] 的整数以及 "dynamic" 字样(内部被转换为 0).
+默认值为 8001.</p><hr/><a name="DM_QUIT_ON_ESC"/>
 	<h4>DM_QUIT_ON_ESC<a href="#DM_QUIT_ON_ESC"><span class="anchor-link"/></a></h4>
-	<p>enables quit on escape key</p>
-	<p>Enables quitting the app directly by pressing the <code>ESCAPE</code> key.
-Set to "1" to enable this feature.</p><hr/><a name="DM_LOG_PORT"/>
+	<p>按ESC键退出</p>
+	<p>开启按 <code>ESCAPE</code> 键退出.
+设置为 "1" 即为开启.</p><hr/><a name="DM_LOG_PORT"/>
 	<h4>DM_LOG_PORT<a href="#DM_LOG_PORT"><span class="anchor-link"/></a></h4>
-	<p>sets the logging port</p>
-	<p>Enables receiving the log on a designated port (e.g. using telnet)
-Valid values are integers between [0, 65535]</p><hr/><a name="--verify-graphics-calls="/>
+	<p>设置日志端口</p>
+	<p>开启接收日志的端口 (例如配合使用 telnet)
+有效值为 [0, 65535] 的整数</p><hr/><a name="--verify-graphics-calls="/>
 	<h4>--verify-graphics-calls=<a href="#--verify-graphics-calls="><span class="anchor-link"/></a></h4>
-	<p>disables OpenGL error checking</p>
-	<p>Disables OpenGL error checking.
-This is especially beneficial for running debug builds in the Chrome browser,
-in which the calls to <code>glGetError()</code> is notoriously slow.
-Default value is "true" for debug builds, and "false" for release builds.</p><p><b>EXAMPLES</b></p>
+	<p>关闭 OpenGL 错误检查</p>
+	<p>关闭 OpenGL 错误检查.
+这在用Chrome浏览器运行debug版游戏时很有用,
+因为调用 <code>glGetError()</code> 会特别慢.
+debug版默认为 "true", release默认为 "false".</p><p><b>实例</b></p>
 	<div class="codehilite"><pre><span></span>$ ./dmengine --verify-graphics-calls<span class="o">=</span><span class="nb">false</span>
 </pre></div><hr/><a name="launch_project"/>
 	<h4>launch_project<a href="#launch_project"><span class="anchor-link"/></a></h4>
-	<p>launch with a specific project</p>
-	<p>Launch the engine with a specific project file
-If no project is specified, it will default to "./game.projectc", "build/default/game.projectc"</p><p><b>EXAMPLES</b></p>
+	<p>载入指定项目文件</p>
+	<p>让引擎加载指定项目文件
+如果未指定, 默认为 "./game.projectc", "build/default/game.projectc"</p><p><b>实例</b></p>
 	<div class="codehilite"><pre><span></span>$ ./dmengine some/folder/game.projectc
 </pre></div><hr/><a name="--config="/>
 	<h4>--config=<a href="#--config="><span class="anchor-link"/></a></h4>
-	<p>override game property</p>
-	<p>Override game properties with the format <code>--config=section.key=value</code></p><p><b>EXAMPLES</b></p>
+	<p>覆盖游戏属性</p>
+	<p>使用如 <code>--config=section.key=value</code> 的参数覆盖游戏属性</p><p><b>实例</b></p>
 	<div class="codehilite"><pre><span></span>$ ./dmengine --config<span class="o">=</span>project.mode<span class="o">=</span>TEST --config<span class="o">=</span>project.server<span class="o">=</span>http://testserver.com
 </pre></div><hr/></div>
 		</div>
