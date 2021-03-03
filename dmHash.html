@@ -10,7 +10,7 @@
 
   gtag('config', 'UA-83690-3');
 </script>
-<title>API reference (dmHash)</title>
+<title>API 文档 (dmHash)</title>
 
 <!-- Google Structured Data (https://developers.google.com/search/docs/guides/intro-structured-data) -->
 <script type="application/ld+json">
@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmHash/">alpha</option><option value="/ref/beta/dmHash/">beta</option><option value="/ref/stable/dmHash/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk hash api documentation</h2>
-<p>Hash functions.</p>
+			<div class="columns nine ref scrollable"><h2>Sdk hash api 文档</h2>
+<p>Hash 函数.</p>
 
 <table class="compact">
 	<tr>
@@ -209,75 +209,73 @@
 
 </table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmHashBuffer64:buffer-buffer_len">uint64_t&nbsp;dmHashBuffer64(const void*&nbsp;buffer, uint32_t&nbsp;buffer_len)</a></td>
-		<td>calculate 64-bit hash value from buffer</td>
+		<td>用缓存计算 64-bit 哈希值</td>
 	</tr><tr>
 		<td><a href="#dmHashString64:string">uint64_t&nbsp;dmHashString64(const char*&nbsp;string)</a></td>
-		<td>calculate 64-bit hash value from string</td>
+		<td>用字符串计算 64-bit 哈希值</td>
 	</tr><tr>
 		<td><a href="#dmHashReverseSafe64:hash">const char*&nbsp;dmHashReverseSafe64(uint64_t&nbsp;hash)</a></td>
-		<td>get string value from hash</td>
+		<td>把哈希值转为字符串</td>
 	</tr><tr>
 		<td><a href="#dmHashReverseSafe64:hash-length">const char*&nbsp;dmHashReverseSafe64(uint64_t&nbsp;hash, uint32_t*&nbsp;length)</a></td>
-		<td>get string value from hash</td>
+		<td>把哈希值转为字符串</td>
 	</tr></table><h2>Functions</h2><a name="dmHashBuffer64:buffer-buffer_len"/>
 		<h4>dmHashBuffer64<a href="#dmHashBuffer64:buffer-buffer_len" class="anchor-link"></a></h4>
 			<p><code>uint64_t&nbsp;dmHashBuffer64(const void*&nbsp;buffer, uint32_t&nbsp;buffer_len)</code><p>
 
-    calculate 64-bit hash value from buffer
-    <p><b>PARAMETERS</b></p>
+	用缓存计算 64-bit 哈希值
+    <p><b>参数</b></p>
     <table><tr><td><code>const void*</code></td>
                 <td><code>buffer</code></td>
-                <td>Buffer</td></tr><tr><td><code>uint32_t</code></td>
+                <td>缓存</td></tr><tr><td><code>uint32_t</code></td>
                 <td><code>buffer_len</code></td>
-                <td>Length of buffer</td></tr></table><p><b>RETURNS</b></p>
+                <td>缓存长度</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>uint64_t</code></td>
-                <td>hash value</td>
+                <td>哈希值</td>
             </tr></table><hr/><a name="dmHashString64:string"/>
 		<h4>dmHashString64<a href="#dmHashString64:string" class="anchor-link"></a></h4>
 			<p><code>uint64_t&nbsp;dmHashString64(const char*&nbsp;string)</code><p>
 
-    calculate 64-bit hash value from string
-    <p><b>PARAMETERS</b></p>
+	用字符串计算 64-bit 哈希值
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>string</code></td>
-                <td>Null terminated string</td></tr></table><p><b>RETURNS</b></p>
+                <td>以null结尾的字符串</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>uint64_t</code></td>
-                <td>hash value</td>
+                <td>哈希值</td>
             </tr></table><hr/><a name="dmHashReverseSafe64:hash"/>
 		<h4>dmHashReverseSafe64<a href="#dmHashReverseSafe64:hash" class="anchor-link"></a></h4>
 			<p><code>const char*&nbsp;dmHashReverseSafe64(uint64_t&nbsp;hash)</code><p>
 
-    Returns the original string used to produce a hash.
-Always returns a null terminated string. Returns "<unknown>" if the original string wasn't found.
-    <p><b>PARAMETERS</b></p>
+    转成为哈希之前的原字符串.
+返回以null结尾的字符串. 如果没有则返回 "<unknown>".
+    <p><b>参数</b></p>
     <table><tr><td><code>uint64_t</code></td>
                 <td><code>hash</code></td>
-                <td>hash value</td></tr></table><p><b>RETURNS</b></p>
+                <td>哈希值</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>const char*</code></td>
-                <td>Original string value</td>
+                <td>原字符串</td>
             </tr></table><hr/><a name="dmHashReverseSafe64:hash-length"/>
 		<h4>dmHashReverseSafe64<a href="#dmHashReverseSafe64:hash-length" class="anchor-link"></a></h4>
 			<p><code>const char*&nbsp;dmHashReverseSafe64(uint64_t&nbsp;hash, uint32_t*&nbsp;length)</code><p>
 
-    Reverse hash lookup. Maps hash to original data. It is guaranteed that the returned
-buffer is null-terminated. If the buffer contains a valid c-string
-it can safely be used in printf and friends.
-    <p><b>PARAMETERS</b></p>
+    反转哈希过程. 对应哈希的原字符串. 返回以null结尾的缓存. 缓存是合法c语言字符串的话就可以使用 printf 和 friends 进行输出.
+    <p><b>参数</b></p>
     <table><tr><td><code>uint64_t</code></td>
                 <td><code>hash</code></td>
-                <td>hash to lookup</td></tr><tr><td><code>uint32_t*</code></td>
+                <td>需要反转的哈希值</td></tr><tr><td><code>uint32_t*</code></td>
                 <td><code>length</code></td>
-                <td>original data length. Optional argument and NULL-pointer is accepted.</td></tr></table><p><b>RETURNS</b></p>
+                <td>原数据长度. 可选参数, 可以传入非空指针.</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>const char*</code></td>
-                <td>pointer to buffer. 0 if no reverse exists or if reverse lookup is disabled</td>
+                <td>缓存指针. 无法反转的话返回0</td>
             </tr></table><hr/></div>
 		</div>
 	</div>
