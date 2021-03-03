@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmAlign/">alpha</option><option value="/ref/beta/dmAlign/">beta</option><option value="/ref/stable/dmAlign/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk align api documentation</h2>
-<p>Alignment macros. Use for compiler compatibility</p>
+			<div class="columns nine ref scrollable"><h2>Sdk align api 文档</h2>
+<p>数据对齐宏. 用以使编译器兼容</p>
 
 <table class="compact">
 	<tr>
@@ -209,34 +209,34 @@
 
 </table><table class="compact">
 	<tr>
-		<th>MACROS</th>
+		<th>宏</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#">DM_ALIGNED(a)</a></td>
-		<td>data structure alignment macro</td>
+		<td>数据结构对齐宏</td>
 	</tr><tr>
 		<td><a href="#">DM_ALIGN(x,&nbspa)</a></td>
-		<td>value alignment macro</td>
-	</tr></table><h2>Macros</h2><a name="DM_ALIGNED"/>
+		<td>值对齐宏</td>
+	</tr></table><h2>宏</h2><a name="DM_ALIGNED"/>
 	<h4>DM_ALIGNED<a href="#DM_ALIGNED"><span class="anchor-link"/></a></h4>
-	<p>data structure alignment macro</p>
-	<p>Data structure alignment</p><table><tr>
+	<p>数据结构对齐宏</p>
+	<p>数据结构对齐</p><table><tr>
 		<td><code>a</code></td>
-		<td>number of bytes to align to</td>
-	</tr></table><p><b>EXAMPLES</b></p>
-	Align m_Data to 16 bytes alignment boundary:
+		<td>对齐字节数</td>
+	</tr></table><p><b>实例</b></p>
+	对齐 m_Data 到16字节范围:
 <div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">DM_ALIGNED</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="n">m_Data</span><span class="p">;</span>
 </pre></div><hr/><a name="DM_ALIGN"/>
 	<h4>DM_ALIGN<a href="#DM_ALIGN"><span class="anchor-link"/></a></h4>
-	<p>value alignment macro</p>
-	<p>Align a value to a boundary</p><table><tr>
+	<p>值对齐宏</p>
+	<p>把一个值对齐到一个范围</p><table><tr>
 		<td><code>x</code></td>
-		<td>value to align</td>
+		<td>要对齐的值</td>
 	</tr><tr>
 		<td><code>a</code></td>
-		<td>alignment boundary</td>
-	</tr></table><p><b>EXAMPLES</b></p>
-	Align 24 to 16 alignment boundary. results is 32:
+		<td>对齐范围</td>
+	</tr></table><p><b>实例</b></p>
+	把 24 对齐到以16为10的范围. 结果是 32:
 <div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">DM_ALIGN</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
 </pre></div><hr/></div>
 		</div>
