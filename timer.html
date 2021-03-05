@@ -193,74 +193,73 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/timer/">alpha</option><option value="/ref/beta/timer/">beta</option><option value="/ref/stable/timer/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Timer API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>Timer API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#timer.delay:delay-repeat-callback">timer.delay()</a></td>
-		<td>create a timer</td>
+		<td>创建计时器</td>
 	</tr><tr>
 		<td><a href="#timer.cancel:handle">timer.cancel()</a></td>
-		<td>cancel a timer</td>
+		<td>取消计时器</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>CONSTANT</th>
+		<th>常量</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#timer.INVALID_TIMER_HANDLE">timer.INVALID_TIMER_HANDLE</a></td>
-		<td>Indicates an invalid timer handle</td>
-	</tr></table><h2>Functions</h2><a name="timer.delay:delay-repeat-callback"/>
+		<td>标注非法计时器句柄</td>
+	</tr></table><h2>函数</h2><a name="timer.delay:delay-repeat-callback"/>
 		<a name="timer.delay"/>
 		<h4>timer.delay()<a href="#timer.delay:delay-repeat-callback" class="anchor-link"></a></h4>
 		<p><code>timer.delay(delay,repeat,callback)</code></p>
-		Adds a timer and returns a unique handle
-You may create more timers from inside a timer callback.
-Using a delay of 0 will result in a timer that triggers at the next frame just before
-script update functions.
-If you want a timer that triggers on each frame, set delay to 0.0f and repeat to true.
-Timers created within a script will automatically die when the script is deleted.
-		<p><b>PARAMETERS</b></p>
+		创建计时器返回唯一编号句柄
+一个callback函数可以对应多个计时器.
+delay为 0 的话计时器会在下一帧立即启动.
+要让计时器每一帧都启动, 把 delay 设置为 0.0f, repeat 设置为 true.
+脚本被删除的话, 其创建的计时器会被自动一同删除.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>delay</code></td>
-				<td>time interval in seconds</td>
+				<td>以秒为单位的延时时间</td>
 			</tr><tr>
 				<td><code>repeat</code></td>
-				<td>true = repeat timer until cancel, false = one-shot timer</td>
+				<td>true = 重复计时, false = 一次性计时</td>
 			</tr><tr>
 				<td><code>callback</code></td>
-				<td>timer callback function
+				<td>计时结束回调函数
 <dl>
 <dt><code>self</code></dt>
-<dd><span class="type">object</span> The current object</dd>
+<dd><span class="type">object</span> 当前对象</dd>
 <dt><code>handle</code></dt>
-<dd><span class="type">number</span> The handle of the timer</dd>
+<dd><span class="type">number</span> 计时器句柄</dd>
 <dt><code>time_elapsed</code></dt>
-<dd><span class="type">number</span> The elapsed time - on first trigger it is time since timer.delay call, otherwise time since last trigger</dd>
+<dd><span class="type">number</span> 经过的时间 - 第一个计时器从 timer.delay 调用开始计算, 否则从最后一个计时器出发开始计算</dd>
 </dl></td>
-			</tr></table><p><b>RETURNS</b></p>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>handle</code></td>
-				<td>identifier for the create timer, returns timer.INVALID_TIMER_HANDLE if the timer can not be created</td>
+				<td>创建的计时器的id, 无法创建的话返回 timer.INVALID_TIMER_HANDLE</td>
 			</tr></table><hr/><a name="timer.cancel:handle"/>
 		<a name="timer.cancel"/>
 		<h4>timer.cancel()<a href="#timer.cancel:handle" class="anchor-link"></a></h4>
 		<p><code>timer.cancel(handle)</code></p>
-		You may cancel a timer from inside a timer callback.
-Cancelling a timer that is already executed or cancelled is safe.
-		<p><b>PARAMETERS</b></p>
+		可以从回调函数里取消计时器.
+被取消的计时器不管是不是处于运行状态都不会报错.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>handle</code></td>
-				<td>the timer handle returned by timer.delay()</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>由 timer.delay() 返回的计时器句柄</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>true</code></td>
-				<td>if the timer was active, false if the timer is already cancelled / complete</td>
-			</tr></table><hr/><h2>Constants</h2><a name="timer.INVALID_TIMER_HANDLE"/>
+				<td>表示取消了正在运行中的计时器, false 表示计时器没在运行</td>
+			</tr></table><hr/><h2>常量</h2><a name="timer.INVALID_TIMER_HANDLE"/>
 	<h4>timer.INVALID_TIMER_HANDLE<a href="#timer.INVALID_TIMER_HANDLE"><span class="anchor-link"/></a></h4>
-	<p>Indicates an invalid timer handle</p>
-	<p>Indicates an invalid timer handle</p><hr/></div>
+	<p>表示非法计时器句柄</p>
+	<p>表示非法计时器句柄</p><hr/></div>
 		</div>
 	</div>
 </div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
