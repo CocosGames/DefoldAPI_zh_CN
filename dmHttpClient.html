@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmHttpClient/">alpha</option><option value="/ref/beta/dmHttpClient/">beta</option><option value="/ref/stable/dmHttpClient/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk http client api documentation</h2>
-<p>Http client functions.</p>
+			<div class="columns nine ref scrollable"><h2>Sdk http 客户端 api 文档</h2>
+<p>Http 客户端函数.</p>
 
 <table class="compact">
 	<tr>
@@ -210,47 +210,47 @@
 
 </table><table class="compact">
 	<tr>
-		<th>ENUMS</th>
+		<th>枚举</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#ParseResult">ParseResult</a></td>
-		<td>header parse result enumeration</td>
+		<td>响应头数据解析结果枚举</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#ParseHeader:header_str-user_data-end_of_receive-version_cbk-header_cbk-body_cbk">dmHttpClient::ParseResult&nbsp;ParseHeader(char*&nbsp;header_str, const void*&nbsp;user_data, bool&nbsp;end_of_receive, function&nbsp;version_cbk, function&nbsp;header_cbk, function&nbsp;body_cbk)</a></td>
-		<td>parse the headers</td>
-	</tr></table><h2>Functions</h2><a name="ParseHeader:header_str-user_data-end_of_receive-version_cbk-header_cbk-body_cbk"/>
+		<td>解析响应头数据</td>
+	</tr></table><h2>函数</h2><a name="ParseHeader:header_str-user_data-end_of_receive-version_cbk-header_cbk-body_cbk"/>
 		<h4>ParseHeader<a href="#ParseHeader:header_str-user_data-end_of_receive-version_cbk-header_cbk-body_cbk" class="anchor-link"></a></h4>
 			<p><code>dmHttpClient::ParseResult&nbsp;ParseHeader(char*&nbsp;header_str, const void*&nbsp;user_data, bool&nbsp;end_of_receive, function&nbsp;version_cbk, function&nbsp;header_cbk, function&nbsp;body_cbk)</code><p>
 
-    Parse the header data and make callbacks for each header/version entry and the start of the body.
-    <p><b>PARAMETERS</b></p>
+    解析响应头数据以及传入各种回调函数.
+    <p><b>参数</b></p>
     <table><tr><td><code>char*</code></td>
                 <td><code>header_str</code></td>
-                <td>http response headers. Must be a null terminated string.</td></tr><tr><td><code>const void*</code></td>
+                <td>http 响应头数据. 以null结尾的符串.</td></tr><tr><td><code>const void*</code></td>
                 <td><code>user_data</code></td>
-                <td>user data to the callbacks.</td></tr><tr><td><code>bool</code></td>
+                <td>用户数据回调函数.</td></tr><tr><td><code>bool</code></td>
                 <td><code>end_of_receive</code></td>
-                <td>true if there is no more data</td></tr><tr><td><code>function</code></td>
+                <td>如果不再有更多数据则返回true</td></tr><tr><td><code>function</code></td>
                 <td><code>version_cbk</code></td>
-                <td>callback for the http version
+                <td>http版本回调函数
     void (<em>version_cbk)(void</em> user_data, int major, int minor, int status, const char* status_str);</td></tr><tr><td><code>function</code></td>
                 <td><code>header_cbk</code></td>
-                <td>callback for each header/value pair
+                <td>各个 响应头/值 映射回调函数
     void (<em>header_cbk)(void</em> user_data, const char<em> key, const char</em> value);</td></tr><tr><td><code>function</code></td>
                 <td><code>body_cbk</code></td>
-                <td>callback to note the start offset of the body data.
-    void (<em>body_cbk)(void</em> user_data, int offset)</td></tr></table><p><b>RETURNS</b></p>
+                <td>响应体数据偏移量回调函数.
+    void (<em>body_cbk)(void</em> user_data, int offset)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmHttpClient::ParseResult</code></td>
-                <td>the parse result</td>
+                <td>解析结果</td>
             </tr></table><hr/><h2>Enums</h2><a name="ParseResult"/>
 	<h4>ParseResult<a href="#ParseResult"><span class="anchor-link"/></a></h4>
 	<p>header parse result enumeration</p>
-	<p>Header parse result enumeration.</p><table><tr>
+	<p>响应头数据解析结果枚举.</p><table><tr>
 		<td><code>dmHttpClient::PARSE_RESULT_NEED_MORE_DATA</code></td>
 		<td>= 1</td>
 	</tr><tr>
