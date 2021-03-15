@@ -193,31 +193,31 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/zlib/">alpha</option><option value="/ref/beta/zlib/">beta</option><option value="/ref/stable/zlib/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Zlib compression API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>Zlib 压缩 API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#zlib.inflate:buf">zlib.inflate()</a></td>
-		<td>Inflate (decompress) a buffer</td>
+		<td>解压缓存</td>
 	</tr><tr>
 		<td><a href="#zlib.deflate:buf">zlib.deflate()</a></td>
-		<td>Deflate (compress) a buffer</td>
+		<td>压缩缓存</td>
 	</tr></table><h2>Functions</h2><a name="zlib.inflate:buf"/>
 		<a name="zlib.inflate"/>
 		<h4>zlib.inflate()<a href="#zlib.inflate:buf" class="anchor-link"></a></h4>
 		<p><code>zlib.inflate(buf)</code></p>
-		A lua error is raised is on error
-		<p><b>PARAMETERS</b></p>
+		遇到问题的话lua会报错
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td>buffer to inflate</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>需解压缓存</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td>inflated buffer</td>
-			</tr></table><p><b>EXAMPLES</b></p>
+				<td>解压后缓存</td>
+			</tr></table><p><b>实例</b></p>
 		<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\120\94\11\201\200\44\86\0\162\68\133\226\146\162\204\188\116\133\242\204\146\12\133\210\188\228\252\220\130\162\212\226\226\212\20\133\148\196\146\68\61\0\44\67\14\201</span><span class="s">&quot;</span>
 <span class="kd">local</span> <span class="n">uncompressed_data</span> <span class="o">=</span> <span class="n">zlib</span><span class="p">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">uncompressed_data</span><span class="p">)</span> <span class="c1">--&gt; This is a string with uncompressed data.</span>
@@ -225,16 +225,16 @@
 		<a name="zlib.deflate"/>
 		<h4>zlib.deflate()<a href="#zlib.deflate:buf" class="anchor-link"></a></h4>
 		<p><code>zlib.deflate(buf)</code></p>
-		A lua error is raised is on error
-		<p><b>PARAMETERS</b></p>
+		遇到问题的话lua会报错
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td>buffer to deflate</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>需压缩缓存</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td>deflated buffer</td>
-			</tr></table><p><b>EXAMPLES</b></p>
+				<td>压缩后缓存</td>
+			</tr></table><p><b>实例</b></p>
 		<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">This is a string with uncompressed data.&quot;</span>
 <span class="kd">local</span> <span class="n">compressed_data</span> <span class="o">=</span> <span class="n">zlib</span><span class="p">.</span><span class="n">deflate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">&quot;</span>
