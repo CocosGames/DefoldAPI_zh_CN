@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmDNS/">alpha</option><option value="/ref/beta/dmDNS/">beta</option><option value="/ref/stable/dmDNS/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk dns api documentation</h2>
-<p>Dns functions.</p>
+			<div class="columns nine ref scrollable"><h2>Sdk dns api 文档</h2>
+<p>Dns 函数.</p>
 
 <table class="compact">
 	<tr>
@@ -210,36 +210,36 @@
 
 </table><table class="compact">
 	<tr>
-		<th>ENUMS</th>
+		<th>枚举</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmDNS::Result">dmDNS::Result</a></td>
-		<td>result type</td>
+		<td>结果的类型</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmDNS::NewChannel:channel">&nbsp;dmDNS::NewChannel(dmDNS::HChannel*&nbsp;channel)</a></td>
-		<td>create a new channel</td>
+		<td>建立新通道</td>
 	</tr><tr>
 		<td><a href="#dmDNS::StopChannel:channel">void&nbsp;dmDNS::StopChannel(dmDNS::HChannel&nbsp;channel)</a></td>
-		<td>stop current request</td>
+		<td>停止当前请求</td>
 	</tr><tr>
 		<td><a href="#dmDNS::DeleteChannel:channel">void&nbsp;dmDNS::DeleteChannel(dmDNS::HChannel&nbsp;channel)</a></td>
-		<td>delete channel</td>
+		<td>删除通道</td>
 	</tr><tr>
 		<td><a href="#dmDNS::RefreshChannel:channel">&nbsp;dmDNS::RefreshChannel(dmDNS::HChannel&nbsp;channel)</a></td>
-		<td>refresh to the latest dns servers</td>
-	</tr></table><h2>Functions</h2><a name="dmDNS::NewChannel:channel"/>
+		<td>刷新dns服务器</td>
+	</tr></table><h2>函数</h2><a name="dmDNS::NewChannel:channel"/>
 		<h4>dmDNS::NewChannel<a href="#dmDNS::NewChannel:channel" class="anchor-link"></a></h4>
 			<p><code>&nbsp;dmDNS::NewChannel(dmDNS::HChannel*&nbsp;channel)</code><p>
 
-    Creates a new channel that can be used for DNS queries.
-    <p><b>PARAMETERS</b></p>
+    建立新通道用于建立DNS查询请求.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmDNS::HChannel*</code></td>
                 <td><code>channel</code></td>
-                <td>Pointer to the created channel if successful, will be left alone otherwise</td></tr></table><p><b>RETURNS</b></p>
+                <td>成功则使指针指向新建通道, 否则甚么也不指向</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code></code></td>
                 <td>on succcess</td>
@@ -247,35 +247,35 @@
 		<h4>dmDNS::StopChannel<a href="#dmDNS::StopChannel:channel" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmDNS::StopChannel(dmDNS::HChannel&nbsp;channel)</code><p>
 
-    Stops the current request (if available) on a channel.
-    <p><b>PARAMETERS</b></p>
+    停止通道中的当前请求 (如果有的话).
+    <p><b>参数</b></p>
     <table><tr><td><code>dmDNS::HChannel</code></td>
                 <td><code>channel</code></td>
-                <td>Handle to the channel</td></tr></table><hr/><a name="dmDNS::DeleteChannel:channel"/>
+                <td>通道句柄</td></tr></table><hr/><a name="dmDNS::DeleteChannel:channel"/>
 		<h4>dmDNS::DeleteChannel<a href="#dmDNS::DeleteChannel:channel" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmDNS::DeleteChannel(dmDNS::HChannel&nbsp;channel)</code><p>
 
-    Deletes the current channel and cancels all requests.
-Note: You must always make sure to call StopChannel(channel) before calling this function.
-    <p><b>PARAMETERS</b></p>
+    删除当前通道及其所有请求.
+注意: 调用此函数前必须先调用 StopChannel(channel).
+    <p><b>参数</b></p>
     <table><tr><td><code>dmDNS::HChannel</code></td>
                 <td><code>channel</code></td>
-                <td>Handle to the channel</td></tr></table><hr/><a name="dmDNS::RefreshChannel:channel"/>
+                <td>通道句柄</td></tr></table><hr/><a name="dmDNS::RefreshChannel:channel"/>
 		<h4>dmDNS::RefreshChannel<a href="#dmDNS::RefreshChannel:channel" class="anchor-link"></a></h4>
 			<p><code>&nbsp;dmDNS::RefreshChannel(dmDNS::HChannel&nbsp;channel)</code><p>
 
-    Refreshes the channel configuration so that the latest DNS servers are used.
-    <p><b>PARAMETERS</b></p>
+    刷新通道设置供DNS服务器使用.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmDNS::HChannel</code></td>
                 <td><code>channel</code></td>
-                <td>Handle to the channel</td></tr></table><p><b>RETURNS</b></p>
+                <td>通道句柄</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code></code></td>
                 <td>on succcess</td>
-            </tr></table><hr/><h2>Enums</h2><a name="dmDNS::Result"/>
+            </tr></table><hr/><h2>枚举</h2><a name="dmDNS::Result"/>
 	<h4>dmDNS::Result<a href="#dmDNS::Result"><span class="anchor-link"/></a></h4>
 	<p>result type</p>
-	<p>Result type</p><table><tr>
+	<p>结果类型</p><table><tr>
 		<td><code>dmDNS::RESULT_OK</code></td>
 		<td>0</td>
 	</tr><tr>
