@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmURI/">alpha</option><option value="/ref/beta/dmURI/">beta</option><option value="/ref/stable/dmURI/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk uri api documentation</h2>
-<p>URI functions.</p>
+			<div class="columns nine ref scrollable"><h2>Sdk uri api 文档</h2>
+<p>URI 函数.</p>
 
 <table class="compact">
 	<tr>
@@ -210,80 +210,80 @@
 
 </table><table class="compact">
 	<tr>
-		<th>STRUCTS</th>
+		<th>结构</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmURI::Parts">struct&nbsp;dmURI::Parts</a></td>
-		<td>URI parsing result parts</td>
+		<td>URI 解析结果的各部分</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmURI::Result:">void&nbsp;dmURI::Result()</a></td>
-		<td>URI parsing result</td>
+		<td>URI 解析结果</td>
 	</tr><tr>
 		<td><a href="#dmURI::Parse:uri-parts">&nbsp;dmURI::Parse(const char*&nbsp;uri, dmURI::Parts&nbsp;parts)</a></td>
-		<td>Parse URI and split in three parts. (scheme, locat...</td>
+		<td>解析 URI 并分为三个部分. (scheme, locat...</td>
 	</tr><tr>
 		<td><a href="#dmURI::Encode:src-dst-dst_size-bytes_written[out]">void&nbsp;dmURI::Encode(const char*&nbsp;src, char*&nbsp;dst, uint32_t&nbsp;dst_size, uint32_t&nbsp;bytes_written[out])</a></td>
-		<td>Performs URL encoding of the supplied buffer</td>
+		<td>对缓存进行URL编码</td>
 	</tr><tr>
 		<td><a href="#dmURI::Decode:src-dst">void&nbsp;dmURI::Decode(const char*&nbsp;src, char*&nbsp;dst)</a></td>
-		<td>Decodes an URL encoded buffer</td>
-	</tr></table><h2>Functions</h2><a name="dmURI::Result:"/>
+		<td>对缓存进行URL解码</td>
+	</tr></table><h2>函数</h2><a name="dmURI::Result:"/>
 		<h4>dmURI::Result<a href="#dmURI::Result:" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmURI::Result()</code><p>
 
-    URI parsing result
-    <p><b>PARAMETERS</b></p>
+    URI解析结果
+    <p><b>参数</b></p>
     <table></table><hr/><a name="dmURI::Parse:uri-parts"/>
 		<h4>dmURI::Parse<a href="#dmURI::Parse:uri-parts" class="anchor-link"></a></h4>
 			<p><code>&nbsp;dmURI::Parse(const char*&nbsp;uri, dmURI::Parts&nbsp;parts)</code><p>
 
-    Parse URI and split in three parts. (scheme, location, path)
-    <p><b>PARAMETERS</b></p>
+    解析URI并且分为三部分. (scheme, location, path)
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>uri</code></td>
-                <td>URI to parse</td></tr><tr><td><code>dmURI::Parts</code></td>
+                <td>要解析的URI</td></tr><tr><td><code>dmURI::Parts</code></td>
                 <td><code>parts</code></td>
-                <td>Result</td></tr></table><p><b>RETURNS</b></p>
+                <td>解析结果</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code></code></td>
-                <td>on success</td>
+                <td>解析成功</td>
             </tr></table><hr/><a name="dmURI::Encode:src-dst-dst_size-bytes_written[out]"/>
 		<h4>dmURI::Encode<a href="#dmURI::Encode:src-dst-dst_size-bytes_written[out]" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmURI::Encode(const char*&nbsp;src, char*&nbsp;dst, uint32_t&nbsp;dst_size, uint32_t&nbsp;bytes_written[out])</code><p>
 
-    Performs URL encoding of the supplied buffer
-    <p><b>PARAMETERS</b></p>
+	对缓存进行URI编码
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>src</code></td>
-                <td>string to encode</td></tr><tr><td><code>char*</code></td>
+                <td>需要编码的字符串</td></tr><tr><td><code>char*</code></td>
                 <td><code>dst</code></td>
-                <td>the destination buffer</td></tr><tr><td><code>uint32_t</code></td>
+                <td>输出缓存</td></tr><tr><td><code>uint32_t</code></td>
                 <td><code>dst_size</code></td>
-                <td>size of the provided out buffer</td></tr><tr><td><code>uint32_t</code></td>
+                <td>输出缓存大小</td></tr><tr><td><code>uint32_t</code></td>
                 <td><code>bytes_written[out]</code></td>
-                <td>number of bytes written</td></tr></table><hr/><a name="dmURI::Decode:src-dst"/>
+                <td>输出字节数</td></tr></table><hr/><a name="dmURI::Decode:src-dst"/>
 		<h4>dmURI::Decode<a href="#dmURI::Decode:src-dst" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmURI::Decode(const char*&nbsp;src, char*&nbsp;dst)</code><p>
 
-    Decodes an URL encoded buffer
+    对缓存进行URI解码
     <p><b>PARAMETERS</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>src</code></td>
                 <td>Input</td></tr><tr><td><code>char*</code></td>
                 <td><code>dst</code></td>
-                <td>Decoded output</td></tr></table><hr/><h2>Structs</h2><a name="dmURI::Parts"/>
+                <td>解码输出</td></tr></table><hr/><h2>Structs</h2><a name="dmURI::Parts"/>
 	<h4>dmURI::Parts<a href="#dmURI::Parts"><span class="anchor-link"/></a></h4>
 
 		<p>
-        <p><b>TYPE</b></p>
+        <p><b>类型</b></p>
         <code>struct&nbsp;dmURI::Parts</code><br>
     </p>
 
-    <p>URI parsing result parts</p>
+    <p>URI 解析结果部分</p>
 
 	<hr/></div>
 		</div>
