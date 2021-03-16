@@ -193,47 +193,47 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/image/">alpha</option><option value="/ref/beta/image/">beta</option><option value="/ref/stable/image/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Image API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>Image API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#image.load:buffer-[premult]">image.load()</a></td>
-		<td>load image from buffer</td>
+		<td>从缓存加载图片</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>CONSTANT</th>
+		<th>常量</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#image.TYPE_RGB">image.TYPE_RGB</a></td>
-		<td>RGB image type</td>
+		<td>RGB 图片类型</td>
 	</tr><tr>
 		<td><a href="#image.TYPE_RGBA">image.TYPE_RGBA</a></td>
-		<td>RGBA image type</td>
+		<td>RGBA 图片类型</td>
 	</tr><tr>
 		<td><a href="#image.TYPE_LUMINANCE">image.TYPE_LUMINANCE</a></td>
-		<td>luminance image type</td>
+		<td>亮度图片类型</td>
 	</tr></table><h2>Functions</h2><a name="image.load:buffer-[premult]"/>
 		<a name="image.load"/>
 		<h4>image.load()<a href="#image.load:buffer-[premult]" class="anchor-link"></a></h4>
 		<p><code>image.load(buffer,[premult])</code></p>
-		Load image (PNG or JPEG) from buffer.
-		<p><b>PARAMETERS</b></p>
+		从缓存加载 (PNG 或 JPEG) 图片.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>buffer</code></td>
-				<td>image data buffer</td>
+				<td>图片数据缓存</td>
 			</tr><tr>
 				<td><code>[premult]</code></td>
-				<td>optional flag if alpha should be premultiplied. Defaults to <code>false</code></td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>可选标志, 表明 alpha 通道是否预乘. 默认为 <code>false</code></td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>image</code></td>
-				<td>object or <code>nil</code> if loading fails. The object is a table with the following fields:
+				<td>成功返回对象,失败返回 <code>nil</code>. 返回的对象是一个有以下项目的表:
 <ul>
-<li><span class="type">number</span> <code>width</code>: image width</li>
-<li><span class="type">number</span> <code>height</code>: image height</li>
-<li><span class="type">constant</span> <code>type</code>: image type<ul>
+<li><span class="type">number</span> <code>width</code>: 图片宽度</li>
+<li><span class="type">number</span> <code>height</code>: 图片高度</li>
+<li><span class="type">constant</span> <code>type</code>: 图片类型<ul>
 <li><code>image.TYPE_RGB</code></li>
 <li><code>image.TYPE_RGBA</code></li>
 <li><code>image.TYPE_LUMINANCE</code></li>
@@ -241,23 +241,23 @@
 </li>
 <li><span class="type">string</span> <code>buffer</code>: the raw image data</li>
 </ul></td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		How to load an image from an URL and create a GUI texture from it:
+			</tr></table><p><b>实例</b></p>
+		从 URL 载入图片然后用作 GUI 的贴图:
 <div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">imgurl</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">http://www.site.com/image.png&quot;</span>
 <span class="n">http</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">imgurl</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">GET&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
         <span class="kd">local</span> <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">response</span><span class="p">)</span>
         <span class="kd">local</span> <span class="n">tx</span> <span class="o">=</span> <span class="n">gui</span><span class="p">.</span><span class="n">new_texture</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">image_node&quot;</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="n">buffer</span><span class="p">)</span>
     <span class="k">end</span><span class="p">)</span>
-</pre></div><hr/><h2>Constants</h2><a name="image.TYPE_RGB"/>
+</pre></div><hr/><h2>常量</h2><a name="image.TYPE_RGB"/>
 	<h4>image.TYPE_RGB<a href="#image.TYPE_RGB"><span class="anchor-link"/></a></h4>
 	<p>RGB image type</p>
-	<p>RGB image type</p><hr/><a name="image.TYPE_RGBA"/>
+	<p>RGB 图片类型</p><hr/><a name="image.TYPE_RGBA"/>
 	<h4>image.TYPE_RGBA<a href="#image.TYPE_RGBA"><span class="anchor-link"/></a></h4>
 	<p>RGBA image type</p>
-	<p>RGBA image type</p><hr/><a name="image.TYPE_LUMINANCE"/>
+	<p>RGBA 图片类型</p><hr/><a name="image.TYPE_LUMINANCE"/>
 	<h4>image.TYPE_LUMINANCE<a href="#image.TYPE_LUMINANCE"><span class="anchor-link"/></a></h4>
 	<p>luminance image type</p>
-	<p>luminance image type</p><hr/></div>
+	<p>亮度图片类型</p><hr/></div>
 		</div>
 	</div>
 </div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
