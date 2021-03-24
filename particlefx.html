@@ -193,63 +193,63 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/particlefx/">alpha</option><option value="/ref/beta/particlefx/">beta</option><option value="/ref/stable/particlefx/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Particle effects API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>粒子特效 API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#particlefx.play:url-[emitter_state_function]">particlefx.play()</a></td>
-		<td>start playing a particle FX</td>
+		<td>开始播放粒子特效</td>
 	</tr><tr>
 		<td><a href="#particlefx.stop:url">particlefx.stop()</a></td>
-		<td>stop playing a particle fx</td>
+		<td>停止播放粒子特效</td>
 	</tr><tr>
 		<td><a href="#particlefx.set_constant:url-emitter-constant-value">particlefx.set_constant()</a></td>
-		<td>set a shader constant for a particle FX component emitter</td>
+		<td>为粒子特效组件设置着色器常量</td>
 	</tr><tr>
 		<td><a href="#particlefx.reset_constant:url-emitter-constant">particlefx.reset_constant()</a></td>
-		<td>reset a shader constant for a particle FX component emitter</td>
+		<td>为粒子特效组件重置着色器常量</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>CONSTANT</th>
+		<th>常量</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#particlefx.EMITTER_STATE_SLEEPING">particlefx.EMITTER_STATE_SLEEPING</a></td>
-		<td>sleeping state</td>
+		<td>待机状态</td>
 	</tr><tr>
 		<td><a href="#particlefx.EMITTER_STATE_PRESPAWN">particlefx.EMITTER_STATE_PRESPAWN</a></td>
-		<td>prespawn state</td>
+		<td>重置状态</td>
 	</tr><tr>
 		<td><a href="#particlefx.EMITTER_STATE_SPAWNING">particlefx.EMITTER_STATE_SPAWNING</a></td>
-		<td>spawning state</td>
+		<td>加载状态</td>
 	</tr><tr>
 		<td><a href="#particlefx.EMITTER_STATE_POSTSPAWN">particlefx.EMITTER_STATE_POSTSPAWN</a></td>
-		<td>postspawn state</td>
+		<td>加载完成状态</td>
 	</tr></table><h2>Functions</h2><a name="particlefx.play:url-[emitter_state_function]"/>
 		<a name="particlefx.play"/>
 		<h4>particlefx.play()<a href="#particlefx.play:url-[emitter_state_function]" class="anchor-link"></a></h4>
 		<p><code>particlefx.play(url,[emitter_state_function])</code></p>
-		Starts playing a particle FX component.
-Particle FX started this way need to be manually stopped through <code>particlefx.stop()</code>.
-Which particle FX to play is identified by the URL.
-<span class="icon-attention"></span> A particle FX will continue to emit particles even if the game object the particle FX component belonged to is deleted. You can call <code>particlefx.stop()</code> to stop it from emitting more particles.
-		<p><b>PARAMETERS</b></p>
+		开始播放粒子特效.
+这样启动的粒子特效需要使用 <code>particlefx.stop()</code> 手动停止.
+其中需要启动的粒子特效用唯一id的URL指定.
+<span class="icon-attention"></span> 即使粒子特效组件所在的游戏对象已被删除, 粒子特效仍会继续播放. 可以使用 <code>particlefx.stop()</code> 停止其播放.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the particle fx that should start playing.</td>
+				<td>需要播放的粒子特效地址.</td>
 			</tr><tr>
 				<td><code>[emitter_state_function]</code></td>
-				<td>optional callback function that will be called when an emitter attached to this particlefx changes state.
+				<td>可选参数, 当粒子特效状态变化时的回调函数.
 <dl>
 <dt><code>self</code></dt>
-<dd><span class="type">object</span> The current object</dd>
+<dd><span class="type">object</span> 当前对象</dd>
 <dt><code>id</code></dt>
-<dd><span class="type">hash</span> The id of the particle fx component</dd>
+<dd><span class="type">hash</span> 粒子特效id</dd>
 <dt><code>emitter</code></dt>
-<dd><span class="type">hash</span> The id of the emitter</dd>
+<dd><span class="type">hash</span> 发射器id</dd>
 <dt><code>state</code></dt>
-<dd><span class="type">constant</span> the new state of the emitter:</dd>
+<dd><span class="type">constant</span> 发射器状态:</dd>
 </dl>
 <ul>
 <li><code>particlefx.EMITTER_STATE_SLEEPING</code></li>
@@ -257,13 +257,12 @@ Which particle FX to play is identified by the URL.
 <li><code>particlefx.EMITTER_STATE_SPAWNING</code></li>
 <li><code>particlefx.EMITTER_STATE_POSTSPAWN</code></li>
 </ul></td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		How to play a particle fx when a game object is created.
-The callback receives the hash of the path to the particlefx, the hash of the id
-of the emitter, and the new state of the emitter as particlefx.EMITTER_STATE_<STATE>.
+			</tr></table><p><b>实例</b></p>
+		游戏对象建立时播放粒子特效.
+回调函数接收例子特效路径hash, 发射器id的hash, 以及发射器状态 particlefx.EMITTER_STATE_<STATE>.
 <div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="k">function</span> <span class="nf">emitter_state_change</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">emitter</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">emitter</span> <span class="o">==</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">exhaust&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">state</span> <span class="o">==</span> <span class="n">particlefx</span><span class="p">.</span><span class="n">EMITTER_STATE_POSTSPAWN</span> <span class="k">then</span>
-    <span class="c1">-- exhaust is done spawning particles...</span>
+    <span class="c1">-- 播放粒子特效...</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -274,15 +273,15 @@ of the emitter, and the new state of the emitter as particlefx.EMITTER_STATE_<ST
 		<a name="particlefx.stop"/>
 		<h4>particlefx.stop()<a href="#particlefx.stop:url" class="anchor-link"></a></h4>
 		<p><code>particlefx.stop(url)</code></p>
-		Stops a particle FX component from playing.
-Stopping a particle FX does not remove already spawned particles.
-Which particle FX to stop is identified by the URL.
-		<p><b>PARAMETERS</b></p>
+		停止正在播放的粒子特效.
+并不删除已存在的粒子.
+路径URL决定了是哪个粒子特效需要停止播放.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the particle fx that should stop playing</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		How to stop a particle fx when a game object is deleted:
+				<td>需要关闭的粒子特效url</td>
+			</tr></table><p><b>实例</b></p>
+		游戏对象被删除后如何停止其下的粒子特效:
 <div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">final</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
     <span class="n">particlefx</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#particlefx&quot;</span><span class="p">)</span>
 <span class="k">end</span>
@@ -290,29 +289,29 @@ Which particle FX to stop is identified by the URL.
 		<a name="particlefx.set_constant"/>
 		<h4>particlefx.set_constant()<a href="#particlefx.set_constant:url-emitter-constant-value" class="anchor-link"></a></h4>
 		<p><code>particlefx.set_constant(url,emitter,constant,value)</code></p>
-		Sets a shader constant for a particle FX component emitter.
-The constant must be defined in the material assigned to the emitter.
-Setting a constant through this function will override the value set for that constant in the material.
-The value will be overridden until particlefx.reset_constant is called.
-Which particle FX to set a constant for is identified by the URL.
-		<p><b>PARAMETERS</b></p>
+		为粒子特效组件设置一个着色器常量.
+这个常量必须先在组件的材质配置里定义好.
+用这个方法设置的常量值会自动覆盖材质里定义的默认值.
+使用 particlefx.reset_constant 可以恢复默认常量值.
+要设置常量的粒子特效组件使用URL指定.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the particle FX that should have a constant set</td>
+				<td>需要设置常量的粒子特效的url地址</td>
 			</tr><tr>
 				<td><code>emitter</code></td>
-				<td>the id of the emitter</td>
+				<td>粒子发射器id</td>
 			</tr><tr>
 				<td><code>constant</code></td>
-				<td>the name of the constant</td>
+				<td>需要设置的常量名</td>
 			</tr><tr>
 				<td><code>value</code></td>
-				<td>the value of the constant</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		The following examples assumes that the particle FX has id "particlefx", it
-contains an emitter with the id "emitter" and that the default-material in builtins is used, which defines the constant "tint".
-If you assign a custom material to the sprite, you can reset the constants defined there in the same manner.
-How to tint particles from an emitter red:
+				<td>需要设置的常量值</td>
+			</tr></table><p><b>实例</b></p>
+		假设有个粒子特效id 叫做 "particlefx", 它
+包含一个id 叫做 "emitter" 的发射器且使用默认材质, 材质里有预定义常量 "tint".
+对于sprite的自定义材质, 可以使用同样方法设置常量.
+把发射的粒子染成红色:
 <div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
     <span class="n">particlefx</span><span class="p">.</span><span class="n">set_constant</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#particlefx&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">emitter&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">tint&quot;</span><span class="p">,</span> <span class="n">vmath</span><span class="p">.</span><span class="n">vector4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="k">end</span>
@@ -320,41 +319,41 @@ How to tint particles from an emitter red:
 		<a name="particlefx.reset_constant"/>
 		<h4>particlefx.reset_constant()<a href="#particlefx.reset_constant:url-emitter-constant" class="anchor-link"></a></h4>
 		<p><code>particlefx.reset_constant(url,emitter,constant)</code></p>
-		Resets a shader constant for a particle FX component emitter.
-The constant must be defined in the material assigned to the emitter.
-Resetting a constant through this function implies that the value defined in the material will be used.
-Which particle FX to reset a constant for is identified by the URL.
-		<p><b>PARAMETERS</b></p>
+		重置粒子特效组件发射器着色器常量.
+这个常量必须先在组件的材质配置里定义好.
+用这个方法常量值会重置为材质里定义的默认值.
+要设置常量的粒子特效组件使用URL指定.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the particle FX that should have a constant reset</td>
+				<td>需要重置常量的粒子特效url地址</td>
 			</tr><tr>
 				<td><code>emitter</code></td>
-				<td>the id of the emitter</td>
+				<td>粒子发射器id</td>
 			</tr><tr>
 				<td><code>constant</code></td>
-				<td>the name of the constant</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		The following examples assumes that the particle FX has id "particlefx", it
-contains an emitter with the id "emitter" and that the default-material in builtins is used, which defines the constant "tint".
-If you assign a custom material to the sprite, you can reset the constants defined there in the same manner.
-How to reset the tinting of particles from an emitter:
+				<td>需要重置的常量名</td>
+			</tr></table><p><b>实例</b></p>
+		假设有个粒子特效id 叫做 "particlefx", 它
+包含一个id 叫做 "emitter" 的发射器且使用默认材质, 材质里有预定义常量 "tint".
+对于sprite的自定义材质, 可以使用同样方法重置常量.
+把发射的粒子染成红色:
 <div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
     <span class="n">particlefx</span><span class="p">.</span><span class="n">reset_constant</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#particlefx&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">emitter&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">tint&quot;</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></div><hr/><h2>Constants</h2><a name="particlefx.EMITTER_STATE_SLEEPING"/>
+</pre></div><hr/><h2>常量</h2><a name="particlefx.EMITTER_STATE_SLEEPING"/>
 	<h4>particlefx.EMITTER_STATE_SLEEPING<a href="#particlefx.EMITTER_STATE_SLEEPING"><span class="anchor-link"/></a></h4>
-	<p>sleeping state</p>
-	<p>The emitter does not have any living particles and will not spawn any particles in this state.</p><hr/><a name="particlefx.EMITTER_STATE_PRESPAWN"/>
+	<p>待机状态</p>
+	<p>此状态下没有粒子产生, 也没有已发射的粒子显示.</p><hr/><a name="particlefx.EMITTER_STATE_PRESPAWN"/>
 	<h4>particlefx.EMITTER_STATE_PRESPAWN<a href="#particlefx.EMITTER_STATE_PRESPAWN"><span class="anchor-link"/></a></h4>
-	<p>prespawn state</p>
-	<p>The emitter will be in this state when it has been started but before spawning any particles. Normally the emitter is in this state for a short time, depending on if a start delay has been set for this emitter or not.</p><hr/><a name="particlefx.EMITTER_STATE_SPAWNING"/>
+	<p>预备状态</p>
+	<p>此状态下发射器已被激活但是还未产生粒子. 一般这个状态保持时间很短, 具体要看粒子发射器配置中的延迟设置.</p><hr/><a name="particlefx.EMITTER_STATE_SPAWNING"/>
 	<h4>particlefx.EMITTER_STATE_SPAWNING<a href="#particlefx.EMITTER_STATE_SPAWNING"><span class="anchor-link"/></a></h4>
-	<p>spawning state</p>
-	<p>The emitter is spawning particles.</p><hr/><a name="particlefx.EMITTER_STATE_POSTSPAWN"/>
+	<p>发射状态</p>
+	<p>此状态下发射器正在发射粒子.</p><hr/><a name="particlefx.EMITTER_STATE_POSTSPAWN"/>
 	<h4>particlefx.EMITTER_STATE_POSTSPAWN<a href="#particlefx.EMITTER_STATE_POSTSPAWN"><span class="anchor-link"/></a></h4>
-	<p>postspawn state</p>
-	<p>The emitter is not spawning any particles, but has particles that are still alive.</p><hr/></div>
+	<p>完成状态</p>
+	<p>此状态下发射器不再发射粒子, 但是可能有已发射的粒子显示.</p><hr/></div>
 		</div>
 	</div>
 </div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
