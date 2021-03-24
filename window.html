@@ -193,65 +193,65 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/window/">alpha</option><option value="/ref/beta/window/">beta</option><option value="/ref/stable/window/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Window API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>Window API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#window.set_listener:callback">window.set_listener()</a></td>
-		<td>sets a window event listener</td>
+		<td>设置窗体监听器</td>
 	</tr><tr>
 		<td><a href="#window.set_dim_mode:mode">window.set_dim_mode()</a></td>
-		<td>set the mode for screen dimming</td>
+		<td>设置暗屏模式</td>
 	</tr><tr>
 		<td><a href="#window.get_dim_mode:">window.get_dim_mode()</a></td>
-		<td>get the mode for screen dimming</td>
+		<td>获取暗屏模式</td>
 	</tr><tr>
 		<td><a href="#window.get_size:">window.get_size()</a></td>
-		<td>get the window size</td>
+		<td>获取窗体尺寸</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>CONSTANT</th>
+		<th>常量</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#window.WINDOW_EVENT_FOCUS_LOST">window.WINDOW_EVENT_FOCUS_LOST</a></td>
-		<td>focus lost window event</td>
+		<td>窗体丢失焦点事件</td>
 	</tr><tr>
 		<td><a href="#window.WINDOW_EVENT_FOCUS_GAINED">window.WINDOW_EVENT_FOCUS_GAINED</a></td>
-		<td>focus gained window event</td>
+		<td>窗体获得焦点事件</td>
 	</tr><tr>
 		<td><a href="#window.WINDOW_EVENT_RESIZED">window.WINDOW_EVENT_RESIZED</a></td>
-		<td>resized window event</td>
+		<td>窗体尺寸变化事件</td>
 	</tr><tr>
 		<td><a href="#window.WINDOW_EVENT_ICONFIED">window.WINDOW_EVENT_ICONFIED</a></td>
-		<td>iconify window event</td>
+		<td>窗体最小化事件</td>
 	</tr><tr>
 		<td><a href="#window.WINDOW_EVENT_DEICONIFIED">window.WINDOW_EVENT_DEICONIFIED</a></td>
-		<td>deiconified window event</td>
+		<td>窗体还原事件</td>
 	</tr><tr>
 		<td><a href="#window.DIMMING_ON">window.DIMMING_ON</a></td>
-		<td>dimming mode on</td>
+		<td>暗屏状态开启</td>
 	</tr><tr>
 		<td><a href="#window.DIMMING_OFF">window.DIMMING_OFF</a></td>
-		<td>dimming mode off</td>
+		<td>暗屏状态关闭</td>
 	</tr><tr>
 		<td><a href="#window.DIMMING_UNKNOWN">window.DIMMING_UNKNOWN</a></td>
-		<td>dimming mode unknown</td>
+		<td>暗屏状态未知</td>
 	</tr></table><h2>Functions</h2><a name="window.set_listener:callback"/>
 		<a name="window.set_listener"/>
 		<h4>window.set_listener()<a href="#window.set_listener:callback" class="anchor-link"></a></h4>
 		<p><code>window.set_listener(callback)</code></p>
-		Sets a window event listener.
-		<p><b>PARAMETERS</b></p>
+		设置窗体事件监听器.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>callback</code></td>
-				<td>A callback which receives info about window events. Pass an empty function or nil if you no longer wish to receive callbacks.
+				<td>用于接收窗体事件信息的回调函数. 设置为空函数或者为nil相当于取消窗体事件监听.
 <dl>
 <dt><code>self</code></dt>
-<dd><span class="type">object</span> The calling script</dd>
+<dd><span class="type">object</span> 调用脚本</dd>
 <dt><code>event</code></dt>
-<dd><span class="type">constant</span> The type of event. Can be one of these:</dd>
+<dd><span class="type">constant</span> 事件类型. 类型包括:</dd>
 </dl>
 <ul>
 <li><code>window.WINDOW_EVENT_FOCUS_LOST</code></li>
@@ -262,13 +262,13 @@
 </ul>
 <dl>
 <dt><code>data</code></dt>
-<dd><span class="type">table</span> The callback value <code>data</code> is a table which currently holds these values</dd>
+<dd><span class="type">table</span> 回调参数 <code>data</code> 是一个包含以下信息的表</dd>
 </dl>
 <ul>
-<li><span class="type">number</span> <code>width</code>: The width of a resize event. nil otherwise.</li>
-<li><span class="type">number</span> <code>height</code>: The height of a resize event. nil otherwise.</li>
+<li><span class="type">number</span> <code>width</code>: 尺寸变化后的宽度. 没变则是nil.</li>
+<li><span class="type">number</span> <code>height</code>: 尺寸变化后的高度. 没变则是nil.</li>
 </ul></td>
-			</tr></table><p><b>EXAMPLES</b></p>
+			</tr></table><p><b>实例</b></p>
 		<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">window_callback</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="n">window</span><span class="p">.</span><span class="n">WINDOW_EVENT_FOCUS_LOST</span> <span class="k">then</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">window.WINDOW_EVENT_FOCUS_LOST&quot;</span><span class="p">)</span>
@@ -290,13 +290,13 @@
 		<a name="window.set_dim_mode"/>
 		<h4>window.set_dim_mode()<a href="#window.set_dim_mode:mode" class="anchor-link"></a></h4>
 		<p><code>window.set_dim_mode(mode)</code></p>
-		<span class="icon-ios"></span> <span class="icon-android"></span> Sets the dimming mode on a mobile device.
-The dimming mode specifies whether or not a mobile device should dim the screen after a period without user interaction. The dimming mode will only affect the mobile device while the game is in focus on the device, but not when the game is running in the background.
-This function has no effect on platforms that does not support dimming.
-		<p><b>PARAMETERS</b></p>
+		<span class="icon-ios"></span> <span class="icon-android"></span> 设置移动设备的暗屏状态.
+暗屏状态用于控制在用户无交互信息一段时间之后移动设备屏幕是否变暗. 暗屏模式只在游戏获得焦点时有效, 后台运行时无效.
+对于不支持暗屏状态的设备此函数无效.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>mode</code></td>
-				<td>The mode for screen dimming
+				<td>暗屏模式
 <ul>
 <li><code>window.DIMMING_ON</code></li>
 <li><code>window.DIMMING_OFF</code></li>
@@ -305,14 +305,14 @@ This function has no effect on platforms that does not support dimming.
 		<a name="window.get_dim_mode"/>
 		<h4>window.get_dim_mode()<a href="#window.get_dim_mode:" class="anchor-link"></a></h4>
 		<p><code>window.get_dim_mode()</code></p>
-		<span class="icon-ios"></span> <span class="icon-android"></span> Returns the current dimming mode set on a mobile device.
-The dimming mode specifies whether or not a mobile device should dim the screen after a period without user interaction.
-On platforms that does not support dimming, <code>window.DIMMING_UNKNOWN</code> is always returned.
-		<p><b>PARAMETERS</b></p>
-		<table></table><p><b>RETURNS</b></p>
+		<span class="icon-ios"></span> <span class="icon-android"></span> 获取当前移动设备的安平模式状态.
+暗屏状态用于控制在用户无交互信息一段时间之后移动设备屏幕是否变暗.
+对于不支持暗屏状态的设备, 此函数返回 <code>window.DIMMING_UNKNOWN</code>.
+		<p><b>参数</b></p>
+		<table></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>mode</code></td>
-				<td>The mode for screen dimming
+				<td>暗屏模式
 <ul>
 <li><code>window.DIMMING_UNKNOWN</code></li>
 <li><code>window.DIMMING_ON</code></li>
@@ -322,46 +322,45 @@ On platforms that does not support dimming, <code>window.DIMMING_UNKNOWN</code> 
 		<a name="window.get_size"/>
 		<h4>window.get_size()<a href="#window.get_size:" class="anchor-link"></a></h4>
 		<p><code>window.get_size()</code></p>
-		This returns the current window size (width and height).
-		<p><b>PARAMETERS</b></p>
-		<table></table><p><b>RETURNS</b></p>
+		此函数返回窗体尺寸 (宽和高).
+		<p><b>参数</b></p>
+		<table></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>width</code></td>
-				<td>The window width</td>
+				<td>窗体宽度</td>
 			</tr><tr>
 				<td><code>height</code></td>
-				<td>The window height</td>
-			</tr></table><hr/><h2>Constants</h2><a name="window.WINDOW_EVENT_FOCUS_LOST"/>
+				<td>窗体高度</td>
+			</tr></table><hr/><h2>常量</h2><a name="window.WINDOW_EVENT_FOCUS_LOST"/>
 	<h4>window.WINDOW_EVENT_FOCUS_LOST<a href="#window.WINDOW_EVENT_FOCUS_LOST"><span class="anchor-link"/></a></h4>
-	<p>focus lost window event</p>
-	<p>This event is sent to a window event listener when the game window or app screen has lost focus.</p><hr/><a name="window.WINDOW_EVENT_FOCUS_GAINED"/>
+	<p>窗体失去焦点事件</p>
+	<p>当窗体失去焦点时会发送此事件.</p><hr/><a name="window.WINDOW_EVENT_FOCUS_GAINED"/>
 	<h4>window.WINDOW_EVENT_FOCUS_GAINED<a href="#window.WINDOW_EVENT_FOCUS_GAINED"><span class="anchor-link"/></a></h4>
-	<p>focus gained window event</p>
-	<p>This event is sent to a window event listener when the game window or app screen has
-gained focus.
-This event is also sent at game startup and the engine gives focus to the game.</p><hr/><a name="window.WINDOW_EVENT_RESIZED"/>
+	<p>窗体获得焦点事件</p>
+	<p>当窗体获得焦点时会发送此事件.
+游戏引擎启动, 游戏获得焦点时也会发送此事件.</p><hr/><a name="window.WINDOW_EVENT_RESIZED"/>
 	<h4>window.WINDOW_EVENT_RESIZED<a href="#window.WINDOW_EVENT_RESIZED"><span class="anchor-link"/></a></h4>
-	<p>resized window event</p>
-	<p>This event is sent to a window event listener when the game window or app screen is resized.
-The new size is passed along in the data field to the event listener.</p><hr/><a name="window.WINDOW_EVENT_ICONFIED"/>
+	<p>窗体尺寸变化事件</p>
+	<p>当游戏窗体尺寸变化时会发送此事件.
+变化后的尺寸通过data参数发送给回调函数.</p><hr/><a name="window.WINDOW_EVENT_ICONFIED"/>
 	<h4>window.WINDOW_EVENT_ICONFIED<a href="#window.WINDOW_EVENT_ICONFIED"><span class="anchor-link"/></a></h4>
-	<p>iconify window event</p>
-	<p><span class="icon-osx"></span> <span class="icon-windows"></span> <span class="icon-linux"></span> This event is sent to a window event listener when the game window or app screen is
-iconified (reduced to an application icon in a toolbar, application tray or similar).</p><hr/><a name="window.WINDOW_EVENT_DEICONIFIED"/>
+	<p>窗体最小化事件</p>
+	<p><span class="icon-osx"></span> <span class="icon-windows"></span> <span class="icon-linux"></span> 当游戏窗体最小化时会发送此事件
+ (比如最小化为工具栏, 状态栏图标这样的时候).</p><hr/><a name="window.WINDOW_EVENT_DEICONIFIED"/>
 	<h4>window.WINDOW_EVENT_DEICONIFIED<a href="#window.WINDOW_EVENT_DEICONIFIED"><span class="anchor-link"/></a></h4>
-	<p>deiconified window event</p>
-	<p><span class="icon-osx"></span> <span class="icon-windows"></span> <span class="icon-linux"></span> This event is sent to a window event listener when the game window or app screen is
-restored after being iconified.</p><hr/><a name="window.DIMMING_ON"/>
+	<p>窗体恢复事件</p>
+	<p><span class="icon-osx"></span> <span class="icon-windows"></span> <span class="icon-linux"></span> 当游戏窗体从最小化恢复时
+会发送此事件.</p><hr/><a name="window.DIMMING_ON"/>
 	<h4>window.DIMMING_ON<a href="#window.DIMMING_ON"><span class="anchor-link"/></a></h4>
-	<p>dimming mode on</p>
-	<p>Dimming mode is used to control whether or not a mobile device should dim the screen after a period without user interaction.</p><hr/><a name="window.DIMMING_OFF"/>
+	<p>暗屏状态开启</p>
+	<p>暗屏状态用于控制在用户无交互信息一段时间之后移动设备屏幕是否变暗.</p><hr/><a name="window.DIMMING_OFF"/>
 	<h4>window.DIMMING_OFF<a href="#window.DIMMING_OFF"><span class="anchor-link"/></a></h4>
-	<p>dimming mode off</p>
-	<p>Dimming mode is used to control whether or not a mobile device should dim the screen after a period without user interaction.</p><hr/><a name="window.DIMMING_UNKNOWN"/>
+	<p>暗屏状态关闭</p>
+	<p>暗屏状态用于控制在用户无交互信息一段时间之后移动设备屏幕是否变暗.</p><hr/><a name="window.DIMMING_UNKNOWN"/>
 	<h4>window.DIMMING_UNKNOWN<a href="#window.DIMMING_UNKNOWN"><span class="anchor-link"/></a></h4>
-	<p>dimming mode unknown</p>
-	<p>Dimming mode is used to control whether or not a mobile device should dim the screen after a period without user interaction.
-This mode indicates that the dim mode can't be determined, or that the platform doesn't support dimming.</p><hr/></div>
+	<p>暗屏状态未知</p>
+	<p>暗屏状态用于控制在用户无交互信息一段时间之后移动设备屏幕是否变暗.
+此状态是指暗屏状态无法获取, 或者平台设备不支持暗屏状态.</p><hr/></div>
 		</div>
 	</div>
 </div><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
