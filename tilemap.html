@@ -193,41 +193,39 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/tilemap/">alpha</option><option value="/ref/beta/tilemap/">beta</option><option value="/ref/stable/tilemap/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Tilemap API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>Tilemap API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#tilemap.set_tile:url-layer-x-y-tile-[h-flipped]-[v-flipped]">tilemap.set_tile()</a></td>
-		<td>set a tile in a tile map</td>
+		<td>在瓷砖地图里设置一块瓷砖</td>
 	</tr><tr>
 		<td><a href="#tilemap.get_tile:url-layer-x-y">tilemap.get_tile()</a></td>
-		<td>get a tile from a tile map</td>
+		<td>取得瓷砖地图里的一块瓷砖</td>
 	</tr><tr>
 		<td><a href="#tilemap.get_bounds:url">tilemap.get_bounds()</a></td>
-		<td>get the bounds of a tile map</td>
+		<td>取得瓷砖地图的边框</td>
 	</tr><tr>
 		<td><a href="#tilemap.set_visible:url-layer-visible">tilemap.set_visible()</a></td>
-		<td>set the visibility of a layer</td>
+		<td>设置层的可见性</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>PROPERTIES</th>
+		<th>属性</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#tile_source">tile_source</a></td>
-		<td><span class="type">hash</span> tile source</td>
+		<td><span class="type">hash</span> 瓷砖图源</td>
 	</tr><tr>
 		<td><a href="#material">material</a></td>
-		<td><span class="type">hash</span> tile map material</td>
-	</tr></table><h2>Functions</h2><a name="tilemap.set_tile:url-layer-x-y-tile-[h-flipped]-[v-flipped]"/>
+		<td><span class="type">hash</span> 瓷砖地图材质</td>
+	</tr></table><h2>函数</h2><a name="tilemap.set_tile:url-layer-x-y-tile-[h-flipped]-[v-flipped]"/>
 		<a name="tilemap.set_tile"/>
 		<h4>tilemap.set_tile()<a href="#tilemap.set_tile:url-layer-x-y-tile-[h-flipped]-[v-flipped]" class="anchor-link"></a></h4>
 		<p><code>tilemap.set_tile(url,layer,x,y,tile,[h-flipped],[v-flipped])</code></p>
-		Replace a tile in a tile map with a new tile.
-The coordinates of the tiles are indexed so that the "first" tile just
-above and to the right of origo has coordinates 1,1.
-Tiles to the left of and below origo are indexed 0, -1, -2 and so forth.
+		用新的瓷砖替换瓷砖地图里的一个瓷砖.
+瓷砖坐标索引从左下到右上如下表所示.
 <pre>
 +-------+-------+------+------+
 |  0,3  |  1,3  | 2,3  | 3,3  |
@@ -240,124 +238,122 @@ Tiles to the left of and below origo are indexed 0, -1, -2 and so forth.
 +-------+-------+------+------+
 </pre>
 
-The coordinates must be within the bounds of the tile map as it were created.
-That is, it is not possible to extend the size of a tile map by setting tiles outside the edges.
-To clear a tile, set the tile to number 0. Which tile map and layer to manipulate is identified by the URL and the layer name parameters.
-		<p><b>PARAMETERS</b></p>
+这里的坐标必须处于瓷砖地图的范围之内.
+设置范围之外的坐标并不能扩展该瓷砖地图.
+要清除一块瓷砖, 可以把它设置为数字0. 瓷砖地图和层由URL和layer参数指定.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the tile map</td>
+				<td>瓷砖地图地址</td>
 			</tr><tr>
 				<td><code>layer</code></td>
-				<td>name of the layer for the tile</td>
+				<td>层名</td>
 			</tr><tr>
 				<td><code>x</code></td>
-				<td>x-coordinate of the tile</td>
+				<td>瓷砖的x坐标</td>
 			</tr><tr>
 				<td><code>y</code></td>
-				<td>y-coordinate of the tile</td>
+				<td>瓷砖的y坐标</td>
 			</tr><tr>
 				<td><code>tile</code></td>
-				<td>index of new tile to set</td>
+				<td>新瓷砖的引用</td>
 			</tr><tr>
 				<td><code>[h-flipped]</code></td>
-				<td>optional if the tile should be horizontally flipped</td>
+				<td>可选参数, 瓷砖是否需要水平翻转</td>
 			</tr><tr>
 				<td><code>[v-flipped]</code></td>
-				<td>optional i the tile should be vertically flipped</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		<div class="codehilite"><pre><span></span><span class="c1">-- Clear the tile under the player.</span>
+				<td>可选参数, 瓷砖是否需要垂直翻转</td>
+			</tr></table><p><b>实例</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- 清除层中的瓷砖.</span>
 <span class="n">tilemap</span><span class="p">.</span><span class="n">set_tile</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/level#tilemap&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">foreground&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">player_x</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">player_y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div><hr/><a name="tilemap.get_tile:url-layer-x-y"/>
 		<a name="tilemap.get_tile"/>
 		<h4>tilemap.get_tile()<a href="#tilemap.get_tile:url-layer-x-y" class="anchor-link"></a></h4>
 		<p><code>tilemap.get_tile(url,layer,x,y)</code></p>
-		Get the tile set at the specified position in the tilemap.
-The position is identified by the tile index starting at origo
-with index 1, 1. (see <a href="/ref/tilemap#tilemap.set_tile()">tilemap.set_tile()</a>)
-Which tile map and layer to query is identified by the URL and the
-layer name parameters.
-		<p><b>PARAMETERS</b></p>
+		获得瓷砖地图指定位置的瓷砖.
+位置索引从左下到右上递增. (参见 <a href="/ref/tilemap#tilemap.set_tile()">tilemap.set_tile()</a>)
+瓷砖地图和层由URL和layer参数指定.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the tile map</td>
+				<td>瓷砖地图索引</td>
 			</tr><tr>
 				<td><code>layer</code></td>
-				<td>name of the layer for the tile</td>
+				<td>瓷砖所在层名</td>
 			</tr><tr>
 				<td><code>x</code></td>
-				<td>x-coordinate of the tile</td>
+				<td>瓷砖x坐标</td>
 			</tr><tr>
 				<td><code>y</code></td>
-				<td>y-coordinate of the tile</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>瓷砖y坐标</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>tile</code></td>
-				<td>index of the tile</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		<div class="codehilite"><pre><span></span><span class="c1">-- get the tile under the player.</span>
+				<td>瓷砖位置索引</td>
+			</tr></table><p><b>实例</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- 取得层上的瓷砖.</span>
 <span class="kd">local</span> <span class="n">tileno</span> <span class="o">=</span> <span class="n">tilemap</span><span class="p">.</span><span class="n">get_tile</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/level#tilemap&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">foreground&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">player_x</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">player_y</span><span class="p">)</span>
 </pre></div><hr/><a name="tilemap.get_bounds:url"/>
 		<a name="tilemap.get_bounds"/>
 		<h4>tilemap.get_bounds()<a href="#tilemap.get_bounds:url" class="anchor-link"></a></h4>
 		<p><code>tilemap.get_bounds(url)</code></p>
-		Get the bounds for a tile map. This function returns multiple values:
-The lower left corner index x and y coordinates (1-indexed),
-the tile map width and the tile map height.
-The resulting values take all tile map layers into account, meaning that
-the bounds are calculated as if all layers were collapsed into one.
-		<p><b>PARAMETERS</b></p>
+		取得瓷砖地图的边界. 该函数返回多个值:
+左下角xy位置坐标索引,
+瓷砖地图宽高.
+瓷砖地图每个层都纳入计算, 也就是说
+边界大小是多层叠加后的结果.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the tile map</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>瓷砖地图引用</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>x</code></td>
-				<td>x coordinate of the bottom left corner</td>
+				<td>左下角x坐标</td>
 			</tr><tr>
 				<td><code>y</code></td>
-				<td>y coordinate of the bottom left corner</td>
+				<td>左下角y坐标</td>
 			</tr><tr>
 				<td><code>w</code></td>
-				<td>number of columns (width) in the tile map</td>
+				<td>瓷砖地图列数(宽度)</td>
 			</tr><tr>
 				<td><code>h</code></td>
-				<td>number of rows (height) in the tile map</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		<div class="codehilite"><pre><span></span><span class="c1">-- get the level bounds.</span>
+				<td>瓷砖地图行数(高度)</td>
+			</tr></table><p><b>实例</b></p>
+		<div class="codehilite"><pre><span></span><span class="c1">-- 取得地图边界.</span>
 <span class="kd">local</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">tilemap</span><span class="p">.</span><span class="n">get_bounds</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/level#tilemap&quot;</span><span class="p">)</span>
 </pre></div><hr/><a name="tilemap.set_visible:url-layer-visible"/>
 		<a name="tilemap.set_visible"/>
 		<h4>tilemap.set_visible()<a href="#tilemap.set_visible:url-layer-visible" class="anchor-link"></a></h4>
 		<p><code>tilemap.set_visible(url,layer,visible)</code></p>
-		Sets the visibility of the tilemap layer
-		<p><b>PARAMETERS</b></p>
+		设置瓷砖地图层的可见性
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>url</code></td>
-				<td>the tile map</td>
+				<td>瓷砖地图引用</td>
 			</tr><tr>
 				<td><code>layer</code></td>
-				<td>name of the layer for the tile</td>
+				<td>瓷砖所在层名</td>
 			</tr><tr>
 				<td><code>visible</code></td>
-				<td>should the layer be visible</td>
-			</tr></table><p><b>EXAMPLES</b></p>
+				<td>层是否可见</td>
+			</tr></table><p><b>实例</b></p>
 		<div class="codehilite"><pre><span></span><span class="c1">-- Disable rendering of the layer</span>
 <span class="n">tilemap</span><span class="p">.</span><span class="n">set_visible</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/level#tilemap&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">foreground&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
 </pre></div><hr/><h2>Properties</h2><a name="tile_source"/>
 	<h4>tile_source<a href="#tile_source"><span class="anchor-link"/></a></h4>
 	<p>The tile source used when rendering the tile map. The type of the property is hash.</p>
-	<p><span class="type">hash</span> tile source</p><p><b>EXAMPLES</b></p>
-	How to set tile source using a script property (see <a href="/ref/resource#resource.tile_source">resource.tile_source</a>)
+	<p><span class="type">hash</span> tile source</p><p><b>实例</b></p>
+	如何使用脚本属性设置瓷砖图源 (see <a href="/ref/resource#resource.tile_source">resource.tile_source</a>)
 <div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_tile_source&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">tile_source</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/tilesource.tilesource&quot;</span><span class="p">))</span>
 <span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
   <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#tilemap&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">tile_source&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_tile_source</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div><hr/><a name="material"/>
 	<h4>material<a href="#material"><span class="anchor-link"/></a></h4>
-	<p>The material used when rendering the tile map. The type of the property is hash.</p>
-	<p><span class="type">hash</span> tile map material</p><p><b>EXAMPLES</b></p>
-	How to set material using a script property (see <a href="/ref/resource#resource.material">resource.material</a>)
+	<p>用于渲染瓷砖地图的材质. 属性类型为哈希值.</p>
+	<p><span class="type">hash</span> tile map material</p><p><b>实例</b></p>
+	如何使用脚本属性设置材质 (see <a href="/ref/resource#resource.material">resource.material</a>)
 <div class="codehilite"><pre><span></span><span class="n">go</span><span class="p">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_material&quot;</span><span class="p">,</span> <span class="n">resource</span><span class="p">.</span><span class="n">material</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">/material.material&quot;</span><span class="p">))</span>
 <span class="k">function</span> <span class="nf">init</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
   <span class="n">go</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#tilemap&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">material&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">my_material</span><span class="p">)</span>
