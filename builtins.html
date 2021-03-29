@@ -193,42 +193,39 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/builtins/">alpha</option><option value="/ref/beta/builtins/">beta</option><option value="/ref/stable/builtins/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Built-ins API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>Built-ins API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#pprint:v">pprint()</a></td>
-		<td>pretty printing</td>
+		<td>优化输出</td>
 	</tr><tr>
 		<td><a href="#hash:s">hash()</a></td>
-		<td>hashes a string</td>
+		<td>字符串哈希</td>
 	</tr><tr>
 		<td><a href="#hash_to_hex:h">hash_to_hex()</a></td>
-		<td>get hex representation of a hash value as a string</td>
+		<td>得到哈希串的十六进制形式</td>
 	</tr></table><h2>Functions</h2><a name="pprint:v"/>
 		<a name="pprint"/>
 		<h4>pprint()<a href="#pprint:v" class="anchor-link"></a></h4>
 		<p><code>pprint(v)</code></p>
-		Pretty printing of Lua values. This function prints Lua values
-in a manner similar to +print()+, but will also recurse into tables
-and pretty print them. There is a limit to how deep the function
-will recurse.
-		<p><b>PARAMETERS</b></p>
+		优化打印输出. 此函数在控制台输出lua值
+类似与 +print()+, 而且能迭代lua表, 输出更得体的内容. 迭代深度有一定限制.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>v</code></td>
-				<td>value to print</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		Pretty printing a Lua table with a nested table:
+				<td>输出的值</td>
+			</tr></table><p><b>实例</b></p>
+		输出嵌套lua表:
 <div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">t2</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">}</span>
 <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">value&quot;</span><span class="p">,</span> <span class="n">key2</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">,</span> <span class="n">key3</span> <span class="o">=</span> <span class="n">t2</span> <span class="p">}</span>
 <span class="n">pprint</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
 
-Resulting in the following output (note that the key order in non array
-Lua tables is undefined):
+输出如下 (非数组的话键的顺序不确定):
 <div class="codehilite"><pre><span></span>{
   key3 = {
     1 = 1,
@@ -243,38 +240,37 @@ Lua tables is undefined):
 		<a name="hash"/>
 		<h4>hash()<a href="#hash:s" class="anchor-link"></a></h4>
 		<p><code>hash(s)</code></p>
-		All ids in the engine are represented as hashes, so a string needs to be hashed
-before it can be compared with an id.
-		<p><b>PARAMETERS</b></p>
+		引擎内部将各个id哈希化, 所以字符串和id进行对比的话要先哈希化.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>s</code></td>
-				<td>string to hash</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>字符串哈希化</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>hash</code></td>
-				<td>a hashed string</td>
-			</tr></table><p><b>EXAMPLES</b></p>
-		To compare a message_id in an on-message callback function:
+				<td>哈希值</td>
+			</tr></table><p><b>实例</b></p>
+		在 on-message 回调函数中对比 message_id:
 <div class="codehilite"><pre><span></span><span class="k">function</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">message_id</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">message_id</span> <span class="o">==</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_message&quot;</span><span class="p">)</span> <span class="k">then</span>
-        <span class="c1">-- Act on the message here</span>
+        <span class="c1">-- 根据消息进行处理</span>
     <span class="k">end</span>
 <span class="k">end</span>
 </pre></div><hr/><a name="hash_to_hex:h"/>
 		<a name="hash_to_hex"/>
 		<h4>hash_to_hex()<a href="#hash_to_hex:h" class="anchor-link"></a></h4>
 		<p><code>hash_to_hex(h)</code></p>
-		Returns a hexadecimal representation of a hash value.
-The returned string is always padded with leading zeros.
-		<p><b>PARAMETERS</b></p>
+		得到哈希值的十六进制形式.
+返回值以0开头.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>h</code></td>
-				<td>hash value to get hex string for</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>需要转换的哈希值</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>hex</code></td>
-				<td>hex representation of the hash</td>
-			</tr></table><p><b>EXAMPLES</b></p>
+				<td>十六进制值</td>
+			</tr></table><p><b>实例</b></p>
 		<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">h</span> <span class="o">=</span> <span class="n">hash</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">my_hash&quot;</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">hexstr</span> <span class="o">=</span> <span class="n">hash_to_hex</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hexstr</span><span class="p">)</span> <span class="c1">--&gt; a2bc06d97f580aab</span>
