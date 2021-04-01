@@ -259,11 +259,10 @@ pos 默认值为 <code>n+1</code>,
 		<a name="table.maxn"/>
 		<h4>table.maxn()<a href="#table.maxn:table" class="anchor-link"></a></h4>
 		<p><code>table.maxn(table)</code></p>
-		Returns the largest positive numerical index of the given table,
-or zero if the table has no positive numerical indices.
-(To do its job this function does a linear traversal of
-the whole table.)
-		<p><b>PARAMETERS</b></p>
+		返回表里最大的数值键,
+如果没有正数键的话返回0.
+(函数内部需要对表进行一次线性迭代.)
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>table</code></td>
 				<td></td>
@@ -271,14 +270,12 @@ the whole table.)
 		<a name="table.remove"/>
 		<h4>table.remove()<a href="#table.remove:table-[pos]" class="anchor-link"></a></h4>
 		<p><code>table.remove(table,[pos])</code></p>
-		Removes from table the element at position pos,
-shifting down other elements to close the space, if necessary.
-Returns the value of the removed element.
-The default value for pos is n,
-where n is the length of the table,
-so that a call <code>table.remove(t)</code> removes the last element
-of table t.
-		<p><b>PARAMETERS</b></p>
+		移除表内pos位置的元素,
+必要的话会将其他项目前移.
+返回被移除的元素.
+pos默认值为表的长度值,
+例如 <code>table.remove(t)</code> 会移除表t的最后一个元素.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>table</code></td>
 				<td></td>
@@ -289,20 +286,17 @@ of table t.
 		<a name="table.sort"/>
 		<h4>table.sort()<a href="#table.sort:table-[comp]" class="anchor-link"></a></h4>
 		<p><code>table.sort(table,[comp])</code></p>
-		Sorts table elements in a given order, <em>in-place</em>,
-from <code>table[1]</code> to <code>table[n]</code>,
-where n is the length of the table.
-If comp is given,
-then it must be a function that receives two table elements,
-and returns true
-when the first is less than the second
-(so that <code>not comp(a[i+1],a[i])</code> will be true after the sort).
-If comp is not given,
-then the standard Lua operator <code>&lt;</code> is used instead.
-The sort algorithm is not stable;
-that is, elements considered equal by the given order
-may have their relative positions changed by the sort.
-		<p><b>PARAMETERS</b></p>
+		按指定顺序排列表元素,
+从 <code>table[1]</code> 到 <code>table[n]</code> <em>挨个排列</em>,
+其中n为表的长度.
+如果指定comp参数,
+那它必须是这样一个函数: 参数为两个表元素, 并且第一个元素小于第二个时返回true,
+(也就是说排序后 <code>not comp(a[i+1],a[i])</code> 一定是true).
+如果不指定comp参数,
+默认使用 Lua 操作符 <code>&lt;</code>.
+这样的话排序逻辑可能并不理想,
+				相等元素的次序不能确定.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>table</code></td>
 				<td></td>
