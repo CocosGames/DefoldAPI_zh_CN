@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmConnectionPool/">alpha</option><option value="/ref/beta/dmConnectionPool/">beta</option><option value="/ref/stable/dmConnectionPool/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk connection pool api documentation</h2>
-<p>Connection pool</p>
+			<div class="columns nine ref scrollable"><h2>Sdk 连接池 api 文档</h2>
+<p>连接池</p>
 
 <table class="compact">
 	<tr>
@@ -210,183 +210,183 @@
 
 </table><table class="compact">
 	<tr>
-		<th>ENUMS</th>
+		<th>枚举</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::Result">dmConnectionPool::Result</a></td>
-		<td>result enumeration</td>
+		<td>结果枚举</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>STRUCTS</th>
+		<th>结构</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::Params">struct&nbsp;dmConnectionPool::Params</a></td>
-		<td>Creation parameters</td>
+		<td>创建参数</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::New:params-pool">&nbsp;dmConnectionPool::New(&nbsp;params, dmConnectionPool::HPool*&nbsp;pool)</a></td>
-		<td>Create a new connection pool</td>
+		<td>新建连接池</td>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::Delete:pool">&nbsp;dmConnectionPool::Delete(dmConnectionPool::HPool&nbsp;pool)</a></td>
-		<td>Delete connnection pool</td>
+		<td>删除连接池</td>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::Dial:pool-host-port-dns_channel-ssl-timeout-connection-sock_res">&nbsp;dmConnectionPool::Dial(dmConnectionPool::HPool&nbsp;pool, const char*&nbsp;host, uint16_t&nbsp;port, dmDNS::HChannel&nbsp;dns_channel, bool&nbsp;ssl, int&nbsp;timeout, dmConnectionPool::HConnection*&nbsp;connection, dmSocket::Result*&nbsp;sock_res)</a></td>
-		<td>Connection to a host/port</td>
+		<td>连接到主机/端口</td>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::Return:pool-connection">void&nbsp;dmConnectionPool::Return(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</a></td>
-		<td>Return connection to pool</td>
+		<td>将连接回归至连接池</td>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::Close:pool-connection">void&nbsp;dmConnectionPool::Close(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</a></td>
-		<td>Close connection. Use this function whenever an er...</td>
+		<td>关闭连接.</td>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::GetSocket:pool-connection">dmSocket::Socket&nbsp;dmConnectionPool::GetSocket(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</a></td>
-		<td>Get socket for connection</td>
+		<td>获取连接的套接字</td>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::GetSSLSocket:pool-connection">dmSSLSocket::Socket&nbsp;dmConnectionPool::GetSSLSocket(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</a></td>
-		<td>Get secure socket.</td>
+		<td>获取加密套接字</td>
 	</tr><tr>
 		<td><a href="#dmConnectionPool::Shutdown:pool-how">&nbsp;dmConnectionPool::Shutdown(dmConnectionPool::HPool&nbsp;pool, dmSocket::ShutdownType&nbsp;how)</a></td>
-		<td>Shuts down all open sockets in the pool and block ...</td>
-	</tr></table><h2>Functions</h2><a name="dmConnectionPool::New:params-pool"/>
+		<td>关闭套接字</td>
+	</tr></table><h2>函数</h2><a name="dmConnectionPool::New:params-pool"/>
 		<h4>dmConnectionPool::New<a href="#dmConnectionPool::New:params-pool" class="anchor-link"></a></h4>
 			<p><code>&nbsp;dmConnectionPool::New(&nbsp;params, dmConnectionPool::HPool*&nbsp;pool)</code><p>
 
-    Create a new connection pool
-    <p><b>PARAMETERS</b></p>
+    新建连接池
+    <p><b>参数</b></p>
     <table><tr><td><code></code></td>
-                <td><code>params</code></td>
+                <td><code>参数</code></td>
                 <td></td></tr><tr><td><code>dmConnectionPool::HPool*</code></td>
                 <td><code>pool</code></td>
-                <td>pool (out)</td></tr></table><p><b>RETURNS</b></p>
+                <td>连接池 (out)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code></code></td>
-                <td>on success</td>
+                <td>成功后</td>
             </tr></table><hr/><a name="dmConnectionPool::Delete:pool"/>
 		<h4>dmConnectionPool::Delete<a href="#dmConnectionPool::Delete:pool" class="anchor-link"></a></h4>
 			<p><code>&nbsp;dmConnectionPool::Delete(dmConnectionPool::HPool&nbsp;pool)</code><p>
 
-    Delete connnection pool
-    <p><b>PARAMETERS</b></p>
+    删除连接池
+    <p><b>参数</b></p>
     <table><tr><td><code>dmConnectionPool::HPool</code></td>
                 <td><code>pool</code></td>
-                <td>pool</td></tr></table><p><b>RETURNS</b></p>
+                <td>pool</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code></code></td>
-                <td>on success</td>
+                <td>成功后</td>
             </tr></table><hr/><a name="dmConnectionPool::Dial:pool-host-port-dns_channel-ssl-timeout-connection-sock_res"/>
 		<h4>dmConnectionPool::Dial<a href="#dmConnectionPool::Dial:pool-host-port-dns_channel-ssl-timeout-connection-sock_res" class="anchor-link"></a></h4>
 			<p><code>&nbsp;dmConnectionPool::Dial(dmConnectionPool::HPool&nbsp;pool, const char*&nbsp;host, uint16_t&nbsp;port, dmDNS::HChannel&nbsp;dns_channel, bool&nbsp;ssl, int&nbsp;timeout, dmConnectionPool::HConnection*&nbsp;connection, dmSocket::Result*&nbsp;sock_res)</code><p>
 
-    Connection to a host/port
-    <p><b>PARAMETERS</b></p>
+    连接至主机/端口
+    <p><b>参数</b></p>
     <table><tr><td><code>dmConnectionPool::HPool</code></td>
                 <td><code>pool</code></td>
-                <td>pool</td></tr><tr><td><code>const char*</code></td>
+                <td>连接池</td></tr><tr><td><code>const char*</code></td>
                 <td><code>host</code></td>
-                <td>host</td></tr><tr><td><code>uint16_t</code></td>
+                <td>主机</td></tr><tr><td><code>uint16_t</code></td>
                 <td><code>port</code></td>
-                <td>port</td></tr><tr><td><code>dmDNS::HChannel</code></td>
+                <td>端口</td></tr><tr><td><code>dmDNS::HChannel</code></td>
                 <td><code>dns_channel</code></td>
-                <td>The DNS channel that will be used for translating the host to an address</td></tr><tr><td><code>bool</code></td>
+                <td>用于查找主机地址的DNS通道</td></tr><tr><td><code>bool</code></td>
                 <td><code>ssl</code></td>
-                <td>true for ssl connection</td></tr><tr><td><code>int</code></td>
+                <td>是否使用ssl</td></tr><tr><td><code>int</code></td>
                 <td><code>timeout</code></td>
-                <td>The timeout (micro seconds) for the connection and ssl handshake</td></tr><tr><td><code>dmConnectionPool::HConnection*</code></td>
+                <td>连接超时 (毫秒)</td></tr><tr><td><code>dmConnectionPool::HConnection*</code></td>
                 <td><code>connection</code></td>
-                <td>connection (out)</td></tr><tr><td><code>dmSocket::Result*</code></td>
+                <td>连接 (out)</td></tr><tr><td><code>dmSocket::Result*</code></td>
                 <td><code>sock_res</code></td>
-                <td>socket-result code on failure</td></tr></table><p><b>RETURNS</b></p>
+                <td>失败时的套接字结果代码</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code></code></td>
-                <td>on success</td>
+                <td>成功后</td>
             </tr></table><hr/><a name="dmConnectionPool::Return:pool-connection"/>
 		<h4>dmConnectionPool::Return<a href="#dmConnectionPool::Return:pool-connection" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmConnectionPool::Return(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</code><p>
 
-    Return connection to pool
-    <p><b>PARAMETERS</b></p>
+    返回连接池
+    <p><b>参数</b></p>
     <table><tr><td><code>dmConnectionPool::HPool</code></td>
                 <td><code>pool</code></td>
-                <td>pool</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
+                <td>连接池</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
                 <td><code>connection</code></td>
                 <td></td></tr></table><hr/><a name="dmConnectionPool::Close:pool-connection"/>
 		<h4>dmConnectionPool::Close<a href="#dmConnectionPool::Close:pool-connection" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmConnectionPool::Close(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</code><p>
 
-    Close connection. Use this function whenever an error occur in eg http.
-    <p><b>PARAMETERS</b></p>
+    关闭连接. http之类的错误发生时要使用此函数.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmConnectionPool::HPool</code></td>
                 <td><code>pool</code></td>
-                <td>pool</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
+                <td>连接池</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
                 <td><code>connection</code></td>
                 <td></td></tr></table><hr/><a name="dmConnectionPool::GetSocket:pool-connection"/>
 		<h4>dmConnectionPool::GetSocket<a href="#dmConnectionPool::GetSocket:pool-connection" class="anchor-link"></a></h4>
 			<p><code>dmSocket::Socket&nbsp;dmConnectionPool::GetSocket(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</code><p>
 
-    Get socket for connection
-    <p><b>PARAMETERS</b></p>
+    得到连接套接字
+    <p><b>参数</b></p>
     <table><tr><td><code>dmConnectionPool::HPool</code></td>
                 <td><code>pool</code></td>
-                <td>pool</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
+                <td>连接池</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
                 <td><code>connection</code></td>
-                <td></td></tr></table><p><b>RETURNS</b></p>
+                <td></td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmSocket::Socket</code></td>
-                <td>on success</td>
+                <td>成功后</td>
             </tr></table><hr/><a name="dmConnectionPool::GetSSLSocket:pool-connection"/>
 		<h4>dmConnectionPool::GetSSLSocket<a href="#dmConnectionPool::GetSSLSocket:pool-connection" class="anchor-link"></a></h4>
 			<p><code>dmSSLSocket::Socket&nbsp;dmConnectionPool::GetSSLSocket(dmConnectionPool::HPool&nbsp;pool, dmConnectionPool::HConnection&nbsp;connection)</code><p>
 
-    Get secure socket.
-    <p><b>PARAMETERS</b></p>
+    得到加密套接字.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmConnectionPool::HPool</code></td>
                 <td><code>pool</code></td>
-                <td>pool</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
+                <td>连接池</td></tr><tr><td><code>dmConnectionPool::HConnection</code></td>
                 <td><code>connection</code></td>
-                <td></td></tr></table><p><b>RETURNS</b></p>
+                <td></td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmSSLSocket::Socket</code></td>
-                <td>on success</td>
+                <td>成功后</td>
             </tr></table><hr/><a name="dmConnectionPool::Shutdown:pool-how"/>
 		<h4>dmConnectionPool::Shutdown<a href="#dmConnectionPool::Shutdown:pool-how" class="anchor-link"></a></h4>
 			<p><code>&nbsp;dmConnectionPool::Shutdown(dmConnectionPool::HPool&nbsp;pool, dmSocket::ShutdownType&nbsp;how)</code><p>
 
-    Shuts down all open sockets in the pool and block new connection attempts. The function can be
-called repeatedly on the same pool until it returns no more connections in use.
-    <p><b>PARAMETERS</b></p>
+    关闭连接池内所有套接字并阻止新建连接. 可以在一个连接池上
+反复调用此函数直到所有连接都被关闭.
+    <p><b>参数</b></p>
     <table><tr><td><code>dmConnectionPool::HPool</code></td>
-                <td><code>pool</code></td>
+                <td><code>连接池</code></td>
                 <td>pool</td></tr><tr><td><code>dmSocket::ShutdownType</code></td>
                 <td><code>how</code></td>
-                <td>shutdown type to pass to socket shutdown function</td></tr></table><p><b>RETURNS</b></p>
+                <td>关停方式</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code></code></td>
-                <td>number of connections in use</td>
+                <td>还在使用的连接数</td>
             </tr></table><hr/><h2>Structs</h2><a name="dmConnectionPool::Params"/>
 	<h4>dmConnectionPool::Params<a href="#dmConnectionPool::Params"><span class="anchor-link"/></a></h4>
 
 		<p>
-        <p><b>TYPE</b></p>
+        <p><b>类型</b></p>
         <code>struct&nbsp;dmConnectionPool::Params</code><br>
     </p>
 
-    <p>Creation parameters</p><p><b>MEMBERS</b><table><tr>
+    <p>创建参数</p><p><b>成员</b><table><tr>
             <td><code>int</code></td>
             <td><code>m_MaxConnections</code></td>
-            <td>Max connection in pool</td>
+            <td>连接池最大连接数</td>
         </tr><tr>
             <td><code>int</code></td>
             <td><code>m_MaxKeepAlive</code></td>
-            <td>Default max-keep-alive time in seconds</td>
+            <td>默认最长活跃时间, 以秒为单位</td>
         </tr></table></p>
 
-	<hr/><h2>Enums</h2><a name="dmConnectionPool::Result"/>
+	<hr/><h2>枚举</h2><a name="dmConnectionPool::Result"/>
 	<h4>dmConnectionPool::Result<a href="#dmConnectionPool::Result"><span class="anchor-link"/></a></h4>
 	<p>result enumeration</p>
-	<p>Result enumeration.</p><table><tr>
+	<p>结果枚举.</p><table><tr>
 		<td><code>dmConnectionPool::RESULT_OK</code></td>
 		<td>0</td>
 	</tr><tr>
