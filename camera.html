@@ -193,57 +193,57 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/camera/">alpha</option><option value="/ref/beta/camera/">beta</option><option value="/ref/stable/camera/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Camera API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>Camera API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>MESSAGE</th>
+		<th>消息</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#set_camera">set_camera</a></td>
-		<td>sets camera properties</td>
+		<td>设置摄像机属性</td>
 	</tr><tr>
 		<td><a href="#acquire_camera_focus">acquire_camera_focus</a></td>
-		<td>makes the receiving camera become the active camera</td>
+		<td>让摄像机获得焦点</td>
 	</tr><tr>
 		<td><a href="#release_camera_focus">release_camera_focus</a></td>
-		<td>deactivates the receiving camera</td>
-	</tr></table><h2>Messages</h2><a name="set_camera"/>
+		<td>让摄像机释放焦点</td>
+	</tr></table><h2>消息</h2><a name="set_camera"/>
 	<h4>set_camera<a href="#set_camera"><span class="anchor-link"/></a></h4>
-	<p>sets camera properties</p>
+	<p>设置摄像机属性</p>
 	<p>
-Post this message to a camera-component to set its properties at run-time.
+向摄像机组件发送此消息即可在运行时设置摄像机属性.
 </p><table><tr>
 		<td><code>aspect_ratio</code></td>
-		<td>aspect ratio of the screen (width divided by height)</td>
+		<td>摄像机屏幕宽高比 (宽度除以高度)</td>
 	</tr><tr>
 		<td><code>fov</code></td>
-		<td>field of view of the lens, measured as the angle in radians between the right and left edge</td>
+		<td>镜头视角, 由左右边缘到镜头计算出来的弧度制夹角</td>
 	</tr><tr>
 		<td><code>near_z</code></td>
-		<td>position of the near clipping plane (distance from camera along relative z)</td>
+		<td>剔除平面最近z值 (再近的会被剔除渲染)</td>
 	</tr><tr>
 		<td><code>far_z</code></td>
-		<td>position of the far clipping plane (distance from camera along relative z)</td>
-	</tr></table><p><b>EXAMPLES</b></p>
-	In the examples, it is assumed that the instance of the script has a camera-component with id "camera".
+		<td>剔除平面最远z值 (再远的会被剔除渲染)</td>
+	</tr></table><p><b>实例</b></p>
+	假设脚本所在游戏对象上有一个id为 "camera" 的摄像机组件.
 <div class="codehilite"><pre><span></span><span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#camera&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">set_camera&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">aspect_ratio</span> <span class="o">=</span> <span class="mi">16</span><span class="o">/</span><span class="mi">9</span><span class="p">,</span> <span class="n">fov</span> <span class="o">=</span> <span class="nb">math.pi</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">near_z</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">far_z</span> <span class="o">=</span> <span class="mi">500</span><span class="p">})</span>
 </pre></div><hr/><a name="acquire_camera_focus"/>
 	<h4>acquire_camera_focus<a href="#acquire_camera_focus"><span class="anchor-link"/></a></h4>
-	<p>makes the receiving camera become the active camera</p>
-	<p>Post this message to a camera-component to activate it.
-Several cameras can be active at the same time, but only the camera that was last activated will be used for rendering.
-When the camera is deactivated (see <code>release_camera_focus</code>), the previously activated camera will again be used for rendering automatically.
-The reason it is called "camera focus" is the similarity to how acquiring input focus works (see <code>acquire_input_focus</code>).</p><p><b>EXAMPLES</b></p>
-	In the examples, it is assumed that the instance of the script has a camera-component with id "camera".
+	<p>让摄像机获得焦点</p>
+	<p>把此消息发送给摄像机组件即可使摄像机获得焦点.
+消息是可以同时发送给多个摄像机的, 但是只有最后一个得到焦点的摄像机会进行渲染.
+如果使摄像机失去焦点 (参见 <code>release_camera_focus</code>), 那么上一个得到焦点的摄像机会自动激活进行渲染.
+这个 "摄像机焦点" 的工作方式似于输入焦点 (参见 <code>acquire_input_focus</code>).</p><p><b>实例</b></p>
+	假设脚本所在游戏对象上有一个id为 "camera" 的摄像机组件.
 <div class="codehilite"><pre><span></span><span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#camera&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">acquire_camera_focus&quot;</span><span class="p">)</span>
 </pre></div><hr/><a name="release_camera_focus"/>
 	<h4>release_camera_focus<a href="#release_camera_focus"><span class="anchor-link"/></a></h4>
-	<p>deactivates the receiving camera</p>
+	<p>让摄像机失去焦点</p>
 	<p>
-Post this message to a camera-component to deactivate it. The camera is then removed from the active cameras.
-See <code>acquire_camera_focus</code> for more information how the active cameras are used in rendering.
-</p><p><b>EXAMPLES</b></p>
-	In the examples, it is assumed that the instance of the script has a camera-component with id "camera".
+把此消息发送给摄像机组件即可使摄像机失去焦点. 失去焦点的摄像机处于非激活状态.
+处于激活状态的摄像机的工作方式, 参见 <code>acquire_camera_focus</code>.
+</p><p><b>实例</b></p>
+	假设脚本所在游戏对象上有一个id为 "camera" 的摄像机组件.
 <div class="codehilite"><pre><span></span><span class="n">msg</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">#camera&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">release_camera_focus&quot;</span><span class="p">)</span>
 </pre></div><hr/></div>
 		</div>

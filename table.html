@@ -193,37 +193,37 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/table/">alpha</option><option value="/ref/beta/table/">beta</option><option value="/ref/stable/table/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Lua table standard library</h1>
+			<div class="columns nine ref scrollable"><h1>Lua table 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#table.concat:table-[sep]-[i]-[j]">table.concat()</a></td>
-		<td>concatenates table items together into a string</td>
+		<td>把表内项目连结起来转化为字符串</td>
 	</tr><tr>
 		<td><a href="#table.insert:table-[pos]-value">table.insert()</a></td>
-		<td>inserts a new item into a numerically-keyed table</td>
+		<td>向数字为键的表(类似数组)里插入项目</td>
 	</tr><tr>
 		<td><a href="#table.maxn:table">table.maxn()</a></td>
-		<td>returns the highest numeric key in the table</td>
+		<td>返回表里最大的数字键</td>
 	</tr><tr>
 		<td><a href="#table.remove:table-[pos]">table.remove()</a></td>
-		<td>removes an item from a numerically-keyed table</td>
+		<td>从数字为键的表(类似数组)里移除项目</td>
 	</tr><tr>
 		<td><a href="#table.sort:table-[comp]">table.sort()</a></td>
-		<td>Sorts a table</td>
-	</tr></table><h2>Functions</h2><a name="table.concat:table-[sep]-[i]-[j]"/>
+		<td>表排序</td>
+	</tr></table><h2>函数</h2><a name="table.concat:table-[sep]-[i]-[j]"/>
 		<a name="table.concat"/>
 		<h4>table.concat()<a href="#table.concat:table-[sep]-[i]-[j]" class="anchor-link"></a></h4>
 		<p><code>table.concat(table,[sep],[i],[j])</code></p>
 		Given an array where all elements are strings or numbers,
-returns <code>table[i]..sep..table[i+1] ... sep..table[j]</code>.
-The default value for sep is the empty string,
-the default for i is 1,
-and the default for j is the length of the table.
-If i is greater than j, returns the empty string.
-		<p><b>PARAMETERS</b></p>
+返回 <code>table[i]..分隔符..table[i+1] ... 分隔符..table[j]</code>.
+分隔符默认为空白字符串,
+i 默认值为 1,
+j 默认值为表的长度.
+如果 i > j, 返回空白字符串.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>table</code></td>
 				<td></td>
@@ -240,13 +240,12 @@ If i is greater than j, returns the empty string.
 		<a name="table.insert"/>
 		<h4>table.insert()<a href="#table.insert:table-[pos]-value" class="anchor-link"></a></h4>
 		<p><code>table.insert(table,[pos],value)</code></p>
-		Inserts element value at position pos in table,
-shifting up other elements to open space, if necessary.
-The default value for pos is <code>n+1</code>,
-where n is the length of the table ,
-so that a call <code>table.insert(t,x)</code> inserts x at the end
-of table t.
-		<p><b>PARAMETERS</b></p>
+		在表内 pos 处插入项目,
+必要的话会把其他项后移.
+pos 默认值为 <code>n+1</code>,
+其中n是表的长度,
+比如 <code>table.insert(t,x)</code> 就是往表t里插入末项x.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>table</code></td>
 				<td></td>

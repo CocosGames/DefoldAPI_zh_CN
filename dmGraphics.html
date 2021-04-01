@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmGraphics/">alpha</option><option value="/ref/beta/dmGraphics/">beta</option><option value="/ref/stable/dmGraphics/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk graphics api documentation</h2>
-<p>Platform specific native graphics functions.</p>
+			<div class="columns nine ref scrollable"><h2>Sdk 图像 api 文档</h2>
+<p>平台相关的原生图像功能.</p>
 
 <table class="compact">
 	<tr>
@@ -210,203 +210,203 @@
 
 </table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeiOSUIWindow:">id&nbsp;dmGraphics::GetNativeiOSUIWindow()</a></td>
-		<td>get iOS UIWindow</td>
+		<td>取得 iOS UIWindow</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeiOSUIView:">id&nbsp;dmGraphics::GetNativeiOSUIView()</a></td>
-		<td>get iOS UIView</td>
+		<td>取得 iOS UIView</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeiOSEAGLContext:">id&nbsp;dmGraphics::GetNativeiOSEAGLContext()</a></td>
-		<td>get iOS EAGLContext</td>
+		<td>取得 iOS EAGLContext</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeOSXNSWindow:">id&nbsp;dmGraphics::GetNativeOSXNSWindow()</a></td>
-		<td>get OSX NSWindow</td>
+		<td>取得 OSX NSWindow</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeOSXNSView:">id&nbsp;dmGraphics::GetNativeOSXNSView()</a></td>
-		<td>get OSX NSView</td>
+		<td>取得 OSX NSView</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeOSXNSOpenGLContext:">id&nbsp;dmGraphics::GetNativeOSXNSOpenGLContext()</a></td>
-		<td>get OSX NSOpenGLContext</td>
+		<td>取得 OSX NSOpenGLContext</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeWindowsHWND:">HWND&nbsp;dmGraphics::GetNativeWindowsHWND()</a></td>
-		<td>get Win32 HWND</td>
+		<td>取得 Win32 HWND</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeWindowsHGLRC:">HGLRC&nbsp;dmGraphics::GetNativeWindowsHGLRC()</a></td>
-		<td>get Win32 HGLRC</td>
+		<td>取得 Win32 HGLRC</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeAndroidEGLContext:">EGLContext&nbsp;dmGraphics::GetNativeAndroidEGLContext()</a></td>
-		<td>get Android EGLContext</td>
+		<td>取得 Android EGLContext</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeAndroidEGLSurface:">EGLSurface&nbsp;dmGraphics::GetNativeAndroidEGLSurface()</a></td>
-		<td>get Android EGLSurface</td>
+		<td>取得 Android EGLSurface</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeAndroidJavaVM:">JavaVM*&nbsp;dmGraphics::GetNativeAndroidJavaVM()</a></td>
-		<td>get Android native JavaVM</td>
+		<td>取得 Android native JavaVM</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeAndroidActivity:">jobject&nbsp;dmGraphics::GetNativeAndroidActivity()</a></td>
-		<td>get Android native jobject</td>
+		<td>取得 Android native jobject</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeAndroidApp:">struct android_app*&nbsp;dmGraphics::GetNativeAndroidApp()</a></td>
-		<td>get Android app object</td>
+		<td>取得 Android app object</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeX11Window:">Window&nbsp;dmGraphics::GetNativeX11Window()</a></td>
-		<td>get Linux X11Window</td>
+		<td>取得 Linux X11Window</td>
 	</tr><tr>
 		<td><a href="#dmGraphics::GetNativeX11GLXContext:">GLXContext&nbsp;dmGraphics::GetNativeX11GLXContext()</a></td>
-		<td>get Linux X11GLXContext</td>
-	</tr></table><h2>Functions</h2><a name="dmGraphics::GetNativeiOSUIWindow:"/>
+		<td>取得 Linux X11GLXContext</td>
+	</tr></table><h2>函数</h2><a name="dmGraphics::GetNativeiOSUIWindow:"/>
 		<h4>dmGraphics::GetNativeiOSUIWindow<a href="#dmGraphics::GetNativeiOSUIWindow:" class="anchor-link"></a></h4>
 			<p><code>id&nbsp;dmGraphics::GetNativeiOSUIWindow()</code><p>
 
-    Get iOS UIWindow native handle (id). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+    取得 iOS UIWindow 原生句柄 (id). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>id</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeiOSUIView:"/>
 		<h4>dmGraphics::GetNativeiOSUIView<a href="#dmGraphics::GetNativeiOSUIView:" class="anchor-link"></a></h4>
 			<p><code>id&nbsp;dmGraphics::GetNativeiOSUIView()</code><p>
 
-    Get iOS UIView native handle (id). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+    取得 iOS UIView 原生句柄 (id). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>id</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeiOSEAGLContext:"/>
 		<h4>dmGraphics::GetNativeiOSEAGLContext<a href="#dmGraphics::GetNativeiOSEAGLContext:" class="anchor-link"></a></h4>
 			<p><code>id&nbsp;dmGraphics::GetNativeiOSEAGLContext()</code><p>
 
-    Get iOS EAGLContext native handle (id). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 iOS EAGLContext 原生句柄 (id). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>id</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeOSXNSWindow:"/>
 		<h4>dmGraphics::GetNativeOSXNSWindow<a href="#dmGraphics::GetNativeOSXNSWindow:" class="anchor-link"></a></h4>
 			<p><code>id&nbsp;dmGraphics::GetNativeOSXNSWindow()</code><p>
 
-    Get OSX NSWindow native handle (id). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 OSX NSWindow 原生句柄 (id). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>id</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeOSXNSView:"/>
 		<h4>dmGraphics::GetNativeOSXNSView<a href="#dmGraphics::GetNativeOSXNSView:" class="anchor-link"></a></h4>
 			<p><code>id&nbsp;dmGraphics::GetNativeOSXNSView()</code><p>
 
-    Get OSX NSView native handle (id). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 OSX NSView 原生句柄 (id). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>id</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeOSXNSOpenGLContext:"/>
 		<h4>dmGraphics::GetNativeOSXNSOpenGLContext<a href="#dmGraphics::GetNativeOSXNSOpenGLContext:" class="anchor-link"></a></h4>
 			<p><code>id&nbsp;dmGraphics::GetNativeOSXNSOpenGLContext()</code><p>
 
-    Get OSX NSOpenGLContext native handle (id). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 OSX NSOpenGLContext 原生句柄 (id). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>id</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeWindowsHWND:"/>
 		<h4>dmGraphics::GetNativeWindowsHWND<a href="#dmGraphics::GetNativeWindowsHWND:" class="anchor-link"></a></h4>
 			<p><code>HWND&nbsp;dmGraphics::GetNativeWindowsHWND()</code><p>
 
-    Get Win32 windows native handle (HWND). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Win32 windows 原生句柄 (HWND). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>HWND</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeWindowsHGLRC:"/>
 		<h4>dmGraphics::GetNativeWindowsHGLRC<a href="#dmGraphics::GetNativeWindowsHGLRC:" class="anchor-link"></a></h4>
 			<p><code>HGLRC&nbsp;dmGraphics::GetNativeWindowsHGLRC()</code><p>
 
-    Get Win32 gl rendercontext native handle (HGLRC). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Win32 gl rendercontext 原生句柄 (HGLRC). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>HGLRC</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeAndroidEGLContext:"/>
 		<h4>dmGraphics::GetNativeAndroidEGLContext<a href="#dmGraphics::GetNativeAndroidEGLContext:" class="anchor-link"></a></h4>
 			<p><code>EGLContext&nbsp;dmGraphics::GetNativeAndroidEGLContext()</code><p>
 
-    Get Android EGLContext native handle (EGLContext). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Android EGLContext 原生句柄 (EGLContext). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>EGLContext</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeAndroidEGLSurface:"/>
 		<h4>dmGraphics::GetNativeAndroidEGLSurface<a href="#dmGraphics::GetNativeAndroidEGLSurface:" class="anchor-link"></a></h4>
 			<p><code>EGLSurface&nbsp;dmGraphics::GetNativeAndroidEGLSurface()</code><p>
 
-    Get Android EGLSurface native handle (EGLSurface). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Android EGLSurface 原生句柄 (EGLSurface). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>EGLSurface</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeAndroidJavaVM:"/>
 		<h4>dmGraphics::GetNativeAndroidJavaVM<a href="#dmGraphics::GetNativeAndroidJavaVM:" class="anchor-link"></a></h4>
 			<p><code>JavaVM*&nbsp;dmGraphics::GetNativeAndroidJavaVM()</code><p>
 
-    Get Android JavaVM ptr. Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Android JavaVM ptr. 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>JavaVM*</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeAndroidActivity:"/>
 		<h4>dmGraphics::GetNativeAndroidActivity<a href="#dmGraphics::GetNativeAndroidActivity:" class="anchor-link"></a></h4>
 			<p><code>jobject&nbsp;dmGraphics::GetNativeAndroidActivity()</code><p>
 
-    Get Android native jobject. Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Android native jobject. 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>jobject</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeAndroidApp:"/>
 		<h4>dmGraphics::GetNativeAndroidApp<a href="#dmGraphics::GetNativeAndroidApp:" class="anchor-link"></a></h4>
 			<p><code>struct android_app*&nbsp;dmGraphics::GetNativeAndroidApp()</code><p>
 
-    Get Android app object. Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Android app object. 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>struct android_app*</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeX11Window:"/>
 		<h4>dmGraphics::GetNativeX11Window<a href="#dmGraphics::GetNativeX11Window:" class="anchor-link"></a></h4>
 			<p><code>Window&nbsp;dmGraphics::GetNativeX11Window()</code><p>
 
-    Get Linux X11Window windows native handle (Window). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Linux X11Window windows 原生句柄 (Window). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>Window</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/><a name="dmGraphics::GetNativeX11GLXContext:"/>
 		<h4>dmGraphics::GetNativeX11GLXContext<a href="#dmGraphics::GetNativeX11GLXContext:" class="anchor-link"></a></h4>
 			<p><code>GLXContext&nbsp;dmGraphics::GetNativeX11GLXContext()</code><p>
 
-    Get Linux X11GLXContext native handle (GLXContext). Any other platform return zero.
-    <p><b>PARAMETERS</b></p>
-    <table></table><p><b>RETURNS</b></p>
+					取得 Linux X11GLXContext 原生句柄 (GLXContext). 其他平台下返回0.
+    <p><b>参数</b></p>
+    <table></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>GLXContext</code></td>
-                <td>native handle</td>
+                <td>原生句柄</td>
             </tr></table><hr/></div>
 		</div>
 	</div>
