@@ -193,143 +193,143 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmCrypt/">alpha</option><option value="/ref/beta/dmCrypt/">beta</option><option value="/ref/stable/dmCrypt/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>SDK Crypt API documentation</h1>
+			<div class="columns nine ref scrollable"><h1>SDK 加密 API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmCrypt::HashSha1:buf-buflen-digest">dmCrypt::HashSha1()</a></td>
-		<td>Hash buffer using SHA1</td>
+		<td>用 SHA1 算法加密哈希缓存</td>
 	</tr><tr>
 		<td><a href="#dmCrypt::HashSha256:buf-buflen-digest">dmCrypt::HashSha256()</a></td>
-		<td>Hash buffer using SHA256</td>
+		<td>用 SHA256 算法加密哈希缓存</td>
 	</tr><tr>
 		<td><a href="#dmCrypt::HashSha512:buf-buflen-digest">dmCrypt::HashSha512()</a></td>
-		<td>Hash buffer using SHA512</td>
+		<td>用 SHA512 算法加密哈希缓存</td>
 	</tr><tr>
 		<td><a href="#dmCrypt::HashMd5:buf-buflen-digest">dmCrypt::HashMd5()</a></td>
-		<td>Hash buffer using MD5</td>
+		<td>用 MD5 算法加密哈希缓存</td>
 	</tr><tr>
 		<td><a href="#dmCrypt::Base64Encode:src-src_len-dst-dst_len[in,out]">dmCrypt::Base64Encode()</a></td>
-		<td>Base64 encode a buffer</td>
+		<td>用 Base64 算法加密缓存</td>
 	</tr><tr>
 		<td><a href="#dmCrypt::Base64Decode:src-src_len-dst-dst_len[in,out]">dmCrypt::Base64Decode()</a></td>
-		<td>Base64 decode a buffer</td>
+		<td>用 Base64 算法解密缓存</td>
 	</tr></table><h2>Functions</h2><a name="dmCrypt::HashSha1:buf-buflen-digest"/>
 		<a name="dmCrypt::HashSha1"/>
 		<h4>dmCrypt::HashSha1()<a href="#dmCrypt::HashSha1:buf-buflen-digest" class="anchor-link"></a></h4>
 		<p><code>dmCrypt::HashSha1(buf,buflen,digest)</code></p>
-		Hash buffer using SHA1
-		<p><b>PARAMETERS</b></p>
+				用 SHA1 算法加密哈希缓存
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td><div class="codehilite"><pre><span></span>  The source data to hash
+				<td><div class="codehilite"><pre><span></span>  源数据
 </pre></div></td>
 			</tr><tr>
 				<td><code>buflen</code></td>
-				<td>The length of source data in bytes</td>
+				<td>源数据长度, 单位字节</td>
 			</tr><tr>
 				<td><code>digest</code></td>
-				<td>The destination buffer (20 bytes)</td>
+				<td>目标缓存 (20 字节)</td>
 			</tr></table><hr/><a name="dmCrypt::HashSha256:buf-buflen-digest"/>
 		<a name="dmCrypt::HashSha256"/>
 		<h4>dmCrypt::HashSha256()<a href="#dmCrypt::HashSha256:buf-buflen-digest" class="anchor-link"></a></h4>
 		<p><code>dmCrypt::HashSha256(buf,buflen,digest)</code></p>
-		Hash buffer using SHA256
-		<p><b>PARAMETERS</b></p>
+		用 SHA256 算法加密哈希缓存
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td><div class="codehilite"><pre><span></span>  The source data to hash
+				<td><div class="codehilite"><pre><span></span>  源数据
 </pre></div></td>
 			</tr><tr>
 				<td><code>buflen</code></td>
-				<td>The length of source data in bytes</td>
+				<td>源数据长度, 单位字节</td>
 			</tr><tr>
 				<td><code>digest</code></td>
-				<td>The destination buffer (32 bytes)</td>
+				<td>目的缓存 (32 字节)</td>
 			</tr></table><hr/><a name="dmCrypt::HashSha512:buf-buflen-digest"/>
 		<a name="dmCrypt::HashSha512"/>
 		<h4>dmCrypt::HashSha512()<a href="#dmCrypt::HashSha512:buf-buflen-digest" class="anchor-link"></a></h4>
 		<p><code>dmCrypt::HashSha512(buf,buflen,digest)</code></p>
-		Hash buffer using SHA512
-		<p><b>PARAMETERS</b></p>
+		用 SHA512 算法加密哈希缓存
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td><div class="codehilite"><pre><span></span>  The source data to hash
+				<td><div class="codehilite"><pre><span></span>  源数据
 </pre></div></td>
 			</tr><tr>
 				<td><code>buflen</code></td>
-				<td>The length of source data in bytes</td>
+				<td>源数据长度, 单位字节</td>
 			</tr><tr>
 				<td><code>digest</code></td>
-				<td>The destination buffer (64 bytes)</td>
+				<td>目的缓存 (64 字节)</td>
 			</tr></table><hr/><a name="dmCrypt::HashMd5:buf-buflen-digest"/>
 		<a name="dmCrypt::HashMd5"/>
 		<h4>dmCrypt::HashMd5()<a href="#dmCrypt::HashMd5:buf-buflen-digest" class="anchor-link"></a></h4>
 		<p><code>dmCrypt::HashMd5(buf,buflen,digest)</code></p>
-		Hash buffer using MD5
-		<p><b>PARAMETERS</b></p>
+		用 MD5 算法加密哈希缓存
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>buf</code></td>
-				<td><div class="codehilite"><pre><span></span>  The source data to hash
+				<td><div class="codehilite"><pre><span></span>  源数据
 </pre></div></td>
 			</tr><tr>
 				<td><code>buflen</code></td>
-				<td>The length of source data in bytes</td>
+				<td>源数据长度, 单位字节</td>
 			</tr><tr>
 				<td><code>digest</code></td>
-				<td>The destination buffer (16 bytes)</td>
+				<td>目的缓存 (16 字节)</td>
 			</tr></table><hr/><a name="dmCrypt::Base64Encode:src-src_len-dst-dst_len[in,out]"/>
 		<a name="dmCrypt::Base64Encode"/>
 		<h4>dmCrypt::Base64Encode()<a href="#dmCrypt::Base64Encode:src-src_len-dst-dst_len[in,out]" class="anchor-link"></a></h4>
 		<p><code>dmCrypt::Base64Encode(src,src_len,dst,dst_len[in,out])</code></p>
-		Base64 encode a buffer
-		<p><b>PARAMETERS</b></p>
+		用 Base64 算法加密缓存
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>src</code></td>
-				<td><div class="codehilite"><pre><span></span>          The source data to encode
+				<td><div class="codehilite"><pre><span></span>          源数据
 </pre></div></td>
 			</tr><tr>
 				<td><code>src_len</code></td>
-				<td><div class="codehilite"><pre><span></span>      The length of source data in bytes
+				<td><div class="codehilite"><pre><span></span>      源数据长度, 单位字节
 </pre></div></td>
 			</tr><tr>
 				<td><code>dst</code></td>
-				<td><div class="codehilite"><pre><span></span>          The destination buffer
+				<td><div class="codehilite"><pre><span></span>          目的缓存
 </pre></div></td>
 			</tr><tr>
 				<td><code>dst_len[in,out]</code></td>
-				<td>In: The length of the destination in bytes. Out: The length of the encoded string.</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>In: 目标数据长度, 单位字节. Out: 加密后的字符串长度.</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>true</code></td>
-				<td>if the encoding went ok</td>
+				<td>加密成功</td>
 			</tr></table><hr/><a name="dmCrypt::Base64Decode:src-src_len-dst-dst_len[in,out]"/>
 		<a name="dmCrypt::Base64Decode"/>
 		<h4>dmCrypt::Base64Decode()<a href="#dmCrypt::Base64Decode:src-src_len-dst-dst_len[in,out]" class="anchor-link"></a></h4>
 		<p><code>dmCrypt::Base64Decode(src,src_len,dst,dst_len[in,out])</code></p>
-		Base64 decode a buffer
-		<p><b>PARAMETERS</b></p>
+		用 Base64 算法解密缓存
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>src</code></td>
-				<td><div class="codehilite"><pre><span></span>          The source data to encode
+				<td><div class="codehilite"><pre><span></span>          源数据
 </pre></div></td>
 			</tr><tr>
 				<td><code>src_len</code></td>
-				<td><div class="codehilite"><pre><span></span>      The length of source data in bytes
+				<td><div class="codehilite"><pre><span></span>      源数据长度, 单位字节
 </pre></div></td>
 			</tr><tr>
 				<td><code>dst</code></td>
-				<td><div class="codehilite"><pre><span></span>          The destination buffer
+				<td><div class="codehilite"><pre><span></span>          目的缓存
 </pre></div></td>
 			</tr><tr>
 				<td><code>dst_len[in,out]</code></td>
-				<td>In: The length of the destination in bytes. Out: The length of the decoded string.</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>In: 目标数据长度, 单位字节. Out: 解密后的字符串长度.</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>true</code></td>
-				<td>if the decoding went ok</td>
+				<td>解密成功</td>
 			</tr></table><hr/></div>
 		</div>
 	</div>
