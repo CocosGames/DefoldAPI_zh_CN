@@ -193,38 +193,38 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/coroutine/">alpha</option><option value="/ref/beta/coroutine/">beta</option><option value="/ref/stable/coroutine/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h1>Lua coroutine standard library</h1>
+			<div class="columns nine ref scrollable"><h1>Lua 协程标准库</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNCTION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#coroutine.create:f">coroutine.create()</a></td>
-		<td>creates a new coroutine thread</td>
+		<td>新建协程线程</td>
 	</tr><tr>
 		<td><a href="#coroutine.resume:co-[val1]-[...]">coroutine.resume()</a></td>
-		<td>start or resume a thread</td>
+		<td>启动或者恢复线程</td>
 	</tr><tr>
 		<td><a href="#coroutine.running:">coroutine.running()</a></td>
-		<td>returns the running coroutine</td>
+		<td>返回运行中的线程</td>
 	</tr><tr>
 		<td><a href="#coroutine.status:co">coroutine.status()</a></td>
-		<td>returns the status of a thread</td>
+		<td>返回线程状态</td>
 	</tr><tr>
 		<td><a href="#coroutine.wrap:f">coroutine.wrap()</a></td>
-		<td>creates a thread and returns a function to resume it</td>
+		<td>新建线程并且返回一个用于恢复线程的函数</td>
 	</tr><tr>
 		<td><a href="#coroutine.yield:...">coroutine.yield()</a></td>
-		<td>yields execution of thread back to the caller</td>
+		<td>阻塞线程返回调用端</td>
 	</tr></table><h2>Functions</h2><a name="coroutine.create:f"/>
 		<a name="coroutine.create"/>
 		<h4>coroutine.create()<a href="#coroutine.create:f" class="anchor-link"></a></h4>
 		<p><code>coroutine.create(f)</code></p>
-		Creates a new coroutine, with body f.
-f must be a Lua function.
-Returns this new coroutine,
-an object with type <code>"thread"</code>.
-		<p><b>PARAMETERS</b></p>
+		新建线程, 线程执行内容为f.
+f 为一个Lua函数.
+返回的是新建的协程,
+即类型为 <code>"thread"</code> 的对象.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>f</code></td>
 				<td></td>
@@ -232,22 +232,20 @@ an object with type <code>"thread"</code>.
 		<a name="coroutine.resume"/>
 		<h4>coroutine.resume()<a href="#coroutine.resume:co-[val1]-[...]" class="anchor-link"></a></h4>
 		<p><code>coroutine.resume(co,[val1],[...])</code></p>
-		Starts or continues the execution of coroutine co.
-The first time you resume a coroutine,
-it starts running its body.
-The values val1, ... are passed
-as the arguments to the body function.
-If the coroutine has yielded,
-resume restarts it;
-the values val1, ... are passed
-as the results from the yield.
-If the coroutine runs without any errors,
-resume returns <span class="type"> true</span> plus any values passed to yield
-(if the coroutine yields) or any values returned by the body function
-(if the coroutine terminates).
-If there is any error,
-resume returns <span class="type"> false</span> plus the error message.
-		<p><b>PARAMETERS</b></p>
+		开始或者继续执行协程 co.
+第一次恢复协程时,
+协程开始执行其内容函数.
+参数 val1, ... 作为内容函数参数被传递.
+如果协程被阻塞,
+然后被恢复;
+参数 val1, ... 作为阻塞结果被填充.
+如果没有发生错误,
+则返回 <span class="type"> true</span> 以及阻塞结果
+(内容函数阻塞情况下) 或者内容函数返回结果
+(协程执行完毕情况下).
+如果发生错误,
+则返回 <span class="type"> false</span> 以及错误信息.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>co</code></td>
 				<td></td>
@@ -261,23 +259,22 @@ resume returns <span class="type"> false</span> plus the error message.
 		<a name="coroutine.running"/>
 		<h4>coroutine.running()<a href="#coroutine.running:" class="anchor-link"></a></h4>
 		<p><code>coroutine.running()</code></p>
-		Returns the running coroutine,
-or <span class="type"> nil</span> when called by the main thread.
-		<p><b>PARAMETERS</b></p>
+		返回运行中的协程,
+如果调用端为主线程则返回 <span class="type"> nil</span>.
+		<p><b>参数</b></p>
 		<table></table><hr/><a name="coroutine.status:co"/>
 		<a name="coroutine.status"/>
 		<h4>coroutine.status()<a href="#coroutine.status:co" class="anchor-link"></a></h4>
 		<p><code>coroutine.status(co)</code></p>
-		Returns the status of coroutine co, as a string:
+		返回协程 co 的状态, 类型为字符串:
 <code>"running"</code>,
-if the coroutine is running (that is, it called status);
-<code>"suspended"</code>, if the coroutine is suspended in a call to yield,
-or if it has not started running yet;
-<code>"normal"</code> if the coroutine is active but not running
-(that is, it has resumed another coroutine);
-and <code>"dead"</code> if the coroutine has finished its body function,
-or if it has stopped with an error.
-		<p><b>PARAMETERS</b></p>
+代表协程正在运行;
+<code>"suspended"</code>, 代表协程被阻塞,
+或者还没有开始执行;
+<code>"normal"</code> 代表协程恢复了其他协程但是自身没有执行;
+<code>"dead"</code> 代表协程执行完毕,
+或者遇到错误.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>co</code></td>
 				<td></td>
@@ -285,15 +282,14 @@ or if it has stopped with an error.
 		<a name="coroutine.wrap"/>
 		<h4>coroutine.wrap()<a href="#coroutine.wrap:f" class="anchor-link"></a></h4>
 		<p><code>coroutine.wrap(f)</code></p>
-		Creates a new coroutine, with body f.
-f must be a Lua function.
-Returns a function that resumes the coroutine each time it is called.
-Any arguments passed to the function behave as the
-extra arguments to resume.
-Returns the same values returned by resume,
-except the first boolean.
-In case of error, propagates the error.
-		<p><b>PARAMETERS</b></p>
+		新建协程, 内容函数f.
+f 为一个 Lua 函数.
+调用后会返回一个用以恢复协程的函数.
+其余的参数会被作为协程恢复函数的参数使用.
+返回值与resume类似,
+除了第一个布尔返回值.
+遇什么错误就抛出什么错误.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>f</code></td>
 				<td></td>
@@ -301,11 +297,11 @@ In case of error, propagates the error.
 		<a name="coroutine.yield"/>
 		<h4>coroutine.yield()<a href="#coroutine.yield:..." class="anchor-link"></a></h4>
 		<p><code>coroutine.yield(...)</code></p>
-		Suspends the execution of the calling coroutine.
-The coroutine cannot be running a C function,
-a metamethod, or an iterator.
-Any arguments to yield are passed as extra results to resume.
-		<p><b>PARAMETERS</b></p>
+		阻塞该协程.
+协程不可用于运行 C 函数,
+元方法和迭代器.
+其参数会被作为resume的结果.
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>...</code></td>
 				<td></td>
