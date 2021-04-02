@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmEngine/">alpha</option><option value="/ref/beta/dmEngine/">beta</option><option value="/ref/stable/dmEngine/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Sdk engine extension api documentation</h2>
-<p>SDK Engine extension API documentation</p>
+			<div class="columns nine ref scrollable"><h2>Sdk 引擎扩展 api 文档</h2>
+<p>SDK 引擎扩展 API 文档</p>
 
 <table class="compact">
 	<tr>
@@ -210,101 +210,101 @@
 
 </table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#GetConfigFile:app_params">dmConfigFile::HConfig&nbsp;GetConfigFile(dmExtension::AppParams*&nbsp;app_params)</a></td>
-		<td>get the config file</td>
+		<td>取得配置文件</td>
 	</tr><tr>
 		<td><a href="#GetWebServer:app_params">dmWebServer::HServer&nbsp;GetWebServer(dmExtension::AppParams*&nbsp;app_params)</a></td>
-		<td>get the web server handle</td>
+		<td>取得web服务器句柄</td>
 	</tr><tr>
 		<td><a href="#GetGameObjectRegister:app_params">dmGameObject::HRegister&nbsp;GetGameObjectRegister(dmExtension::AppParams*&nbsp;app_params)</a></td>
-		<td>get the game object register</td>
+		<td>取得游戏对象注册器</td>
 	</tr><tr>
 		<td><a href="#GetHIDContext:app_params">dmHID::HContext&nbsp;GetHIDContext(dmExtension::AppParams*&nbsp;app_params)</a></td>
-		<td>get the hid context</td>
+		<td>取得 hid 上下文</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>MACROS</th>
+		<th>宏</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#GetHIDContext:app_params">DM_DEBUG()</a></td>
-		<td>define for debug builds</td>
+		<td>定义为调试版</td>
 	</tr><tr>
 		<td><a href="#GetHIDContext:app_params">DM_RELEASE()</a></td>
-		<td>define for release builds</td>
+		<td>定义为发行版</td>
 	</tr><tr>
 		<td><a href="#GetHIDContext:app_params">DM_HEADLESS()</a></td>
-		<td>define for headless builds</td>
+		<td>定义为非可视版</td>
 	</tr></table><h2>Functions</h2><a name="GetConfigFile:app_params"/>
 		<h4>GetConfigFile<a href="#GetConfigFile:app_params" class="anchor-link"></a></h4>
 			<p><code>dmConfigFile::HConfig&nbsp;GetConfigFile(dmExtension::AppParams*&nbsp;app_params)</code><p>
 
-    get the config file
-    <p><b>PARAMETERS</b></p>
+    取得配置文件
+    <p><b>参数</b></p>
     <table><tr><td><code>dmExtension::AppParams*</code></td>
                 <td><code>app_params</code></td>
-                <td>The app params sent to the extension dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>RETURNS</b></p>
+                <td>参数会被传递给扩展函数 dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmConfigFile::HConfig</code></td>
-                <td>The game project config file</td>
+                <td>游戏项目配置文件</td>
             </tr></table><hr/><a name="GetWebServer:app_params"/>
 		<h4>GetWebServer<a href="#GetWebServer:app_params" class="anchor-link"></a></h4>
 			<p><code>dmWebServer::HServer&nbsp;GetWebServer(dmExtension::AppParams*&nbsp;app_params)</code><p>
 
-    get the web server handle
-    <p><b>PARAMETERS</b></p>
+    取得web服务器句柄
+    <p><b>参数</b></p>
     <table><tr><td><code>dmExtension::AppParams*</code></td>
                 <td><code>app_params</code></td>
-                <td>The app params sent to the extension dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>RETURNS</b></p>
+                <td>参数会被传递给扩展函数 dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmWebServer::HServer</code></td>
-                <td>The web server handle</td>
+                <td>web服务器句柄</td>
             </tr></table><hr/><a name="GetGameObjectRegister:app_params"/>
 		<h4>GetGameObjectRegister<a href="#GetGameObjectRegister:app_params" class="anchor-link"></a></h4>
 			<p><code>dmGameObject::HRegister&nbsp;GetGameObjectRegister(dmExtension::AppParams*&nbsp;app_params)</code><p>
 
-    get the game object register
-    <p><b>PARAMETERS</b></p>
+					取得游戏对象注册器
+    <p><b>参数</b></p>
     <table><tr><td><code>dmExtension::AppParams*</code></td>
                 <td><code>app_params</code></td>
-                <td>The app params sent to the extension dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>RETURNS</b></p>
+                <td>参数会被传递给扩展函数 dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmGameObject::HRegister</code></td>
-                <td>The game object register</td>
+                <td>游戏对象注册器</td>
             </tr></table><hr/><a name="GetHIDContext:app_params"/>
 		<h4>GetHIDContext<a href="#GetHIDContext:app_params" class="anchor-link"></a></h4>
 			<p><code>dmHID::HContext&nbsp;GetHIDContext(dmExtension::AppParams*&nbsp;app_params)</code><p>
 
-    get the hid context
-    <p><b>PARAMETERS</b></p>
+    取得 hid 上下文
+    <p><b>参数</b></p>
     <table><tr><td><code>dmExtension::AppParams*</code></td>
                 <td><code>app_params</code></td>
-                <td>The app params sent to the extension dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>RETURNS</b></p>
+                <td>游戏对象注册器 dmExtension::AppInitialize / dmExtension::AppInitialize</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>dmHID::HContext</code></td>
-                <td>The hid context</td>
+                <td>hid 上下文</td>
             </tr></table><hr/><h2>Macros</h2><a name="DM_DEBUG"/>
 	<h4>DM_DEBUG<a href="#DM_DEBUG"><span class="anchor-link"/></a></h4>
 	<p>define for debug builds</p>
-	<p>define for debug builds</p><p><b>EXAMPLES</b></p>
-	Only enable code in debug builds
+	<p>定义为调试版</p><p><b>实例</b></p>
+	开启调试用代码
 <div class="codehilite"><pre><span></span><span class="cp">#if defined(DM_DEBUG)</span>
     <span class="c1">// ...</span>
 <span class="cp">#endif</span>
 </pre></div><hr/><a name="DM_RELEASE"/>
 	<h4>DM_RELEASE<a href="#DM_RELEASE"><span class="anchor-link"/></a></h4>
 	<p>define for release builds</p>
-	<p>define for release builds</p><p><b>EXAMPLES</b></p>
-	Only enable code in release builds
+	<p>定义为发行版</p><p><b>实例</b></p>
+				开启发行用代码
 <div class="codehilite"><pre><span></span><span class="cp">#if defined(DM_RELEASE)</span>
     <span class="c1">// ...</span>
 <span class="cp">#endif</span>
 </pre></div><hr/><a name="DM_HEADLESS"/>
 	<h4>DM_HEADLESS<a href="#DM_HEADLESS"><span class="anchor-link"/></a></h4>
 	<p>define for headless builds</p>
-	<p>define for headless builds</p><p><b>EXAMPLES</b></p>
+	<p>定义为非可视版</p><p><b>实例</b></p>
 	Only enable code in headless builds
 <div class="codehilite"><pre><span></span><span class="cp">#if defined(DM_HEADLESS)</span>
     <span class="c1">// ...</span>
