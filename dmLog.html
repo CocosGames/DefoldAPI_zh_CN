@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmLog/">alpha</option><option value="/ref/beta/dmLog/">beta</option><option value="/ref/stable/dmLog/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Logging functions</h2>
-<p>Logging functions.</p>
+			<div class="columns nine ref scrollable"><h2>日志功能</h2>
+<p>日志相关函数.</p>
 
 <table class="compact">
 	<tr>
@@ -209,45 +209,44 @@
 
 </table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmLogDebug:format-args">void&nbsp;dmLogDebug(const char*&nbsp;format, ...&nbsp;args)</a></td>
-		<td>log with "debug" severity</td>
+		<td>以 "debug" 等级记录日志</td>
 	</tr><tr>
 		<td><a href="#dmLogUserDebug:format-args">void&nbsp;dmLogUserDebug(const char*&nbsp;format, ...&nbsp;args)</a></td>
-		<td>log with "user" severity</td>
+		<td>以 "user" 等级记录日志</td>
 	</tr><tr>
 		<td><a href="#dmLogInfo:format-args">void&nbsp;dmLogInfo(const char*&nbsp;format, ...&nbsp;args)</a></td>
-		<td>log with "info" severity</td>
+		<td>以 "info" 等级记录日志</td>
 	</tr><tr>
 		<td><a href="#dmLogWarning:format-args">void&nbsp;dmLogWarning(const char*&nbsp;format, ...&nbsp;args)</a></td>
-		<td>log with "warning" severity</td>
+		<td>以 "warning" 等级记录日志</td>
 	</tr><tr>
 		<td><a href="#dmLogError:format-args">void&nbsp;dmLogError(const char*&nbsp;format, ...&nbsp;args)</a></td>
-		<td>log with "error" severity</td>
+		<td>以 "error" 等级记录日志</td>
 	</tr><tr>
 		<td><a href="#dmLogFatal:format-args">void&nbsp;dmLogFatal(const char*&nbsp;format, ...&nbsp;args)</a></td>
-		<td>log with "fatal" severity</td>
+		<td>以 "fatal" 等级记录日志</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>MACROS</th>
+		<th>宏</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmLogFatal:format-args">DLIB_LOG_DOMAIN()</a></td>
-		<td>macro for debug category logging</td>
-	</tr></table><h2>Functions</h2><a name="dmLogDebug:format-args"/>
+		<td>调试类日志宏</td>
+	</tr></table><h2>函数</h2><a name="dmLogDebug:format-args"/>
 		<h4>dmLogDebug<a href="#dmLogDebug:format-args" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmLogDebug(const char*&nbsp;format, ...&nbsp;args)</code><p>
 
-    Debug messages are temporary log instances used when debugging a certain behavior
-Use dmLogOnceDebug for one-shot logging
-    <p><b>PARAMETERS</b></p>
+使用 dmLogOnceDebug 进行一次性调试信息日志记录
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>format</code></td>
                 <td>Format string</td></tr><tr><td><code>...</code></td>
                 <td><code>args</code></td>
-                <td>Format string args (variable arg list)</td></tr></table><p><b>RETURNS</b></p>
+                <td>格式化用字符串 (变量参数表)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>void</code></td>
                 <td></td>
@@ -255,14 +254,13 @@ Use dmLogOnceDebug for one-shot logging
 		<h4>dmLogUserDebug<a href="#dmLogUserDebug:format-args" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmLogUserDebug(const char*&nbsp;format, ...&nbsp;args)</code><p>
 
-    Debug messages are temporary log instances used when debugging a certain behavior
-Use dmLogOnceUserDebug for one-shot logging
-    <p><b>PARAMETERS</b></p>
+					使用 dmLogOnceUserDebug 进行一次性调试信息日志记录
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>format</code></td>
                 <td>Format string</td></tr><tr><td><code>...</code></td>
                 <td><code>args</code></td>
-                <td>Format string args (variable arg list)</td></tr></table><p><b>RETURNS</b></p>
+                <td>格式化用字符串 (变量参数表)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>void</code></td>
                 <td></td>
@@ -270,14 +268,13 @@ Use dmLogOnceUserDebug for one-shot logging
 		<h4>dmLogInfo<a href="#dmLogInfo:format-args" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmLogInfo(const char*&nbsp;format, ...&nbsp;args)</code><p>
 
-    Info messages are used to inform the developers of relevant information
-Use dmLogOnceInfo for one-shot logging
-    <p><b>PARAMETERS</b></p>
+    使用 dmLogOnceInfo 进行一次性开发信息日志记录
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>format</code></td>
                 <td>Format string</td></tr><tr><td><code>...</code></td>
                 <td><code>args</code></td>
-                <td>Format string args (variable arg list)</td></tr></table><p><b>RETURNS</b></p>
+                <td>格式化用字符串 (变量参数表)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>void</code></td>
                 <td></td>
@@ -285,14 +282,13 @@ Use dmLogOnceInfo for one-shot logging
 		<h4>dmLogWarning<a href="#dmLogWarning:format-args" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmLogWarning(const char*&nbsp;format, ...&nbsp;args)</code><p>
 
-    Warning messages are used to inform the developers about potential problems which can cause errors.
-Use dmLogOnceWarning for one-shot logging
-    <p><b>PARAMETERS</b></p>
+    使用 dmLogOnceWarning 进行一次性警告信息日志记录
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>format</code></td>
                 <td>Format string</td></tr><tr><td><code>...</code></td>
                 <td><code>args</code></td>
-                <td>Format string args (variable arg list)</td></tr></table><p><b>RETURNS</b></p>
+                <td>格式化用字符串 (变量参数表)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>void</code></td>
                 <td></td>
@@ -300,14 +296,13 @@ Use dmLogOnceWarning for one-shot logging
 		<h4>dmLogError<a href="#dmLogError:format-args" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmLogError(const char*&nbsp;format, ...&nbsp;args)</code><p>
 
-    Error messages are used in cases where an recoverable error has occurred.
-Use dmLogOnceError for one-shot logging
-    <p><b>PARAMETERS</b></p>
+    使用 dmLogOnceError 进行一次性错误信息日志记录
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>format</code></td>
                 <td>Format string</td></tr><tr><td><code>...</code></td>
                 <td><code>args</code></td>
-                <td>Format string args (variable arg list)</td></tr></table><p><b>RETURNS</b></p>
+                <td>格式化用字符串 (变量参数表)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>void</code></td>
                 <td></td>
@@ -315,22 +310,21 @@ Use dmLogOnceError for one-shot logging
 		<h4>dmLogFatal<a href="#dmLogFatal:format-args" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;dmLogFatal(const char*&nbsp;format, ...&nbsp;args)</code><p>
 
-    Fatal messages are used in cases where an unrecoverable error has occurred.
-Use dmLogOnceFatal for one-shot logging
-    <p><b>PARAMETERS</b></p>
+    使用 dmLogOnceFatal 进行一次性失败信息日志记录
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>format</code></td>
                 <td>Format string</td></tr><tr><td><code>...</code></td>
                 <td><code>args</code></td>
-                <td>Format string args (variable arg list)</td></tr></table><p><b>RETURNS</b></p>
+                <td>格式化用字符串 (变量参数表)</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>void</code></td>
                 <td></td>
-            </tr></table><hr/><h2>Macros</h2><a name="DLIB_LOG_DOMAIN"/>
+            </tr></table><hr/><h2>宏</h2><a name="DLIB_LOG_DOMAIN"/>
 	<h4>DLIB_LOG_DOMAIN<a href="#DLIB_LOG_DOMAIN"><span class="anchor-link"/></a></h4>
-	<p>macro for debug category logging</p>
-	<p>If DLIB_LOG_DOMAIN is defined the value of the defined is printed after severity.
-Otherwise DEFAULT will be printed.</p><p><b>EXAMPLES</b></p>
+	<p>调试类日志宏</p>
+	<p>如果定义了 DLIB_LOG_DOMAIN 则记录日志时会把它的值一同记录在日志等级后面.
+否则的话用 DEFAULT 字样代替记录.</p><p><b>实例</b></p>
 	<div class="codehilite"><pre><span></span><span class="cp">#define DLIB_LOG_DOMAIN &quot;MyOwnDomain&quot;</span>
 <span class="cp">#include</span> <span class="cpf">&lt;dmsdk/dlib/log.h&gt;</span><span class="cp"></span>
 </pre></div><hr/></div>
