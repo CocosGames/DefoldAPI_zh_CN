@@ -196,7 +196,7 @@
 			<div class="columns nine ref scrollable"><h1>SDK Thread API 文档</h1>
 <p>Version: stable</p><table class="compact">
 	<tr>
-		<th>FUNC函数TION</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#dmThread::New:thread_start-stack_size-arg-name">dmThread::New()</a></td>
@@ -206,45 +206,45 @@
 		<td>连接线程</td>
 	</tr><tr>
 		<td><a href="#dmThread::AllocTls:">dmThread::AllocTls()</a></td>
-		<td>allocate thread local storage key</td>
+		<td>线程分配本地存储键</td>
 	</tr><tr>
 		<td><a href="#dmThread::FreeTls:key">dmThread::FreeTls()</a></td>
-		<td>free thread local storage key</td>
+		<td>线程释放本地存储键</td>
 	</tr><tr>
 		<td><a href="#dmThread::SetTlsValue:key-value">dmThread::SetTlsValue()</a></td>
-		<td>set thread specific data</td>
+		<td>为指定线程设置变量数据</td>
 	</tr><tr>
 		<td><a href="#dmThread::GetTlsVAlue:key">dmThread::GetTlsVAlue()</a></td>
-		<td>get thread specific data</td>
+		<td>得到指定线程变量数据</td>
 	</tr><tr>
 		<td><a href="#dmThread::GetCurrentThread:">dmThread::GetCurrentThread()</a></td>
-		<td>gets the current thread</td>
+		<td>得到当前线程</td>
 	</tr><tr>
 		<td><a href="#dmThread::SetThreadName:thread-name">dmThread::SetThreadName()</a></td>
-		<td>sets the current thread name</td>
+		<td>设置当前线程名</td>
 	</tr></table><h2>Functions</h2><a name="dmThread::New:thread_start-stack_size-arg-name"/>
 		<a name="dmThread::New"/>
 		<h4>dmThread::New()<a href="#dmThread::New:thread_start-stack_size-arg-name" class="anchor-link"></a></h4>
 		<p><code>dmThread::New(thread_start,stack_size,arg,name)</code></p>
-		Create a new named thread
-		<p><b>PARAMETERS</b></p>
+		新建线程并为其命名
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>thread_start</code></td>
-				<td>Thread entry function</td>
+				<td>线程主体内容函数</td>
 			</tr><tr>
 				<td><code>stack_size</code></td>
-				<td>Stack size</td>
+				<td>堆栈大小</td>
 			</tr><tr>
 				<td><code>arg</code></td>
-				<td>Thread argument</td>
+				<td>线程参数</td>
 			</tr><tr>
 				<td><code>name</code></td>
-				<td>Thread name</td>
-			</tr></table><p><b>RETURNS</b></p>
+				<td>线程名</td>
+			</tr></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>Thread</code></td>
-				<td>handle</td>
-			</tr></table><p><b>EXAMPLES</b></p>
+				<td>线程句柄</td>
+			</tr></table><p><b>实例</b></p>
 		Create a thread
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;dmsdh/sdk.h&gt;</span><span class="cp"></span>
 
@@ -271,11 +271,11 @@
     <span class="n">ctx</span><span class="p">.</span><span class="n">m_Work</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">dmThread</span><span class="o">::</span><span class="n">HThread</span> <span class="kr">thread</span> <span class="o">=</span> <span class="n">dmThread</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">dmLogThread</span><span class="p">,</span> <span class="mh">0x80000</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span> <span class="s">&quot;my_thread&quot;</span><span class="p">);</span>
 
-    <span class="c1">// do other work...</span>
-    <span class="c1">// ..eventually stop the thread:</span>
+    <span class="c1">// 做其他事...</span>
+    <span class="c1">// ..最终停止线程:</span>
     <span class="n">ctx</span><span class="p">.</span><span class="n">m_DoWork</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 
-    <span class="c1">// wait for thread</span>
+    <span class="c1">// 等待线程</span>
     <span class="n">dmThread</span><span class="o">::</span><span class="n">Join</span><span class="p">(</span><span class="kr">thread</span><span class="p">);</span>
 
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;work done: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ctx</span><span class="p">.</span><span class="n">m_Work</span><span class="p">);</span>
@@ -284,73 +284,73 @@
 		<a name="dmThread::Join"/>
 		<h4>dmThread::Join()<a href="#dmThread::Join:thread" class="anchor-link"></a></h4>
 		<p><code>dmThread::Join(thread)</code></p>
-		Join thread
-		<p><b>PARAMETERS</b></p>
+		连接线程
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>thread</code></td>
-				<td>Thread to join</td>
+				<td>需要连接的线程</td>
 			</tr></table><hr/><a name="dmThread::AllocTls:"/>
 		<a name="dmThread::AllocTls"/>
 		<h4>dmThread::AllocTls()<a href="#dmThread::AllocTls:" class="anchor-link"></a></h4>
 		<p><code>dmThread::AllocTls()</code></p>
-		Allocate thread local storage key
-		<p><b>PARAMETERS</b></p>
-		<table></table><p><b>RETURNS</b></p>
+		给线程指定本地存储键
+		<p><b>参数</b></p>
+		<table></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>Key</code></td>
-				<td></td>
+				<td>键</td>
 			</tr></table><hr/><a name="dmThread::FreeTls:key"/>
 		<a name="dmThread::FreeTls"/>
 		<h4>dmThread::FreeTls()<a href="#dmThread::FreeTls:key" class="anchor-link"></a></h4>
 		<p><code>dmThread::FreeTls(key)</code></p>
-		Free thread local storage key
-		<p><b>PARAMETERS</b></p>
+		释放线程的本地存储键
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>key</code></td>
-				<td>Key</td>
+				<td>键</td>
 			</tr></table><hr/><a name="dmThread::SetTlsValue:key-value"/>
 		<a name="dmThread::SetTlsValue"/>
 		<h4>dmThread::SetTlsValue()<a href="#dmThread::SetTlsValue:key-value" class="anchor-link"></a></h4>
 		<p><code>dmThread::SetTlsValue(key,value)</code></p>
-		Set thread specific data
-		<p><b>PARAMETERS</b></p>
+		设置线程变量数据
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>key</code></td>
-				<td>Key</td>
+				<td>键</td>
 			</tr><tr>
 				<td><code>value</code></td>
-				<td>Value</td>
+				<td>值</td>
 			</tr></table><hr/><a name="dmThread::GetTlsVAlue:key"/>
 		<a name="dmThread::GetTlsVAlue"/>
 		<h4>dmThread::GetTlsVAlue()<a href="#dmThread::GetTlsVAlue:key" class="anchor-link"></a></h4>
 		<p><code>dmThread::GetTlsVAlue(key)</code></p>
-		Get thread specific data
-		<p><b>PARAMETERS</b></p>
+		得到线程变量数据
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>key</code></td>
-				<td>Key</td>
+				<td>键</td>
 			</tr></table><hr/><a name="dmThread::GetCurrentThread:"/>
 		<a name="dmThread::GetCurrentThread"/>
 		<h4>dmThread::GetCurrentThread()<a href="#dmThread::GetCurrentThread:" class="anchor-link"></a></h4>
 		<p><code>dmThread::GetCurrentThread()</code></p>
-		Gets the current thread
-		<p><b>PARAMETERS</b></p>
-		<table></table><p><b>RETURNS</b></p>
+		得到当前线程
+		<p><b>参数</b></p>
+		<table></table><p><b>返回</b></p>
 		<table><tr>
 				<td><code>the</code></td>
-				<td>current thread</td>
+				<td>当前线程</td>
 			</tr></table><hr/><a name="dmThread::SetThreadName:thread-name"/>
 		<a name="dmThread::SetThreadName"/>
 		<h4>dmThread::SetThreadName()<a href="#dmThread::SetThreadName:thread-name" class="anchor-link"></a></h4>
 		<p><code>dmThread::SetThreadName(thread,name)</code></p>
-		Sets the current thread name
-		<p><b>PARAMETERS</b></p>
+		设置当前线程名
+		<p><b>参数</b></p>
 		<table><tr>
 				<td><code>thread</code></td>
-				<td>the thread</td>
+				<td>线程</td>
 			</tr><tr>
 				<td><code>name</code></td>
-				<td>the thread name</td>
+				<td>线程名</td>
 			</tr></table><hr/></div>
 		</div>
 	</div>
