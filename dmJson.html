@@ -193,8 +193,8 @@
 				<select class="navdropdown" onchange="location = this.value;"><option value="/ref/alpha/dmJson/">alpha</option><option value="/ref/beta/dmJson/">beta</option><option value="/ref/stable/dmJson/">stable</option></select>
 				&nbsp;
 			</div>
-			<div class="columns nine ref scrollable"><h2>Json parsing functions</h2>
-<p>API for platform independent parsing of json files</p>
+			<div class="columns nine ref scrollable"><h2>Json 解析功能</h2>
+<p>平台无关的json文件解析API</p>
 
 <table class="compact">
 	<tr>
@@ -210,145 +210,142 @@
 
 </table><table class="compact">
 	<tr>
-		<th>ENUMS</th>
+		<th>枚举</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#Result">Result</a></td>
-		<td>result enumeration</td>
+		<td>结果枚举</td>
 	</tr><tr>
 		<td><a href="#Type">Type</a></td>
-		<td>token type enumeration</td>
+		<td>枚举类型</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>STRUCTS</th>
+		<th>结构</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#Node">struct&nbsp;Node</a></td>
-		<td>Json node representation.</td>
+		<td>Json节点</td>
 	</tr><tr>
 		<td><a href="#Document">struct&nbsp;Document</a></td>
-		<td>Json document</td>
+		<td>Json文档</td>
 	</tr></table><table class="compact">
 	<tr>
-		<th>FUNCTIONS</th>
+		<th>函数</th>
 		<th></th>
 	</tr><tr>
 		<td><a href="#Parse:buffer-length-document">Result&nbsp;Parse(const char*&nbsp;buffer, uint32_t&nbsp;length, Document*&nbsp;document)</a></td>
-		<td>parse json data</td>
+		<td>解析json数据</td>
 	</tr><tr>
 		<td><a href="#Parse:buffer-document">Result&nbsp;Parse(const char*&nbsp;buffer, Document*&nbsp;document)</a></td>
-		<td>parse null terminated json data</td>
+		<td>解析以Null结尾的json数据</td>
 	</tr><tr>
 		<td><a href="#Free:document">void&nbsp;Free(Document*&nbsp;document)</a></td>
-		<td>deallocates json document</td>
-	</tr></table><h2>Functions</h2><a name="Parse:buffer-length-document"/>
+		<td>回收json文档</td>
+	</tr></table><h2>函数</h2><a name="Parse:buffer-length-document"/>
 		<h4>Parse<a href="#Parse:buffer-length-document" class="anchor-link"></a></h4>
 			<p><code>Result&nbsp;Parse(const char*&nbsp;buffer, uint32_t&nbsp;length, Document*&nbsp;document)</code><p>
 
-    Parses an (utf-8) string into a dmJson::Document
-The document must later be freed with dmJson::Free()
-    <p><b>PARAMETERS</b></p>
+    解析一个 (utf-8) 字符串转化成 dmJson::Document
+之后该文档一定要使用 dmJson::Free() 进行释放
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>buffer</code></td>
-                <td>The input data (Utf-8)</td></tr><tr><td><code>uint32_t</code></td>
+                <td>输入数据 (Utf-8)</td></tr><tr><td><code>uint32_t</code></td>
                 <td><code>length</code></td>
-                <td>The size of the json buffer (in bytes)</td></tr><tr><td><code>Document*</code></td>
+                <td>json缓存大小 (以字节为单位)</td></tr><tr><td><code>Document*</code></td>
                 <td><code>document</code></td>
-                <td>The output document</td></tr></table><p><b>RETURNS</b></p>
+                <td>输出文档</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>Result</code></td>
-                <td>dmJson::RESULT_OK on success</td>
+                <td>解析成功返回 dmJson::RESULT_OK</td>
             </tr></table><hr/><a name="Parse:buffer-document"/>
 		<h4>Parse<a href="#Parse:buffer-document" class="anchor-link"></a></h4>
 			<p><code>Result&nbsp;Parse(const char*&nbsp;buffer, Document*&nbsp;document)</code><p>
 
-    Parses a null terminated (utf-8) string into a dmJson::Document
-The document must later be freed with dmJson::Free()
-    <p><b>PARAMETERS</b></p>
+					解析一个 (utf-8) 字符串转化成 dmJson::Document
+					之后该文档一定要使用 dmJson::Free() 进行释放
+    <p><b>参数</b></p>
     <table><tr><td><code>const char*</code></td>
                 <td><code>buffer</code></td>
-                <td>The input data (Utf-8)</td></tr><tr><td><code>Document*</code></td>
+                <td>输入数据 (Utf-8)</td></tr><tr><td><code>Document*</code></td>
                 <td><code>document</code></td>
-                <td>The output document</td></tr></table><p><b>RETURNS</b></p>
+                <td>json文档</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>Result</code></td>
-                <td>dmJson::RESULT_OK on success</td>
+                <td>解析成功返回 dmJson::RESULT_OK</td>
             </tr></table><hr/><a name="Free:document"/>
 		<h4>Free<a href="#Free:document" class="anchor-link"></a></h4>
 			<p><code>void&nbsp;Free(Document*&nbsp;document)</code><p>
 
-    Deallocates a previously created dmJson::Document
-    <p><b>PARAMETERS</b></p>
+    释放之前生成的 dmJson::Document
+    <p><b>参数</b></p>
     <table><tr><td><code>Document*</code></td>
                 <td><code>document</code></td>
-                <td>The document</td></tr></table><p><b>RETURNS</b></p>
+                <td>json文档</td></tr></table><p><b>返回</b></p>
     <table><tr>
                 <td><code>void</code></td>
                 <td></td>
-            </tr></table><hr/><h2>Structs</h2><a name="Node"/>
+            </tr></table><hr/><h2>结构</h2><a name="Node"/>
 	<h4>Node<a href="#Node"><span class="anchor-link"/></a></h4>
 
 		<p>
-        <p><b>TYPE</b></p>
-        <code>struct&nbsp;Node</code><br>
+        <p><b>Type</b></p>
+        <code>Node结构</code><br>
     </p>
 
-    <p>Nodes are in depth-first order with sibling
-links for simplified traversal.
-NOTE: Siblings were added to support a read-only
-lua-view of json-data. It's currently not used and
-could potentially be removed for increased performance.</p><p><b>MEMBERS</b><table><tr>
+    <p>节点采用同级链接进行深度优先处理，以简化遍历.
+注意: 引入同级链接的目的是为了进行json数据的lua读取. 目前已经启用并且可能在未来版本中移除.</p><p><b>成员</b><table><tr>
             <td><code>Type</code></td>
             <td><code>m_Type</code></td>
-            <td>Node type</td>
+            <td>节点类型</td>
         </tr><tr>
             <td><code>int</code></td>
             <td><code>m_Start</code></td>
-            <td>Start index inclusive into document json-data</td>
+            <td>开始索引json数据文档</td>
         </tr><tr>
             <td><code>int</code></td>
             <td><code>m_End</code></td>
-            <td>End index exclusive into document json-data</td>
+            <td>结束索引json数据文档</td>
         </tr><tr>
             <td><code>int</code></td>
             <td><code>m_Size</code></td>
-            <td>Size. Only applicable for arrays and objects</td>
+            <td>json数组与json对象可用的大小</td>
         </tr><tr>
             <td><code>int</code></td>
             <td><code>m_Sibling</code></td>
-            <td>Sibling index. -1 if no sibling</td>
+            <td>同级索引. -1 即为无索引</td>
         </tr></table></p>
 
 	<hr/><a name="Document"/>
 	<h4>Document<a href="#Document"><span class="anchor-link"/></a></h4>
 
 		<p>
-        <p><b>TYPE</b></p>
-        <code>struct&nbsp;Document</code><br>
+        <p><b>Type</b></p>
+        <code>Document结构</code><br>
     </p>
 
-    <p>Holds a full json document</p><p><b>MEMBERS</b><table><tr>
+    <p>整个json文档句柄</p><p><b>成员</b><table><tr>
             <td><code>Node*</code></td>
             <td><code>m_Nodes</code></td>
-            <td>Array of nodes. First node is root</td>
+            <td>节点数组. 第一个节点是root</td>
         </tr><tr>
             <td><code>int</code></td>
             <td><code>m_NodeCount</code></td>
-            <td>Total number of nodes</td>
+            <td>节点总数</td>
         </tr><tr>
             <td><code>char*</code></td>
             <td><code>m_Json</code></td>
-            <td>Json-data (unescaped)</td>
+            <td>json数据 (未处理)</td>
         </tr><tr>
             <td><code>void*</code></td>
             <td><code>m_UserData</code></td>
-            <td>User-data</td>
+            <td>用户数据</td>
         </tr></table></p>
 
-	<hr/><h2>Enums</h2><a name="Result"/>
+	<hr/><h2>枚举</h2><a name="Result"/>
 	<h4>Result<a href="#Result"><span class="anchor-link"/></a></h4>
 	<p>result enumeration</p>
-	<p>Result enumeration.</p><table><tr>
+	<p>结果枚举.</p><table><tr>
 		<td><code>dmJson::RESULT_OK</code></td>
 		<td></td>
 	</tr><tr>
@@ -363,18 +360,18 @@ could potentially be removed for increased performance.</p><p><b>MEMBERS</b><tab
 	</tr></table><hr/><a name="Type"/>
 	<h4>Type<a href="#Type"><span class="anchor-link"/></a></h4>
 	<p>token type enumeration</p>
-	<p>Token type enumeration.</p><table><tr>
+	<p>枚举类型.</p><table><tr>
 		<td><code>dmJson::TYPE_PRIMITIVE</code></td>
-		<td>Number or boolean</td>
+		<td>Number 或者 boolean</td>
 	</tr><tr>
 		<td><code>dmJson::TYPE_OBJECT</code></td>
-		<td>Json object</td>
+		<td>Json 对象</td>
 	</tr><tr>
 		<td><code>dmJson::TYPE_ARRAY</code></td>
-		<td>Json array</td>
+		<td>Json 数组</td>
 	</tr><tr>
 		<td><code>dmJson::TYPE_STRING</code></td>
-		<td>String</td>
+		<td>字符串</td>
 	</tr></table><hr/></div>
 		</div>
 	</div>
